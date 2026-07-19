@@ -2,6 +2,15 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.3] - 2026-07-18
+
+### Fixed
+- **Stale-cache bug: site updates now take effect without a manual/force refresh.** Previously `index.html` was cacheable and `app.js`/`style.css`/`i18n.js` had no `?v=` cache-busting tag, so browsers (and the Cloudflare edge) kept serving old code after a deploy — which is why the scheduler kept running the old `mailto:` version.
+
+### Changed
+- Added `?v=dev` version tags to `style.css`, `js/i18n.js`, and `app.js` in `index.html`; the Docker build stamps these with a unique build id on every deploy, so a new build = a new asset URL.
+- New Nginx cache policy (`nginx.conf.template`): HTML and JSON are always revalidated (`no-cache`, cheap 304s), while fingerprinted CSS/JS/font/image assets are cached hard (`max-age=1y, immutable`) — but only when they carry a real build id. A `map` on `$arg_v` keeps `?v=dev` / unversioned requests on `no-cache` so local bind-mount development still hot-reloads without a forced refresh. Marked the GitHub API proxy `^~` so the new static-asset regexes never intercept it.
+
 ## [1.0.2] - 2026-07-18
 
 ### Added

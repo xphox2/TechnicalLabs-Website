@@ -1,11 +1,59 @@
+# Map the asset ?v= version to a cache policy (http context — this file is
+# included inside http{} via conf.d):
+#   * a real build id (stamped at deploy time) -> cache hard & immutable
+#   * "dev" or no version (local bind-mount)    -> always revalidate
+map $arg_v $asset_cache_control {
+    default   "public, max-age=31536000, immutable";
+    ""        "no-cache";
+    "dev"     "no-cache";
+}
+
 server {
     listen 80;
     server_name localhost;
 
+    root /usr/share/nginx/html;
+
+    # =========================================================================
+    # Cache policy — updates always take effect without a manual refresh.
+    #
+    #  * HTML + JSON  -> always revalidated (no-cache). The browser re-checks
+    #    with the origin every load; unchanged files return a cheap 304 via
+    #    ETag. Because the entry document is never served stale, it always
+    #    references the newest ?v=<build-id> asset URLs.
+    #  * CSS / JS / fonts / images -> cached hard (1 year, immutable). Safe
+    #    because these are served with a ?v=<build-id> query that the Docker
+    #    build stamps fresh on every deploy, so a new build = a new URL.
+    # =========================================================================
+
+    # HTML entry documents — never serve stale markup
+    location = / {
+        try_files /index.html =404;
+        add_header Cache-Control "no-cache" always;
+    }
+    location ~* \.html?$ {
+        add_header Cache-Control "no-cache" always;
+        try_files $uri =404;
+    }
+
+    # Dynamic JSON (locales, live version data) — revalidate, allow 304s
+    location ~* \.json$ {
+        add_header Cache-Control "no-cache" always;
+        try_files $uri =404;
+    }
+
+    # Static assets — cache hard when carrying a real build id (?v=<build-id>),
+    # but revalidate for "?v=dev" / no version so local edits show up instantly
+    location ~* \.(?:css|js|mjs|woff2?|ttf|otf|eot|svg|png|jpe?g|gif|webp|avif|ico)$ {
+        add_header Cache-Control $asset_cache_control always;
+        try_files $uri =404;
+    }
+
+    # Everything else — safe default: revalidate
     location / {
-        root /usr/share/nginx/html;
         index index.html index.htm;
         try_files $uri $uri/ =404;
+        add_header Cache-Control "no-cache" always;
     }
 
     # Booking form mail relay — forwards POST /api/schedule to the mailer service
@@ -24,8 +72,8 @@ server {
         proxy_read_timeout 30s;
     }
 
-    # Secure GitHub API proxy
-    location /api/github/ {
+    # Secure GitHub API proxy ( ^~ so the static-asset regexes never intercept )
+    location ^~ /api/github/ {
         # DNS resolver to dynamic resolve api.github.com (required for proxy_pass to domains)
         resolver 8.8.8.8 [2001:4860:4860::8888] valid=300s;
         resolver_timeout 5s;
