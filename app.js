@@ -237,4 +237,62 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
+  // --- DYNAMIC GITHUB VERSION FETCHING FOR SYSTEM MONITOR ---
+  const fetchLatestVersion = async (repo) => {
+    try {
+      // 1. Try to fetch the latest official release first
+      let response = await fetch(`https://api.github.com/repos/${repo}/releases/latest`);
+      if (response.ok) {
+        const data = await response.json();
+        if (data && data.tag_name) {
+          return data.tag_name;
+        }
+      }
+      
+      // 2. Fallback to tags if no official release is set up
+      response = await fetch(`https://api.github.com/repos/${repo}/tags`);
+      if (response.ok) {
+        const data = await response.json();
+        if (data && data.length > 0) {
+          return data[0].name;
+        }
+      }
+      return 'v1.0.0'; // Fallback default
+    } catch (e) {
+      console.error(`Error querying GitHub version for ${repo}:`, e);
+      return 'Offline';
+    }
+  };
+
+  const loadSystemMonitor = async () => {
+    const vinylEl = document.getElementById('hud-vinylfo-status');
+    const fwmonEl = document.getElementById('hud-fwmon-status');
+    const rustEl = document.getElementById('hud-rust-status');
+
+    // Fetch and display Vinyl Music (xphox2/Vinyl-Release)
+    if (vinylEl) {
+      const vVer = await fetchLatestVersion('xphox2/Vinyl-Release');
+      vinylEl.textContent = `${vVer} • Stable`;
+      vinylEl.classList.add('emerald');
+    }
+
+    // Fetch and display Firewall Monitor (Server & Collector)
+    if (fwmonEl) {
+      const serverVer = await fetchLatestVersion('xphox2/Firewall-Monitoring');
+      const collectorVer = await fetchLatestVersion('xphox2/Firewall-Collector');
+      fwmonEl.textContent = `Server: ${serverVer} • Collector: ${collectorVer}`;
+      fwmonEl.classList.add('active');
+    }
+
+    // Fetch and display Rust Game Plugin (xphox2/SignArtSaver)
+    if (rustEl) {
+      const rustVer = await fetchLatestVersion('xphox2/SignArtSaver');
+      rustEl.textContent = rustVer;
+      rustEl.classList.add('active');
+    }
+  };
+
+  // Run on load
+  loadSystemMonitor();
+
 });
