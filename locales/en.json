@@ -30,7 +30,10 @@
     "fwmon_title": "Firewall Monitor",
     "fwmon_desc": "A vendor-agnostic central NMS with SNMP polling, syslog/sFlow receivers, configuration tracking, and distributed remote probe relays (Firewall-Collector).",
     "rust_title": "Rust Game Plugin",
-    "rust_desc": "A high-performance gameplay enhancement plugin for Rust survival servers. Introducing custom economy, logging systems, admin helpers, and real-time network hooks."
+    "rust_desc": "A high-performance gameplay enhancement plugin for Rust survival servers. Introducing custom economy, logging systems, admin helpers, and real-time network hooks.",
+    "runs_on": "Runs on",
+    "deployed_with": "Deployed with",
+    "built_for": "Built for"
   },
   "common": {
     "view_architecture": "View Architecture",

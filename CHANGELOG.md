@@ -2,6 +2,19 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.4] - 2026-07-19
+
+### Added
+- **Platform / technology badges on the project cards:**
+  - Vinylfo — "Runs on" Windows, macOS, and Linux (inline brand SVGs, official Tux for Linux).
+  - Firewall Monitor — "Deployed with" Docker badge.
+  - Rust Game Plugin — "Built for" a Rust badge that links out to the Rust game site (rust.facepunch.com).
+  - New `.project-platforms` / `.platform-icon` / `.platform-item` / `.platform-name` styles; icons inherit `currentColor` so they adapt to light/dark themes.
+
+### Changed
+- Normalized the language name to **"Go"** everywhere (was inconsistently "Go Lang", "Go Language", and "Golang" across the project tags and modals).
+- Rust Game Plugin tag corrected from "C# / Rust" to just "C#".
+
 ## [1.0.3] - 2026-07-18
 
 ### Fixed

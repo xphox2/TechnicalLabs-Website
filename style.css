@@ -1013,6 +1013,73 @@ nav a:hover::after {
   color: var(--text-secondary);
 }
 
+/* Platform / technology badges on project cards */
+.project-platforms {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.project-platforms .platform-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  opacity: 0.8;
+  margin-right: 0.15rem;
+}
+
+/* An icon + its text name, kept tightly paired */
+.platform-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.platform-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  line-height: 1;
+}
+
+.platform-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--text-secondary);
+  opacity: 0.85;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.platform-icon:hover {
+  color: var(--text-primary);
+  opacity: 1;
+}
+
+/* Clickable platform badge (e.g. the Rust game link) */
+a.platform-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+a.platform-link .platform-icon {
+  transition: none;
+}
+
+a.platform-link:hover,
+a.platform-link:hover .platform-icon {
+  color: var(--indigo-500);
+  opacity: 1;
+}
+
 .project-links {
   display: flex;
   gap: 1rem;
