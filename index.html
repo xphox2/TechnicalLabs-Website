@@ -6,14 +6,18 @@
 
   <!-- Google tag (gtag.js) -->
   <script>
-    // Disable tracking in development/local environments
-    if (
-      window.location.hostname === 'localhost' || 
-      window.location.hostname === '127.0.0.1' || 
-      window.location.hostname.startsWith('192.168.') || 
-      window.location.hostname.startsWith('10.') || 
-      window.location.hostname.endsWith('.local')
-    ) {
+    // Disable tracking in development/local environments, unless in debug/Tag Assistant mode
+    const isLocal = window.location.hostname === 'localhost' || 
+                    window.location.hostname === '127.0.0.1' || 
+                    window.location.hostname.startsWith('192.168.') || 
+                    window.location.hostname.startsWith('10.') || 
+                    window.location.hostname.endsWith('.local');
+    const isDebug = window.location.search.includes('gtm_debug') || 
+                    window.location.hash.includes('gtm_debug') || 
+                    window.location.search.includes('gtag') ||
+                    window.location.hash.includes('gtag');
+    
+    if (isLocal && !isDebug) {
       window['ga-disable-G-KKV5S28YZS'] = true;
       console.log('Google Analytics is disabled in local/development environment.');
     }
