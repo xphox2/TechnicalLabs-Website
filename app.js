@@ -285,15 +285,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (fwServerEl) {
           fwServerEl.textContent = serverVer || 'v0.11.122';
-          fwServerEl.classList.add('active');
+          fwServerEl.classList.add('emerald');
         }
         if (fwCollectorEl) {
           fwCollectorEl.textContent = collectorVer || 'v1.3.16';
-          fwCollectorEl.classList.add('active');
+          fwCollectorEl.classList.add('emerald');
         }
         if (rustEl) {
           rustEl.textContent = rustVer || 'v0.11.14';
-          rustEl.classList.add('active');
+          rustEl.classList.add('emerald');
         }
         return;
       }
@@ -313,15 +313,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (fwServerEl && versions.fw_server) {
           fwServerEl.textContent = versions.fw_server;
-          fwServerEl.classList.add('active');
+          fwServerEl.classList.add('emerald');
         }
         if (fwCollectorEl && versions.fw_collector) {
           fwCollectorEl.textContent = versions.fw_collector;
-          fwCollectorEl.classList.add('active');
+          fwCollectorEl.classList.add('emerald');
         }
         if (rustEl && versions.rust_plugin) {
           rustEl.textContent = versions.rust_plugin;
-          rustEl.classList.add('active');
+          rustEl.classList.add('emerald');
         }
         return;
       }
@@ -336,16 +336,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (fwServerEl) {
       fwServerEl.textContent = 'v0.11.122';
-      fwServerEl.classList.add('active');
+      fwServerEl.classList.add('emerald');
     }
     if (fwCollectorEl) {
       fwCollectorEl.textContent = 'v1.3.16';
-      fwCollectorEl.classList.add('active');
+      fwCollectorEl.classList.add('emerald');
     }
     if (rustEl) {
       const rustVer = await fetchVersion('xphox2/SignArtSaver', false);
       rustEl.textContent = rustVer || 'v0.11.14';
-      rustEl.classList.add('active');
+      rustEl.classList.add('emerald');
     }
   };
 
