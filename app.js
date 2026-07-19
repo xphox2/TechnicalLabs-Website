@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const selectCards = document.querySelectorAll('.select-card');
   
   let currentStep = 1;
-  let selectedTopic = 'networking';
+  let selectedTopic = 'firewalls_networking';
 
   // Topic Select Card Clicks
   selectCards.forEach(card => {

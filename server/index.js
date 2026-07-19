@@ -36,10 +36,10 @@ const MAX_BODY_BYTES = 16 * 1024; // Reject anything larger than 16 KB
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const TOPIC_LABELS = {
-  networking: 'Network & Subnets',
-  firewalls: 'Firewalls & Relays',
-  docker: 'Docker & Containers',
-  dev: 'Custom Dev',
+  firewalls_networking: 'Firewalls & Networking',
+  datacentre_infra: 'Data Centre & Infrastructure',
+  automation: 'System & Process Automation',
+  development: 'Custom Development',
 };
 
 // Naive in-memory, per-IP rate limiter: max 5 submissions per 10 minutes.
