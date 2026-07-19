@@ -480,21 +480,24 @@ nav a:hover::after {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1.5rem;
 }
 
 .hud-label {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-shrink: 0;
 }
 
 .hud-val {
   font-family: var(--font-mono);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-primary);
+  text-align: right;
 }
 
 .hud-val.active {
@@ -503,6 +506,18 @@ nav a:hover::after {
 
 .hud-val.emerald {
   color: var(--emerald-400);
+}
+
+@media (max-width: 480px) {
+  .hud-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  .hud-val {
+    text-align: left;
+    padding-left: 1.6rem;
+  }
 }
 
 /* SECTION STYLING */

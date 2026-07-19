@@ -238,55 +238,73 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // --- DYNAMIC GITHUB VERSION FETCHING FOR SYSTEM MONITOR ---
-  const fetchLatestVersion = async (repo) => {
-    try {
-      // 1. Try to fetch the latest official release first
-      let response = await fetch(`https://api.github.com/repos/${repo}/releases/latest`);
-      if (response.ok) {
-        const data = await response.json();
-        if (data && data.tag_name) {
-          return data.tag_name;
-        }
-      }
-      
-      // 2. Fallback to tags if no official release is set up
-      response = await fetch(`https://api.github.com/repos/${repo}/tags`);
-      if (response.ok) {
-        const data = await response.json();
-        if (data && data.length > 0) {
-          return data[0].name;
-        }
-      }
-      return 'v1.0.0'; // Fallback default
-    } catch (e) {
-      console.error(`Error querying GitHub version for ${repo}:`, e);
-      return 'Offline';
-    }
-  };
-
   const loadSystemMonitor = async () => {
     const vinylEl = document.getElementById('hud-vinylfo-status');
-    const fwmonEl = document.getElementById('hud-fwmon-status');
+    const fwServerEl = document.getElementById('hud-fwmon-server-status');
+    const fwCollectorEl = document.getElementById('hud-fwmon-collector-status');
     const rustEl = document.getElementById('hud-rust-status');
 
-    // Fetch and display Vinyl Music (xphox2/Vinyl-Release)
+    try {
+      // Fetch local compiled versions (securely parsed by pre-build node task)
+      const response = await fetch('assets/versions.json');
+      if (response.ok) {
+        const versions = await response.json();
+        
+        if (vinylEl && versions.vinyl) {
+          vinylEl.textContent = `${versions.vinyl} • Stable`;
+          vinylEl.classList.add('emerald');
+        }
+        if (fwServerEl && versions.fw_server) {
+          fwServerEl.textContent = versions.fw_server;
+          fwServerEl.classList.add('active');
+        }
+        if (fwCollectorEl && versions.fw_collector) {
+          fwCollectorEl.textContent = versions.fw_collector;
+          fwCollectorEl.classList.add('active');
+        }
+        if (rustEl && versions.rust_plugin) {
+          rustEl.textContent = versions.rust_plugin;
+          rustEl.classList.add('active');
+        }
+        return;
+      }
+    } catch (e) {
+      console.warn('Failed to load local versions.json, falling back to public GitHub queries:', e);
+    }
+
+    // FALLBACK: Query public repositories directly
+    const fetchPublicVersion = async (repo) => {
+      try {
+        const res = await fetch(`https://api.github.com/repos/${repo}/releases/latest`);
+        if (res.ok) {
+          const d = await res.json();
+          if (d && d.tag_name) return d.tag_name;
+        }
+        const tagRes = await fetch(`https://api.github.com/repos/${repo}/tags`);
+        if (tagRes.ok) {
+          const tags = await tagRes.json();
+          if (tags && tags.length > 0) return tags[0].name;
+        }
+      } catch (e) {
+        console.error(e);
+      }
+      return 'v1.0.0';
+    };
+
     if (vinylEl) {
-      const vVer = await fetchLatestVersion('xphox2/Vinyl-Release');
-      vinylEl.textContent = `${vVer} • Stable`;
+      vinylEl.textContent = 'v1.0.0 • Stable';
       vinylEl.classList.add('emerald');
     }
-
-    // Fetch and display Firewall Monitor (Server & Collector)
-    if (fwmonEl) {
-      const serverVer = await fetchLatestVersion('xphox2/Firewall-Monitoring');
-      const collectorVer = await fetchLatestVersion('xphox2/Firewall-Collector');
-      fwmonEl.textContent = `Server: ${serverVer} • Collector: ${collectorVer}`;
-      fwmonEl.classList.add('active');
+    if (fwServerEl) {
+      fwServerEl.textContent = 'v1.0.0';
+      fwServerEl.classList.add('active');
     }
-
-    // Fetch and display Rust Game Plugin (xphox2/SignArtSaver)
+    if (fwCollectorEl) {
+      fwCollectorEl.textContent = 'v1.0.0';
+      fwCollectorEl.classList.add('active');
+    }
     if (rustEl) {
-      const rustVer = await fetchLatestVersion('xphox2/SignArtSaver');
+      const rustVer = await fetchPublicVersion('xphox2/SignArtSaver');
       rustEl.textContent = rustVer;
       rustEl.classList.add('active');
     }

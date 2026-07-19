@@ -4,8 +4,8 @@
   "description": "Website for Technical Labs (www.technicallabs.org)",
   "main": "index.html",
   "scripts": {
-    "dev": "npx -y http-server -p 3000",
-    "start": "npx -y http-server -p 3000"
+    "dev": "node scripts/fetch-versions.js && npx -y http-server -p 3000",
+    "start": "node scripts/fetch-versions.js && npx -y http-server -p 3000"
   },
   "keywords": [],
   "author": "Technical Labs",
