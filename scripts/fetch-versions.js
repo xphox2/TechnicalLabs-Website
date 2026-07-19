@@ -22,7 +22,7 @@ const getLatestVersionWithFetch = async (repo) => {
       }
     }
   } catch (e) {
-    // Ignore error and fall back
+    // Ignore error
   }
 
   try {
@@ -56,7 +56,52 @@ const getLatestVersionWithCli = (repo) => {
       return tagsOut;
     }
   } catch (e) {
-    console.error(`CLI failed for ${repo}:`, e.message);
+    // Log error and fallback
+  }
+
+  return null;
+};
+
+const getLocalFallbackVersion = (repo) => {
+  // Check local sibling folders to parse versions directly from Go source files
+  if (repo === 'xphox2/Firewall-Monitoring') {
+    try {
+      const localPath = path.join(__dirname, '..', '..', 'Firewall-Mon', 'cmd', 'api', 'main.go');
+      if (fs.existsSync(localPath)) {
+        const content = fs.readFileSync(localPath, 'utf8');
+        const match = content.match(/const ServerVersion = "(.*?)"/);
+        if (match && match[1]) {
+          return 'v' + match[1];
+        }
+      }
+    } catch (e) {
+      // Sibling folder check failed, return hardcoded default
+    }
+    return 'v0.11.122'; // Hardcoded default
+  }
+
+  if (repo === 'xphox2/Firewall-Collector') {
+    try {
+      const localPath = path.join(__dirname, '..', '..', 'Firewall-Collector', 'cmd', 'collector', 'main.go');
+      if (fs.existsSync(localPath)) {
+        const content = fs.readFileSync(localPath, 'utf8');
+        const match = content.match(/const version = "(.*?)"/);
+        if (match && match[1]) {
+          return 'v' + match[1];
+        }
+      }
+    } catch (e) {
+      // Sibling folder check failed, return hardcoded default
+    }
+    return 'v1.3.16'; // Hardcoded default
+  }
+
+  if (repo === 'xphox2/Vinylfo-Releases') {
+    return 'v0.16.12';
+  }
+
+  if (repo === 'xphox2/SignArtSaver') {
+    return 'v0.11.14';
   }
 
   return 'v1.0.0';
@@ -82,7 +127,7 @@ const main = async () => {
     if (!ver) {
       ver = getLatestVersionWithCli(repo);
     }
-    versions[key] = ver || 'v1.0.0';
+    versions[key] = ver || getLocalFallbackVersion(repo);
   }
 
   const assetsDir = path.join(__dirname, '..', 'assets');

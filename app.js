@@ -292,15 +292,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (vinylEl) {
-      vinylEl.textContent = 'v1.0.0 • Stable';
+      vinylEl.textContent = 'v0.16.12 • Stable';
       vinylEl.classList.add('emerald');
     }
     if (fwServerEl) {
-      fwServerEl.textContent = 'v1.0.0';
+      fwServerEl.textContent = 'v0.11.122';
       fwServerEl.classList.add('active');
     }
     if (fwCollectorEl) {
-      fwCollectorEl.textContent = 'v1.0.0';
+      fwCollectorEl.textContent = 'v1.3.16';
       fwCollectorEl.classList.add('active');
     }
     if (rustEl) {
