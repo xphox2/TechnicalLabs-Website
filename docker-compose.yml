@@ -1,0 +1,72 @@
+# =============================================================================
+# Technical Labs Website — Docker Compose
+# =============================================================================
+# Services:
+#   * website      — Production container, serving Nginx with compiled versions
+#   * website-dev  — Development container, bind-mounting source for local hot reload
+# =============================================================================
+
+name: technical-labs-website
+
+services:
+  website:
+    image: technical-labs/website:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - GITHUB_TOKEN=${GITHUB_TOKEN}
+    container_name: technical-labs-production
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8080}:80"
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:80/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    labels:
+      org.opencontainers.image.title: "Technical Labs Website"
+      org.opencontainers.image.description: "Website for Technical Labs, served by Nginx."
+      org.opencontainers.image.source: "https://github.com/xphox2/TechnicalLabs-Website"
+      com.technicallabs.component: "production-website"
+
+  website-dev:
+    image: technical-labs/website:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - GITHUB_TOKEN=${GITHUB_TOKEN}
+    container_name: technical-labs-website-dev
+    profiles: ["dev"]
+    restart: unless-stopped
+    ports:
+      - "${DEV_PORT:-3000}:80"
+    volumes:
+      # Bind-mount source directory for instant updates in local development
+      - ./:/usr/share/nginx/html:ro
+      # Mask configuration and build tooling within the container
+      - /dev/null:/usr/share/nginx/html/Dockerfile:ro
+      - /dev/null:/usr/share/nginx/html/docker-compose.yml:ro
+      - /dev/null:/usr/share/nginx/html/.dockerignore:ro
+      - /dev/null:/usr/share/nginx/html/Makefile:ro
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:80/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    labels:
+      com.technicallabs.component: "dev-website"
