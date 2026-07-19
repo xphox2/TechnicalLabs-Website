@@ -2,6 +2,12 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.5] - 2026-07-19
+
+### Changed
+- Rust Game Plugin card now uses the **official Rust game logo** (`rust-marque` brand mark from files.facepunch.com), inlined with its real brand colours, replacing the placeholder game-controller icon. Still links to rust.facepunch.com.
+- Added a `.platform-icon.rust-marque` rule so full-colour brand marks keep their own colours (with slightly rounded corners) instead of inheriting `currentColor`.
+
 ## [1.0.4] - 2026-07-19
 
 ### Added

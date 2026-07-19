@@ -1055,6 +1055,12 @@ nav a:hover::after {
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
+/* Full-colour brand mark (e.g. the Rust game logo) — keep its own colours */
+.platform-icon.rust-marque {
+  opacity: 1;
+  border-radius: 3px;
+}
+
 .platform-icon:hover {
   color: var(--text-primary);
   opacity: 1;
