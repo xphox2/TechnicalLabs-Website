@@ -23,6 +23,9 @@ RUN node scripts/fetch-versions.js
 # =============================================================================
 FROM nginx:alpine
 
+# Copy Nginx proxy configuration template (substitutes GITHUB_TOKEN environment variable at run time)
+COPY nginx.conf.template /etc/nginx/templates/default.conf.template
+
 # Copy local source files to Nginx public html serving path
 COPY . /usr/share/nginx/html
 

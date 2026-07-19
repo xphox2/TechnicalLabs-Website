@@ -244,8 +244,65 @@ document.addEventListener('DOMContentLoaded', () => {
     const fwCollectorEl = document.getElementById('hud-fwmon-collector-status');
     const rustEl = document.getElementById('hud-rust-status');
 
+    // Helper to fetch latest version from GitHub API (supports proxy endpoint)
+    const fetchVersion = async (repo, useProxy = false) => {
+      const baseUrl = useProxy ? `/api/github/repos/${repo}` : `https://api.github.com/repos/${repo}`;
+      try {
+        let res = await fetch(`${baseUrl}/releases/latest`);
+        if (res.ok) {
+          const d = await res.json();
+          if (d && d.tag_name) return d.tag_name;
+        }
+      } catch (e) {}
+
+      try {
+        let res = await fetch(`${baseUrl}/tags`);
+        if (res.ok) {
+          const tags = await res.json();
+          if (tags && tags.length > 0) return tags[0].name;
+        }
+      } catch (e) {}
+
+      return null;
+    };
+
+    // 1. Try Live Production Nginx API Proxy first
     try {
-      // Fetch local compiled versions (securely parsed by pre-build node task)
+      const testRes = await fetch('/api/github/repos/xphox2/SignArtSaver/tags');
+      if (testRes.ok) {
+        console.log('Production Nginx live API proxy active. Fetching versions live from GitHub...');
+        
+        const [vinylVer, serverVer, collectorVer, rustVer] = await Promise.all([
+          fetchVersion('xphox2/Vinylfo-Releases', true),
+          fetchVersion('xphox2/Firewall-Monitoring', true),
+          fetchVersion('xphox2/Firewall-Collector', true),
+          fetchVersion('xphox2/SignArtSaver', true)
+        ]);
+
+        if (vinylEl) {
+          vinylEl.textContent = `${vinylVer || 'v0.16.12'} • Stable`;
+          vinylEl.classList.add('emerald');
+        }
+        if (fwServerEl) {
+          fwServerEl.textContent = serverVer || 'v0.11.122';
+          fwServerEl.classList.add('active');
+        }
+        if (fwCollectorEl) {
+          fwCollectorEl.textContent = collectorVer || 'v1.3.16';
+          fwCollectorEl.classList.add('active');
+        }
+        if (rustEl) {
+          rustEl.textContent = rustVer || 'v0.11.14';
+          rustEl.classList.add('active');
+        }
+        return;
+      }
+    } catch (e) {
+      // Proxy not available (e.g. running local dev server)
+    }
+
+    // 2. Local Fallback: Fetch local versions.json (compiled by Node pre-start script)
+    try {
       const response = await fetch('assets/versions.json');
       if (response.ok) {
         const versions = await response.json();
@@ -269,28 +326,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
     } catch (e) {
-      console.warn('Failed to load local versions.json, falling back to public GitHub queries:', e);
+      console.warn('Failed to load local versions.json, falling back to static baselines:', e);
     }
 
-    // FALLBACK: Query public repositories directly
-    const fetchPublicVersion = async (repo) => {
-      try {
-        const res = await fetch(`https://api.github.com/repos/${repo}/releases/latest`);
-        if (res.ok) {
-          const d = await res.json();
-          if (d && d.tag_name) return d.tag_name;
-        }
-        const tagRes = await fetch(`https://api.github.com/repos/${repo}/tags`);
-        if (tagRes.ok) {
-          const tags = await tagRes.json();
-          if (tags && tags.length > 0) return tags[0].name;
-        }
-      } catch (e) {
-        console.error(e);
-      }
-      return 'v1.0.0';
-    };
-
+    // 3. Static Baselines (Offline fallback)
     if (vinylEl) {
       vinylEl.textContent = 'v0.16.12 • Stable';
       vinylEl.classList.add('emerald');
@@ -304,8 +343,8 @@ document.addEventListener('DOMContentLoaded', () => {
       fwCollectorEl.classList.add('active');
     }
     if (rustEl) {
-      const rustVer = await fetchPublicVersion('xphox2/SignArtSaver');
-      rustEl.textContent = rustVer;
+      const rustVer = await fetchVersion('xphox2/SignArtSaver', false);
+      rustEl.textContent = rustVer || 'v0.11.14';
       rustEl.classList.add('active');
     }
   };
