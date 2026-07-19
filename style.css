@@ -1803,3 +1803,114 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   LANGUAGE PICKER (i18n)
+   ========================================================================== */
+.lang-picker-container {
+  position: relative;
+  display: inline-block;
+  z-index: 110;
+}
+
+.lang-picker-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 0.7rem;
+  height: 2.5rem;
+  border-radius: 50px;
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-picker-btn:hover {
+  border-color: var(--indigo-500);
+  color: var(--text-primary);
+  background-color: rgba(99, 102, 241, 0.05);
+}
+
+.lang-picker-btn .globe-icon {
+  opacity: 0.85;
+}
+
+.lang-picker-btn .chevron-icon {
+  opacity: 0.6;
+  transition: transform 0.25s ease;
+}
+
+.lang-picker-container.open .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 140px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-lg);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+
+.lang-picker-container.open .lang-dropdown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.lang-option {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-option:hover {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: var(--text-primary);
+}
+
+.lang-option.active {
+  background-color: rgba(99, 102, 241, 0.15);
+  color: var(--indigo-400);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .lang-picker-btn #active-lang-text {
+    display: none;
+  }
+  .lang-picker-btn {
+    padding: 0;
+    width: 2.5rem;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .lang-picker-btn .chevron-icon {
+    display: none;
+  }
+}

@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
   }
 
+  // i18n helper: use the global translator when available, else fall back
+  const tt = (key, fallback) => (typeof window.t === 'function' ? window.t(key) : fallback);
+
   // --- THEME TOGGLE LOGIC ---
   const themeToggle = document.getElementById('theme-toggle');
   const htmlEl = document.documentElement;
@@ -172,11 +175,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentStep === 1) {
       prevBtn.style.display = 'none';
       nextBtn.style.display = 'inline-flex';
-      nextBtn.innerHTML = 'Continue <i data-lucide="arrow-right"></i>';
+      nextBtn.innerHTML = `<span data-i18n="scheduler.continue">${tt('scheduler.continue', 'Continue')}</span> <i data-lucide="arrow-right"></i>`;
     } else if (currentStep === 2) {
       prevBtn.style.display = 'inline-flex';
       nextBtn.style.display = 'inline-flex';
-      nextBtn.innerHTML = 'Schedule Session <i data-lucide="check"></i>';
+      nextBtn.innerHTML = `<span data-i18n="scheduler.schedule">${tt('scheduler.schedule', 'Schedule Session')}</span> <i data-lucide="check"></i>`;
     } else {
       // Completed state (Step 3)
       prevBtn.style.display = 'none';
@@ -200,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const notesInput = document.getElementById('contact-notes');
       
       if (!nameInput.value || !emailInput.value) {
-        alert('Please fill out your Name and Email address.');
+        alert(tt('scheduler.validation', 'Please fill out your Name and Email address.'));
         return;
       }
       
@@ -280,7 +283,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ]);
 
         if (vinylEl) {
-          vinylEl.textContent = `${vinylVer || 'v0.16.12'} • Stable`;
+          vinylEl.dataset.version = vinylVer || 'v0.16.12';
+          vinylEl.textContent = `${vinylEl.dataset.version} • ${tt('hud.stable', 'Stable')}`;
           vinylEl.classList.add('emerald');
         }
         if (fwServerEl) {
@@ -308,7 +312,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const versions = await response.json();
         
         if (vinylEl && versions.vinyl) {
-          vinylEl.textContent = `${versions.vinyl} • Stable`;
+          vinylEl.dataset.version = versions.vinyl;
+          vinylEl.textContent = `${vinylEl.dataset.version} • ${tt('hud.stable', 'Stable')}`;
           vinylEl.classList.add('emerald');
         }
         if (fwServerEl && versions.fw_server) {
@@ -331,7 +336,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Static Baselines (Offline fallback)
     if (vinylEl) {
-      vinylEl.textContent = 'v0.16.12 • Stable';
+      vinylEl.dataset.version = 'v0.16.12';
+      vinylEl.textContent = `${vinylEl.dataset.version} • ${tt('hud.stable', 'Stable')}`;
       vinylEl.classList.add('emerald');
     }
     if (fwServerEl) {
@@ -351,5 +357,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Run on load
   loadSystemMonitor();
+
+
+  // --- RE-RENDER DYNAMIC CONTENT ON LANGUAGE CHANGE ---
+  // i18n.js translates all [data-i18n] nodes, but scheduler buttons and the
+  // HUD status suffix are built imperatively, so refresh them here.
+  window.addEventListener('languageChanged', () => {
+    updateSchedulerUI();
+
+    const vinylEl = document.getElementById('hud-vinylfo-status');
+    if (vinylEl && vinylEl.dataset.version) {
+      vinylEl.textContent = `${vinylEl.dataset.version} • ${tt('hud.stable', 'Stable')}`;
+    }
+  });
 
 });

@@ -3,6 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KKV5S28YZS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-KKV5S28YZS');
+  </script>
+
   <meta name="description" content="Technical Labs offers interactive IT learning resources, network lab simulators, best-practice deployment services, and professional engineering portfolios.">
   <meta name="keywords" content="IT Labs, Linux Admin, Network Simulator, Subnet Calculator, Firewall Monitoring, Vinylfo, Rust Plugin, IT Professional Resume">
   <meta name="author" content="Technical Labs">
@@ -28,15 +39,34 @@
       
       <nav id="nav-menu">
         <ul>
-          <li><a href="#hero" id="nav-link-home">Home</a></li>
-          <li><a href="http://portal.technicallabs.org" id="nav-link-portal" target="_blank" rel="noopener noreferrer">Portal</a></li>
-          <li><a href="#projects" id="nav-link-projects">Projects</a></li>
-          <li><a href="#resume" id="nav-link-resume">Resume &amp; Skills</a></li>
-          <li><a href="#services" id="nav-link-services">Services &amp; Consulting</a></li>
+          <li><a href="#hero" id="nav-link-home" data-i18n="nav.home">Home</a></li>
+          <li><a href="http://portal.technicallabs.org" id="nav-link-portal" target="_blank" rel="noopener noreferrer" data-i18n="nav.portal">Portal</a></li>
+          <li><a href="#projects" id="nav-link-projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#resume" id="nav-link-resume" data-i18n="nav.resume">Resume &amp; Skills</a></li>
+          <li><a href="#services" id="nav-link-services" data-i18n="nav.services">Services &amp; Consulting</a></li>
         </ul>
       </nav>
       
       <div class="nav-controls">
+        <div class="lang-picker-container" id="lang-picker-container">
+          <button class="lang-picker-btn" id="lang-picker-btn" aria-label="Change Language">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="globe-icon"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="active-lang-text">EN</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="chevron-icon"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <button class="lang-option active" data-lang="en">English</button>
+            <button class="lang-option" data-lang="de">Deutsch</button>
+            <button class="lang-option" data-lang="es">Español</button>
+            <button class="lang-option" data-lang="fr">Français</button>
+            <button class="lang-option" data-lang="it">Italiano</button>
+            <button class="lang-option" data-lang="pt">Português</button>
+            <button class="lang-option" data-lang="ru">Русский</button>
+            <button class="lang-option" data-lang="ja">日本語</button>
+            <button class="lang-option" data-lang="ko">한국어</button>
+            <button class="lang-option" data-lang="zh">中文</button>
+          </div>
+        </div>
         <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle light/dark theme">
           <i data-lucide="moon" class="moon-icon"></i>
           <i data-lucide="sun" class="sun-icon"></i>
@@ -59,16 +89,16 @@
       <div class="container hero-grid">
         <div class="hero-content">
           <a href="https://www.technicallabs.org" class="badge-tag" style="text-decoration: none; transition: background-color 0.2s ease, border-color 0.2s ease;">www.technicallabs.org</a>
-          <h1>Interactive IT Learning &amp;<br>Systems Engineering</h1>
-          <p>
+          <h1 data-i18n="hero.title" data-i18n-html>Interactive IT Learning &amp;<br>Systems Engineering</h1>
+          <p data-i18n="hero.subtitle">
             Welcome to Technical Labs. We provide hands-on interactive lab resources to help aspiring IT professionals build real-world skills, offer custom consulting for best-practice deployments, and showcase production-grade projects.
           </p>
           <div class="hero-ctas">
             <a href="#projects" class="btn btn-primary" id="hero-cta-projects">
-              <i data-lucide="briefcase"></i> View Portfolio Projects
+              <i data-lucide="briefcase"></i> <span data-i18n="hero.cta_projects">View Portfolio Projects</span>
             </a>
             <a href="#services" class="btn btn-secondary" id="hero-cta-services">
-              <i data-lucide="calendar"></i> Book Deployment Support
+              <i data-lucide="calendar"></i> <span data-i18n="hero.cta_services">Book Deployment Support</span>
             </a>
           </div>
         </div>
@@ -77,28 +107,28 @@
         <div class="hero-hud" id="hero-status-hud">
           <div class="hud-header">
             <div class="hud-title">
-              <i data-lucide="activity"></i> System Monitor
+              <i data-lucide="activity"></i> <span data-i18n="hud.title">System Monitor</span>
             </div>
             <div class="hud-status-indicator">
-              <span class="pulse-dot"></span> Active
+              <span class="pulse-dot"></span> <span data-i18n="hud.status">Active</span>
             </div>
           </div>
-          
+
           <div class="hud-row">
-            <span class="hud-label"><i data-lucide="music" style="width: 14px; height: 14px;"></i> Vinyl Music</span>
-            <span class="hud-val" id="hud-vinylfo-status">Fetching version...</span>
+            <span class="hud-label"><i data-lucide="music" style="width: 14px; height: 14px;"></i> <span data-i18n="hud.vinyl">Vinyl Music</span></span>
+            <span class="hud-val" id="hud-vinylfo-status" data-i18n="hud.fetching">Fetching version...</span>
           </div>
           <div class="hud-row">
-            <span class="hud-label"><i data-lucide="shield-check" style="width: 14px; height: 14px;"></i> Firewall Server</span>
-            <span class="hud-val" id="hud-fwmon-server-status">Fetching version...</span>
+            <span class="hud-label"><i data-lucide="shield-check" style="width: 14px; height: 14px;"></i> <span data-i18n="hud.fw_server">Firewall Server</span></span>
+            <span class="hud-val" id="hud-fwmon-server-status" data-i18n="hud.fetching">Fetching version...</span>
           </div>
           <div class="hud-row">
-            <span class="hud-label"><i data-lucide="radio" style="width: 14px; height: 14px;"></i> Firewall Collector</span>
-            <span class="hud-val" id="hud-fwmon-collector-status">Fetching version...</span>
+            <span class="hud-label"><i data-lucide="radio" style="width: 14px; height: 14px;"></i> <span data-i18n="hud.fw_collector">Firewall Collector</span></span>
+            <span class="hud-val" id="hud-fwmon-collector-status" data-i18n="hud.fetching">Fetching version...</span>
           </div>
           <div class="hud-row">
-            <span class="hud-label"><i data-lucide="gamepad-2" style="width: 14px; height: 14px;"></i> Rust Game Plugin</span>
-            <span class="hud-val" id="hud-rust-status">Fetching version...</span>
+            <span class="hud-label"><i data-lucide="gamepad-2" style="width: 14px; height: 14px;"></i> <span data-i18n="hud.rust">Rust Game Plugin</span></span>
+            <span class="hud-val" id="hud-rust-status" data-i18n="hud.fetching">Fetching version...</span>
           </div>
         </div>
       </div>
@@ -110,9 +140,9 @@
     <section id="projects" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="badge-tag">Showcase</span>
-          <h2>Active Engineering Projects</h2>
-          <p>
+          <span class="badge-tag" data-i18n="projects.tag">Showcase</span>
+          <h2 data-i18n="projects.heading">Active Engineering Projects</h2>
+          <p data-i18n="projects.intro">
             Explore our open-source tools, server software, and plugins engineered for performance, streaming overlays, and central network monitoring.
           </p>
         </div>
@@ -124,7 +154,7 @@
               <i data-lucide="music"></i>
             </div>
             <h3>Vinylfo</h3>
-            <p class="project-description">
+            <p class="project-description" data-i18n="projects.vinylfo_desc">
               A self-hosted desktop application that syncs Discogs collections, manages track schedules, and feeds live Twitch metadata, OBS video overlays, and Stream Deck integrations.
             </p>
             <div class="project-tags">
@@ -135,10 +165,10 @@
             </div>
             <div class="project-links">
               <span class="project-link" data-modal="modal-vinylfo" id="btn-details-vinylfo" style="cursor: pointer;">
-                View Architecture <i data-lucide="arrow-right"></i>
+                <span data-i18n="common.view_architecture">View Architecture</span> <i data-lucide="arrow-right"></i>
               </span>
               <a href="https://www.vinylfo.com" target="_blank" rel="noopener noreferrer" class="project-link" id="link-web-vinylfo">
-                <i data-lucide="globe" style="width: 14px; height: 14px; display: inline; vertical-align: middle;"></i> Website
+                <i data-lucide="globe" style="width: 14px; height: 14px; display: inline; vertical-align: middle;"></i> <span data-i18n="common.website">Website</span>
               </a>
             </div>
           </article>
@@ -148,8 +178,8 @@
             <div class="project-icon">
               <i data-lucide="shield-check"></i>
             </div>
-            <h3>Firewall Monitor</h3>
-            <p class="project-description">
+            <h3 data-i18n="projects.fwmon_title">Firewall Monitor</h3>
+            <p class="project-description" data-i18n="projects.fwmon_desc">
               A vendor-agnostic central NMS with SNMP polling, syslog/sFlow receivers, configuration tracking, and distributed remote probe relays (Firewall-Collector).
             </p>
             <div class="project-tags">
@@ -160,10 +190,10 @@
             </div>
             <div class="project-links">
               <span class="project-link" data-modal="modal-fwmon" id="btn-details-fwmon" style="cursor: pointer;">
-                View Architecture <i data-lucide="arrow-right"></i>
+                <span data-i18n="common.view_architecture">View Architecture</span> <i data-lucide="arrow-right"></i>
               </span>
               <a href="https://firewall-mon.technicallabs.org" target="_blank" rel="noopener noreferrer" class="project-link" id="link-web-fwmon">
-                <i data-lucide="globe" style="width: 14px; height: 14px; display: inline; vertical-align: middle;"></i> Website
+                <i data-lucide="globe" style="width: 14px; height: 14px; display: inline; vertical-align: middle;"></i> <span data-i18n="common.website">Website</span>
               </a>
             </div>
           </article>
@@ -173,8 +203,8 @@
             <div class="project-icon">
               <i data-lucide="gamepad-2"></i>
             </div>
-            <h3>Rust Game Plugin</h3>
-            <p class="project-description">
+            <h3 data-i18n="projects.rust_title">Rust Game Plugin</h3>
+            <p class="project-description" data-i18n="projects.rust_desc">
               A high-performance gameplay enhancement plugin for Rust survival servers. Introducing custom economy, logging systems, admin helpers, and real-time network hooks.
             </p>
             <div class="project-tags">
@@ -185,10 +215,10 @@
             </div>
             <div class="project-links">
               <span class="project-link" data-modal="modal-rustplugin" id="btn-details-rustplugin" style="cursor: pointer;">
-                View Details <i data-lucide="arrow-right"></i>
+                <span data-i18n="common.view_details">View Details</span> <i data-lucide="arrow-right"></i>
               </span>
               <a href="https://github.com/xphox2/SignArtSaver" target="_blank" rel="noopener noreferrer" class="project-link" id="link-git-rust">
-                <i data-lucide="github" style="width: 14px; height: 14px; display: inline; vertical-align: middle;"></i> GitHub
+                <i data-lucide="github" style="width: 14px; height: 14px; display: inline; vertical-align: middle;"></i> <span data-i18n="common.github">GitHub</span>
               </a>
             </div>
           </article>
@@ -200,9 +230,9 @@
     <section id="resume" class="section section-alt">
       <div class="container">
         <div class="section-header">
-          <span class="badge-tag">Professional profile</span>
-          <h2>Resume &amp; Core Skillsets</h2>
-          <p>
+          <span class="badge-tag" data-i18n="resume.tag">Professional profile</span>
+          <h2 data-i18n="resume.heading">Resume &amp; Core Skillsets</h2>
+          <p data-i18n="resume.intro">
             A summary of professional experience, qualifications, and core technical skillsets gathered from years of systems development and administration.
           </p>
         </div>
@@ -214,7 +244,7 @@
               <img src="assets/profile.jpg" alt="Nicholas Diotte profile" class="profile-img" id="profile-picture">
             </div>
             <h3>Nicholas Diotte</h3>
-            <p class="resume-subtitle">Principal Engineer | Network &amp; Infrastructure</p>
+            <p class="resume-subtitle" data-i18n="resume.subtitle">Principal Engineer | Network &amp; Infrastructure</p>
             
             <div class="resume-sidebar-links">
               <a href="mailto:xphox@xphox.net" class="resume-sidebar-link">
@@ -227,7 +257,7 @@
                 <i data-lucide="linkedin"></i> <span>linkedin.com/in/nickdiotte</span>
               </a>
               <div class="resume-sidebar-link">
-                <i data-lucide="map-pin"></i> <span>Toronto, ON / Remote</span>
+                <i data-lucide="map-pin"></i> <span data-i18n="resume.location">Toronto, ON / Remote</span>
               </div>
             </div>
           </div>
@@ -239,16 +269,16 @@
               <div class="timeline-item">
                 <span class="timeline-dot-indicator"></span>
                 <div class="timeline-header-meta">
-                  <h4>Principal Engineer</h4>
-                  <span class="timeline-period">Aug 2024 - Present</span>
+                  <h4 data-i18n="resume.exp1_role">Principal Engineer</h4>
+                  <span class="timeline-period" data-i18n="resume.exp1_period">Aug 2024 - Present</span>
                 </div>
                 <span class="timeline-org">Tuor Networks</span>
                 <div class="timeline-description">
-                  <p>Senior technical authority across all managed service customer accounts, architecting enterprise infrastructure migrations.</p>
+                  <p data-i18n="resume.exp1_desc">Senior technical authority across all managed service customer accounts, architecting enterprise infrastructure migrations.</p>
                   <ul>
-                    <li>Lead FortiGate firewall deployments, security policy governance, and system posture reviews.</li>
-                    <li>Architect and oversee complex, end-to-end network, storage, and compute migrations.</li>
-                    <li>Conduct disaster recovery testing, business continuity exercises, and device health audits.</li>
+                    <li data-i18n="resume.exp1_li1">Lead FortiGate firewall deployments, security policy governance, and system posture reviews.</li>
+                    <li data-i18n="resume.exp1_li2">Architect and oversee complex, end-to-end network, storage, and compute migrations.</li>
+                    <li data-i18n="resume.exp1_li3">Conduct disaster recovery testing, business continuity exercises, and device health audits.</li>
                   </ul>
                 </div>
               </div>
@@ -257,16 +287,16 @@
               <div class="timeline-item">
                 <span class="timeline-dot-indicator"></span>
                 <div class="timeline-header-meta">
-                  <h4>Senior IT Consultant &amp; Team Lead</h4>
-                  <span class="timeline-period">Aug 2020 - Jul 2024</span>
+                  <h4 data-i18n="resume.exp2_role">Senior IT Consultant &amp; Team Lead</h4>
+                  <span class="timeline-period" data-i18n="resume.exp2_period">Aug 2020 - Jul 2024</span>
                 </div>
                 <span class="timeline-org">Tuor Networks</span>
                 <div class="timeline-description">
-                  <p>Led a team of consultants delivering managed IT services across diverse enterprise verticals.</p>
+                  <p data-i18n="resume.exp2_desc">Led a team of consultants delivering managed IT services across diverse enterprise verticals.</p>
                   <ul>
-                    <li>Assessed business computing needs, analyzed system weaknesses, and implemented specialist recommendations.</li>
-                    <li>Managed network and system security programs for strategic accounts.</li>
-                    <li>Successfully planned and executed all network, storage, and compute migrations.</li>
+                    <li data-i18n="resume.exp2_li1">Assessed business computing needs, analyzed system weaknesses, and implemented specialist recommendations.</li>
+                    <li data-i18n="resume.exp2_li2">Managed network and system security programs for strategic accounts.</li>
+                    <li data-i18n="resume.exp2_li3">Successfully planned and executed all network, storage, and compute migrations.</li>
                   </ul>
                 </div>
               </div>
@@ -275,12 +305,12 @@
               <div class="timeline-item">
                 <span class="timeline-dot-indicator"></span>
                 <div class="timeline-header-meta">
-                  <h4>Senior Consultant</h4>
-                  <span class="timeline-period">Sep 2017 - Aug 2020</span>
+                  <h4 data-i18n="resume.exp3_role">Senior Consultant</h4>
+                  <span class="timeline-period" data-i18n="resume.exp3_period">Sep 2017 - Aug 2020</span>
                 </div>
                 <span class="timeline-org">Tuor Networks</span>
                 <div class="timeline-description">
-                  <p>Provided hands-on technical consulting for managed service clients across networking and hybrid infrastructure.</p>
+                  <p data-i18n="resume.exp3_desc">Provided hands-on technical consulting for managed service clients across networking and hybrid infrastructure.</p>
                 </div>
               </div>
 
@@ -288,16 +318,16 @@
               <div class="timeline-item">
                 <span class="timeline-dot-indicator"></span>
                 <div class="timeline-header-meta">
-                  <h4>Manager, Network &amp; Service Operations</h4>
-                  <span class="timeline-period">Jul 2011 - Feb 2017</span>
+                  <h4 data-i18n="resume.exp4_role">Manager, Network &amp; Service Operations</h4>
+                  <span class="timeline-period" data-i18n="resume.exp4_period">Jul 2011 - Feb 2017</span>
                 </div>
                 <span class="timeline-org">Comwave</span>
                 <div class="timeline-description">
-                  <p>Managed NOC, Provisioning, and Capacity Planning teams, and owned wholesale customer operations.</p>
+                  <p data-i18n="resume.exp4_desc">Managed NOC, Provisioning, and Capacity Planning teams, and owned wholesale customer operations.</p>
                   <ul>
-                    <li>Assisted with the launch and capacity planning of the enterprise data centre at 151 Front Street, Toronto.</li>
-                    <li>Expanded NOC to 24/7/365 coverage and designed automation tools to eliminate repetitive daily workflows.</li>
-                    <li>Managed data centre physical infrastructure, HVAC systems, DC power distribution, and optical fibres.</li>
+                    <li data-i18n="resume.exp4_li1">Assisted with the launch and capacity planning of the enterprise data centre at 151 Front Street, Toronto.</li>
+                    <li data-i18n="resume.exp4_li2">Expanded NOC to 24/7/365 coverage and designed automation tools to eliminate repetitive daily workflows.</li>
+                    <li data-i18n="resume.exp4_li3">Managed data centre physical infrastructure, HVAC systems, DC power distribution, and optical fibres.</li>
                   </ul>
                 </div>
               </div>
@@ -306,15 +336,15 @@
               <div class="timeline-item">
                 <span class="timeline-dot-indicator"></span>
                 <div class="timeline-header-meta">
-                  <h4>Team Lead &amp; NOCC Technician</h4>
-                  <span class="timeline-period">Feb 2005 - Jun 2011</span>
+                  <h4 data-i18n="resume.exp5_role">Team Lead &amp; NOCC Technician</h4>
+                  <span class="timeline-period" data-i18n="resume.exp5_period">Feb 2005 - Jun 2011</span>
                 </div>
                 <span class="timeline-org">Primus Telecommunications</span>
                 <div class="timeline-description">
-                  <p>Supervised NOCC operations, built standardized training metrics, and monitored national carrier voice and data networks.</p>
+                  <p data-i18n="resume.exp5_desc">Supervised NOCC operations, built standardized training metrics, and monitored national carrier voice and data networks.</p>
                   <ul>
-                    <li>Built a web-based shift handoff tracker, improving audits and communication.</li>
-                    <li>Administered Cisco, Redback SmartEdge, Plexus, and Juniper infrastructure across core protocols (BGP, OSPF, MPLS, SIP, ATM).</li>
+                    <li data-i18n="resume.exp5_li1">Built a web-based shift handoff tracker, improving audits and communication.</li>
+                    <li data-i18n="resume.exp5_li2">Administered Cisco, Redback SmartEdge, Plexus, and Juniper infrastructure across core protocols (BGP, OSPF, MPLS, SIP, ATM).</li>
                   </ul>
                 </div>
               </div>
@@ -323,15 +353,15 @@
               <div class="timeline-item">
                 <span class="timeline-dot-indicator"></span>
                 <div class="timeline-header-meta">
-                  <h4>Systems &amp; Network Support</h4>
-                  <span class="timeline-period">Sep 1999 - Feb 2005</span>
+                  <h4 data-i18n="resume.exp6_role">Systems &amp; Network Support</h4>
+                  <span class="timeline-period" data-i18n="resume.exp6_period">Sep 1999 - Feb 2005</span>
                 </div>
                 <span class="timeline-org">Woodslee Credit Union &amp; WINCOM ISP</span>
                 <div class="timeline-description">
-                  <p>Managed mail, DNS, database, and colocation servers for regional ISP, and migrated multi-branch banking infrastructure.</p>
+                  <p data-i18n="resume.exp6_desc">Managed mail, DNS, database, and colocation servers for regional ISP, and migrated multi-branch banking infrastructure.</p>
                   <ul>
-                    <li>Led NT 4.0 to Windows/Exchange Server migration across seven bank branch locations.</li>
-                    <li>Configured security firewalls, IDS sensors, and backup architectures.</li>
+                    <li data-i18n="resume.exp6_li1">Led NT 4.0 to Windows/Exchange Server migration across seven bank branch locations.</li>
+                    <li data-i18n="resume.exp6_li2">Configured security firewalls, IDS sensors, and backup architectures.</li>
                   </ul>
                 </div>
               </div>
@@ -339,12 +369,12 @@
 
             <!-- SKILLS IN VIEWPORT CARDS -->
             <div class="skills-sec">
-              <h3><i data-lucide="bar-chart-3" style="color: var(--indigo-400);"></i> Core Competencies</h3>
+              <h3><i data-lucide="bar-chart-3" style="color: var(--indigo-400);"></i> <span data-i18n="resume.skills_heading">Core Competencies</span></h3>
               <div class="skills-grid" id="skills-visual-grid">
                 
                 <!-- Category 1 -->
                 <div class="skills-category-card">
-                  <h4>Network &amp; Firewalls</h4>
+                  <h4 data-i18n="resume.cat1_title">Network &amp; Firewalls</h4>
                   <div class="skills-list">
                     <div class="skill-row">
                       <div class="skill-info">
@@ -355,7 +385,7 @@
                     </div>
                     <div class="skill-row">
                       <div class="skill-info">
-                        <span class="skill-name">VPN, Security &amp; Compliance</span>
+                        <span class="skill-name" data-i18n="resume.cat1_skill2">VPN, Security &amp; Compliance</span>
                         <span class="skill-percent">93%</span>
                       </div>
                       <div class="skill-bar-outer"><div class="skill-bar-inner" data-skill-val="93"></div></div>
@@ -372,11 +402,11 @@
 
                 <!-- Category 2 -->
                 <div class="skills-category-card">
-                  <h4>Infrastructure &amp; Systems</h4>
+                  <h4 data-i18n="resume.cat2_title">Infrastructure &amp; Systems</h4>
                   <div class="skills-list">
                     <div class="skill-row">
                       <div class="skill-info">
-                        <span class="skill-name">Data Centre Operations</span>
+                        <span class="skill-name" data-i18n="resume.cat2_skill1">Data Centre Operations</span>
                         <span class="skill-percent">94%</span>
                       </div>
                       <div class="skill-bar-outer"><div class="skill-bar-inner" data-skill-val="94"></div></div>
@@ -390,7 +420,7 @@
                     </div>
                     <div class="skill-row">
                       <div class="skill-info">
-                        <span class="skill-name">Disaster Recovery &amp; Planning</span>
+                        <span class="skill-name" data-i18n="resume.cat2_skill3">Disaster Recovery &amp; Planning</span>
                         <span class="skill-percent">92%</span>
                       </div>
                       <div class="skill-bar-outer"><div class="skill-bar-inner" data-skill-val="92"></div></div>
@@ -400,7 +430,7 @@
 
                 <!-- Category 3 -->
                 <div class="skills-category-card">
-                  <h4>Professional Certifications</h4>
+                  <h4 data-i18n="resume.cat3_title">Professional Certifications</h4>
                   <div class="skills-list" style="gap: 0.5rem; font-size: 0.85rem; color: var(--text-secondary);">
                     <div style="display: flex; gap: 0.35rem; align-items: flex-start;">
                       <i data-lucide="award" style="color: var(--cyan-400); width: 14px; height: 14px; margin-top: 2px; flex-shrink:0;"></i>
@@ -440,9 +470,9 @@
     <section id="services" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="badge-tag">Time &amp; Support</span>
-          <h2>Services &amp; Custom Mentorship</h2>
-          <p>
+          <span class="badge-tag" data-i18n="services.tag">Time &amp; Support</span>
+          <h2 data-i18n="services.heading">Services &amp; Custom Mentorship</h2>
+          <p data-i18n="services.intro">
             Need help deploying a secure firewall, building a custom monitoring dashboard, or learning best practices? Book a session below.
           </p>
         </div>
@@ -455,9 +485,9 @@
                 <div class="service-icon">
                   <i data-lucide="users"></i>
                 </div>
-                <h3>1-on-1 Deployment Mentorship</h3>
+                <h3 data-i18n="services.svc1_title">1-on-1 Deployment Mentorship</h3>
               </div>
-              <p>
+              <p data-i18n="services.svc1_desc">
                 Learn directly as we build. Together we'll map out your network layout, build firewall policies, and deploy probes using secure templates.
               </p>
             </div>
@@ -467,9 +497,9 @@
                 <div class="service-icon">
                   <i data-lucide="git-pull-request"></i>
                 </div>
-                <h3>Architecture Audits &amp; CI/CD</h3>
+                <h3 data-i18n="services.svc2_title">Architecture Audits &amp; CI/CD</h3>
               </div>
-              <p>
+              <p data-i18n="services.svc2_desc">
                 Get your automation pipelines reviewed. We'll optimize Docker configurations, check TLS endpoints, and set up auth controls.
               </p>
             </div>
@@ -479,9 +509,9 @@
                 <div class="service-icon">
                   <i data-lucide="terminal"></i>
                 </div>
-                <h3>Custom Network Tooling</h3>
+                <h3 data-i18n="services.svc3_title">Custom Network Tooling</h3>
               </div>
-              <p>
+              <p data-i18n="services.svc3_desc">
                 Need custom relays, collectors, or plugin adapters? We can build lightweight backend solutions matching your hardware profiles.
               </p>
             </div>
@@ -489,8 +519,8 @@
           
           <!-- Interactive Scheduler Card -->
           <div class="scheduler-card" id="booking-container">
-            <h3>Schedule a Session</h3>
-            <p>Select your topic, enter your details, and book your slot.</p>
+            <h3 data-i18n="scheduler.title">Schedule a Session</h3>
+            <p data-i18n="scheduler.subtitle">Select your topic, enter your details, and book your slot.</p>
             
             <div class="scheduler-steps">
               <span class="step-indicator active" data-step="1">1</span>
@@ -503,23 +533,23 @@
                 <!-- Step 1: Select Topic -->
                 <div class="scheduler-step-pane active" data-step="1">
                   <div class="form-group">
-                    <label>Select Mentorship Area</label>
+                    <label data-i18n="scheduler.select_label">Select Mentorship Area</label>
                     <div class="form-select-grid">
                       <div class="select-card selected" data-value="networking">
-                        <span class="select-card-title">Network &amp; Subnets</span>
-                        <span class="select-card-desc">Subnet planning, routing basics</span>
+                        <span class="select-card-title" data-i18n="scheduler.card_net_title">Network &amp; Subnets</span>
+                        <span class="select-card-desc" data-i18n="scheduler.card_net_desc">Subnet planning, routing basics</span>
                       </div>
                       <div class="select-card" data-value="firewalls">
-                        <span class="select-card-title">Firewalls &amp; Relays</span>
-                        <span class="select-card-desc">Syslog, SNMP setup, best practices</span>
+                        <span class="select-card-title" data-i18n="scheduler.card_fw_title">Firewalls &amp; Relays</span>
+                        <span class="select-card-desc" data-i18n="scheduler.card_fw_desc">Syslog, SNMP setup, best practices</span>
                       </div>
                       <div class="select-card" data-value="docker">
-                        <span class="select-card-title">Docker &amp; Containters</span>
-                        <span class="select-card-desc">Container orchestration, deploy pipelines</span>
+                        <span class="select-card-title" data-i18n="scheduler.card_docker_title">Docker &amp; Containers</span>
+                        <span class="select-card-desc" data-i18n="scheduler.card_docker_desc">Container orchestration, deploy pipelines</span>
                       </div>
                       <div class="select-card" data-value="development">
-                        <span class="select-card-title">Custom Dev</span>
-                        <span class="select-card-desc">Go backend, Twitch auth, plugin dev</span>
+                        <span class="select-card-title" data-i18n="scheduler.card_dev_title">Custom Dev</span>
+                        <span class="select-card-desc" data-i18n="scheduler.card_dev_desc">Go backend, Twitch auth, plugin dev</span>
                       </div>
                     </div>
                   </div>
@@ -528,24 +558,24 @@
                 <!-- Step 2: Contact Details -->
                 <div class="scheduler-step-pane" data-step="2">
                   <div class="form-group">
-                    <label for="contact-name">Full Name</label>
-                    <input type="text" id="contact-name" class="form-input" placeholder="Your name" required>
+                    <label for="contact-name" data-i18n="scheduler.name_label">Full Name</label>
+                    <input type="text" id="contact-name" class="form-input" placeholder="Your name" data-i18n-placeholder="scheduler.name_ph" required>
                   </div>
                   <div class="form-group">
-                    <label for="contact-email">Email Address</label>
+                    <label for="contact-email" data-i18n="scheduler.email_label">Email Address</label>
                     <input type="email" id="contact-email" class="form-input" placeholder="you@example.com" required>
                   </div>
                   <div class="form-group">
-                    <label for="contact-notes">Project Notes</label>
-                    <textarea id="contact-notes" class="form-input" placeholder="Briefly describe what you're working on or trying to deploy..."></textarea>
+                    <label for="contact-notes" data-i18n="scheduler.notes_label">Project Notes</label>
+                    <textarea id="contact-notes" class="form-input" placeholder="Briefly describe what you're working on or trying to deploy..." data-i18n-placeholder="scheduler.notes_ph"></textarea>
                   </div>
                 </div>
                 
                 <!-- Step 3: Success Confirmation -->
                 <div class="scheduler-step-pane" data-step="3" style="text-align: center; gap: 0.75rem;">
                   <i data-lucide="check-circle-2" style="width: 4rem; height: 4rem; color: var(--emerald-500); margin: 0 auto;"></i>
-                  <h4 style="font-size: 1.4rem;">Session Initiated!</h4>
-                  <p style="color: var(--text-secondary); max-width: 320px; margin: 0 auto;">
+                  <h4 style="font-size: 1.4rem;" data-i18n="scheduler.success_title">Session Initiated!</h4>
+                  <p style="color: var(--text-secondary); max-width: 320px; margin: 0 auto;" data-i18n="scheduler.success_text">
                     Thank you! We've received your request and will email you within 24 hours to finalize details.
                   </p>
                 </div>
@@ -553,10 +583,10 @@
               
               <div class="scheduler-buttons">
                 <button type="button" class="btn btn-secondary" id="scheduler-prev-btn" style="display: none;">
-                  <i data-lucide="arrow-left"></i> Back
+                  <i data-lucide="arrow-left"></i> <span data-i18n="scheduler.back">Back</span>
                 </button>
                 <button type="button" class="btn btn-primary" id="scheduler-next-btn" style="margin-left: auto;">
-                  Continue <i data-lucide="arrow-right"></i>
+                  <span data-i18n="scheduler.continue">Continue</span> <i data-lucide="arrow-right"></i>
                 </button>
               </div>
             </form>
@@ -576,32 +606,32 @@
           </div>
           <span>Technical Labs</span>
         </a>
-        <p>Providing high-quality IT lab simulators, customized deployment mentorship, and robust networking solutions.</p>
+        <p data-i18n="footer.brand_desc">Providing high-quality IT lab simulators, customized deployment mentorship, and robust networking solutions.</p>
       </div>
-      
+
       <div class="footer-links-col">
-        <h4>Navigation</h4>
+        <h4 data-i18n="footer.nav_heading">Navigation</h4>
         <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#resume">Resume &amp; Skills</a></li>
-          <li><a href="#services">Services &amp; Consulting</a></li>
+          <li><a href="#hero" data-i18n="nav.home">Home</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#resume" data-i18n="nav.resume">Resume &amp; Skills</a></li>
+          <li><a href="#services" data-i18n="nav.services">Services &amp; Consulting</a></li>
         </ul>
       </div>
 
       <div class="footer-links-col">
-        <h4>Domain info</h4>
+        <h4 data-i18n="footer.domain_heading">Domain info</h4>
         <ul>
           <li><a href="https://www.technicallabs.org" target="_blank" rel="noopener noreferrer">www.technicallabs.org</a></li>
           <li><a href="mailto:xphox@xphox.net">xphox@xphox.net</a></li>
-          <li><span style="color: var(--text-secondary);">EST Timezone</span></li>
+          <li><span style="color: var(--text-secondary);" data-i18n="footer.timezone">EST Timezone</span></li>
         </ul>
       </div>
     </div>
-    
+
     <div class="container footer-bottom">
-      <p>&copy; 2026 Technical Labs. All rights reserved.</p>
-      <p>Designed with Vanilla HTML, CSS, and JS</p>
+      <p data-i18n="footer.copyright">&copy; 2026 Technical Labs. All rights reserved.</p>
+      <p data-i18n="footer.designed">Designed with Vanilla HTML, CSS, and JS</p>
     </div>
   </footer>
 
@@ -617,7 +647,7 @@
           <div class="project-icon" style="margin-bottom: 0; width: 2.5rem; height: 2.5rem;">
             <i data-lucide="music"></i>
           </div>
-          <h3>Vinylfo Record Collection Manager</h3>
+          <h3 data-i18n="modals.vinylfo_title">Vinylfo Record Collection Manager</h3>
         </div>
         <div class="project-tags">
           <span class="project-tag">Go Language</span>
@@ -629,29 +659,29 @@
       </div>
       <div class="modal-body">
         <div class="modal-section">
-          <h4 class="modal-section-title">Project Overview</h4>
-          <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+          <h4 class="modal-section-title" data-i18n="modals.overview_heading">Project Overview</h4>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="modals.vinylfo_overview">
             Vinylfo is a self-hosted desktop application designed for streamers and audiophiles to manage their physical vinyl records while streaming metadata and media feeds to platforms like Twitch, YouTube, and OBS.
           </p>
         </div>
         <div class="modal-section">
-          <h4 class="modal-section-title">Core Systems Architecture</h4>
+          <h4 class="modal-section-title" data-i18n="modals.arch_heading">Core Systems Architecture</h4>
           <ul class="modal-features-list">
             <li>
               <i data-lucide="chevron-right"></i>
-              <span><strong>Discogs OAuth &amp; Sync:</strong> Import vinyl libraries and artwork through standard OAuth connections, running syncs asynchronously in database workers.</span>
+              <span data-i18n="modals.vinylfo_feat1" data-i18n-html><strong>Discogs OAuth &amp; Sync:</strong> Import vinyl libraries and artwork through standard OAuth connections, running syncs asynchronously in database workers.</span>
             </li>
             <li>
               <i data-lucide="chevron-right"></i>
-              <span><strong>Multi-Source Duration Consensus:</strong> Queries MusicBrainz, Wikipedia, and YouTube APIs to resolve track durations, applying filters for closest match consensus.</span>
+              <span data-i18n="modals.vinylfo_feat2" data-i18n-html><strong>Multi-Source Duration Consensus:</strong> Queries MusicBrainz, Wikipedia, and YouTube APIs to resolve track durations, applying filters for closest match consensus.</span>
             </li>
             <li>
               <i data-lucide="chevron-right"></i>
-              <span><strong>OBS Server-Sent Events (SSE):</strong> Broadcasts low-latency "Now Playing", Album Cover, and Visualizer feeds on a local HTTP port directly into OBS browser sources.</span>
+              <span data-i18n="modals.vinylfo_feat3" data-i18n-html><strong>OBS Server-Sent Events (SSE):</strong> Broadcasts low-latency "Now Playing", Album Cover, and Visualizer feeds on a local HTTP port directly into OBS browser sources.</span>
             </li>
             <li>
               <i data-lucide="chevron-right"></i>
-              <span><strong>Twitch Live HUD &amp; Chatbot:</strong> Connects via device code OAuth to read chat events, moderate, launch viewer polls, and send announcements when record tracks advance.</span>
+              <span data-i18n="modals.vinylfo_feat4" data-i18n-html><strong>Twitch Live HUD &amp; Chatbot:</strong> Connects via device code OAuth to read chat events, moderate, launch viewer polls, and send announcements when record tracks advance.</span>
             </li>
           </ul>
         </div>
@@ -670,7 +700,7 @@
           <div class="project-icon" style="margin-bottom: 0; width: 2.5rem; height: 2.5rem;">
             <i data-lucide="shield-check"></i>
           </div>
-          <h3>Firewall Monitor &amp; Probe Relays</h3>
+          <h3 data-i18n="modals.fwmon_title">Firewall Monitor &amp; Probe Relays</h3>
         </div>
         <div class="project-tags">
           <span class="project-tag">Golang Daemon</span>
@@ -682,29 +712,29 @@
       </div>
       <div class="modal-body">
         <div class="modal-section">
-          <h4 class="modal-section-title">Project Overview</h4>
-          <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+          <h4 class="modal-section-title" data-i18n="modals.overview_heading">Project Overview</h4>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="modals.fwmon_overview">
             Firewall Monitor is a specialized, lightweight Network Management System (NMS) focused entirely on firewall fleets. It supports centralized deployments or edge collection probes across multiple client sites.
           </p>
         </div>
         <div class="modal-section">
-          <h4 class="modal-section-title">Core Systems Architecture</h4>
+          <h4 class="modal-section-title" data-i18n="modals.arch_heading">Core Systems Architecture</h4>
           <ul class="modal-features-list">
             <li>
               <i data-lucide="chevron-right"></i>
-              <span><strong>Distributed SNMP Relays:</strong> The Firewall-Collector probe runs locally, polling devices at the edge (FortiGate, Palo Alto, pfSense) and batches logs to HQ over HTTPS.</span>
+              <span data-i18n="modals.fwmon_feat1" data-i18n-html><strong>Distributed SNMP Relays:</strong> The Firewall-Collector probe runs locally, polling devices at the edge (FortiGate, Palo Alto, pfSense) and batches logs to HQ over HTTPS.</span>
             </li>
             <li>
               <i data-lucide="chevron-right"></i>
-              <span><strong>Syslog &amp; sFlow Receivers:</strong> High-performance UDP parsing pipelines normalized to handle hundreds of events per second with rate-limiting filters.</span>
+              <span data-i18n="modals.fwmon_feat2" data-i18n-html><strong>Syslog &amp; sFlow Receivers:</strong> High-performance UDP parsing pipelines normalized to handle hundreds of events per second with rate-limiting filters.</span>
             </li>
             <li>
               <i data-lucide="chevron-right"></i>
-              <span><strong>Normalized Configuration Tracking:</strong> Periodically polls configurations via SSH/TFTP, Normalizes values across different vendors, and stores differential code revisions.</span>
+              <span data-i18n="modals.fwmon_feat3" data-i18n-html><strong>Normalized Configuration Tracking:</strong> Periodically polls configurations via SSH/TFTP, Normalizes values across different vendors, and stores differential code revisions.</span>
             </li>
             <li>
               <i data-lucide="chevron-right"></i>
-              <span><strong>Custom State Alerts:</strong> Evaluates data lag, traffic spikes, interface metrics, and sends notifications via Webhooks, SMTP Email, and IRC Bots.</span>
+              <span data-i18n="modals.fwmon_feat4" data-i18n-html><strong>Custom State Alerts:</strong> Evaluates data lag, traffic spikes, interface metrics, and sends notifications via Webhooks, SMTP Email, and IRC Bots.</span>
             </li>
           </ul>
         </div>
@@ -723,7 +753,7 @@
           <div class="project-icon" style="margin-bottom: 0; width: 2.5rem; height: 2.5rem;">
             <i data-lucide="gamepad-2"></i>
           </div>
-          <h3>Rust Server Gameplay Plugin</h3>
+          <h3 data-i18n="modals.rust_title">Rust Server Gameplay Plugin</h3>
         </div>
         <div class="project-tags">
           <span class="project-tag">C# / .NET</span>
@@ -734,29 +764,29 @@
       </div>
       <div class="modal-body">
         <div class="modal-section">
-          <h4 class="modal-section-title">Project Overview</h4>
-          <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+          <h4 class="modal-section-title" data-i18n="modals.overview_heading">Project Overview</h4>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="modals.rust_overview">
             A native plugin developed for Rust survival game servers, modifying engine hooks to implement client-side interactive economy boards, administrative alerts, and performance metrics.
           </p>
         </div>
         <div class="modal-section">
-          <h4 class="modal-section-title">Core Systems Architecture</h4>
+          <h4 class="modal-section-title" data-i18n="modals.arch_heading">Core Systems Architecture</h4>
           <ul class="modal-features-list">
             <li>
               <i data-lucide="chevron-right"></i>
-              <span><strong>Low-Overhead Event Hooks:</strong> Attaches directly to player interaction hooks (gathering, trading, combat) without introducing stutter to the game thread.</span>
+              <span data-i18n="modals.rust_feat1" data-i18n-html><strong>Low-Overhead Event Hooks:</strong> Attaches directly to player interaction hooks (gathering, trading, combat) without introducing stutter to the game thread.</span>
             </li>
             <li>
               <i data-lucide="chevron-right"></i>
-              <span><strong>In-Memory Database Sync:</strong> Maintains real-time player telemetry and points balances in memory, periodically saving checkpoints to disk using structured JSON configurations.</span>
+              <span data-i18n="modals.rust_feat2" data-i18n-html><strong>In-Memory Database Sync:</strong> Maintains real-time player telemetry and points balances in memory, periodically saving checkpoints to disk using structured JSON configurations.</span>
             </li>
             <li>
               <i data-lucide="chevron-right"></i>
-              <span><strong>Admin Command Registry:</strong> Exposes chat and console commands with permission layers for server managers to issue adjustments, check logs, and run server diagnostics.</span>
+              <span data-i18n="modals.rust_feat3" data-i18n-html><strong>Admin Command Registry:</strong> Exposes chat and console commands with permission layers for server managers to issue adjustments, check logs, and run server diagnostics.</span>
             </li>
             <li>
               <i data-lucide="chevron-right"></i>
-              <span><strong>UI Overlay Renderer:</strong> Crafts custom vector and text screens using the Rust Game UI Engine, displaying data directly on player viewports dynamically.</span>
+              <span data-i18n="modals.rust_feat4" data-i18n-html><strong>UI Overlay Renderer:</strong> Crafts custom vector and text screens using the Rust Game UI Engine, displaying data directly on player viewports dynamically.</span>
             </li>
           </ul>
         </div>
@@ -769,6 +799,7 @@
     <i data-lucide="arrow-up"></i>
   </button>
 
+  <script src="js/i18n.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
