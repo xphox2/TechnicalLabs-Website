@@ -116,7 +116,9 @@
     "continue": "Continue",
     "schedule": "Schedule Session",
     "back": "Back",
-    "validation": "Please fill out your Name and Email address."
+    "validation": "Please fill out your Name and Email address.",
+    "sending": "Sending…",
+    "error": "Sorry, we could not send your request. Please email xphox@xphox.net directly."
   },
   "footer": {
     "brand_desc": "Providing high-quality IT lab simulators, customized deployment mentorship, and robust networking solutions.",

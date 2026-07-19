@@ -2,6 +2,19 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.2] - 2026-07-18
+
+### Added
+- **Server-side email delivery for the "Schedule a Session" booking form.** Bookings are now sent from the server over SMTP instead of relying on the visitor's local mail client.
+  - New `mailer` service (`server/`): a small zero-framework Node/nodemailer relay exposing `POST /api/schedule` (validates name/email/topic/notes, rate-limits per IP, escapes user input) and `GET /health`.
+  - New `server/Dockerfile` and a `mailer` service in `docker-compose.yml`, configured via `SMTP_HOST/PORT/USER/PASS/SECURE` and `MAIL_TO`/`MAIL_FROM` environment variables.
+  - Nginx `location = /api/schedule` proxy (`nginx.conf.template`) forwards submissions to the mailer over the internal Docker network, resolving the service name at request time via Docker DNS.
+  - New `.env.example` documenting all required variables; `.gitignore` now keeps `.env.example` tracked.
+
+### Changed
+- `app.js` scheduler wizard now `fetch`-POSTs the booking to `/api/schedule` (with a "Sending…" state and error handling/retry) instead of opening a `mailto:` link. The recipient (`xphox@xphox.net`) is now server-configured.
+- Added `scheduler.sending` and `scheduler.error` strings to the English locale.
+
 ## [1.0.1] - 2026-07-18
 
 ### Added

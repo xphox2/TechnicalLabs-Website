@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  nextBtn.addEventListener('click', () => {
+  nextBtn.addEventListener('click', async () => {
     if (currentStep === 1) {
       currentStep = 2;
       updateSchedulerUI();
@@ -239,36 +239,54 @@ document.addEventListener('DOMContentLoaded', () => {
         alert(tt('scheduler.validation', 'Please fill out your Name and Email address.'));
         return;
       }
-      
-      // Construct subject and body for the email client
-      const subjectStr = `Mentorship Booking: ${selectedTopic.charAt(0).toUpperCase() + selectedTopic.slice(1)}`;
-      const bodyStr = `Hi Nick,\n\nI would like to book a deployment mentorship session. Here are my details:\n\n` +
-                      `- Name: ${nameInput.value}\n` +
-                      `- Contact Email: ${emailInput.value}\n` +
-                      `- Service Topic: ${selectedTopic.charAt(0).toUpperCase() + selectedTopic.slice(1)}\n\n` +
-                      `Project Notes:\n` +
-                      `${notesInput.value || 'None'}\n\n` +
-                      `Best regards,\n` +
-                      `${nameInput.value}`;
 
-      // Open the local mail client pre-filled with details
-      window.location.href = `mailto:xphox@xphox.net?subject=${encodeURIComponent(subjectStr)}&body=${encodeURIComponent(bodyStr)}`;
+      // Submit the booking to the server-side mail relay (Nginx proxies this
+      // to the mailer service, which delivers the request over SMTP).
+      const restoreLabel = nextBtn.innerHTML;
+      nextBtn.disabled = true;
+      nextBtn.innerHTML = `<span>${tt('scheduler.sending', 'Sending…')}</span>`;
 
-      // Track booking conversion in Google Analytics
-      if (typeof gtag === 'function') {
-        gtag('event', 'generate_lead', {
-          topic: selectedTopic
+      try {
+        const res = await fetch('/api/schedule', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: nameInput.value,
+            email: emailInput.value,
+            topic: selectedTopic,
+            notes: notesInput.value || ''
+          })
         });
-      }
 
-      // Transition to final visually completed step
-      currentStep = 3;
-      updateSchedulerUI();
-      
-      // Reset form fields after delay
-      setTimeout(() => {
-        schedulerForm.reset();
-      }, 1000);
+        if (!res.ok) {
+          throw new Error(`Request failed with status ${res.status}`);
+        }
+
+        // Track booking conversion in Google Analytics
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', {
+            topic: selectedTopic
+          });
+        }
+
+        // Transition to final visually completed step
+        currentStep = 3;
+        updateSchedulerUI();
+
+        // Reset form fields after delay
+        setTimeout(() => {
+          schedulerForm.reset();
+        }, 1000);
+      } catch (err) {
+        console.error('Booking submission failed:', err);
+        alert(tt('scheduler.error', 'Sorry, we could not send your request. Please email xphox@xphox.net directly.'));
+        // Restore the button so the visitor can retry
+        nextBtn.disabled = false;
+        nextBtn.innerHTML = restoreLabel;
+        if (typeof lucide !== 'undefined') {
+          lucide.createIcons();
+        }
+      }
     }
   });
 

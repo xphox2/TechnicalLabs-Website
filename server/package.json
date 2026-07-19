@@ -1,0 +1,15 @@
+{
+  "name": "technical-labs-mailer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Booking form SMTP mail relay for the Technical Labs website",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Technical Labs",
+  "license": "ISC",
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}

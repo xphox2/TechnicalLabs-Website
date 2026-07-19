@@ -20,6 +20,7 @@ yarn-error.log*
 # Local environment configs
 .env
 .env*
+!.env.example
 
 # Playwright MCP scratch output
 .playwright-mcp/
