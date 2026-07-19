@@ -21,6 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     htmlEl.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
+
+    // Track theme toggle in Google Analytics
+    if (typeof gtag === 'function') {
+      gtag('event', 'select_content', {
+        content_type: 'theme',
+        item_id: newTheme
+      });
+    }
   });
 
   // --- MOBILE NAVIGATION BURGER ---
@@ -54,6 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
         targetModal.classList.add('active');
         targetModal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden'; // Disable page scrolling
+
+        // Track modal open in Google Analytics
+        if (typeof gtag === 'function') {
+          gtag('event', 'select_content', {
+            content_type: 'portfolio_project',
+            item_id: modalId
+          });
+        }
       }
     });
   });
@@ -148,6 +164,14 @@ document.addEventListener('DOMContentLoaded', () => {
       selectCards.forEach(c => c.classList.remove('selected'));
       card.classList.add('selected');
       selectedTopic = card.getAttribute('data-value');
+
+      // Track topic selection in Google Analytics
+      if (typeof gtag === 'function') {
+        gtag('event', 'select_content', {
+          content_type: 'scheduler_topic',
+          item_id: selectedTopic
+        });
+      }
     });
   });
 
@@ -196,6 +220,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentStep === 1) {
       currentStep = 2;
       updateSchedulerUI();
+
+      // Track progress to Step 2 in Google Analytics
+      if (typeof gtag === 'function') {
+        gtag('event', 'scheduler_progress', {
+          step: 2,
+          step_name: 'Contact Details',
+          topic: selectedTopic
+        });
+      }
     } else if (currentStep === 2) {
       // Basic validation
       const nameInput = document.getElementById('contact-name');
@@ -220,6 +253,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Open the local mail client pre-filled with details
       window.location.href = `mailto:xphox@xphox.net?subject=${encodeURIComponent(subjectStr)}&body=${encodeURIComponent(bodyStr)}`;
+
+      // Track booking conversion in Google Analytics
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', {
+          topic: selectedTopic
+        });
+      }
 
       // Transition to final visually completed step
       currentStep = 3;
@@ -362,12 +402,23 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- RE-RENDER DYNAMIC CONTENT ON LANGUAGE CHANGE ---
   // i18n.js translates all [data-i18n] nodes, but scheduler buttons and the
   // HUD status suffix are built imperatively, so refresh them here.
-  window.addEventListener('languageChanged', () => {
+  window.addEventListener('languageChanged', (e) => {
     updateSchedulerUI();
 
     const vinylEl = document.getElementById('hud-vinylfo-status');
     if (vinylEl && vinylEl.dataset.version) {
       vinylEl.textContent = `${vinylEl.dataset.version} • ${tt('hud.stable', 'Stable')}`;
+    }
+
+    // Track language selection in Google Analytics
+    if (typeof gtag === 'function') {
+      const selectedLang = e.detail && e.detail.lang;
+      if (selectedLang) {
+        gtag('event', 'select_content', {
+          content_type: 'language',
+          item_id: selectedLang
+        });
+      }
     }
   });
 
