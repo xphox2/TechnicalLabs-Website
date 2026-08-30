@@ -30,7 +30,10 @@
     "fwmon_title": "Firewall Monitor",
     "fwmon_desc": "Un NMS centrale indipendente dal vendor con polling SNMP, ricevitori syslog/sFlow, tracciamento delle configurazioni e relay di probe remoti distribuiti (Firewall-Collector).",
     "rust_title": "Plugin di Gioco per Rust",
-    "rust_desc": "Un plugin di potenziamento del gameplay ad alte prestazioni per server survival di Rust. Introduce un'economia personalizzata, sistemi di logging, strumenti per amministratori e hook di rete in tempo reale."
+    "rust_desc": "Un plugin di potenziamento del gameplay ad alte prestazioni per server survival di Rust. Introduce un'economia personalizzata, sistemi di logging, strumenti per amministratori e hook di rete in tempo reale.",
+    "runs_on": "Funziona su",
+    "built_for": "Realizzato per",
+    "deployed_with": "Distribuito con"
   },
   "common": {
     "view_architecture": "Visualizza Architettura",
@@ -116,7 +119,18 @@
     "continue": "Continua",
     "schedule": "Pianifica Sessione",
     "back": "Indietro",
-    "validation": "Compila il tuo Nome e Indirizzo Email."
+    "validation": "Compila il tuo Nome e Indirizzo Email.",
+    "sending": "Invio in corso…",
+    "error": "Spiacenti, non siamo riusciti a inviare la tua richiesta. Scrivici direttamente a xphox@xphox.net."
+  },
+  "irc": {
+    "title": "Chatta con la community",
+    "desc": "Gestiamo un server IRC pubblico. Fai domande, racconta cosa stai costruendo o passa solo a salutare.",
+    "server": "Server",
+    "tls": "TLS",
+    "channel": "Canale",
+    "cta": "Apri la chat web",
+    "hint": "Si apre nel browser: non serve installare nulla"
   },
   "footer": {
     "brand_desc": "Fornitori di simulatori di laboratorio IT di alta qualità, mentorship di implementazione personalizzata e soluzioni di rete affidabili.",

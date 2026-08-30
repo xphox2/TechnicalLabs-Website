@@ -30,7 +30,10 @@
     "fwmon_title": "Firewall Monitor",
     "fwmon_desc": "Um NMS central e agnóstico de fornecedor, com polling SNMP, recetores syslog/sFlow, rastreio de configurações e relés de sondas remotas distribuídas (Firewall-Collector).",
     "rust_title": "Plugin de Jogo Rust",
-    "rust_desc": "Um plugin de alto desempenho para melhorar a jogabilidade em servidores de sobrevivência Rust. Introduz um sistema de economia personalizado, sistemas de registo (logging), ferramentas de administração e hooks de rede em tempo real."
+    "rust_desc": "Um plugin de alto desempenho para melhorar a jogabilidade em servidores de sobrevivência Rust. Introduz um sistema de economia personalizado, sistemas de registo (logging), ferramentas de administração e hooks de rede em tempo real.",
+    "runs_on": "Funciona em",
+    "built_for": "Feito para",
+    "deployed_with": "Implantado com"
   },
   "common": {
     "view_architecture": "Ver Arquitetura",
@@ -116,7 +119,18 @@
     "continue": "Continuar",
     "schedule": "Agendar Sessão",
     "back": "Voltar",
-    "validation": "Por favor, preencha o seu Nome e Endereço de Email."
+    "validation": "Por favor, preencha o seu Nome e Endereço de Email.",
+    "sending": "Enviando…",
+    "error": "Desculpe, não conseguimos enviar o seu pedido. Envie um e-mail diretamente para xphox@xphox.net."
+  },
+  "irc": {
+    "title": "Converse com a comunidade",
+    "desc": "Mantemos um servidor IRC público. Faça perguntas, mostre o que está construindo ou apenas passe para dizer olá.",
+    "server": "Servidor",
+    "tls": "TLS",
+    "channel": "Canal",
+    "cta": "Abrir chat na web",
+    "hint": "Abre no seu navegador — nada para instalar"
   },
   "footer": {
     "brand_desc": "Fornecendo simuladores de laboratório de TI de alta qualidade, mentoria de implementação personalizada e soluções de rede robustas.",

@@ -30,7 +30,10 @@
     "fwmon_title": "Firewall Monitor",
     "fwmon_desc": "Un NMS central independiente del proveedor con sondeo SNMP, receptores de syslog/sFlow, seguimiento de configuraciones y relés de sondas remotas distribuidas (Firewall-Collector).",
     "rust_title": "Complemento de Juego para Rust",
-    "rust_desc": "Un complemento de mejora de juego de alto rendimiento para servidores de supervivencia de Rust. Incorpora economía personalizada, sistemas de registro, herramientas de administración y conexiones de red en tiempo real."
+    "rust_desc": "Un complemento de mejora de juego de alto rendimiento para servidores de supervivencia de Rust. Incorpora economía personalizada, sistemas de registro, herramientas de administración y conexiones de red en tiempo real.",
+    "runs_on": "Funciona en",
+    "built_for": "Creado para",
+    "deployed_with": "Desplegado con"
   },
   "common": {
     "view_architecture": "Ver Arquitectura",
@@ -116,7 +119,18 @@
     "continue": "Continuar",
     "schedule": "Programar Sesión",
     "back": "Atrás",
-    "validation": "Por favor completa tu Nombre y Correo Electrónico."
+    "validation": "Por favor completa tu Nombre y Correo Electrónico.",
+    "sending": "Enviando…",
+    "error": "Lo sentimos, no pudimos enviar tu solicitud. Escríbenos directamente a xphox@xphox.net."
+  },
+  "irc": {
+    "title": "Chatea con la comunidad",
+    "desc": "Tenemos un servidor IRC público. Haz preguntas, comparte lo que estás creando o simplemente saluda.",
+    "server": "Servidor",
+    "tls": "TLS",
+    "channel": "Canal",
+    "cta": "Abrir chat web",
+    "hint": "Se abre en tu navegador: nada que instalar"
   },
   "footer": {
     "brand_desc": "Ofrecemos simuladores de laboratorio de TI de alta calidad, mentoría de implementación personalizada y soluciones de red robustas.",

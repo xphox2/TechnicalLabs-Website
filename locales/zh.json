@@ -30,7 +30,10 @@
     "fwmon_title": "Firewall Monitor",
     "fwmon_desc": "一套厂商无关的集中式 NMS,具备 SNMP 轮询、syslog/sFlow 接收器、配置追踪以及分布式远程探针中继(Firewall-Collector)。",
     "rust_title": "Rust Game Plugin",
-    "rust_desc": "一款为 Rust 生存服务器打造的高性能玩法增强插件,引入自定义经济系统、日志系统、管理辅助工具及实时网络钩子。"
+    "rust_desc": "一款为 Rust 生存服务器打造的高性能玩法增强插件,引入自定义经济系统、日志系统、管理辅助工具及实时网络钩子。",
+    "runs_on": "运行于",
+    "built_for": "适用于",
+    "deployed_with": "部署方式"
   },
   "common": {
     "view_architecture": "查看架构",
@@ -116,7 +119,18 @@
     "continue": "继续",
     "schedule": "预约时段",
     "back": "返回",
-    "validation": "请填写您的姓名和电子邮箱地址。"
+    "validation": "请填写您的姓名和电子邮箱地址。",
+    "sending": "发送中…",
+    "error": "抱歉，我们无法发送您的请求。请直接发送邮件至 xphox@xphox.net。"
+  },
+  "irc": {
+    "title": "与社区交流",
+    "desc": "我们运营着一台公开的 IRC 服务器。欢迎提问、分享你正在做的项目，或者只是来打个招呼。",
+    "server": "服务器",
+    "tls": "TLS",
+    "channel": "频道",
+    "cta": "打开网页聊天",
+    "hint": "在浏览器中打开 — 无需安装"
   },
   "footer": {
     "brand_desc": "提供高质量的IT实验模拟器、定制化部署指导以及稳健的网络解决方案。",

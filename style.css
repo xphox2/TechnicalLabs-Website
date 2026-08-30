@@ -1463,7 +1463,9 @@ a.resume-sidebar-link:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: start;
+  /* stretch, not start: the three service cards share the scheduler's height so
+     the two columns finish level instead of leaving a ragged left edge. */
+  align-items: stretch;
 }
 
 .services-list {
@@ -1476,10 +1478,16 @@ a.resume-sidebar-link:hover {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 1.25rem;
-  padding: 2rem;
+  padding: 2.5rem;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  /* Share the column height evenly, and keep the copy optically centred in the
+     taller card rather than pinned to the top. */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .service-card:hover {
@@ -1830,6 +1838,11 @@ footer {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
+  /* Stacked: no sibling column to match, so let content set the height. */
+  .service-card {
+    flex: 0 1 auto;
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1985,5 +1998,134 @@ footer {
   }
   .lang-picker-btn .chevron-icon {
     display: none;
+  }
+}
+
+/* =============================================================================
+   COMMUNITY / IRC CARD
+   Sits under the services layout: the scheduler above sells booked time, so this
+   is the free way in. Two-tier grid — copy and call-to-action share the top row,
+   the connection details span the full width beneath a rule, so the card has no
+   dead gap between the text and the button on wide screens.
+   ========================================================================== */
+.irc-card {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 2.5rem;
+  row-gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 1.25rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(var(--glass-blur));
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.irc-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.irc-head { min-width: 0; }
+
+.irc-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.irc-title-row h3 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+/* Cyan sets this apart from the indigo service cards directly above. */
+.irc-icon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  color: var(--cyan-400);
+  background-color: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.irc-icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.irc-head p {
+  color: var(--text-secondary);
+  margin: 0;
+  max-width: 62ch;
+}
+
+.irc-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.irc-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Full-width strip beneath the rule. */
+.irc-facts {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 2.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 1.35rem 0 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.irc-facts li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.irc-fact-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.irc-facts code {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  background-color: rgba(99, 102, 241, 0.08);
+  border: 1px solid var(--border-color);
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.55rem;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .irc-card {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    row-gap: 1.25rem;
+  }
+  .irc-cta { width: 100%; }
+  .irc-facts {
+    gap: 0.6rem 1.5rem;
+    padding-top: 1.15rem;
   }
 }

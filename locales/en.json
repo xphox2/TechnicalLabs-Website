@@ -123,6 +123,15 @@
     "sending": "Sending…",
     "error": "Sorry, we could not send your request. Please email xphox@xphox.net directly."
   },
+  "irc": {
+    "title": "Chat with the community",
+    "desc": "We run a public IRC server. Ask questions, share what you're building, or just say hello.",
+    "server": "Server",
+    "tls": "TLS",
+    "channel": "Channel",
+    "cta": "Open web chat",
+    "hint": "Opens in your browser — nothing to install"
+  },
   "footer": {
     "brand_desc": "Providing high-quality IT lab simulators, customized deployment mentorship, and robust networking solutions.",
     "nav_heading": "Navigation",

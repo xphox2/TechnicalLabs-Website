@@ -4,12 +4,18 @@ All notable changes to the Technical Labs website are documented in this file.
 
 ## [1.0.6] - 2026-08-29
 
+### Added
+- **Community card for the public IRC server**, in the Services section directly beneath the scheduler — the scheduler sells booked time, so this offers the free way to reach us. Shows the server (`irc.technicallabs.org`), the TLS port (6697) and the main channel (`#technicallabs`), with a primary call to action opening the existing Lounge web client at <https://irc.technicallabs.org/> in a new tab. All details were read from the server's own MOTD and ISUPPORT rather than hand-written, so they match what the network actually advertises.
+- New `irc` translation group (7 keys) across all ten locales.
+
 ### Fixed
 - **The System Monitor HUD was showing stale hardcoded versions instead of live ones.** All three resolution tiers were failing through to the same static constants, so the rows had frozen at Vinylfo v0.16.12 / Firewall server v0.11.122 / Firewall collector v1.3.16 while the real releases had moved to v0.16.13 / v0.11.233 / v1.3.44. Two independent causes:
   - The Nginx `/api/github/` proxy injected `Authorization: token <credential>`, and the running container's credential was missing or expired, so every proxied call returned `401 Bad credentials`.
   - `scripts/fetch-versions.js` gated its HTTP path behind an auth check, so a credential-less build skipped straight to the `gh` CLI — which does not exist in the `node:20-alpine` builder stage. Every image build therefore baked the hardcoded fallbacks into `assets/versions.json`.
 - **Switching language wiped three of the four HUD rows.** `js/i18n.js` re-translates every `[data-i18n]` node on change, and only the Vinylfo row was restored afterwards, so the other three reverted to "Fetching version..." permanently. Resolved rows now drop their `data-i18n` attribute once they own their text.
 - The `/tags` fallback returned the most recently *created* tag, which for Vinylfo is a pre-release (`v0.16.16-alpha.26`). Pre-release tags are now skipped, since these rows are labelled "Stable".
+- **Services & Custom Mentorship: the two columns were not spaced to match.** `.services-layout` used `align-items: start`, so the three service cards kept their natural height and the left column finished 59px above the scheduler card, leaving a ragged edge. The grid now stretches and the cards share the column height evenly (`flex: 1`), so both sides start and end level with the 2rem gaps between cards unchanged. Service card padding was raised from 2rem to 2.5rem to match the scheduler, so copy on both sides sits at the same inset, and card content is vertically centred rather than pinned to the top. Below 1024px the section stacks into one column, where cards revert to content height and 2rem padding — the stacked layout is unchanged.
+- Backfilled five strings that were present only in English and silently falling back for every other language: `projects.runs_on`, `projects.built_for`, `projects.deployed_with` (added with the platform badges in 1.0.4) and `scheduler.sending`, `scheduler.error` (added with the SMTP booking form). All ten locales are now at full key parity — 142 keys each, no drift in either direction.
 
 ### Changed
 - All four repositories are public, so version lookups no longer use any credential. The browser queries `api.github.com` directly (the REST API sends `Access-Control-Allow-Origin: *`), which means versions refresh without a redeploy and there is no secret left to rotate or expire.
