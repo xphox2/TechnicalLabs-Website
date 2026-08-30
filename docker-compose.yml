@@ -59,8 +59,6 @@ services:
       - mailer
     ports:
       - "${PORT:-8080}:80"
-    environment:
-      - GITHUB_TOKEN=${GITHUB_TOKEN}
     healthcheck:
       test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:80/"]
       interval: 30s

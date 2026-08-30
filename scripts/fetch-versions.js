@@ -4,6 +4,10 @@ const path = require('path');
 
 const token = process.env.GITHUB_TOKEN;
 
+// These versions are shown on rows labelled "Stable", so a pre-release tag is
+// never the right answer even when it is the most recently created one.
+const isPrerelease = (tag) => /-(?:alpha|beta|rc|pre)/i.test(tag);
+
 const getLatestVersionWithFetch = async (repo) => {
   const headers = {
     'Accept': 'application/vnd.github.v3+json',
@@ -29,8 +33,11 @@ const getLatestVersionWithFetch = async (repo) => {
     let res = await fetch(`https://api.github.com/repos/${repo}/tags`, { headers });
     if (res.ok) {
       const data = await res.json();
-      if (data && data.length > 0) {
-        return data[0].name;
+      if (Array.isArray(data)) {
+        const stable = data.find((t) => t && t.name && !isPrerelease(t.name));
+        if (stable) {
+          return stable.name;
+        }
       }
     }
   } catch (e) {
@@ -51,9 +58,12 @@ const getLatestVersionWithCli = (repo) => {
   }
 
   try {
-    const tagsOut = execSync(`gh api repos/${repo}/tags --jq ".[0].name"`, { encoding: 'utf8' }).trim();
+    const tagsOut = execSync(`gh api repos/${repo}/tags --jq ".[].name"`, { encoding: 'utf8' }).trim();
     if (tagsOut) {
-      return tagsOut;
+      const stable = tagsOut.split('\n').map((n) => n.trim()).find((n) => n && !isPrerelease(n));
+      if (stable) {
+        return stable;
+      }
     }
   } catch (e) {
     // Log error and fallback
@@ -77,7 +87,7 @@ const getLocalFallbackVersion = (repo) => {
     } catch (e) {
       // Sibling folder check failed, return hardcoded default
     }
-    return 'v0.11.122'; // Hardcoded default
+    return 'v0.11.233'; // Hardcoded default
   }
 
   if (repo === 'xphox2/Firewall-Collector') {
@@ -93,11 +103,11 @@ const getLocalFallbackVersion = (repo) => {
     } catch (e) {
       // Sibling folder check failed, return hardcoded default
     }
-    return 'v1.3.16'; // Hardcoded default
+    return 'v1.3.44'; // Hardcoded default
   }
 
   if (repo === 'xphox2/Vinylfo-Releases') {
-    return 'v0.16.12';
+    return 'v0.16.13';
   }
 
   if (repo === 'xphox2/SignArtSaver') {
@@ -120,10 +130,10 @@ const main = async () => {
   const versions = {};
 
   for (const [key, repo] of Object.entries(repos)) {
-    let ver = null;
-    if (token) {
-      ver = await getLatestVersionWithFetch(repo);
-    }
+    // Always try HTTP first: every repo here is public, so it needs no auth and
+    // no tooling. It is the one path that works inside the node:20-alpine builder
+    // stage, which has no gh CLI.
+    let ver = await getLatestVersionWithFetch(repo);
     if (!ver) {
       ver = getLatestVersionWithCli(repo);
     }

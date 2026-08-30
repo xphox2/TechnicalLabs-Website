@@ -2,6 +2,25 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.6] - 2026-08-29
+
+### Fixed
+- **The System Monitor HUD was showing stale hardcoded versions instead of live ones.** All three resolution tiers were failing through to the same static constants, so the rows had frozen at Vinylfo v0.16.12 / Firewall server v0.11.122 / Firewall collector v1.3.16 while the real releases had moved to v0.16.13 / v0.11.233 / v1.3.44. Two independent causes:
+  - The Nginx `/api/github/` proxy injected `Authorization: token <credential>`, and the running container's credential was missing or expired, so every proxied call returned `401 Bad credentials`.
+  - `scripts/fetch-versions.js` gated its HTTP path behind an auth check, so a credential-less build skipped straight to the `gh` CLI — which does not exist in the `node:20-alpine` builder stage. Every image build therefore baked the hardcoded fallbacks into `assets/versions.json`.
+- **Switching language wiped three of the four HUD rows.** `js/i18n.js` re-translates every `[data-i18n]` node on change, and only the Vinylfo row was restored afterwards, so the other three reverted to "Fetching version..." permanently. Resolved rows now drop their `data-i18n` attribute once they own their text.
+- The `/tags` fallback returned the most recently *created* tag, which for Vinylfo is a pre-release (`v0.16.16-alpha.26`). Pre-release tags are now skipped, since these rows are labelled "Stable".
+
+### Changed
+- All four repositories are public, so version lookups no longer use any credential. The browser queries `api.github.com` directly (the REST API sends `Access-Control-Allow-Origin: *`), which means versions refresh without a redeploy and there is no secret left to rotate or expire.
+- Resolved versions are cached in `sessionStorage` for 30 minutes, so repeat views cost no requests against GitHub's 60/hour unauthenticated per-IP budget. Only a complete result is cached, so a partial failure retries on the next load.
+- `loadSystemMonitor` now drives all four rows from one `HUD_ROWS` table instead of repeating the same four assignments across three fallback branches.
+- `scripts/fetch-versions.js` always attempts the unauthenticated HTTP fetch first; a token remains optional and only raises the build-time rate limit.
+
+### Removed
+- The `location ^~ /api/github/` block in `nginx.conf.template`. Nothing calls it now, and as written it was an unauthenticated open proxy to the GitHub API for any visitor.
+- The runtime credential passthrough on the `website` service in `docker-compose.yml` — Nginx no longer needs it. The build arg is retained.
+
 ## [1.0.5] - 2026-07-19
 
 ### Changed

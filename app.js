@@ -299,118 +299,130 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // --- DYNAMIC GITHUB VERSION FETCHING FOR SYSTEM MONITOR ---
+  //
+  // All four repos are public, so the browser talks to api.github.com directly:
+  // no token, no server-side proxy, nothing that can expire. GitHub serves the
+  // REST API with `Access-Control-Allow-Origin: *`, so this is a plain
+  // cross-origin fetch.
+  //
+  // Unauthenticated GitHub allows 60 requests/hour per client IP and a page load
+  // costs four, so a sessionStorage cache keeps repeat views free. If GitHub is
+  // unreachable or that budget is spent, we fall back to assets/versions.json
+  // (regenerated at image build time by scripts/fetch-versions.js), and finally
+  // to the baselines below.
+  const HUD_ROWS = [
+    { id: 'hud-vinylfo-status',         key: 'vinyl',        repo: 'xphox2/Vinylfo-Releases',    baseline: 'v0.16.13', stable: true },
+    { id: 'hud-fwmon-server-status',    key: 'fw_server',    repo: 'xphox2/Firewall-Monitoring', baseline: 'v0.11.233' },
+    { id: 'hud-fwmon-collector-status', key: 'fw_collector', repo: 'xphox2/Firewall-Collector',  baseline: 'v1.3.44' },
+    { id: 'hud-rust-status',            key: 'rust_plugin',  repo: 'xphox2/SignArtSaver',        baseline: 'v0.11.14' }
+  ];
+
+  const HUD_CACHE_KEY = 'tl-hud-versions';
+  const HUD_CACHE_TTL = 30 * 60 * 1000; // 30 minutes
+
+  // A tag like v0.16.16-alpha.26 sorts newer than the newest *release*, but these
+  // rows are labelled "Stable", so a pre-release is never the right answer.
+  const isPrerelease = (tag) => /-(?:alpha|beta|rc|pre)/i.test(tag);
+
+  const readVersionCache = () => {
+    try {
+      const raw = sessionStorage.getItem(HUD_CACHE_KEY);
+      if (!raw) return null;
+      const { at, versions } = JSON.parse(raw);
+      if (!at || Date.now() - at > HUD_CACHE_TTL) return null;
+      return versions;
+    } catch (e) {
+      return null; // private mode, storage disabled, or a malformed entry
+    }
+  };
+
+  const writeVersionCache = (versions) => {
+    try {
+      sessionStorage.setItem(HUD_CACHE_KEY, JSON.stringify({ at: Date.now(), versions }));
+    } catch (e) {
+      // Storage unavailable — the fetch still succeeded, so this is not fatal.
+    }
+  };
+
+  // Latest published release, falling back to the newest non-prerelease tag for
+  // repos that tag but never cut releases.
+  const fetchVersion = async (repo) => {
+    const base = `https://api.github.com/repos/${repo}`;
+
+    try {
+      const res = await fetch(`${base}/releases/latest`);
+      if (res.ok) {
+        const d = await res.json();
+        if (d && d.tag_name) return d.tag_name;
+      }
+    } catch (e) {}
+
+    try {
+      const res = await fetch(`${base}/tags`);
+      if (res.ok) {
+        const tags = await res.json();
+        if (Array.isArray(tags)) {
+          const stable = tags.find((t) => t && t.name && !isPrerelease(t.name));
+          if (stable) return stable.name;
+        }
+      }
+    } catch (e) {}
+
+    return null;
+  };
+
+  const renderHud = (versions) => {
+    HUD_ROWS.forEach((row) => {
+      const el = document.getElementById(row.id);
+      if (!el) return;
+      const version = versions[row.key] || row.baseline;
+
+      // i18n.js re-translates every [data-i18n] node on language change, which
+      // would otherwise stamp "Fetching version..." back over a resolved number.
+      // Drop the attribute now that this row owns its own text.
+      el.removeAttribute('data-i18n');
+      el.dataset.version = version;
+      el.textContent = row.stable ? `${version} • ${tt('hud.stable', 'Stable')}` : version;
+      el.classList.add('emerald');
+    });
+  };
+
   const loadSystemMonitor = async () => {
-    const vinylEl = document.getElementById('hud-vinylfo-status');
-    const fwServerEl = document.getElementById('hud-fwmon-server-status');
-    const fwCollectorEl = document.getElementById('hud-fwmon-collector-status');
-    const rustEl = document.getElementById('hud-rust-status');
+    const cached = readVersionCache();
+    if (cached) {
+      renderHud(cached);
+      return;
+    }
 
-    // Helper to fetch latest version from GitHub API (supports proxy endpoint)
-    const fetchVersion = async (repo, useProxy = false) => {
-      const baseUrl = useProxy ? `/api/github/repos/${repo}` : `https://api.github.com/repos/${repo}`;
-      try {
-        let res = await fetch(`${baseUrl}/releases/latest`);
-        if (res.ok) {
-          const d = await res.json();
-          if (d && d.tag_name) return d.tag_name;
-        }
-      } catch (e) {}
+    // 1. Live from GitHub.
+    const resolved = await Promise.all(HUD_ROWS.map((row) => fetchVersion(row.repo)));
+    const versions = {};
+    HUD_ROWS.forEach((row, i) => {
+      if (resolved[i]) versions[row.key] = resolved[i];
+    });
 
-      try {
-        let res = await fetch(`${baseUrl}/tags`);
-        if (res.ok) {
-          const tags = await res.json();
-          if (tags && tags.length > 0) return tags[0].name;
-        }
-      } catch (e) {}
+    // Only cache a complete answer, so a partial failure retries on the next load.
+    if (Object.keys(versions).length === HUD_ROWS.length) {
+      writeVersionCache(versions);
+      renderHud(versions);
+      return;
+    }
 
-      return null;
-    };
-
-    // 1. Try Live Production Nginx API Proxy first
+    // 2. Fill the gaps from the build-time snapshot.
     try {
-      const testRes = await fetch('/api/github/repos/xphox2/SignArtSaver/tags');
-      if (testRes.ok) {
-        console.log('Production Nginx live API proxy active. Fetching versions live from GitHub...');
-        
-        const [vinylVer, serverVer, collectorVer, rustVer] = await Promise.all([
-          fetchVersion('xphox2/Vinylfo-Releases', true),
-          fetchVersion('xphox2/Firewall-Monitoring', true),
-          fetchVersion('xphox2/Firewall-Collector', true),
-          fetchVersion('xphox2/SignArtSaver', true)
-        ]);
-
-        if (vinylEl) {
-          vinylEl.dataset.version = vinylVer || 'v0.16.12';
-          vinylEl.textContent = `${vinylEl.dataset.version} • ${tt('hud.stable', 'Stable')}`;
-          vinylEl.classList.add('emerald');
-        }
-        if (fwServerEl) {
-          fwServerEl.textContent = serverVer || 'v0.11.122';
-          fwServerEl.classList.add('emerald');
-        }
-        if (fwCollectorEl) {
-          fwCollectorEl.textContent = collectorVer || 'v1.3.16';
-          fwCollectorEl.classList.add('emerald');
-        }
-        if (rustEl) {
-          rustEl.textContent = rustVer || 'v0.11.14';
-          rustEl.classList.add('emerald');
-        }
-        return;
+      const res = await fetch('assets/versions.json');
+      if (res.ok) {
+        const snapshot = await res.json();
+        HUD_ROWS.forEach((row) => {
+          if (!versions[row.key] && snapshot[row.key]) versions[row.key] = snapshot[row.key];
+        });
       }
     } catch (e) {
-      // Proxy not available (e.g. running local dev server)
+      console.warn('Failed to load assets/versions.json; using static baselines:', e);
     }
 
-    // 2. Local Fallback: Fetch local versions.json (compiled by Node pre-start script)
-    try {
-      const response = await fetch('assets/versions.json');
-      if (response.ok) {
-        const versions = await response.json();
-        
-        if (vinylEl && versions.vinyl) {
-          vinylEl.dataset.version = versions.vinyl;
-          vinylEl.textContent = `${vinylEl.dataset.version} • ${tt('hud.stable', 'Stable')}`;
-          vinylEl.classList.add('emerald');
-        }
-        if (fwServerEl && versions.fw_server) {
-          fwServerEl.textContent = versions.fw_server;
-          fwServerEl.classList.add('emerald');
-        }
-        if (fwCollectorEl && versions.fw_collector) {
-          fwCollectorEl.textContent = versions.fw_collector;
-          fwCollectorEl.classList.add('emerald');
-        }
-        if (rustEl && versions.rust_plugin) {
-          rustEl.textContent = versions.rust_plugin;
-          rustEl.classList.add('emerald');
-        }
-        return;
-      }
-    } catch (e) {
-      console.warn('Failed to load local versions.json, falling back to static baselines:', e);
-    }
-
-    // 3. Static Baselines (Offline fallback)
-    if (vinylEl) {
-      vinylEl.dataset.version = 'v0.16.12';
-      vinylEl.textContent = `${vinylEl.dataset.version} • ${tt('hud.stable', 'Stable')}`;
-      vinylEl.classList.add('emerald');
-    }
-    if (fwServerEl) {
-      fwServerEl.textContent = 'v0.11.122';
-      fwServerEl.classList.add('emerald');
-    }
-    if (fwCollectorEl) {
-      fwCollectorEl.textContent = 'v1.3.16';
-      fwCollectorEl.classList.add('emerald');
-    }
-    if (rustEl) {
-      const rustVer = await fetchVersion('xphox2/SignArtSaver', false);
-      rustEl.textContent = rustVer || 'v0.11.14';
-      rustEl.classList.add('emerald');
-    }
+    // 3. renderHud() supplies the static baseline for anything still missing.
+    renderHud(versions);
   };
 
   // Run on load

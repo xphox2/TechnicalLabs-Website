@@ -1,6 +1,6 @@
 {
-  "vinyl": "v0.16.12",
-  "fw_server": "v0.11.122",
-  "fw_collector": "v1.3.16",
+  "vinyl": "v0.16.13",
+  "fw_server": "v0.11.234",
+  "fw_collector": "v1.3.44",
   "rust_plugin": "v0.11.14"
 }

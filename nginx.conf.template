@@ -71,25 +71,4 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_read_timeout 30s;
     }
-
-    # Secure GitHub API proxy ( ^~ so the static-asset regexes never intercept )
-    location ^~ /api/github/ {
-        # DNS resolver to dynamic resolve api.github.com (required for proxy_pass to domains)
-        resolver 8.8.8.8 [2001:4860:4860::8888] valid=300s;
-        resolver_timeout 5s;
-
-        proxy_pass https://api.github.com/;
-        proxy_set_header Authorization "token ${GITHUB_TOKEN}";
-        proxy_set_header Accept "application/vnd.github.v3+json";
-        proxy_set_header User-Agent "Nginx-Reverse-Proxy";
-        
-        # Required for SSL handshakes to SNI-restricted hosts like GitHub
-        proxy_ssl_server_name on;
-        
-        # Turn off buffering to stream live responses
-        proxy_buffering off;
-
-        # Optional caching to prevent rate-limit flooding from repetitive client refreshes
-        proxy_cache_bypass $http_upgrade;
-    }
 }
