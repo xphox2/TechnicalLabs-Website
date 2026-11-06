@@ -2,6 +2,15 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.8] - 2026-11-06
+
+### Fixed
+- **The mobile menu never opened.** `app.js` toggles `.mobile-active` on `.nav-container` (the parent of `<nav>` and of the burger button), but the CSS revealed the menu only for `nav.mobile-active`, so tapping the burger did nothing on screens up to 768px. The burger's X animation used the same wrong selector (the button is not inside `<nav>`). Both rules now target `.nav-container.mobile-active`.
+- **`/ai` redirected through plain http.** Nginx sees only http behind nginx-proxy-manager and Cloudflare, so its directory redirect pointed at `http://technicallabs.org/ai/` and the browser took an extra hop back to https. `absolute_redirect off` makes redirects relative (`Location: /ai/`), so they keep the scheme and host the visitor used.
+
+### Changed
+- The burger button now reports its state to assistive technology: `aria-controls="nav-menu"` and an `aria-expanded` value that `app.js` keeps in sync when the menu opens, closes, or a menu link is chosen.
+
 ## [1.0.7] - 2026-11-06
 
 ### Added
