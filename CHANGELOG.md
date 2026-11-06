@@ -2,6 +2,14 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.7] - 2026-11-06
+
+### Added
+- **Technical Labs AI guide at `/ai/`.** A standalone page for testers of our self-hosted AI models (Ornith-1.5-122B, Ornith-1.5-35B, Qwen3.8-27B TURBO on an ASUS Ascent GX10): the two setups and when each one wins, measured team-job results for 1 to 6 people at once, a minute-by-minute example job, the full model catalog with exact builds, and ready-to-copy settings for OpenCode and Claude Code. A "For companies" section explains how a Claude Team/Enterprise Owner adds the TechLabs connector and how staff connect with their own key. Served by the existing Nginx `location /` rule (`/ai/` resolves to `ai/index.html`, revalidated like every HTML document); no server changes.
+- **FAQ section** on the home page (`#faq`), with three questions: what Technical Labs AI is, how to connect to it (a button links to `/ai/#connect`), and how to get access. Native `<details>` elements, so it works without JavaScript and is keyboard accessible.
+- `FAQ` links in the header navigation and the footer navigation. Between 769px and 1100px the header hides its FAQ link (it stays in the footer and on the page), and from 769px to 960px the header text and gaps shrink slightly, so the bar stays on one line in every language; nav labels and the logo no longer wrap onto two lines.
+- New `faq` translation group (9 keys) and `nav.faq` across all ten locales. All ten locales are at full key parity: 152 keys each, no drift.
+
 ## [1.0.6] - 2026-08-29
 
 ### Added
