@@ -4,7 +4,8 @@
     "portal": "Portal",
     "projects": "Proyectos",
     "resume": "Currículum y Habilidades",
-    "services": "Servicios y Consultoría"
+    "services": "Servicios y Consultoría",
+    "faq": "Preguntas"
   },
   "hero": {
     "title": "Aprendizaje Interactivo de TI e<br>Ingeniería de Sistemas",
@@ -131,6 +132,17 @@
     "channel": "Canal",
     "cta": "Abrir chat web",
     "hint": "Se abre en tu navegador: nada que instalar"
+  },
+  "faq": {
+    "tag": "Preguntas",
+    "heading": "Preguntas frecuentes",
+    "q1": "¿Qué es Technical Labs AI?",
+    "a1": "Nuestros propios modelos de IA para programar, que funcionan en un ASUS Ascent GX10 en nuestro laboratorio. Puedes usarlos desde Claude Code, OpenCode o la app de Claude, con hasta un millón de tokens de contexto.",
+    "q2": "¿Cómo me conecto a Technical Labs AI?",
+    "a2": "Sigue nuestra guía de configuración. Incluye ajustes listos para copiar para Claude Code y OpenCode, y los pasos para añadir el conector de TechLabs al Claude de tu empresa.",
+    "a2_link": "Abrir la guía de conexión",
+    "q3": "¿Cómo obtengo acceso?",
+    "a3": "Mientras hacemos pruebas, el acceso es solo por invitación. Pide a Nicholas una clave personal y te la enviará directamente."
   },
   "footer": {
     "brand_desc": "Ofrecemos simuladores de laboratorio de TI de alta calidad, mentoría de implementación personalizada y soluciones de red robustas.",

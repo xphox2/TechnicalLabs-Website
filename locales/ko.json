@@ -4,7 +4,8 @@
     "portal": "포털",
     "projects": "프로젝트",
     "resume": "이력서 및 기술",
-    "services": "서비스 및 컨설팅"
+    "services": "서비스 및 컨설팅",
+    "faq": "자주 묻는 질문"
   },
   "hero": {
     "title": "인터랙티브 IT 학습 &<br>시스템 엔지니어링",
@@ -131,6 +132,17 @@
     "channel": "채널",
     "cta": "웹 채팅 열기",
     "hint": "브라우저에서 열립니다 — 설치할 것이 없습니다"
+  },
+  "faq": {
+    "tag": "질문",
+    "heading": "자주 묻는 질문",
+    "q1": "Technical Labs AI란 무엇인가요?",
+    "a1": "저희 연구실의 ASUS Ascent GX10에서 실행되는 자체 코딩용 AI 모델입니다. Claude Code, OpenCode 또는 Claude 앱에서 사용할 수 있으며 최대 100만 토큰의 컨텍스트를 지원합니다.",
+    "q2": "Technical Labs AI에 어떻게 연결하나요?",
+    "a2": "설정 가이드를 따르세요. Claude Code와 OpenCode용으로 바로 복사해 쓸 수 있는 설정과, 회사 Claude에 TechLabs 커넥터를 추가하는 방법이 나와 있습니다.",
+    "a2_link": "연결 가이드 열기",
+    "q3": "어떻게 이용할 수 있나요?",
+    "a3": "테스트 기간에는 초대받은 분만 이용할 수 있습니다. Nicholas에게 개인 키를 요청하면 직접 보내 드립니다."
   },
   "footer": {
     "brand_desc": "고품질 IT 실습 시뮬레이터, 맞춤형 배포 멘토링, 견고한 네트워킹 솔루션을 제공합니다.",

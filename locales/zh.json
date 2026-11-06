@@ -4,7 +4,8 @@
     "portal": "Portal",
     "projects": "项目",
     "resume": "简历与技能",
-    "services": "服务与咨询"
+    "services": "服务与咨询",
+    "faq": "常见问题"
   },
   "hero": {
     "title": "互动式IT学习与<br>系统工程",
@@ -131,6 +132,17 @@
     "channel": "频道",
     "cta": "打开网页聊天",
     "hint": "在浏览器中打开 — 无需安装"
+  },
+  "faq": {
+    "tag": "问题",
+    "heading": "常见问题",
+    "q1": "什么是 Technical Labs AI？",
+    "a1": "我们自己的 AI 编程模型，运行在我们实验室的 ASUS Ascent GX10 上。你可以在 Claude Code、OpenCode 或 Claude 应用中使用它们，最多支持一百万个 token 的上下文。",
+    "q2": "如何连接 Technical Labs AI？",
+    "a2": "请按照我们的设置指南操作。指南提供可直接复制的 Claude Code 和 OpenCode 设置，以及将 TechLabs 连接器添加到公司 Claude 的步骤。",
+    "a2_link": "打开连接指南",
+    "q3": "如何获得访问权限？",
+    "a3": "测试期间仅限受邀使用。请向 Nicholas 申请个人密钥，他会直接发给你。"
   },
   "footer": {
     "brand_desc": "提供高质量的IT实验模拟器、定制化部署指导以及稳健的网络解决方案。",
