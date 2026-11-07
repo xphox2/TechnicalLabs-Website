@@ -2,6 +2,11 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.10] - 2026-11-07
+
+### Changed
+- **TechLabs connector URL** in the `/ai/` guide is now `https://mcp.technicallabs.org/mcp`, on the standard HTTPS port through Cloudflare. The Claude app's servers never connect to port 8443, so the direct address from 1.0.9 worked only for Claude Code. Verified on 2026-11-07: a full Claude app connect from a phone hotspot (sign-in, token, tool calls up to 75 s), and a 201-second tool call through Cloudflare. The connector sends a progress update every 10 seconds, so Cloudflare's 100-second limit doesn't cut long answers. Claude Code uses the same address.
+
 ## [1.0.9] - 2026-11-07
 
 ### Added

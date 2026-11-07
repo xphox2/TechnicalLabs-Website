@@ -378,7 +378,7 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
       <p><b>An Owner adds it once</b></p>
       <ol class="plain">
         <li>Open <b>Organization settings → Connectors</b>, click <b>Add</b>, then <b>Custom</b>.</li>
-        <li>Name: <code>TechLabs</code>. URL: <code>https://llm.technicallabs.org:8443/mcp</code></li>
+        <li>Name: <code>TechLabs</code>. URL: <code>https://mcp.technicallabs.org/mcp</code></li>
         <li>For the OAuth client, choose <b>Register automatically</b>, then <b>Add</b>.</li>
       </ol>
       <p><b>Each staff member connects</b></p>
@@ -412,14 +412,14 @@ claude</pre>
 <section class="sheet" id="connector">
   <div class="tag"><span><b>Connector</b></span><span>Connect and test in two minutes</span></div>
   <h2>Connector: connect and test</h2>
-  <p>The TechLabs connector address is <code>https://llm.technicallabs.org:8443/mcp</code>. It works from any network, including a phone hotspot. Every connection signs in with your own TechLabs key, so keep the key private.</p>
+  <p>The TechLabs connector address is <code>https://mcp.technicallabs.org/mcp</code>. It works from any network, including a phone hotspot. Every connection signs in with your own TechLabs key, so keep the key private.</p>
   <div class="grid2">
     <div class="card" style="--c: var(--setB)">
       <h3>In the Claude app</h3>
       <div class="sub">claude.ai, desktop and mobile</div>
       <ol class="plain">
         <li>If your company already added TechLabs, skip to step 3. On Pro or Max, open <b>Customize → Connectors → Add custom connector</b>.</li>
-        <li>Name: <code>TechLabs</code>. URL: <code>https://llm.technicallabs.org:8443/mcp</code>. If it asks about an OAuth client, choose <b>Register automatically</b>.</li>
+        <li>Name: <code>TechLabs</code>. URL: <code>https://mcp.technicallabs.org/mcp</code>. If it asks about an OAuth client, choose <b>Register automatically</b>.</li>
         <li>Click <b>Connect</b>. Our sign-in page opens: paste your TechLabs key and click <b>Connect</b>. Claude reopens and shows TechLabs as connected.</li>
         <li>In a chat, turn it on under <b>+ → Connectors</b>.</li>
       </ol>
@@ -428,7 +428,7 @@ claude</pre>
       <h3>In Claude Code</h3>
       <div class="sub">connects straight from your computer</div>
       <pre>claude mcp add --transport http techlabs \
-  https://llm.technicallabs.org:8443/mcp</pre>
+  https://mcp.technicallabs.org/mcp</pre>
       <ol class="plain">
         <li>Start <code>claude</code>, type <code>/mcp</code>, pick <b>techlabs</b> and choose <b>Authenticate</b>.</li>
         <li>Your browser opens our sign-in page. Paste your TechLabs key and click <b>Connect</b>, then go back to Claude Code.</li>
