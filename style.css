@@ -1865,20 +1865,21 @@ footer {
     gap: 1.5rem;
     box-shadow: var(--shadow-lg);
   }
-  nav.mobile-active ul {
+  /* app.js toggles .mobile-active on .nav-container (the parent of <nav> and of the burger button) */
+  .nav-container.mobile-active nav ul {
     display: flex;
   }
   .burger-menu {
     display: flex;
   }
   /* Burger transformations */
-  nav.mobile-active .burger-menu span:nth-child(1) {
+  .nav-container.mobile-active .burger-menu span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
-  nav.mobile-active .burger-menu span:nth-child(2) {
+  .nav-container.mobile-active .burger-menu span:nth-child(2) {
     opacity: 0;
   }
-  nav.mobile-active .burger-menu span:nth-child(3) {
+  .nav-container.mobile-active .burger-menu span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
   }
   .footer-grid {

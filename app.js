@@ -36,15 +36,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainHeader = document.getElementById('main-header');
   const navMenu = document.getElementById('nav-menu');
 
+  const setMobileNav = (open) => {
+    navMenu.parentElement.classList.toggle('mobile-active', open);
+    mobileToggle.setAttribute('aria-expanded', String(open));
+  };
+
   mobileToggle.addEventListener('click', () => {
-    navMenu.parentElement.classList.toggle('mobile-active');
+    setMobileNav(!navMenu.parentElement.classList.contains('mobile-active'));
   });
 
   // Close mobile nav when clicking a menu link
   const navLinks = navMenu.querySelectorAll('a');
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
-      navMenu.parentElement.classList.remove('mobile-active');
+      setMobileNav(false);
     });
   });
 

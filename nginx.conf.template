@@ -14,6 +14,11 @@ server {
 
     root /usr/share/nginx/html;
 
+    # Behind nginx-proxy-manager and Cloudflare this server only sees plain http, so absolute
+    # redirects (e.g. /ai -> /ai/) would point at http://. Relative Location headers keep the
+    # browser on whatever scheme and host it used.
+    absolute_redirect off;
+
     # =========================================================================
     # Cache policy — updates always take effect without a manual refresh.
     #
