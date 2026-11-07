@@ -130,7 +130,9 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
 .cmp td.build { font-size: 12.5px; white-space: normal; overflow-wrap: anywhere; }
 .plain { padding-left: 20px; margin: 4px 0 12px; } .plain li { margin-bottom: 4px; font-size: 15.5px; }
 #companies .card pre { margin: 10px 0 12px; white-space: pre-wrap; overflow-wrap: anywhere; }
-#companies code { overflow-wrap: anywhere; }
+#connector .card pre { margin: 10px 0 12px; white-space: pre-wrap; overflow-wrap: anywhere; }
+#connector code, #companies code { overflow-wrap: anywhere; }
+#connector .grid2 > *, #companies .grid2 > * { min-width: 0; }
 .topnav { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: center; padding: 18px 0 0; font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.04em; }
 .topnav a { color: var(--ink); text-decoration: none; }
 .topnav a:hover { text-decoration: underline; text-decoration-color: var(--accent); }
@@ -154,7 +156,7 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
 </head>
 <body>
 <div class="wrap">
-<nav class="topnav" aria-label="Page"><a class="home" href="/">&larr; technicallabs.org</a><a href="#connect">Connect</a><a href="#companies">For companies</a><a href="/#faq">FAQ</a></nav>
+<nav class="topnav" aria-label="Page"><a class="home" href="/">&larr; technicallabs.org</a><a href="#connect">Connect</a><a href="#companies">For companies</a><a href="#connector">Test the connector</a><a href="/#faq">FAQ</a></nav>
 
 <section class="sheet">
   <div class="tag"><span><b>Invitation</b></span><span>TechLabs test program</span><span>Tested November 2026</span></div>
@@ -283,7 +285,7 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
   <p>You'll get a personal key. Paste it where it says <code>YOUR_KEY</code>. These settings start you on Setup B; the OpenCode file lists every model, and only the ones in the running setup will answer.</p>
   <div class="card" style="--c: var(--accent); margin: 6px 0 22px">
     <h3>Using the Claude app?</h3>
-    <p>The Claude app (claude.ai, desktop or mobile) only talks to Anthropic's own models, and there is no TechLabs connector for it yet. To use our models you need Claude Code or OpenCode, set up below with your own TechLabs key. Ask Nicholas for access and he'll send you one. Your normal Claude account keeps working as before.</p>
+    <p>Add the TechLabs connector and Claude can hand work to our models while it stays in charge of the chat. The steps are under <a href="#connector">Connector: connect and test</a> below. To run whole coding sessions on our models instead, use Claude Code or OpenCode with the settings here. Either way you need your own TechLabs key: ask Nicholas and he'll send you one. Your normal Claude account keeps working as before.</p>
   </div>
   <div class="grid2">
     <div class="snip">
@@ -376,7 +378,7 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
       <p><b>An Owner adds it once</b></p>
       <ol class="plain">
         <li>Open <b>Organization settings → Connectors</b>, click <b>Add</b>, then <b>Custom</b>.</li>
-        <li>Name: <code>TechLabs</code>. URL: <code>https://mcp.technicallabs.org/techlabs/mcp</code></li>
+        <li>Name: <code>TechLabs</code>. URL: <code>https://llm.technicallabs.org:8443/mcp</code></li>
         <li>For the OAuth client, choose <b>Register automatically</b>, then <b>Add</b>.</li>
       </ol>
       <p><b>Each staff member connects</b></p>
@@ -385,7 +387,7 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
         <li>Our sign-in page opens. Paste your personal TechLabs key (ask Nicholas for one) and click <b>Connect</b>.</li>
         <li>In a chat, turn it on under <b>+ → Connectors</b>.</li>
       </ol>
-      <p class="note">New this week: we have tested every step from our side. If connecting fails, send Nicholas the error text. Claude stays in charge of the conversation and calls our models as tools: <code>list_models</code> shows what's running, <code>ask_model</code> sends a prompt. Each answer has a 200-second limit, so ask for focused pieces of work. On Pro or Max, add it yourself under <b>Customize → Connectors → Add custom connector</b>.</p>
+      <p class="note">Claude stays in charge of the conversation and calls our models as tools: <code>list_models</code> shows what's running, <code>ask_model</code> sends a prompt. Each answer has a 200-second limit, so ask for focused pieces of work. On Pro or Max, add it yourself under <b>Customize → Connectors → Add custom connector</b>.</p>
       <pre>Use TechLabs: ask qwen3.8-27b-turbo-openai to write
 unit tests for this function, then review them.</pre>
     </div>
@@ -403,6 +405,52 @@ claude --settings ~/.claude/techlabs.json \
 # your usual Claude, untouched, in another terminal
 claude</pre>
       <p class="note">Admins can see each person's usage and set budgets per key. Anthropic doesn't officially support Claude Code on non-Claude models; we test every Claude Code version we recommend (currently 2.1.317) and turn off the one feature our models can't handle (tool search).</p>
+    </div>
+  </div>
+</section>
+
+<section class="sheet" id="connector">
+  <div class="tag"><span><b>Connector</b></span><span>Connect and test in two minutes</span></div>
+  <h2>Connector: connect and test</h2>
+  <p>The TechLabs connector address is <code>https://llm.technicallabs.org:8443/mcp</code>. It works from any network, including a phone hotspot. Every connection signs in with your own TechLabs key, so keep the key private.</p>
+  <div class="grid2">
+    <div class="card" style="--c: var(--setB)">
+      <h3>In the Claude app</h3>
+      <div class="sub">claude.ai, desktop and mobile</div>
+      <ol class="plain">
+        <li>If your company already added TechLabs, skip to step 3. On Pro or Max, open <b>Customize → Connectors → Add custom connector</b>.</li>
+        <li>Name: <code>TechLabs</code>. URL: <code>https://llm.technicallabs.org:8443/mcp</code>. If it asks about an OAuth client, choose <b>Register automatically</b>.</li>
+        <li>Click <b>Connect</b>. Our sign-in page opens: paste your TechLabs key and click <b>Connect</b>. Claude reopens and shows TechLabs as connected.</li>
+        <li>In a chat, turn it on under <b>+ → Connectors</b>.</li>
+      </ol>
+    </div>
+    <div class="card" style="--c: var(--setA)">
+      <h3>In Claude Code</h3>
+      <div class="sub">connects straight from your computer</div>
+      <pre>claude mcp add --transport http techlabs \
+  https://llm.technicallabs.org:8443/mcp</pre>
+      <ol class="plain">
+        <li>Start <code>claude</code>, type <code>/mcp</code>, pick <b>techlabs</b> and choose <b>Authenticate</b>.</li>
+        <li>Your browser opens our sign-in page. Paste your TechLabs key and click <b>Connect</b>, then go back to Claude Code.</li>
+      </ol>
+      <p class="note">This adds our models as tools next to your normal Claude. To run the whole session on our models, use the settings file in <a href="#connect">Connect</a>.</p>
+    </div>
+  </div>
+  <div class="grid2" style="margin-top:22px">
+    <div class="snip">
+      <header><b>Test it: paste this into a chat</b></header>
+      <pre>Use TechLabs: list the models, then ask
+ornith-35b-openai what 17 times 23 is.</pre>
+      <p class="note">You should see the running models, then the answer 391 within a few seconds. The first call can take a little longer while the model warms up.</p>
+    </div>
+    <div class="snip">
+      <header><b>If it doesn't work</b></header>
+      <ul class="plain">
+        <li><b>"That key wasn't accepted":</b> paste the whole key, starting with <code>sk-</code>, with no spaces.</li>
+        <li><b>"This sign-in link has expired or was opened somewhere else":</b> the page works for 10 minutes, in the browser that first opened it. Go back and click Connect again.</li>
+        <li><b>Claude says it couldn't reach Technical Labs:</b> send Nicholas the full error text, including the reference that starts with <code>ofid_</code>.</li>
+        <li><b>An answer stops after about 200 seconds:</b> that's the limit per answer. Ask for a smaller piece of work.</li>
+      </ul>
     </div>
   </div>
 </section>

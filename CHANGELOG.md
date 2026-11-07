@@ -2,6 +2,16 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.9] - 2026-11-07
+
+### Added
+- **"Connector: connect and test" section** in the `/ai/` guide (`#connector`, linked from the page menu): steps for the Claude app and for Claude Code (`claude mcp add --transport http`, then `/mcp` and Authenticate), a test prompt with the expected answer, and fixes for the four errors people can hit. The error wording matches the sign-in page exactly.
+
+### Changed
+- **TechLabs connector URL** is now `https://llm.technicallabs.org:8443/mcp`, served directly with no Cloudflare in the path, so long tool calls are not cut off at Cloudflare's 100-second limit. It works from any network; every connection signs in with a personal key. This replaces the Cloudflare address from 1.0.8 at the owner's request. Claude's servers did not connect to port 8443 in a Nov 6 test, so the guide asks testers to send the error text if the Claude app can't connect; Claude Code connects from the person's own computer and is not affected.
+- The "Using the Claude app?" box no longer says there is no connector. It points to the new section.
+- Long connector addresses wrap inside their cards on phones instead of widening the page.
+
 ## [1.0.8] - 2026-11-06
 
 ### Fixed
