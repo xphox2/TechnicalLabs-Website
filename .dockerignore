@@ -6,3 +6,6 @@ npm-debug.log*
 Makefile
 docker-compose.yml
 .env
+
+# Planning notes (tasks/todo.md) are not part of the website
+tasks/

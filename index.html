@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
   <!-- Google tag (gtag.js) -->
   <script>
@@ -31,862 +31,1706 @@
     gtag('config', 'G-KKV5S28YZS');
   </script>
 
-  <meta name="description" content="Technical Labs offers interactive IT learning resources, network lab simulators, best-practice deployment services, and professional engineering portfolios.">
-  <meta name="keywords" content="IT Labs, Linux Admin, Network Simulator, Subnet Calculator, Firewall Monitoring, Vinylfo, Rust Plugin, IT Professional Resume">
-  <meta name="author" content="Technical Labs">
-  
-  <title>Technical Labs | Interactive IT Learning & Systems Engineering</title>
-  
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Technical Labs is the engineering practice of Nicholas Diotte, Principal Engineer (Network &amp; Infrastructure) in Toronto. Deployment mentorship, architecture audits, custom tooling, production software (Vinylfo, Firewall Monitor, SignArtSaver, WiFi Doctor), and self-hosted AI coding models.">
+  <meta name="author" content="Nicholas Diotte — Technical Labs">
+  <title data-i18n="meta.title">Technical Labs — Nicholas Diotte | Network &amp; Infrastructure Engineering</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=dev">
   <link rel="stylesheet" href="style.css?v=dev">
-  
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>document.documentElement.classList.add('js-enabled');</script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link" data-i18n="a11y.skip">Skip to main content</a>
 
-  <!-- HEADER / NAVIGATION -->
-  <header id="main-header">
-    <div class="container nav-container">
-      <a href="#" class="logo" id="header-logo">
-        <div class="logo-icon">
-          <i data-lucide="terminal"></i>
-        </div>
-        <span>Technical Labs</span>
+  <!-- ICON SPRITE (one copy of each icon; referenced with <use href="#i-…">) -->
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-brand" viewBox="0 0 24 24"><path d="M5 8L10 12L5 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="16" x2="19" y2="16" fill="none" style="stroke:var(--signal-emerald)" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></g></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></g></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></g></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></g></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></g></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-branch" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></g></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></g></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></g></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></g></symbol>
+    <symbol id="i-windows" viewBox="0 0 24 24"><path fill="currentColor" d="M0 3.45L9.75 2.1v9.45H0m10.95-9.6L24 0v11.4H10.95M0 12.6h9.75v9.45L0 20.7M10.95 12.6H24V24l-12.9-1.8"/></symbol>
+    <symbol id="i-apple" viewBox="0 0 24 24"><path fill="currentColor" d="M12.15 6.9c-.95 0-2.41-1.08-3.96-1.04-2.04.03-3.91 1.18-4.96 3.01-2.12 3.68-.55 9.1 1.52 12.09 1.01 1.45 2.21 3.09 3.79 3.04 1.52-.07 2.09-.99 3.94-.99 1.83 0 2.35.99 3.96.95 1.64-.03 2.68-1.48 3.68-2.95 1.15-1.69 1.63-3.32 1.66-3.41-.04-.01-3.18-1.22-3.22-4.86-.03-3.04 2.48-4.49 2.6-4.56-1.43-2.09-3.62-2.32-4.39-2.38-2-.15-3.68 1.1-4.62 1.1zM15.53 3.83c.84-1.01 1.4-2.43 1.25-3.83-1.21.05-2.66.81-3.53 1.82-.78.9-1.46 2.34-1.28 3.71 1.34.1 2.72-.69 3.56-1.7z"/></symbol>
+    <symbol id="i-linux" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3"/><line x1="13" y1="15" x2="17" y2="15"/></g></symbol>
+    <symbol id="i-docker" viewBox="0 0 24 24"><path fill="currentColor" d="M13.98 11.08h2.12a.19.19 0 00.19-.19V9a.19.19 0 00-.19-.19h-2.12a.19.19 0 00-.18.19v1.89c0 .1.08.19.18.19m-2.95-5.43h2.12a.19.19 0 00.18-.19V3.57a.19.19 0 00-.18-.18h-2.12a.19.19 0 00-.19.18v1.89c0 .1.08.19.19.19m0 2.72h2.12a.19.19 0 00.18-.19V6.29a.19.19 0 00-.18-.19h-2.12a.19.19 0 00-.19.19v1.89c0 .1.08.19.19.19m-2.93 0h2.12a.19.19 0 00.18-.19V6.29a.19.19 0 00-.18-.19H8.1a.19.19 0 00-.19.19v1.89c0 .1.09.19.19.19m-2.96 0h2.12a.19.19 0 00.18-.19V6.29a.19.19 0 00-.18-.19H5.14a.19.19 0 00-.19.19v1.89c0 .1.09.19.19.19m5.89 2.71h2.12a.19.19 0 00.18-.19V9a.19.19 0 00-.18-.19h-2.12a.19.19 0 00-.19.19v1.89c0 .1.08.19.19.19m-2.93 0h2.12a.19.19 0 00.18-.19V9a.19.19 0 00-.18-.19H8.1a.19.19 0 00-.19.19v1.89c0 .1.09.19.19.19m-2.96 0h2.12a.19.19 0 00.18-.19V9a.19.19 0 00-.18-.19H5.14a.19.19 0 00-.19.19v1.89c0 .1.09.19.19.19m-2.92 0h2.12a.19.19 0 00.18-.19V9a.19.19 0 00-.18-.19H2.22a.19.19 0 00-.18.19v1.89c0 .1.08.19.18.19M23.76 9.89c-.06-.05-.67-.51-1.95-.51-.34 0-.68.03-1.01.09-.25-1.7-1.65-2.53-1.72-2.57l-.34-.2-.23.33c-.28.44-.49.92-.61 1.43-.23.97-.09 1.88.4 2.66-.59.33-1.55.41-1.74.42H.75a.75.75 0 00-.75.75 11.4 11.4 0 00.69 4.06c.55 1.43 1.36 2.48 2.41 3.12 1.18.73 3.1 1.14 5.28 1.14.98 0 1.96-.09 2.93-.27a12.2 12.2 0 003.82-1.39c.98-.56 1.86-1.28 2.61-2.13 1.25-1.42 2-3 2.55-4.4h.22c1.37 0 2.22-.55 2.68-1.01.31-.29.55-.65.71-1.05l.1-.28z"/></symbol>
+    <symbol id="i-android" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></g></symbol>
+    <symbol id="i-tv" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="13" rx="2"/><polyline points="17 2 12 7 7 2"/></g></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></g></symbol>
+    <symbol id="i-rust" viewBox="0 0 48 48"><rect width="48" height="48" rx="6" style="fill:var(--rust-brand)"/><path d="M15.72 21.64L5.52 19.97V30.14L15.72 28.47V21.64Z" style="fill:var(--rust-mark)"/><path d="M28.47 15.72L30.14 5.52H19.97L21.64 15.72H28.47Z" style="fill:var(--rust-mark)"/><path d="M29.27 34.05L35.26 42.48L42.48 35.26L34.05 29.27L29.27 34.05Z" style="fill:var(--rust-mark)"/><circle cx="24" cy="24" r="4" style="fill:var(--rust-mark)"/></symbol>
+  </svg>
+
+  <!-- AMBIENT NOC BACKDROP -->
+  <div class="ambient-canvas" aria-hidden="true">
+    <div class="ambient-glow"></div>
+    <div class="ambient-grid"></div>
+  </div>
+
+  <!-- SITE HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="#hero" class="brand-mark">
+        <span class="brand-glyph" aria-hidden="true"><svg width="20" height="20"><use href="#i-brand"/></svg></span>
+        <span class="brand-name">Technical Labs</span>
       </a>
-      
-      <nav id="nav-menu">
-        <ul>
-          <li><a href="#hero" id="nav-link-home" data-i18n="nav.home">Home</a></li>
-          <li><a href="http://portal.technicallabs.org" id="nav-link-portal" target="_blank" rel="noopener noreferrer" data-i18n="nav.portal">Portal</a></li>
-          <li><a href="#projects" id="nav-link-projects" data-i18n="nav.projects">Projects</a></li>
-          <li><a href="#resume" id="nav-link-resume" data-i18n="nav.resume">Resume &amp; Skills</a></li>
-          <li><a href="#services" id="nav-link-services" data-i18n="nav.services">Services &amp; Consulting</a></li>
-          <li class="nav-item-faq"><a href="#faq" id="nav-link-faq" data-i18n="nav.faq">FAQ</a></li>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link"><span data-i18n="nav.home">Home</span></a></li>
+          <li><a href="#projects" class="nav-link"><span data-i18n="nav.projects">Projects</span></a></li>
+          <li><a href="#services" class="nav-link"><span data-i18n="nav.services">Services &amp; Consulting</span></a></li>
+          <li><a href="#resume" class="nav-link"><span data-i18n="nav.resume">Resume &amp; Skills</span></a></li>
+          <li><a href="#faq" class="nav-link"><span data-i18n="nav.faq">FAQ</span></a></li>
+          <li class="nav-sep" aria-hidden="true"></li>
+          <li>
+            <a href="/ai/" class="nav-link nav-link-pill">
+              <span class="pip pip-amber" aria-hidden="true"></span>
+              <span data-i18n="nav.ai">AI</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://portal.technicallabs.org" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-ext">
+              <span data-i18n="nav.portal">Portal</span>
+              <span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span>
+              <svg width="12" height="12" aria-hidden="true"><use href="#i-ext"/></svg>
+            </a>
+          </li>
+          <li class="nav-book-item">
+            <a href="#booking" class="btn btn-primary btn-sm nav-book" data-book-link>
+              <span data-i18n="nav.book">Book a session</span>
+              <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </li>
         </ul>
       </nav>
-      
-      <div class="nav-controls">
-        <div class="lang-picker-container" id="lang-picker-container">
-          <button class="lang-picker-btn" id="lang-picker-btn" aria-label="Change Language">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="globe-icon"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-            <span id="active-lang-text">EN</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="chevron-icon"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+      <div class="header-controls">
+        <a href="#booking" class="btn btn-primary btn-sm header-book" data-book-link>
+          <span data-i18n="nav.book">Book a session</span>
+        </a>
+
+        <!-- Language Picker (10 required languages) -->
+        <div class="lang-picker" id="lang-picker">
+          <button type="button" class="lang-trigger" id="lang-trigger" aria-label="Change language" aria-expanded="false" aria-haspopup="listbox" aria-controls="lang-listbox">
+            <svg width="15" height="15" aria-hidden="true"><use href="#i-globe"/></svg>
+            <span class="lang-code" id="active-lang-code">EN</span>
+            <svg class="lang-chevron" width="12" height="12" aria-hidden="true"><use href="#i-chevron"/></svg>
           </button>
-          <div class="lang-dropdown" id="lang-dropdown">
-            <button class="lang-option active" data-lang="en">English</button>
-            <button class="lang-option" data-lang="de">Deutsch</button>
-            <button class="lang-option" data-lang="es">Español</button>
-            <button class="lang-option" data-lang="fr">Français</button>
-            <button class="lang-option" data-lang="it">Italiano</button>
-            <button class="lang-option" data-lang="pt">Português</button>
-            <button class="lang-option" data-lang="ru">Русский</button>
-            <button class="lang-option" data-lang="ja">日本語</button>
-            <button class="lang-option" data-lang="ko">한국어</button>
-            <button class="lang-option" data-lang="zh">中文</button>
-          </div>
+          <ul class="lang-dropdown" id="lang-listbox" role="listbox" aria-label="Select language" hidden>
+            <li role="option" tabindex="0" class="lang-choice is-active" aria-selected="true" data-lang="en" data-code="EN"><span>English</span><span class="lang-tag">EN</span></li>
+            <li role="option" tabindex="-1" class="lang-choice" aria-selected="false" data-lang="de" data-code="DE"><span>Deutsch</span><span class="lang-tag">DE</span></li>
+            <li role="option" tabindex="-1" class="lang-choice" aria-selected="false" data-lang="es" data-code="ES"><span>Español</span><span class="lang-tag">ES</span></li>
+            <li role="option" tabindex="-1" class="lang-choice" aria-selected="false" data-lang="fr" data-code="FR"><span>Français</span><span class="lang-tag">FR</span></li>
+            <li role="option" tabindex="-1" class="lang-choice" aria-selected="false" data-lang="it" data-code="IT"><span>Italiano</span><span class="lang-tag">IT</span></li>
+            <li role="option" tabindex="-1" class="lang-choice" aria-selected="false" data-lang="pt" data-code="PT"><span>Português</span><span class="lang-tag">PT</span></li>
+            <li role="option" tabindex="-1" class="lang-choice" aria-selected="false" data-lang="ru" data-code="RU"><span>Русский</span><span class="lang-tag">RU</span></li>
+            <li role="option" tabindex="-1" class="lang-choice" aria-selected="false" data-lang="ja" data-code="JA"><span>日本語</span><span class="lang-tag">JA</span></li>
+            <li role="option" tabindex="-1" class="lang-choice" aria-selected="false" data-lang="ko" data-code="KO"><span>한국어</span><span class="lang-tag">KO</span></li>
+            <li role="option" tabindex="-1" class="lang-choice" aria-selected="false" data-lang="zh" data-code="ZH"><span>中文</span><span class="lang-tag">ZH</span></li>
+          </ul>
         </div>
-        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle light/dark theme">
-          <i data-lucide="moon" class="moon-icon"></i>
-          <i data-lucide="sun" class="sun-icon"></i>
-        </button>
-        <button class="burger-menu" id="mobile-menu-toggle" aria-label="Toggle menu" aria-controls="nav-menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+
+        <!-- Mobile Menu Toggle -->
+        <button type="button" class="nav-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-controls="primary-nav" aria-expanded="false">
+          <span class="nav-toggle-bars" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </span>
         </button>
       </div>
     </div>
   </header>
 
-  <main>
-    <!-- HERO SECTION -->
-    <section id="hero" class="hero">
-      <div class="hero-bg-grid"></div>
-      <div class="hero-blob"></div>
-      
+  <main id="main-content">
+    <!-- HERO + OPERATIONS CONSOLE -->
+    <section id="hero" class="hero-section" aria-labelledby="hero-heading">
       <div class="container hero-grid">
-        <div class="hero-content">
-          <a href="https://www.technicallabs.org" class="badge-tag" style="text-decoration: none; transition: background-color 0.2s ease, border-color 0.2s ease;">www.technicallabs.org</a>
-          <h1 data-i18n="hero.title" data-i18n-html>Interactive IT Learning &amp;<br>Systems Engineering</h1>
-          <p data-i18n="hero.subtitle">
-            Welcome to Technical Labs. We provide hands-on interactive lab resources to help aspiring IT professionals build real-world skills, offer custom consulting for best-practice deployments, and showcase production-grade projects.
+        <div class="hero-copy" data-reveal>
+          <div class="eyebrow-bar">
+            <span class="pip pip-emerald pip-pulse" aria-hidden="true"></span>
+            <span class="mono-label" data-i18n="hero.eyebrow">Nicholas Diotte · Principal Engineer · Toronto, ON / Remote</span>
+          </div>
+
+          <h1 id="hero-heading" data-i18n="hero.h1">Network &amp; infrastructure engineering, consulting, and production software.</h1>
+
+          <p class="hero-lede" data-i18n="hero.lede">
+            Nicholas Diotte is a Principal Engineer in Toronto who leads FortiGate deployments, infrastructure migrations and disaster-recovery testing. Technical Labs is his practice: 25+ years of network and infrastructure work since 1999, offered as 1-on-1 deployment mentorship, architecture audits and custom network tooling.
           </p>
-          <div class="hero-ctas">
-            <a href="#projects" class="btn btn-primary" id="hero-cta-projects">
-              <i data-lucide="briefcase"></i> <span data-i18n="hero.cta_projects">View Portfolio Projects</span>
+
+          <div class="hero-actions">
+            <a href="#booking" class="btn btn-primary" data-book-link>
+              <span data-i18n="hero.cta_book">Book a consulting session</span>
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
             </a>
-            <a href="#services" class="btn btn-secondary" id="hero-cta-services">
-              <i data-lucide="calendar"></i> <span data-i18n="hero.cta_services">Book Deployment Support</span>
+            <a href="#projects" class="btn btn-secondary">
+              <span data-i18n="hero.cta_explore">Explore active systems</span>
             </a>
           </div>
-        </div>
-        
-        <!-- ECOSYSTEM STATS HUD -->
-        <div class="hero-hud" id="hero-status-hud">
-          <div class="hud-header">
-            <div class="hud-title">
-              <i data-lucide="activity"></i> <span data-i18n="hud.title">System Monitor</span>
+
+          <div class="hero-topic-picker">
+            <p class="hero-topic-hint mono-label" id="hero-topic-hint" data-i18n="hero.topic_hint">Or start a booking with a topic</p>
+            <ul class="hero-topic-chips" aria-labelledby="hero-topic-hint">
+              <li><button type="button" class="topic-chip" data-pick-topic="firewalls_networking"><span data-i18n="scheduler.card_net_title">Firewalls &amp; Networking</span></button></li>
+              <li><button type="button" class="topic-chip" data-pick-topic="datacentre_infra"><span data-i18n="scheduler.card_fw_title">Data Centre &amp; Infrastructure</span></button></li>
+              <li><button type="button" class="topic-chip" data-pick-topic="automation"><span data-i18n="scheduler.card_docker_title">System &amp; Process Automation</span></button></li>
+              <li><button type="button" class="topic-chip" data-pick-topic="development"><span data-i18n="scheduler.card_dev_title">Custom Development</span></button></li>
+            </ul>
+          </div>
+
+          <dl class="hero-readout-strip">
+            <div class="readout-cell">
+              <dt data-i18n="hero.readout_experience">Experience</dt>
+              <dd data-i18n="hero.readout_experience_v">Since 1999 (25+ yrs)</dd>
             </div>
-            <div class="hud-status-indicator">
-              <span class="pulse-dot"></span> <span data-i18n="hud.status">Active</span>
+            <div class="readout-cell">
+              <dt data-i18n="hero.readout_focus">Focus</dt>
+              <dd data-i18n="hero.readout_focus_v">Firewalls · DC · Automation</dd>
+            </div>
+            <div class="readout-cell">
+              <dt data-i18n="hero.readout_certified">Certified</dt>
+              <dd>Cisco · Fortinet · Meraki · SonicWALL</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- LIVE SYSTEM MONITOR / OPERATIONS CONSOLE -->
+        <aside class="ops-console" id="hero-status-hud" aria-labelledby="ops-console-heading" data-reveal data-reveal-delay="1">
+          <div class="console-corner console-corner-tl" aria-hidden="true"></div>
+          <div class="console-corner console-corner-tr" aria-hidden="true"></div>
+          <div class="console-corner console-corner-bl" aria-hidden="true"></div>
+          <div class="console-corner console-corner-br" aria-hidden="true"></div>
+
+          <div class="ops-header">
+            <div class="ops-title-group">
+              <svg width="16" height="16" class="icon-cyan" aria-hidden="true"><use href="#i-activity"/></svg>
+              <h2 id="ops-console-heading" class="ops-heading" data-i18n="hud.title">System Monitor</h2>
+            </div>
+            <div class="ops-status-badge" id="ops-status-badge" data-state="pending">
+              <span class="pip pip-pulse" aria-hidden="true"></span>
+              <span id="ops-feed-state" data-i18n="hud.pending">Fetching</span>
             </div>
           </div>
 
-          <div class="hud-row">
-            <span class="hud-label"><i data-lucide="music" style="width: 14px; height: 14px;"></i> <span data-i18n="hud.vinyl">Vinyl Music</span></span>
-            <span class="hud-val" id="hud-vinylfo-status" data-i18n="hud.fetching">Fetching version...</span>
+          <div class="ops-subheader">
+            <span data-i18n="hud.telemetry">Release telemetry</span>
+            <span id="ops-source-label"><span data-i18n="hud.pending">Fetching</span> // <span data-i18n="hud.repos">4 repos</span></span>
           </div>
-          <div class="hud-row">
-            <span class="hud-label"><i data-lucide="shield-check" style="width: 14px; height: 14px;"></i> <span data-i18n="hud.fw_server">Firewall Server</span></span>
-            <span class="hud-val" id="hud-fwmon-server-status" data-i18n="hud.fetching">Fetching version...</span>
+
+          <ul class="ops-rows">
+            <li class="ops-row">
+              <button type="button" class="ops-row-btn" data-modal-open="modal-vinylfo">
+                <span class="ops-row-main">
+                  <span class="ops-service-name">Vinylfo</span>
+                  <span class="ops-repo-path"><span class="ops-repo-owner">xphox2/</span>Vinylfo-Releases</span>
+                </span>
+                <span class="ops-version-pill" id="hud-vinylfo-status" data-version-for="vinyl" data-stable="true" data-i18n="hud.fetching">Fetching…</span>
+              </button>
+            </li>
+            <li class="ops-row">
+              <button type="button" class="ops-row-btn" data-modal-open="modal-fwmon">
+                <span class="ops-row-main">
+                  <span class="ops-service-name">Firewall Monitor</span>
+                  <span class="ops-repo-path"><span class="ops-repo-line"><span class="ops-repo-owner">xphox2/</span>Firewall-Monitoring</span><span class="ops-repo-line"><span class="ops-repo-owner">xphox2/</span>Firewall-Collector</span></span>
+                </span>
+                <span class="ops-version-group">
+                  <span class="ops-version-pill"><span class="version-k" data-i18n="hud.server">server</span> <span id="hud-fwmon-server-status" data-version-for="fw_server" data-i18n="hud.fetching">Fetching…</span></span>
+                  <span class="ops-version-pill"><span class="version-k" data-i18n="hud.collector">collector</span> <span id="hud-fwmon-collector-status" data-version-for="fw_collector" data-i18n="hud.fetching">Fetching…</span></span>
+                </span>
+              </button>
+            </li>
+            <li class="ops-row">
+              <button type="button" class="ops-row-btn" data-modal-open="modal-rustplugin">
+                <span class="ops-row-main">
+                  <span class="ops-service-name">SignArtSaver</span>
+                  <span class="ops-repo-path"><span class="ops-repo-owner">xphox2/</span>SignArtSaver</span>
+                </span>
+                <span class="ops-version-pill" id="hud-rust-status" data-version-for="rust_plugin" data-i18n="hud.fetching">Fetching…</span>
+              </button>
+            </li>
+            <!-- Static row: private repository, no public release, nothing fetched -->
+            <li class="ops-row">
+              <button type="button" class="ops-row-btn" data-modal-open="modal-wifidoctor">
+                <span class="ops-row-main">
+                  <span class="ops-service-name">WiFi Doctor</span>
+                  <span class="ops-repo-path" data-i18n="hud.private_repo">private repository</span>
+                </span>
+                <span class="ops-version-pill ops-version-pill-status" data-i18n="projects.early_access">Early access</span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="ops-footer">
+            <a href="/ai/" class="ops-quicklink">
+              <span class="ops-quicklink-k" data-i18n="hud.quick_ai_k">Self-hosted AI</span>
+              <span class="ops-quicklink-v" data-i18n="hud.quick_ai_v">Setup guide · /ai/ →</span>
+            </a>
+            <a href="http://portal.technicallabs.org" target="_blank" rel="noopener noreferrer" class="ops-quicklink">
+              <span class="ops-quicklink-k" data-i18n="community.labs_label">Interactive IT labs</span>
+              <span class="ops-quicklink-v">portal.technicallabs.org ↗</span>
+              <span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span>
+            </a>
           </div>
-          <div class="hud-row">
-            <span class="hud-label"><i data-lucide="radio" style="width: 14px; height: 14px;"></i> <span data-i18n="hud.fw_collector">Firewall Collector</span></span>
-            <span class="hud-val" id="hud-fwmon-collector-status" data-i18n="hud.fetching">Fetching version...</span>
-          </div>
-          <div class="hud-row">
-            <span class="hud-label"><i data-lucide="gamepad-2" style="width: 14px; height: 14px;"></i> <span data-i18n="hud.rust">Rust Game Plugin</span></span>
-            <span class="hud-val" id="hud-rust-status" data-i18n="hud.fetching">Fetching version...</span>
-          </div>
-        </div>
+        </aside>
       </div>
     </section>
 
-
-
-    <!-- PORTFOLIO SECTION -->
-    <section id="projects" class="section">
+    <!-- SECTION 01: PROJECTS -->
+    <section id="projects" class="section" aria-labelledby="projects-heading">
       <div class="container">
-        <div class="section-header">
-          <span class="badge-tag" data-i18n="projects.tag">Showcase</span>
-          <h2 data-i18n="projects.heading">Active Engineering Projects</h2>
-          <p data-i18n="projects.intro">
-            Explore our open-source tools, server software, and plugins engineered for performance, streaming overlays, and central network monitoring.
-          </p>
+        <div class="section-head" data-reveal>
+          <div class="section-coord">
+            <span class="coord-index">01</span>
+            <span class="coord-rule" aria-hidden="true"></span>
+            <span class="coord-label" data-i18n="sections.projects">Production software</span>
+          </div>
+          <div class="section-title-split">
+            <h2 id="projects-heading" data-i18n="projects.heading">Active Engineering Projects</h2>
+            <p class="section-lead" data-i18n="projects.intro">
+              A self-hosted desktop app for streamers, a central NMS for firewall fleets with its edge probes, a plugin for Rust game servers, and WiFi Doctor, a WiFi survey fleet made of the devices you already have. The monitor above shows each latest release, and WiFi Doctor's early-access status.
+            </p>
+          </div>
         </div>
-        
+
         <div class="projects-grid">
           <!-- Project 1: Vinylfo -->
-          <article class="project-card" id="project-card-vinylfo">
-            <div class="project-icon">
-              <i data-lucide="music"></i>
+          <article class="project-card" id="project-vinylfo" data-reveal>
+            <div class="project-card-top">
+              <span class="sys-id">SYS-01 // <span data-i18n="projects.sys1">Streaming desktop app</span></span>
+              <span class="version-chip" data-version-for="vinyl" data-stable="true">v0.16.13 · Stable</span>
             </div>
-            <h3>Vinylfo</h3>
-            <p class="project-description" data-i18n="projects.vinylfo_desc">
-              A self-hosted desktop application that syncs Discogs collections, manages track schedules, and feeds live Twitch metadata, OBS video overlays, and Stream Deck integrations.
+
+            <!-- Decorative topology thumbnail -->
+            <div class="topology-frame" aria-hidden="true">
+              <svg viewBox="0 0 320 68" fill="none" class="topology-svg">
+                <line x1="68" y1="34" x2="122" y2="34" class="topo-line-dim"/>
+                <line x1="198" y1="34" x2="252" y2="20" class="topo-line-cyan"/>
+                <line x1="198" y1="34" x2="252" y2="48" class="topo-line-emerald"/>
+                <rect x="8" y="19" width="60" height="30" rx="4" class="topo-node"/>
+                <text x="38" y="37" text-anchor="middle" class="topo-text-muted" font-size="8.5">DISCOGS</text>
+                <rect x="122" y="15" width="76" height="38" rx="5" class="topo-hub topo-hub-cyan"/>
+                <text x="160" y="32" text-anchor="middle" class="topo-text" font-size="9" font-weight="600">VINYLFO</text>
+                <text x="160" y="44" text-anchor="middle" class="topo-text-cyan" font-size="7.5">GO DESKTOP APP</text>
+                <rect x="252" y="8" width="60" height="22" rx="4" class="topo-node"/>
+                <text x="282" y="22" text-anchor="middle" class="topo-text-muted" font-size="8">OBS SSE</text>
+                <rect x="252" y="38" width="60" height="22" rx="4" class="topo-node"/>
+                <text x="282" y="52" text-anchor="middle" class="topo-text-muted" font-size="8">TWITCH</text>
+              </svg>
+            </div>
+
+            <h3 class="project-title">Vinylfo</h3>
+            <p class="project-summary" data-i18n="projects.vinylfo_desc">
+              Self-hosted desktop app for streamers and audiophiles that syncs Discogs collections, manages track schedules, and feeds live Twitch metadata, OBS video overlays, and Stream Deck integrations.
             </p>
-            <div class="project-tags">
-              <span class="project-tag">Go</span>
-              <span class="project-tag">Twitch OAuth</span>
-              <span class="project-tag">OBS WebSocket</span>
-              <span class="project-tag">SSE</span>
+
+            <ul class="tag-list" aria-label="Vinylfo technologies">
+              <li>Go</li>
+              <li>Twitch OAuth / API</li>
+              <li>YouTube API</li>
+              <li>OBS WebSocket / Overlay</li>
+              <li>SSE</li>
+            </ul>
+
+            <div class="platform-bar">
+              <span class="platform-k" data-i18n="projects.runs_on">Runs on</span>
+              <div class="platform-items">
+                <span class="platform-pill"><svg width="13" height="13" aria-hidden="true"><use href="#i-windows"/></svg><span>Windows</span></span>
+                <span class="platform-pill"><svg width="13" height="13" aria-hidden="true"><use href="#i-apple"/></svg><span>macOS</span></span>
+                <span class="platform-pill"><svg width="13" height="13" aria-hidden="true"><use href="#i-linux"/></svg><span>Linux</span></span>
+              </div>
             </div>
-            <div class="project-platforms" aria-label="Runs on Windows, macOS, and Linux">
-              <span class="platform-label" data-i18n="projects.runs_on">Runs on</span>
-              <svg class="platform-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Windows"><title>Windows</title><path fill="currentColor" d="M0,3.449L9.75,2.1v9.451H0m10.949-9.602L24,0v11.4H10.949M0,12.6h9.75v9.451L0,20.699M10.949,12.6H24V24l-12.9-1.801"/></svg>
-              <svg class="platform-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="macOS"><title>macOS</title><path fill="currentColor" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
-              <svg class="platform-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Linux"><title>Linux</title><path fill="currentColor" d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2.012-.09.013-.18.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.613.613 0 00-.166-.267.248.248 0 00-.183-.064h-.021c-.071.006-.13.04-.186.132a.552.552 0 00-.12.27.944.944 0 00-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268.01.009.02.018.034.024-.07.057-.117.07-.176.136a.304.304 0 01-.131.068 2.62 2.62 0 01-.275-.402 1.772 1.772 0 01-.155-.667 1.759 1.759 0 01.08-.668 1.43 1.43 0 01.283-.535c.128-.133.26-.2.418-.2zm1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.571.571 0 01.016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.139 1.139 0 01-.448-.067 3.566 3.566 0 01-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71-.07-.268-.005-.47.193-.6.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.645 2.645 0 00-.402-.533 1.45 1.45 0 00-.275-.333c.182 0 .338-.03.465-.067a.615.615 0 00.314-.334c.108-.267 0-.697-.345-1.163-.345-.467-.931-.995-1.788-1.521-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.123 8.123 0 01.647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335.039.003.075.006.11.006.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01c.053 0 .105.005.157.014.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602-.369-.066-.61-.2-.723-.4-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336zm7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8.097 8.097 0 01-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065zm-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"/></svg>
-            </div>
-            <div class="project-links">
-              <span class="project-link" data-modal="modal-vinylfo" id="btn-details-vinylfo" style="cursor: pointer;">
-                <span data-i18n="common.view_architecture">View Architecture</span> <i data-lucide="arrow-right"></i>
-              </span>
-              <a href="https://www.vinylfo.com" target="_blank" rel="noopener noreferrer" class="project-link" id="link-web-vinylfo">
-                <i data-lucide="globe" style="width: 14px; height: 14px; display: inline; vertical-align: middle;"></i> <span data-i18n="common.website">Website</span>
+
+            <div class="project-actions">
+              <button type="button" class="btn-inspect" data-modal-open="modal-vinylfo">
+                <span data-i18n="common.view_architecture">Core architecture</span>
+                <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </button>
+              <a href="https://www.vinylfo.com" target="_blank" rel="noopener noreferrer" class="project-ext-link">
+                <span>vinylfo.com</span>
+                <span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span>
+                <svg width="13" height="13" aria-hidden="true"><use href="#i-ext"/></svg>
               </a>
             </div>
           </article>
 
-          <!-- Project 2: Firewall Mon -->
-          <article class="project-card" id="project-card-fwmon">
-            <div class="project-icon">
-              <i data-lucide="shield-check"></i>
+          <!-- Project 2: Firewall Monitor + Firewall-Collector -->
+          <article class="project-card" id="project-fwmon" data-reveal data-reveal-delay="1">
+            <div class="project-card-top">
+              <span class="sys-id">SYS-02 // <span data-i18n="projects.sys2">Fleet NMS</span></span>
+              <div class="dual-versions">
+                <span class="version-chip"><span class="version-k" data-i18n="hud.server">server</span> <span data-version-for="fw_server">v0.11.233</span></span>
+                <span class="version-chip version-chip-sub"><span class="version-k" data-i18n="hud.collector">collector</span> <span data-version-for="fw_collector">v1.3.44</span></span>
+              </div>
             </div>
-            <h3 data-i18n="projects.fwmon_title">Firewall Monitor</h3>
-            <p class="project-description" data-i18n="projects.fwmon_desc">
-              A vendor-agnostic central NMS with SNMP polling, syslog/sFlow receivers, configuration tracking, and distributed remote probe relays (Firewall-Collector).
+
+            <!-- Decorative topology thumbnail -->
+            <div class="topology-frame" aria-hidden="true">
+              <svg viewBox="0 0 320 68" fill="none" class="topology-svg">
+                <line x1="68" y1="34" x2="114" y2="34" class="topo-line-dim"/>
+                <line x1="194" y1="34" x2="244" y2="34" class="topo-line-emerald topo-line-solid"/>
+                <text x="219" y="27" text-anchor="middle" class="topo-text-emerald" font-size="7.5">mTLS</text>
+                <rect x="8" y="15" width="60" height="38" rx="4" class="topo-node"/>
+                <text x="38" y="31" text-anchor="middle" class="topo-text-muted" font-size="8">EDGE FW</text>
+                <text x="38" y="43" text-anchor="middle" class="topo-text-dim" font-size="7">SNMP/UDP</text>
+                <rect x="114" y="17" width="80" height="34" rx="4" class="topo-hub topo-hub-cyan"/>
+                <text x="154" y="32" text-anchor="middle" class="topo-text" font-size="8.5" font-weight="600">COLLECTOR</text>
+                <text x="154" y="43" text-anchor="middle" class="topo-text-cyan" font-size="7">REMOTE PROBE</text>
+                <rect x="244" y="15" width="68" height="38" rx="5" class="topo-hub topo-hub-emerald"/>
+                <text x="278" y="32" text-anchor="middle" class="topo-text" font-size="8.5" font-weight="600">HQ NMS</text>
+                <text x="278" y="44" text-anchor="middle" class="topo-text-emerald" font-size="7">DIFF + ALERT</text>
+              </svg>
+            </div>
+
+            <h3 class="project-title" data-i18n="projects.fwmon_card_title">Firewall Monitor &amp; Collector</h3>
+            <p class="project-summary" data-i18n="projects.fwmon_desc">
+              Vendor-agnostic, lightweight central NMS for firewall fleets (FortiGate, Palo Alto, pfSense): SNMP v2c/v3 polling, syslog and sFlow receivers, SSH/TFTP config diffs, and distributed Firewall-Collector probes over HTTPS/mTLS.
             </p>
-            <div class="project-tags">
-              <span class="project-tag">Go</span>
-              <span class="project-tag">SNMP Traps</span>
-              <span class="project-tag">Syslog Ingest</span>
-              <span class="project-tag">mTLS Relays</span>
+
+            <ul class="tag-list" aria-label="Firewall Monitor technologies">
+              <li>Go</li>
+              <li>SNMP v2c/v3</li>
+              <li>Syslog</li>
+              <li>sFlow</li>
+              <li>mTLS Relays</li>
+            </ul>
+
+            <div class="platform-bar">
+              <span class="platform-k" data-i18n="projects.deployed_with">Deployed with</span>
+              <div class="platform-items">
+                <span class="platform-pill"><svg width="14" height="14" aria-hidden="true"><use href="#i-docker"/></svg><span>Docker</span></span>
+              </div>
             </div>
-            <div class="project-platforms" aria-label="Deployed with Docker">
-              <span class="platform-label" data-i18n="projects.deployed_with">Deployed with</span>
-              <span class="platform-item">
-              <svg class="platform-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Docker"><title>Docker</title><path fill="currentColor" d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.186v1.887c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288z"/></svg>
-                <span class="platform-name">Docker</span>
-              </span>
-            </div>
-            <div class="project-links">
-              <span class="project-link" data-modal="modal-fwmon" id="btn-details-fwmon" style="cursor: pointer;">
-                <span data-i18n="common.view_architecture">View Architecture</span> <i data-lucide="arrow-right"></i>
-              </span>
-              <a href="https://firewall-mon.technicallabs.org" target="_blank" rel="noopener noreferrer" class="project-link" id="link-web-fwmon">
-                <i data-lucide="globe" style="width: 14px; height: 14px; display: inline; vertical-align: middle;"></i> <span data-i18n="common.website">Website</span>
+
+            <div class="project-actions">
+              <button type="button" class="btn-inspect" data-modal-open="modal-fwmon">
+                <span data-i18n="common.view_architecture">Core architecture</span>
+                <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </button>
+              <a href="https://firewall-mon.technicallabs.org" target="_blank" rel="noopener noreferrer" class="project-ext-link">
+                <span data-i18n="common.website">Website</span>
+                <span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span>
+                <svg width="13" height="13" aria-hidden="true"><use href="#i-ext"/></svg>
               </a>
             </div>
           </article>
 
-          <!-- Project 3: Rust Game Plugin -->
-          <article class="project-card" id="project-card-rustplugin">
-            <div class="project-icon">
-              <i data-lucide="gamepad-2"></i>
+          <!-- Project 3: Rust Game Plugin (SignArtSaver) -->
+          <article class="project-card" id="project-rust" data-reveal data-reveal-delay="2">
+            <div class="project-card-top">
+              <span class="sys-id">SYS-03 // <span data-i18n="projects.sys3">Game plugin</span></span>
+              <span class="version-chip" data-version-for="rust_plugin">v0.11.14</span>
             </div>
-            <h3 data-i18n="projects.rust_title">Rust Game Plugin</h3>
-            <p class="project-description" data-i18n="projects.rust_desc">
-              A high-performance gameplay enhancement plugin for Rust survival servers. Introducing custom economy, logging systems, admin helpers, and real-time network hooks.
+
+            <!-- Decorative topology thumbnail -->
+            <div class="topology-frame" aria-hidden="true">
+              <svg viewBox="0 0 320 68" fill="none" class="topology-svg">
+                <line x1="72" y1="34" x2="118" y2="34" class="topo-line-cyan"/>
+                <line x1="202" y1="34" x2="248" y2="20" class="topo-line-dim"/>
+                <line x1="202" y1="34" x2="248" y2="48" class="topo-line-emerald"/>
+                <rect x="8" y="19" width="64" height="30" rx="4" class="topo-node"/>
+                <text x="40" y="37" text-anchor="middle" class="topo-text-muted" font-size="8">uMOD HOOK</text>
+                <rect x="118" y="15" width="84" height="38" rx="5" class="topo-hub topo-hub-cyan"/>
+                <text x="160" y="32" text-anchor="middle" class="topo-text" font-size="8.5" font-weight="600">IN-MEMORY</text>
+                <text x="160" y="44" text-anchor="middle" class="topo-text-cyan" font-size="7.5">C# / .NET</text>
+                <rect x="248" y="8" width="64" height="22" rx="4" class="topo-node"/>
+                <text x="280" y="22" text-anchor="middle" class="topo-text-muted" font-size="8">JSON SYNC</text>
+                <rect x="248" y="38" width="64" height="22" rx="4" class="topo-node"/>
+                <text x="280" y="52" text-anchor="middle" class="topo-text-muted" font-size="8">UI ENGINE</text>
+              </svg>
+            </div>
+
+            <h3 class="project-title">SignArtSaver <span class="project-subtitle" data-i18n="projects.rust_subtitle">Rust Plugin</span></h3>
+            <p class="project-summary" data-i18n="projects.rust_desc">
+              C#/.NET gameplay plugin for Rust survival game servers via Oxide/uMod hooks: economy boards, admin alerts and command registry, performance metrics, in-memory data with JSON checkpoints, and custom game UI overlays.
             </p>
-            <div class="project-tags">
-              <span class="project-tag">C#</span>
-              <span class="project-tag">uMod Hooks</span>
-              <span class="project-tag">Data Ingest</span>
-              <span class="project-tag">Performance Optimization</span>
+
+            <ul class="tag-list" aria-label="SignArtSaver technologies">
+              <li>C#</li>
+              <li>.NET</li>
+              <li>Oxide / uMod API</li>
+              <li>JSON Configs</li>
+            </ul>
+
+            <div class="platform-bar">
+              <span class="platform-k" data-i18n="projects.built_for">Built for</span>
+              <div class="platform-items">
+                <a href="https://rust.facepunch.com" target="_blank" rel="noopener noreferrer" class="platform-pill platform-pill-link">
+                  <svg width="13" height="13" aria-hidden="true"><use href="#i-rust"/></svg>
+                  <span>Rust</span>
+                  <span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span>
+                </a>
+              </div>
             </div>
-            <div class="project-platforms">
-              <span class="platform-label" data-i18n="projects.built_for">Built for</span>
-              <a href="https://rust.facepunch.com" target="_blank" rel="noopener noreferrer" class="platform-link" id="link-rustgame" aria-label="Rust — the survival game (opens rust.facepunch.com)">
-                <svg class="platform-icon rust-marque" role="img" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-label="Rust"><title>Rust</title><path d="M48 0H0V48H48V0Z" fill="#CD412B"/><path d="M15.7211 21.6418L5.51904 19.9693V30.1379L15.7211 28.4655V21.6418Z" fill="#1E2020"/><path d="M20.8389 21.6418H17.427V28.432H20.8389V21.6418Z" fill="#1E2020"/><path d="M28.4652 15.7213L30.1376 5.51923H19.969L21.6415 15.7213H28.4652Z" fill="#1E2020"/><path d="M28.4319 17.4272H21.6416V20.839H28.4319V17.4272Z" fill="#1E2020"/><path d="M25.0529 22.6419L22.6404 25.0544L25.0529 27.4669L27.4654 25.0544L25.0529 22.6419Z" fill="#1E2020"/><path d="M29.2686 34.0516L35.256 42.4809L42.4811 35.2558L34.0518 29.2684L29.2686 34.0516Z" fill="#1E2020"/><path d="M30.4552 25.6617L25.6538 30.4631L28.0663 32.8757L32.8677 28.0743L30.4552 25.6617Z" fill="#1E2020"/></svg>
-                <span class="platform-name">Rust</span>
+
+            <div class="project-actions">
+              <button type="button" class="btn-inspect" data-modal-open="modal-rustplugin">
+                <span data-i18n="common.view_architecture">Core architecture</span>
+                <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </button>
+              <a href="https://github.com/xphox2/SignArtSaver" target="_blank" rel="noopener noreferrer" class="project-ext-link">
+                <span data-i18n="common.github">GitHub</span>
+                <span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span>
+                <svg width="13" height="13" aria-hidden="true"><use href="#i-ext"/></svg>
               </a>
             </div>
-            <div class="project-links">
-              <span class="project-link" data-modal="modal-rustplugin" id="btn-details-rustplugin" style="cursor: pointer;">
-                <span data-i18n="common.view_details">View Details</span> <i data-lucide="arrow-right"></i>
+          </article>
+
+          <!-- Project 4: WiFi Doctor (early access; private repository, no public version) -->
+          <article class="project-card" id="project-wifidoctor" data-reveal data-reveal-delay="3">
+            <div class="project-card-top">
+              <span class="sys-id">SYS-04 // <span data-i18n="projects.sys4">WiFi survey fleet</span></span>
+              <span class="version-chip version-chip-status" data-i18n="projects.early_access">Early access</span>
+            </div>
+
+            <!-- Decorative topology thumbnail -->
+            <div class="topology-frame" aria-hidden="true">
+              <svg viewBox="0 0 320 68" fill="none" class="topology-svg">
+                <line x1="68" y1="20" x2="122" y2="34" class="topo-line-dim"/>
+                <line x1="68" y1="48" x2="122" y2="34" class="topo-line-dim"/>
+                <line x1="198" y1="34" x2="252" y2="20" class="topo-line-amber"/>
+                <line x1="198" y1="34" x2="252" y2="48" class="topo-line-emerald"/>
+                <rect x="8" y="8" width="60" height="22" rx="4" class="topo-node"/>
+                <text x="38" y="22" text-anchor="middle" class="topo-text-muted" font-size="8">PHONES / TV</text>
+                <rect x="8" y="38" width="60" height="22" rx="4" class="topo-node"/>
+                <text x="38" y="52" text-anchor="middle" class="topo-text-muted" font-size="8">PCs / PI</text>
+                <rect x="122" y="15" width="76" height="38" rx="5" class="topo-hub topo-hub-amber"/>
+                <text x="160" y="32" text-anchor="middle" class="topo-text" font-size="8.5" font-weight="600">WIFI DOCTOR</text>
+                <text x="160" y="44" text-anchor="middle" class="topo-text-amber" font-size="7.5">SCANS → MAPS</text>
+                <rect x="252" y="8" width="60" height="22" rx="4" class="topo-node"/>
+                <text x="282" y="22" text-anchor="middle" class="topo-text-muted" font-size="8">HEATMAPS</text>
+                <rect x="252" y="38" width="60" height="22" rx="4" class="topo-node"/>
+                <text x="282" y="52" text-anchor="middle" class="topo-text-muted" font-size="8">FINDINGS</text>
+              </svg>
+            </div>
+
+            <h3 class="project-title">WiFi Doctor</h3>
+            <p class="project-summary" data-i18n="projects.wifi_desc">
+              Finds and fixes weak WiFi, room by room. It turns the phones, Android TV boxes and computers you already have into a WiFi survey fleet, maps signal on your real floor plans, and tells you what to fix. No survey kit to buy.
+            </p>
+
+            <ul class="tag-list" aria-label="WiFi Doctor technologies">
+              <li>Go</li>
+              <li>Kotlin Multiplatform</li>
+              <li>React</li>
+              <li>Postgres</li>
+              <li>ClickHouse</li>
+              <li>NATS</li>
+            </ul>
+
+            <div class="platform-bar">
+              <span class="platform-k" data-i18n="projects.sensors_on">Sensors on</span>
+              <div class="platform-items">
+                <span class="platform-pill"><svg width="13" height="13" aria-hidden="true"><use href="#i-android"/></svg><span>Android</span></span>
+                <span class="platform-pill"><svg width="13" height="13" aria-hidden="true"><use href="#i-tv"/></svg><span>Android TV</span></span>
+                <span class="platform-pill"><svg width="13" height="13" aria-hidden="true"><use href="#i-windows"/></svg><span>Windows</span></span>
+                <span class="platform-pill"><svg width="13" height="13" aria-hidden="true"><use href="#i-apple"/></svg><span>macOS</span></span>
+                <span class="platform-pill"><svg width="13" height="13" aria-hidden="true"><use href="#i-linux"/></svg><span>Linux</span></span>
+              </div>
+            </div>
+
+            <div class="project-actions">
+              <button type="button" class="btn-inspect" data-modal-open="modal-wifidoctor">
+                <span data-i18n="common.view_architecture">Core architecture</span>
+                <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </button>
+              <span class="project-ext-links">
+                <a href="https://wifi-doctor.technicallabs.org" target="_blank" rel="noopener noreferrer" class="project-ext-link">
+                  <span data-i18n="common.website">Website</span>
+                  <span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span>
+                  <svg width="13" height="13" aria-hidden="true"><use href="#i-ext"/></svg>
+                </a>
+                <a href="https://wifi-doctor.technicallabs.org/access" target="_blank" rel="noopener noreferrer" class="project-ext-link project-ext-link-accent">
+                  <span data-i18n="projects.request_access">Request early access</span>
+                  <span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span>
+                  <svg width="13" height="13" aria-hidden="true"><use href="#i-ext"/></svg>
+                </a>
               </span>
-              <a href="https://github.com/xphox2/SignArtSaver" target="_blank" rel="noopener noreferrer" class="project-link" id="link-git-rust">
-                <i data-lucide="github" style="width: 14px; height: 14px; display: inline; vertical-align: middle;"></i> <span data-i18n="common.github">GitHub</span>
-              </a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- RESUME SECTION -->
-    <section id="resume" class="section section-alt">
+    <!-- SECTION 02: SERVICES & CONSULTING -->
+    <section id="services" class="section section-alt" aria-labelledby="services-heading">
       <div class="container">
-        <div class="section-header">
-          <span class="badge-tag" data-i18n="resume.tag">Professional profile</span>
-          <h2 data-i18n="resume.heading">Resume &amp; Core Skillsets</h2>
-          <p data-i18n="resume.intro">
-            A summary of professional experience, qualifications, and core technical skillsets gathered from years of systems development and administration.
-          </p>
-        </div>
-        
-        <div class="resume-layout">
-          <!-- Sidebar / Photo Card -->
-          <div class="resume-sidebar" id="resume-aside">
-            <div class="profile-img-container">
-              <img src="assets/profile.jpg" alt="Nicholas Diotte profile" class="profile-img" id="profile-picture">
-            </div>
-            <h3>Nicholas Diotte</h3>
-            <p class="resume-subtitle" data-i18n="resume.subtitle">Principal Engineer | Network &amp; Infrastructure</p>
-            
-            <div class="resume-sidebar-links">
-              <a href="mailto:xphox@xphox.net" class="resume-sidebar-link">
-                <i data-lucide="mail"></i> <span>xphox@xphox.net</span>
-              </a>
-              <a href="https://www.technicallabs.org" target="_blank" rel="noopener noreferrer" class="resume-sidebar-link">
-                <i data-lucide="globe"></i> <span>www.technicallabs.org</span>
-              </a>
-              <a href="https://linkedin.com/in/nickdiotte" target="_blank" rel="noopener noreferrer" class="resume-sidebar-link">
-                <i data-lucide="linkedin"></i> <span>linkedin.com/in/nickdiotte</span>
-              </a>
-              <div class="resume-sidebar-link">
-                <i data-lucide="map-pin"></i> <span data-i18n="resume.location">Toronto, ON / Remote</span>
-              </div>
-            </div>
+        <div class="section-head" data-reveal>
+          <div class="section-coord">
+            <span class="coord-index">02</span>
+            <span class="coord-rule" aria-hidden="true"></span>
+            <span class="coord-label" data-i18n="sections.services">Consulting &amp; mentorship</span>
           </div>
-          
-          <!-- Career Timeline & Skills -->
-          <div>
-            <div class="resume-timeline" id="experience-timeline">
-              <!-- Timeline Item 1 -->
-              <div class="timeline-item">
-                <span class="timeline-dot-indicator"></span>
-                <div class="timeline-header-meta">
-                  <h4 data-i18n="resume.exp1_role">Principal Engineer</h4>
-                  <span class="timeline-period" data-i18n="resume.exp1_period">Aug 2024 - Present</span>
-                </div>
-                <span class="timeline-org">Tuor Networks</span>
-                <div class="timeline-description">
-                  <p data-i18n="resume.exp1_desc">Senior technical authority across all managed service customer accounts, architecting enterprise infrastructure migrations.</p>
-                  <ul>
-                    <li data-i18n="resume.exp1_li1">Lead FortiGate firewall deployments, security policy governance, and system posture reviews.</li>
-                    <li data-i18n="resume.exp1_li2">Architect and oversee complex, end-to-end network, storage, and compute migrations.</li>
-                    <li data-i18n="resume.exp1_li3">Conduct disaster recovery testing, business continuity exercises, and device health audits.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Timeline Item 2 -->
-              <div class="timeline-item">
-                <span class="timeline-dot-indicator"></span>
-                <div class="timeline-header-meta">
-                  <h4 data-i18n="resume.exp2_role">Senior IT Consultant &amp; Team Lead</h4>
-                  <span class="timeline-period" data-i18n="resume.exp2_period">Aug 2020 - Jul 2024</span>
-                </div>
-                <span class="timeline-org">Tuor Networks</span>
-                <div class="timeline-description">
-                  <p data-i18n="resume.exp2_desc">Led a team of consultants delivering managed IT services across diverse enterprise verticals.</p>
-                  <ul>
-                    <li data-i18n="resume.exp2_li1">Assessed business computing needs, analyzed system weaknesses, and implemented specialist recommendations.</li>
-                    <li data-i18n="resume.exp2_li2">Managed network and system security programs for strategic accounts.</li>
-                    <li data-i18n="resume.exp2_li3">Successfully planned and executed all network, storage, and compute migrations.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Timeline Item 3 -->
-              <div class="timeline-item">
-                <span class="timeline-dot-indicator"></span>
-                <div class="timeline-header-meta">
-                  <h4 data-i18n="resume.exp3_role">Senior Consultant</h4>
-                  <span class="timeline-period" data-i18n="resume.exp3_period">Sep 2017 - Aug 2020</span>
-                </div>
-                <span class="timeline-org">Tuor Networks</span>
-                <div class="timeline-description">
-                  <p data-i18n="resume.exp3_desc">Provided hands-on technical consulting for managed service clients across networking and hybrid infrastructure.</p>
-                </div>
-              </div>
-
-              <!-- Timeline Item 4 -->
-              <div class="timeline-item">
-                <span class="timeline-dot-indicator"></span>
-                <div class="timeline-header-meta">
-                  <h4 data-i18n="resume.exp4_role">Manager, Network &amp; Service Operations</h4>
-                  <span class="timeline-period" data-i18n="resume.exp4_period">Jul 2011 - Feb 2017</span>
-                </div>
-                <span class="timeline-org">Comwave</span>
-                <div class="timeline-description">
-                  <p data-i18n="resume.exp4_desc">Managed NOC, Provisioning, and Capacity Planning teams, and owned wholesale customer operations.</p>
-                  <ul>
-                    <li data-i18n="resume.exp4_li1">Assisted with the launch and capacity planning of the enterprise data centre at 151 Front Street, Toronto.</li>
-                    <li data-i18n="resume.exp4_li2">Expanded NOC to 24/7/365 coverage and designed automation tools to eliminate repetitive daily workflows.</li>
-                    <li data-i18n="resume.exp4_li3">Managed data centre physical infrastructure, HVAC systems, DC power distribution, and optical fibres.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Timeline Item 5 -->
-              <div class="timeline-item">
-                <span class="timeline-dot-indicator"></span>
-                <div class="timeline-header-meta">
-                  <h4 data-i18n="resume.exp5_role">Team Lead &amp; NOCC Technician</h4>
-                  <span class="timeline-period" data-i18n="resume.exp5_period">Feb 2005 - Jun 2011</span>
-                </div>
-                <span class="timeline-org">Primus Telecommunications</span>
-                <div class="timeline-description">
-                  <p data-i18n="resume.exp5_desc">Supervised NOCC operations, built standardized training metrics, and monitored national carrier voice and data networks.</p>
-                  <ul>
-                    <li data-i18n="resume.exp5_li1">Built a web-based shift handoff tracker, improving audits and communication.</li>
-                    <li data-i18n="resume.exp5_li2">Administered Cisco, Redback SmartEdge, Plexus, and Juniper infrastructure across core protocols (BGP, OSPF, MPLS, SIP, ATM).</li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Timeline Item 6 -->
-              <div class="timeline-item">
-                <span class="timeline-dot-indicator"></span>
-                <div class="timeline-header-meta">
-                  <h4 data-i18n="resume.exp6_role">Systems &amp; Network Support</h4>
-                  <span class="timeline-period" data-i18n="resume.exp6_period">Sep 1999 - Feb 2005</span>
-                </div>
-                <span class="timeline-org">Woodslee Credit Union &amp; WINCOM ISP</span>
-                <div class="timeline-description">
-                  <p data-i18n="resume.exp6_desc">Managed mail, DNS, database, and colocation servers for regional ISP, and migrated multi-branch banking infrastructure.</p>
-                  <ul>
-                    <li data-i18n="resume.exp6_li1">Led NT 4.0 to Windows/Exchange Server migration across seven bank branch locations.</li>
-                    <li data-i18n="resume.exp6_li2">Configured security firewalls, IDS sensors, and backup architectures.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <!-- SKILLS IN VIEWPORT CARDS -->
-            <div class="skills-sec">
-              <h3><i data-lucide="bar-chart-3" style="color: var(--indigo-400);"></i> <span data-i18n="resume.skills_heading">Core Competencies</span></h3>
-              <div class="skills-grid" id="skills-visual-grid">
-                
-                <!-- Category 1 -->
-                <div class="skills-category-card">
-                  <h4 data-i18n="resume.cat1_title">Network &amp; Firewalls</h4>
-                  <div class="skills-list">
-                    <div class="skill-row">
-                      <div class="skill-info">
-                        <span class="skill-name">FortiGate, Cisco, Meraki, SonicWALL</span>
-                        <span class="skill-percent">96%</span>
-                      </div>
-                      <div class="skill-bar-outer"><div class="skill-bar-inner" data-skill-val="96"></div></div>
-                    </div>
-                    <div class="skill-row">
-                      <div class="skill-info">
-                        <span class="skill-name" data-i18n="resume.cat1_skill2">VPN, Security &amp; Compliance</span>
-                        <span class="skill-percent">93%</span>
-                      </div>
-                      <div class="skill-bar-outer"><div class="skill-bar-inner" data-skill-val="93"></div></div>
-                    </div>
-                    <div class="skill-row">
-                      <div class="skill-info">
-                        <span class="skill-name">Routing &amp; Switching, SDWAN</span>
-                        <span class="skill-percent">90%</span>
-                      </div>
-                      <div class="skill-bar-outer"><div class="skill-bar-inner" data-skill-val="90"></div></div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Category 2 -->
-                <div class="skills-category-card">
-                  <h4 data-i18n="resume.cat2_title">Infrastructure &amp; Systems</h4>
-                  <div class="skills-list">
-                    <div class="skill-row">
-                      <div class="skill-info">
-                        <span class="skill-name" data-i18n="resume.cat2_skill1">Data Centre Operations</span>
-                        <span class="skill-percent">94%</span>
-                      </div>
-                      <div class="skill-bar-outer"><div class="skill-bar-inner" data-skill-val="94"></div></div>
-                    </div>
-                    <div class="skill-row">
-                      <div class="skill-info">
-                        <span class="skill-name">Windows Server, Linux, Automation</span>
-                        <span class="skill-percent">93%</span>
-                      </div>
-                      <div class="skill-bar-outer"><div class="skill-bar-inner" data-skill-val="93"></div></div>
-                    </div>
-                    <div class="skill-row">
-                      <div class="skill-info">
-                        <span class="skill-name" data-i18n="resume.cat2_skill3">Disaster Recovery &amp; Planning</span>
-                        <span class="skill-percent">92%</span>
-                      </div>
-                      <div class="skill-bar-outer"><div class="skill-bar-inner" data-skill-val="92"></div></div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Category 3 -->
-                <div class="skills-category-card">
-                  <h4 data-i18n="resume.cat3_title">Professional Certifications</h4>
-                  <div class="skills-list" style="gap: 0.5rem; font-size: 0.85rem; color: var(--text-secondary);">
-                    <div style="display: flex; gap: 0.35rem; align-items: flex-start;">
-                      <i data-lucide="award" style="color: var(--cyan-400); width: 14px; height: 14px; margin-top: 2px; flex-shrink:0;"></i>
-                      <span>Cisco 360 Black Belt Meraki Presales (2025)</span>
-                    </div>
-                    <div style="display: flex; gap: 0.35rem; align-items: flex-start;">
-                      <i data-lucide="award" style="color: var(--cyan-400); width: 14px; height: 14px; margin-top: 2px; flex-shrink:0;"></i>
-                      <span>Fortinet FortiGate 7.4 Operator (2024)</span>
-                    </div>
-                    <div style="display: flex; gap: 0.35rem; align-items: flex-start;">
-                      <i data-lucide="award" style="color: var(--cyan-400); width: 14px; height: 14px; margin-top: 2px; flex-shrink:0;"></i>
-                      <span>Fortinet Certified Associate – Cybersecurity (2024)</span>
-                    </div>
-                    <div style="display: flex; gap: 0.35rem; align-items: flex-start;">
-                      <i data-lucide="award" style="color: var(--cyan-400); width: 14px; height: 14px; margin-top: 2px; flex-shrink:0;"></i>
-                      <span>Fortinet Certified Fundamentals – Cybersecurity (2024)</span>
-                    </div>
-                    <div style="display: flex; gap: 0.35rem; align-items: flex-start;">
-                      <i data-lucide="award" style="color: var(--cyan-400); width: 14px; height: 14px; margin-top: 2px; flex-shrink:0;"></i>
-                      <span>Certified Meraki Networking Associate (CMNA) (2024)</span>
-                    </div>
-                    <div style="display: flex; gap: 0.35rem; align-items: flex-start;">
-                      <i data-lucide="award" style="color: var(--cyan-400); width: 14px; height: 14px; margin-top: 2px; flex-shrink:0;"></i>
-                      <span>Certified SonicWALL Security Administrator (CSSA) (2018)</span>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
+          <div class="section-title-split">
+            <h2 id="services-heading" data-i18n="services.heading">Services &amp; Session Booking</h2>
+            <p class="section-lead" data-i18n="services.intro">
+              Hands-on deployment mentorship, architecture audits, and custom network tooling, guided directly by a Principal Engineer.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- SERVICES & BOOKING SECTION -->
-    <section id="services" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="badge-tag" data-i18n="services.tag">Time &amp; Support</span>
-          <h2 data-i18n="services.heading">Services &amp; Custom Mentorship</h2>
-          <p data-i18n="services.intro">
-            Need help deploying a secure firewall, building a custom monitoring dashboard, or learning best practices? Book a session below.
-          </p>
-        </div>
-        
-        <div class="services-layout">
-          <!-- Services Offerings List -->
-          <div class="services-list" id="services-offered">
-            <div class="service-card">
-              <div class="service-card-header">
-                <div class="service-icon">
-                  <i data-lucide="users"></i>
-                </div>
+        <div class="services-grid">
+          <!-- Left: Service Offerings -->
+          <div class="service-cards" data-reveal>
+            <article class="service-card">
+              <div class="service-card-head">
+                <span class="service-icon" aria-hidden="true"><svg width="18" height="18"><use href="#i-shield"/></svg></span>
                 <h3 data-i18n="services.svc1_title">1-on-1 Deployment Mentorship</h3>
               </div>
               <p data-i18n="services.svc1_desc">
-                Learn directly as we build. Together we'll map out your network layout, build firewall policies, and deploy probes using secure templates.
+                Learn directly as we build: map out your network layout, build firewall policies, and deploy probes using secure templates.
               </p>
-            </div>
+              <button type="button" class="service-select-link" data-pick-topic="firewalls_networking">
+                <span data-i18n="services.select_net">Select Firewalls &amp; Networking →</span>
+              </button>
+            </article>
 
-            <div class="service-card">
-              <div class="service-card-header">
-                <div class="service-icon">
-                  <i data-lucide="git-pull-request"></i>
-                </div>
+            <article class="service-card">
+              <div class="service-card-head">
+                <span class="service-icon" aria-hidden="true"><svg width="18" height="18"><use href="#i-branch"/></svg></span>
                 <h3 data-i18n="services.svc2_title">Architecture Audits &amp; CI/CD</h3>
               </div>
               <p data-i18n="services.svc2_desc">
-                Get your automation pipelines reviewed. We'll optimize Docker configurations, check TLS endpoints, and set up auth controls.
+                Have your automation pipelines reviewed: optimize Docker configurations, check TLS endpoints, and set up authentication controls.
               </p>
-            </div>
+              <button type="button" class="service-select-link" data-pick-topic="automation">
+                <span data-i18n="services.select_auto">Select System &amp; Process Automation →</span>
+              </button>
+            </article>
 
-            <div class="service-card">
-              <div class="service-card-header">
-                <div class="service-icon">
-                  <i data-lucide="terminal"></i>
-                </div>
+            <article class="service-card">
+              <div class="service-card-head">
+                <span class="service-icon" aria-hidden="true"><svg width="18" height="18"><use href="#i-code"/></svg></span>
                 <h3 data-i18n="services.svc3_title">Custom Network Tooling</h3>
               </div>
               <p data-i18n="services.svc3_desc">
-                Need custom relays, collectors, or plugin adapters? We can build lightweight backend solutions matching your hardware profiles.
+                Need custom relays, collectors, or plugin adapters? Lightweight backend solutions built to match your hardware profiles.
               </p>
+              <button type="button" class="service-select-link" data-pick-topic="development">
+                <span data-i18n="services.select_dev">Select Custom Development →</span>
+              </button>
+            </article>
+
+            <div class="direct-dispatch-note">
+              <span class="pip pip-emerald" aria-hidden="true"></span>
+              <span data-i18n="services.email_note" data-i18n-html>Prefer email? Reach Nicholas directly at <a href="mailto:xphox@xphox.net">xphox@xphox.net</a> (EST).</span>
             </div>
           </div>
-          
-          <!-- Interactive Scheduler Card -->
-          <div class="scheduler-card" id="booking-container">
-            <h3 data-i18n="scheduler.title">Schedule a Session</h3>
-            <p data-i18n="scheduler.subtitle">Select your topic, enter your details, and book your slot.</p>
-            
-            <div class="scheduler-steps">
-              <span class="step-indicator active" data-step="1">1</span>
-              <span class="step-indicator" data-step="2">2</span>
-              <span class="step-indicator" data-step="3">3</span>
+
+          <!-- Right: Interactive Session Booking Console -->
+          <div class="scheduler-console" id="booking" data-reveal data-reveal-delay="1">
+            <div class="scheduler-bar">
+              <span class="mono-label"><span data-i18n="scheduler.bar">Session dispatch</span> // <span data-i18n="scheduler.bar2">schedule</span></span>
+              <span class="mono-muted" data-i18n="scheduler.response">24h response</span>
             </div>
-            
-            <form id="scheduler-form" onsubmit="return false;">
-              <div class="scheduler-content">
-                <!-- Step 1: Select Topic -->
-                <div class="scheduler-step-pane active" data-step="1">
-                  <div class="form-group">
-                    <label data-i18n="scheduler.select_label">Select Mentorship Area</label>
-                    <div class="form-select-grid">
-                      <div class="select-card selected" data-value="firewalls_networking">
-                        <span class="select-card-title" data-i18n="scheduler.card_net_title">Firewalls &amp; Networking</span>
-                        <span class="select-card-desc" data-i18n="scheduler.card_net_desc">Subnet planning, firewall rules, routing</span>
-                      </div>
-                      <div class="select-card" data-value="datacentre_infra">
-                        <span class="select-card-title" data-i18n="scheduler.card_fw_title">Data Centre &amp; Infrastructure</span>
-                        <span class="select-card-desc" data-i18n="scheduler.card_fw_desc">Server deployments, virtualization, physical setup</span>
-                      </div>
-                      <div class="select-card" data-value="automation">
-                        <span class="select-card-title" data-i18n="scheduler.card_docker_title">System &amp; Process Automation</span>
-                        <span class="select-card-desc" data-i18n="scheduler.card_docker_desc">Scripting, CI/CD pipelines, container workflows</span>
-                      </div>
-                      <div class="select-card" data-value="development">
-                        <span class="select-card-title" data-i18n="scheduler.card_dev_title">Custom Development</span>
-                        <span class="select-card-desc" data-i18n="scheduler.card_dev_desc">API integrations, backend services, custom tools</span>
-                      </div>
+
+            <form id="scheduler-form" novalidate>
+              <div id="scheduler-fields">
+                <fieldset class="scheduler-fieldset">
+                  <legend class="step-legend">
+                    <span class="step-badge">01</span>
+                    <span data-i18n="scheduler.step1">Choose Engagement Topic</span>
+                  </legend>
+                  <div class="topic-grid">
+                    <label class="topic-option">
+                      <input type="radio" name="topic" value="firewalls_networking" checked>
+                      <span class="topic-box">
+                        <span class="topic-name" data-i18n="scheduler.card_net_title">Firewalls &amp; Networking</span>
+                        <span class="topic-hint" data-i18n="scheduler.card_net_desc">Subnet planning, firewall rules, routing</span>
+                      </span>
+                    </label>
+                    <label class="topic-option">
+                      <input type="radio" name="topic" value="datacentre_infra">
+                      <span class="topic-box">
+                        <span class="topic-name" data-i18n="scheduler.card_fw_title">Data Centre &amp; Infrastructure</span>
+                        <span class="topic-hint" data-i18n="scheduler.card_fw_desc">Server deployments, virtualization, physical setup</span>
+                      </span>
+                    </label>
+                    <label class="topic-option">
+                      <input type="radio" name="topic" value="automation">
+                      <span class="topic-box">
+                        <span class="topic-name" data-i18n="scheduler.card_docker_title">System &amp; Process Automation</span>
+                        <span class="topic-hint" data-i18n="scheduler.card_docker_desc">Scripting, CI/CD pipelines, container workflows</span>
+                      </span>
+                    </label>
+                    <label class="topic-option">
+                      <input type="radio" name="topic" value="development">
+                      <span class="topic-box">
+                        <span class="topic-name" data-i18n="scheduler.card_dev_title">Custom Development</span>
+                        <span class="topic-hint" data-i18n="scheduler.card_dev_desc">API integrations, backend services, custom tools</span>
+                      </span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <div class="scheduler-fieldset">
+                  <div class="step-legend">
+                    <span class="step-badge">02</span>
+                    <span data-i18n="scheduler.step2">Your Contact &amp; Project Context</span>
+                  </div>
+
+                  <div class="form-row-two">
+                    <div class="form-field">
+                      <label for="contact-name"><span data-i18n="scheduler.name_label">Full Name</span> <span class="req" aria-hidden="true">*</span></label>
+                      <input type="text" id="contact-name" name="name" autocomplete="name" placeholder="Your name" data-i18n-placeholder="scheduler.name_ph" required aria-describedby="err-name">
+                      <p class="field-err" id="err-name" role="alert" hidden></p>
+                    </div>
+                    <div class="form-field">
+                      <label for="contact-email"><span data-i18n="scheduler.email_label">Email Address</span> <span class="req" aria-hidden="true">*</span></label>
+                      <input type="email" id="contact-email" name="email" autocomplete="email" placeholder="you@company.com" data-i18n-placeholder="scheduler.email_ph" required aria-describedby="err-email">
+                      <p class="field-err" id="err-email" role="alert" hidden></p>
                     </div>
                   </div>
-                </div>
-                
-                <!-- Step 2: Contact Details -->
-                <div class="scheduler-step-pane" data-step="2">
-                  <div class="form-group">
-                    <label for="contact-name" data-i18n="scheduler.name_label">Full Name</label>
-                    <input type="text" id="contact-name" class="form-input" placeholder="Your name" data-i18n-placeholder="scheduler.name_ph" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="contact-email" data-i18n="scheduler.email_label">Email Address</label>
-                    <input type="email" id="contact-email" class="form-input" placeholder="you@example.com" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="contact-notes" data-i18n="scheduler.notes_label">Project Notes</label>
-                    <textarea id="contact-notes" class="form-input" placeholder="Briefly describe what you're working on or trying to deploy..." data-i18n-placeholder="scheduler.notes_ph"></textarea>
+
+                  <div class="form-field">
+                    <label for="contact-notes"><span data-i18n="scheduler.notes_label">Project Notes</span> <span class="opt" data-i18n="scheduler.optional">(Optional)</span></label>
+                    <textarea id="contact-notes" name="notes" rows="3" placeholder="Briefly describe what you're working on, auditing, or deploying..." data-i18n-placeholder="scheduler.notes_ph"></textarea>
                   </div>
                 </div>
-                
-                <!-- Step 3: Success Confirmation -->
-                <div class="scheduler-step-pane" data-step="3" style="text-align: center; gap: 0.75rem;">
-                  <i data-lucide="check-circle-2" style="width: 4rem; height: 4rem; color: var(--emerald-500); margin: 0 auto;"></i>
-                  <h4 style="font-size: 1.4rem;" data-i18n="scheduler.success_title">Session Initiated!</h4>
-                  <p style="color: var(--text-secondary); max-width: 320px; margin: 0 auto;" data-i18n="scheduler.success_text">
-                    Thank you! We've received your request and will email you within 24 hours to finalize details.
+
+                <!-- Friendly fallback when /api/schedule is unreachable -->
+                <div class="scheduler-fallback" id="scheduler-error" role="alert" hidden>
+                  <div class="fallback-title">
+                    <svg width="16" height="16" aria-hidden="true"><use href="#i-alert"/></svg>
+                    <span data-i18n="scheduler.err_title">We couldn't send your request.</span>
+                  </div>
+                  <p data-i18n="scheduler.err_body">
+                    Email it instead: your name, topic and notes are already filled in. We reply within 24 hours.
                   </p>
+                  <a href="mailto:xphox@xphox.net" class="btn btn-primary btn-sm" id="scheduler-mailto-compose">
+                    <span data-i18n="scheduler.err_mailto">Email this request →</span>
+                  </a>
+                </div>
+
+                <div class="scheduler-submit-row">
+                  <button type="submit" class="btn btn-primary btn-block" id="scheduler-submit">
+                    <span id="scheduler-submit-text" data-i18n="scheduler.schedule">Schedule Session</span>
+                    <svg width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg>
+                  </button>
                 </div>
               </div>
-              
-              <div class="scheduler-buttons">
-                <button type="button" class="btn btn-secondary" id="scheduler-prev-btn" style="display: none;">
-                  <i data-lucide="arrow-left"></i> <span data-i18n="scheduler.back">Back</span>
-                </button>
-                <button type="button" class="btn btn-primary" id="scheduler-next-btn" style="margin-left: auto;">
-                  <span data-i18n="scheduler.continue">Continue</span> <i data-lucide="arrow-right"></i>
+
+              <!-- Confirmation View -->
+              <div class="scheduler-confirmed" id="scheduler-confirmed" tabindex="-1" hidden>
+                <div class="confirmed-badge" aria-hidden="true"><svg width="28" height="28"><use href="#i-check-circle"/></svg></div>
+                <h3 data-i18n="scheduler.success_title">Session Request Initiated</h3>
+                <p data-i18n="scheduler.success_text">
+                  We've received your request and will email you within 24 hours to finalize details.
+                </p>
+                <dl class="confirmed-summary">
+                  <div>
+                    <dt data-i18n="scheduler.topic_label">Topic</dt>
+                    <dd id="confirmed-topic" data-i18n="scheduler.card_net_title">Firewalls &amp; Networking</dd>
+                  </div>
+                  <div>
+                    <dt data-i18n="common.contact">Contact</dt>
+                    <dd id="confirmed-email">—</dd>
+                  </div>
+                </dl>
+                <button type="button" class="btn btn-secondary btn-sm" id="scheduler-reset">
+                  <span data-i18n="scheduler.book_another">Book Another Session</span>
                 </button>
               </div>
             </form>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Community / public IRC server -->
-        <div class="irc-card">
-          <div class="irc-head">
-            <div class="irc-title-row">
-              <span class="irc-icon"><i data-lucide="message-circle"></i></span>
-              <h3 data-i18n="irc.title">Chat with the community</h3>
-            </div>
-            <p data-i18n="irc.desc">
-              We run a public IRC server. Ask questions, share what you're building, or just say hello.
+    <!-- SECTION 03: RESUME & SKILLS -->
+    <section id="resume" class="section" aria-labelledby="resume-heading">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div class="section-coord">
+            <span class="coord-index">03</span>
+            <span class="coord-rule" aria-hidden="true"></span>
+            <span class="coord-label" data-i18n="sections.resume">Principal dossier</span>
+          </div>
+          <div class="section-title-split">
+            <h2 id="resume-heading" data-i18n="resume.heading">Resume, Competencies &amp; Certifications</h2>
+            <p class="section-lead" data-i18n="resume.intro">
+              A 25+ year record across managed service networks, national carrier operations, data centre infrastructure, and security policy governance.
             </p>
           </div>
-          <div class="irc-cta">
-            <a href="https://irc.technicallabs.org/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              <i data-lucide="message-square"></i>
-              <span data-i18n="irc.cta">Open web chat</span>
-            </a>
-            <span class="irc-hint" data-i18n="irc.hint">Opens in your browser — nothing to install</span>
+        </div>
+
+        <div class="resume-layout">
+          <!-- Profile Sidebar -->
+          <aside class="profile-dossier" aria-label="Nicholas Diotte contact profile" data-reveal>
+            <div class="portrait-frame">
+              <img src="assets/profile.jpg?v=dev" alt="Nicholas Diotte, Principal Engineer" class="portrait-img" width="480" height="600" loading="lazy">
+            </div>
+            <div class="dossier-body">
+              <div class="dossier-status">
+                <span class="pip pip-emerald" aria-hidden="true"></span>
+                <span data-i18n="resume.exp1_role">Principal Engineer</span>
+              </div>
+              <h3 class="dossier-name">Nicholas Diotte</h3>
+              <p class="dossier-title" data-i18n="resume.title_short">Network &amp; Infrastructure</p>
+              <p class="dossier-intro" data-i18n="resume.dossier_intro">
+                Since 1999: ISP and credit-union systems support, a national carrier NOC, the launch and capacity planning of an enterprise data centre at 151 Front Street, Toronto, and now senior technical authority across managed service accounts.
+              </p>
+
+              <ul class="dossier-links">
+                <li>
+                  <svg width="15" height="15" aria-hidden="true"><use href="#i-pin"/></svg>
+                  <span data-i18n="resume.location_est">Toronto, ON / Remote (EST)</span>
+                </li>
+                <li>
+                  <svg width="15" height="15" aria-hidden="true"><use href="#i-mail"/></svg>
+                  <a href="mailto:xphox@xphox.net">xphox@xphox.net</a>
+                </li>
+                <li>
+                  <svg width="15" height="15" aria-hidden="true"><use href="#i-linkedin"/></svg>
+                  <a href="https://linkedin.com/in/nickdiotte" target="_blank" rel="noopener noreferrer"><span>linkedin.com/in/nickdiotte</span><span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span></a>
+                </li>
+                <li>
+                  <svg width="15" height="15" aria-hidden="true"><use href="#i-globe"/></svg>
+                  <a href="https://www.technicallabs.org">www.technicallabs.org</a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+
+          <!-- Experience Timeline + Competencies + Certifications -->
+          <div class="resume-content">
+            <div class="sub-block" data-reveal>
+              <h3 class="sub-heading" data-i18n="resume.timeline_heading">Experience Timeline</h3>
+              <ol class="timeline-list">
+                <li class="timeline-entry is-current">
+                  <span class="timeline-node" aria-hidden="true"></span>
+                  <div class="timeline-meta">
+                    <div>
+                      <h4 class="timeline-role" data-i18n="resume.exp1_role">Principal Engineer</h4>
+                      <span class="timeline-company">Tuor Networks</span>
+                    </div>
+                    <span class="timeline-dates" data-i18n="resume.exp1_period">Aug 2024 – Present</span>
+                  </div>
+                  <p class="timeline-summary" data-i18n="resume.exp1_desc">
+                    Senior technical authority across all managed service customer accounts, architecting enterprise infrastructure migrations.
+                  </p>
+                  <ul class="timeline-bullets">
+                    <li data-i18n="resume.exp1_li1">Lead FortiGate firewall deployments, security policy governance, and system posture reviews.</li>
+                    <li data-i18n="resume.exp1_li2">Architect and oversee complex, end-to-end network, storage, and compute migrations.</li>
+                    <li data-i18n="resume.exp1_li3">Conduct disaster recovery testing, business continuity exercises, and device health audits.</li>
+                  </ul>
+                </li>
+
+                <li class="timeline-entry">
+                  <span class="timeline-node" aria-hidden="true"></span>
+                  <div class="timeline-meta">
+                    <div>
+                      <h4 class="timeline-role" data-i18n="resume.exp2_role">Senior IT Consultant &amp; Team Lead</h4>
+                      <span class="timeline-company">Tuor Networks</span>
+                    </div>
+                    <span class="timeline-dates" data-i18n="resume.exp2_period">Aug 2020 – Jul 2024</span>
+                  </div>
+                  <p class="timeline-summary" data-i18n="resume.exp2_desc">
+                    Led a team of consultants delivering managed IT services across diverse enterprise verticals.
+                  </p>
+                  <ul class="timeline-bullets">
+                    <li data-i18n="resume.exp2_li1">Assessed business computing needs, analyzed system weaknesses, and implemented specialist recommendations.</li>
+                    <li data-i18n="resume.exp2_li2">Managed network and system security programs for strategic accounts.</li>
+                    <li data-i18n="resume.exp2_li3">Successfully planned and executed all network, storage, and compute migrations.</li>
+                  </ul>
+                </li>
+
+                <li class="timeline-entry">
+                  <span class="timeline-node" aria-hidden="true"></span>
+                  <div class="timeline-meta">
+                    <div>
+                      <h4 class="timeline-role" data-i18n="resume.exp3_role">Senior Consultant</h4>
+                      <span class="timeline-company">Tuor Networks</span>
+                    </div>
+                    <span class="timeline-dates" data-i18n="resume.exp3_period">Sep 2017 – Aug 2020</span>
+                  </div>
+                  <p class="timeline-summary" data-i18n="resume.exp3_desc">
+                    Provided hands-on technical consulting for managed service clients across networking and hybrid infrastructure.
+                  </p>
+                </li>
+
+                <li class="timeline-entry">
+                  <span class="timeline-node" aria-hidden="true"></span>
+                  <div class="timeline-meta">
+                    <div>
+                      <h4 class="timeline-role" data-i18n="resume.exp4_role">Manager, Network &amp; Service Operations</h4>
+                      <span class="timeline-company">Comwave</span>
+                    </div>
+                    <span class="timeline-dates" data-i18n="resume.exp4_period">Jul 2011 – Feb 2017</span>
+                  </div>
+                  <p class="timeline-summary" data-i18n="resume.exp4_desc">
+                    Managed NOC, Provisioning, and Capacity Planning teams, and owned wholesale customer operations.
+                  </p>
+                  <ul class="timeline-bullets">
+                    <li data-i18n="resume.exp4_li1">Assisted with the launch and capacity planning of the enterprise data centre at 151 Front Street, Toronto.</li>
+                    <li data-i18n="resume.exp4_li2">Expanded NOC to 24/7/365 coverage and designed automation tools to eliminate repetitive daily workflows.</li>
+                    <li data-i18n="resume.exp4_li3">Managed data centre physical infrastructure, HVAC systems, DC power distribution, and optical fibres.</li>
+                  </ul>
+                </li>
+
+                <li class="timeline-entry">
+                  <span class="timeline-node" aria-hidden="true"></span>
+                  <div class="timeline-meta">
+                    <div>
+                      <h4 class="timeline-role" data-i18n="resume.exp5_role">Team Lead &amp; NOCC Technician</h4>
+                      <span class="timeline-company">Primus Telecommunications</span>
+                    </div>
+                    <span class="timeline-dates" data-i18n="resume.exp5_period">Feb 2005 – Jun 2011</span>
+                  </div>
+                  <p class="timeline-summary" data-i18n="resume.exp5_desc">
+                    Supervised NOCC operations, built standardized training metrics, and monitored national carrier voice and data networks.
+                  </p>
+                  <ul class="timeline-bullets">
+                    <li data-i18n="resume.exp5_li1">Built a web-based shift handoff tracker, improving audits and communication.</li>
+                    <li data-i18n="resume.exp5_li2">Administered Cisco, Redback SmartEdge, Plexus, and Juniper infrastructure across core protocols (BGP, OSPF, MPLS, SIP, ATM).</li>
+                  </ul>
+                </li>
+
+                <li class="timeline-entry">
+                  <span class="timeline-node" aria-hidden="true"></span>
+                  <div class="timeline-meta">
+                    <div>
+                      <h4 class="timeline-role" data-i18n="resume.exp6_role">Systems &amp; Network Support</h4>
+                      <span class="timeline-company">Woodslee Credit Union &amp; WINCOM ISP</span>
+                    </div>
+                    <span class="timeline-dates" data-i18n="resume.exp6_period">Sep 1999 – Feb 2005</span>
+                  </div>
+                  <p class="timeline-summary" data-i18n="resume.exp6_desc">
+                    Managed mail, DNS, database, and colocation servers for a regional ISP, and migrated multi-branch banking infrastructure.
+                  </p>
+                  <ul class="timeline-bullets">
+                    <li data-i18n="resume.exp6_li1">Led NT 4.0 to Windows/Exchange Server migration across seven bank branch locations.</li>
+                    <li data-i18n="resume.exp6_li2">Configured security firewalls, IDS sensors, and backup architectures.</li>
+                  </ul>
+                </li>
+              </ol>
+            </div>
+
+            <!-- Competencies (sublines are drawn from the resume bullets; no percentages) -->
+            <div class="sub-block" data-reveal>
+              <h3 class="sub-heading" data-i18n="resume.skills_heading">Core Competencies</h3>
+              <div class="competency-grid">
+                <div class="competency-panel">
+                  <div class="competency-head">
+                    <span class="mono-label" data-i18n="resume.domain1">Domain 01</span>
+                    <h4 data-i18n="resume.cat1_title">Network &amp; Firewalls</h4>
+                  </div>
+                  <ul class="competency-list">
+                    <li>
+                      <span class="comp-title">FortiGate, Cisco, Meraki, SonicWALL</span>
+                      <span class="comp-meta" data-i18n="resume.cat1_skill1_meta">Firewall deployments, security policy governance</span>
+                    </li>
+                    <li>
+                      <span class="comp-title" data-i18n="resume.cat1_skill2">VPN, Security &amp; Compliance</span>
+                      <span class="comp-meta" data-i18n="resume.cat1_skill2_meta">Security programs, posture reviews, IDS sensors</span>
+                    </li>
+                    <li>
+                      <span class="comp-title" data-i18n="resume.cat1_skill3">Routing &amp; Switching, SD-WAN</span>
+                      <span class="comp-meta" data-i18n="resume.cat1_skill3_meta">BGP, OSPF, MPLS, SIP, ATM · carrier voice &amp; data networks</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="competency-panel">
+                  <div class="competency-head">
+                    <span class="mono-label" data-i18n="resume.domain2">Domain 02</span>
+                    <h4 data-i18n="resume.cat2_title">Infrastructure &amp; Systems</h4>
+                  </div>
+                  <ul class="competency-list">
+                    <li>
+                      <span class="comp-title" data-i18n="resume.cat2_skill1">Data Centre Operations</span>
+                      <span class="comp-meta" data-i18n="resume.cat2_skill1_meta">Capacity planning, DC power, HVAC, optical fibres</span>
+                    </li>
+                    <li>
+                      <span class="comp-title" data-i18n="resume.cat2_skill2">Windows Server, Linux, Automation</span>
+                      <span class="comp-meta" data-i18n="resume.cat2_skill2_meta">Windows/Exchange migrations, automation tooling, Docker &amp; CI/CD</span>
+                    </li>
+                    <li>
+                      <span class="comp-title" data-i18n="resume.cat2_skill3">Disaster Recovery &amp; Planning</span>
+                      <span class="comp-meta" data-i18n="resume.cat2_skill3_meta">DR testing, business continuity exercises, backup architectures</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Six Certifications -->
+            <div class="sub-block" data-reveal>
+              <h3 class="sub-heading" data-i18n="resume.cat3_title">Professional Certifications</h3>
+              <ul class="cert-grid">
+                <li class="cert-item">
+                  <span class="cert-year">2025</span>
+                  <span class="cert-name">Cisco 360 Black Belt Meraki Presales</span>
+                </li>
+                <li class="cert-item">
+                  <span class="cert-year">2024</span>
+                  <span class="cert-name">Fortinet FortiGate 7.4 Operator</span>
+                </li>
+                <li class="cert-item">
+                  <span class="cert-year">2024</span>
+                  <span class="cert-name">Fortinet Certified Associate – Cybersecurity</span>
+                </li>
+                <li class="cert-item">
+                  <span class="cert-year">2024</span>
+                  <span class="cert-name">Fortinet Certified Fundamentals – Cybersecurity</span>
+                </li>
+                <li class="cert-item">
+                  <span class="cert-year">2024</span>
+                  <span class="cert-name">Certified Meraki Networking Associate (CMNA)</span>
+                </li>
+                <li class="cert-item">
+                  <span class="cert-year">2018</span>
+                  <span class="cert-name">Certified SonicWALL Security Administrator (CSSA)</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <ul class="irc-facts">
-            <li><span class="irc-fact-label" data-i18n="irc.server">Server</span><code>irc.technicallabs.org</code></li>
-            <li><span class="irc-fact-label" data-i18n="irc.tls">TLS</span><code>6697</code></li>
-            <li><span class="irc-fact-label" data-i18n="irc.channel">Channel</span><code>#technicallabs</code></li>
-          </ul>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="section section-alt">
+    <!-- SECTION 04: TECHNICAL LABS AI & FAQ -->
+    <section id="faq" class="section section-alt" aria-labelledby="faq-heading">
       <div class="container">
-        <div class="section-header">
-          <span class="badge-tag" data-i18n="faq.tag">Questions</span>
-          <h2 data-i18n="faq.heading">Frequently asked questions</h2>
+        <div class="section-head" data-reveal>
+          <div class="section-coord">
+            <span class="coord-index">04</span>
+            <span class="coord-rule" aria-hidden="true"></span>
+            <span class="coord-label" data-i18n="sections.faq">Technical Labs AI &amp; FAQ</span>
+          </div>
+          <div class="section-title-split">
+            <h2 id="faq-heading" data-i18n="faq.heading">Self-Hosted AI Lab &amp; Common Questions</h2>
+            <p class="section-lead" data-i18n="faq.intro">
+              Our own AI coding models, the setup guide, and answers about the lab, booking, and the community.
+            </p>
+          </div>
         </div>
-        <div class="faq-list" id="faq-list">
-          <details class="faq-item" id="faq-ai-what">
-            <summary data-i18n="faq.q1">What is Technical Labs AI?</summary>
-            <p data-i18n="faq.a1">Our own AI coding models, running on an ASUS Ascent GX10 in our lab. You can use them from Claude Code, OpenCode or the Claude app, with up to a million tokens of context.</p>
-          </details>
-          <details class="faq-item" id="faq-ai-connect" open>
-            <summary data-i18n="faq.q2">How do I connect to Technical Labs AI?</summary>
-            <p data-i18n="faq.a2">Follow our setup guide. It has ready-to-copy settings for Claude Code and OpenCode, and the steps to add the TechLabs connector to your company's Claude.</p>
-            <a href="/ai/#connect" class="btn btn-primary faq-cta" id="faq-ai-guide-link" data-i18n="faq.a2_link">Open the connection guide</a>
-          </details>
-          <details class="faq-item" id="faq-ai-access">
-            <summary data-i18n="faq.q3">How do I get access?</summary>
-            <p data-i18n="faq.a3">Access is by invitation while we test. Ask Nicholas for a personal key and he will send it to you directly.</p>
-          </details>
+
+        <div class="ai-faq-layout">
+          <!-- Left: Technical Labs AI spec plate -->
+          <div class="ai-spotlight" data-reveal>
+            <h3 data-i18n="ai.heading">Technical Labs AI</h3>
+
+            <dl class="ai-plate">
+              <div class="ai-plate-row">
+                <dt data-i18n="ai.hardware">Hardware</dt>
+                <dd data-i18n="ai.hardware_v">Our own AI coding models on an ASUS Ascent GX10, self-hosted in our lab</dd>
+              </div>
+              <div class="ai-plate-row">
+                <dt data-i18n="ai.context">Context</dt>
+                <dd data-i18n="ai.context_v">Up to a million tokens</dd>
+              </div>
+              <div class="ai-plate-row">
+                <dt data-i18n="ai.clients">Clients</dt>
+                <dd data-i18n="ai.clients_v">Claude Code · OpenCode · the Claude app</dd>
+              </div>
+              <div class="ai-plate-row">
+                <dt data-i18n="ai.setup">Setup</dt>
+                <dd data-i18n="ai.setup_v">Ready-to-copy settings for Claude Code and OpenCode, plus the steps to add the TechLabs connector to your company's Claude</dd>
+              </div>
+            </dl>
+
+            <div class="ai-cta-group">
+              <a href="/ai/#connect" class="btn btn-primary">
+                <span data-i18n="ai.cta_guide">Open the connection guide</span>
+                <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </a>
+              <a href="/ai/" class="btn btn-secondary">
+                <span data-i18n="ai.cta_full">Read the full guide (/ai/)</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: grouped FAQ -->
+          <div class="faq-stack" data-reveal data-reveal-delay="1">
+            <h3 class="faq-group-heading" data-i18n="faq.group_ai">AI lab</h3>
+            <details class="faq-item">
+              <summary>
+                <span data-i18n="faq.q1">What is Technical Labs AI?</span>
+                <span class="faq-chevron" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.a1">
+                  Our own AI coding models, running in our lab. You can use them from Claude Code, OpenCode or the Claude app, with up to a million tokens of context.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item" open>
+              <summary>
+                <span data-i18n="faq.q2">How do I connect to Technical Labs AI?</span>
+                <span class="faq-chevron" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.a2">
+                  Follow our setup guide. It has ready-to-copy settings for Claude Code and OpenCode, and the steps to add the TechLabs connector to your company's Claude.
+                </p>
+                <a href="/ai/#connect" class="faq-inline-cta"><span data-i18n="faq.a2_link_full">Open the connection guide (/ai/#connect) →</span></a>
+              </div>
+            </details>
+
+            <h3 class="faq-group-heading" data-i18n="faq.group_booking">Booking</h3>
+            <details class="faq-item">
+              <summary>
+                <span data-i18n="faq.q4">What can I book a session about?</span>
+                <span class="faq-chevron" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.a4">
+                  Four areas: Firewalls &amp; Networking (subnet planning, firewall rules, routing), Data Centre &amp; Infrastructure (server deployments, virtualization, physical setup), System &amp; Process Automation (scripting, CI/CD pipelines, container workflows), and Custom Development (API integrations, backend services, custom tools).
+                </p>
+                <a href="#booking" class="faq-inline-cta" data-book-link><span data-i18n="faq.a4_link">Go to the booking form →</span></a>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <span data-i18n="faq.q5">What happens after I send a booking request?</span>
+                <span class="faq-chevron" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.a5">
+                  We receive your request and email you within 24 hours to finalize the details.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <span data-i18n="faq.q6">Where are you based?</span>
+                <span class="faq-chevron" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.a6">
+                  Toronto, ON, working remotely as well, on EST.
+                </p>
+              </div>
+            </details>
+
+            <h3 class="faq-group-heading" data-i18n="faq.group_community">Community</h3>
+            <details class="faq-item">
+              <summary>
+                <span data-i18n="faq.q7">Do I need to install anything to join IRC?</span>
+                <span class="faq-chevron" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.a7" data-i18n-html>
+                  No. The web chat at <a href="https://irc.technicallabs.org/" target="_blank" rel="noopener noreferrer"><span>irc.technicallabs.org</span><span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span></a> opens in your browser, nothing to install. If you prefer a standalone client, point it at <code>irc.technicallabs.org</code> on TLS port <code>6697</code> and join <code>#technicallabs</code>.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <span data-i18n="faq.q8">Where are the interactive IT labs?</span>
+                <span class="faq-chevron" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.a8" data-i18n-html>
+                  The Portal at <a href="http://portal.technicallabs.org" target="_blank" rel="noopener noreferrer"><span>portal.technicallabs.org</span><span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span></a> hosts the interactive IT labs: hands-on lab resources for aspiring IT professionals.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 05: COMMUNITY & PORTAL -->
+    <section id="community" class="section" aria-labelledby="community-heading">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div class="section-coord">
+            <span class="coord-index">05</span>
+            <span class="coord-rule" aria-hidden="true"></span>
+            <span class="coord-label" data-i18n="sections.community">Community &amp; lab environments</span>
+          </div>
+          <div class="section-title-split">
+            <h2 id="community-heading" data-i18n="community.heading">Public IRC Server &amp; Lab Portal</h2>
+            <p class="section-lead" data-i18n="community.intro">
+              Join the community on our public IRC server over TLS, or open the browser-based interactive IT labs.
+            </p>
+          </div>
+        </div>
+
+        <div class="community-grid">
+          <!-- IRC Block -->
+          <div class="community-card" data-reveal>
+            <div class="community-card-bar">
+              <span class="mono-label"><span data-i18n="community.irc_label">Public IRC</span> // TLS 6697</span>
+              <span class="mono-muted">#technicallabs</span>
+            </div>
+
+            <h3 data-i18n="irc.title">Chat with the Community</h3>
+            <p class="community-desc" data-i18n="irc.desc">
+              We run a public IRC server. Ask questions, share what you're building, or just say hello.
+            </p>
+
+            <dl class="irc-endpoint-grid">
+              <div class="irc-cell">
+                <dt data-i18n="irc.server">Server</dt>
+                <dd><code>irc.technicallabs.org</code></dd>
+              </div>
+              <div class="irc-cell">
+                <dt data-i18n="community.tls_port">TLS Port</dt>
+                <dd><code>6697</code></dd>
+              </div>
+              <div class="irc-cell">
+                <dt data-i18n="irc.channel">Channel</dt>
+                <dd><code>#technicallabs</code></dd>
+              </div>
+            </dl>
+
+            <div class="community-actions">
+              <a href="https://irc.technicallabs.org/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <span data-i18n="irc.cta">Open Web Chat</span>
+                <span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span>
+                <svg width="14" height="14" aria-hidden="true"><use href="#i-ext"/></svg>
+              </a>
+              <button type="button" class="btn btn-secondary btn-copy" id="copy-irc-btn" data-copy="irc.technicallabs.org:6697">
+                <span class="btn-copy-text" data-i18n="community.copy">Copy Server:Port</span>
+              </button>
+              <span class="community-hint" data-i18n="irc.hint">Opens in your browser — nothing to install</span>
+            </div>
+          </div>
+
+          <!-- Interactive Portal Block -->
+          <div class="community-card" data-reveal data-reveal-delay="1">
+            <div class="community-card-bar">
+              <span class="mono-label" data-i18n="community.labs_label">Interactive IT labs</span>
+              <span class="mono-muted" data-i18n="nav.portal">Portal</span>
+            </div>
+
+            <h3 data-i18n="community.portal_title">Technical Labs Portal</h3>
+            <p class="community-desc" data-i18n="community.portal_desc">
+              Hands-on interactive lab resources to help aspiring IT professionals build real-world skills.
+            </p>
+
+            <dl class="irc-endpoint-grid portal-endpoint-grid">
+              <div class="irc-cell">
+                <dt data-i18n="community.address">Address</dt>
+                <dd><code>portal.technicallabs.org</code></dd>
+              </div>
+              <div class="irc-cell">
+                <dt data-i18n="community.environment">Environment</dt>
+                <dd><code data-i18n="community.environment_v">Interactive IT Labs</code></dd>
+              </div>
+            </dl>
+
+            <div class="community-actions">
+              <a href="http://portal.technicallabs.org" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <span data-i18n="community.launch">Launch Lab Portal</span>
+                <span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span>
+                <svg width="14" height="14" aria-hidden="true"><use href="#i-ext"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING BOOKING BAND -->
+    <section class="booking-band" aria-labelledby="booking-band-heading">
+      <div class="container booking-band-inner" data-reveal>
+        <div class="booking-band-copy">
+          <div class="section-coord">
+            <span class="coord-index">//</span>
+            <span class="coord-rule" aria-hidden="true"></span>
+            <span class="coord-label" data-i18n="sections.band">Session dispatch</span>
+          </div>
+          <h2 id="booking-band-heading" data-i18n="band.heading">Ready to book a session?</h2>
+          <p data-i18n="band.text">Pick a topic, send your details, and we'll email you within 24 hours to finalize details.</p>
+        </div>
+        <div class="booking-band-actions">
+          <a href="#booking" class="btn btn-primary" data-book-link>
+            <span data-i18n="nav.book">Book a session</span>
+            <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a href="mailto:xphox@xphox.net" class="btn btn-secondary">
+            <span data-i18n="band.email">Email xphox@xphox.net</span>
+          </a>
         </div>
       </div>
     </section>
   </main>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a href="#" class="logo">
-          <div class="logo-icon">
-            <i data-lucide="terminal"></i>
-          </div>
-          <span>Technical Labs</span>
+        <a href="#hero" class="brand-mark">
+          <span class="brand-glyph" aria-hidden="true"><svg width="18" height="18"><use href="#i-brand"/></svg></span>
+          <span class="brand-name">Technical Labs</span>
         </a>
-        <p data-i18n="footer.brand_desc">Providing high-quality IT lab simulators, customized deployment mentorship, and robust networking solutions.</p>
+        <p class="footer-tagline" data-i18n="footer.brand_desc">
+          Providing high-quality IT lab simulators, customized deployment mentorship, and robust networking solutions.
+        </p>
+        <p class="footer-loc" data-i18n="footer.location">Toronto, ON / Remote · EST Timezone</p>
       </div>
 
-      <div class="footer-links-col">
-        <h4 data-i18n="footer.nav_heading">Navigation</h4>
+      <div class="footer-col">
+        <h2 class="footer-heading" data-i18n="footer.sections">Sections</h2>
         <ul>
           <li><a href="#hero" data-i18n="nav.home">Home</a></li>
           <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
-          <li><a href="#resume" data-i18n="nav.resume">Resume &amp; Skills</a></li>
           <li><a href="#services" data-i18n="nav.services">Services &amp; Consulting</a></li>
+          <li><a href="#booking" data-book-link data-i18n="nav.book">Book a session</a></li>
+          <li><a href="#resume" data-i18n="nav.resume">Resume &amp; Skills</a></li>
           <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
         </ul>
       </div>
 
-      <div class="footer-links-col">
-        <h4 data-i18n="footer.domain_heading">Domain info</h4>
+      <div class="footer-col">
+        <h2 class="footer-heading" data-i18n="footer.lab">Lab &amp; Network</h2>
         <ul>
-          <li><a href="https://www.technicallabs.org" target="_blank" rel="noopener noreferrer">www.technicallabs.org</a></li>
+          <li><a href="/ai/" data-i18n="ai.heading">Technical Labs AI</a></li>
+          <li><a href="/ai/#connect" data-i18n="footer.ai_guide">AI Connection Guide</a></li>
+          <li><a href="http://portal.technicallabs.org" target="_blank" rel="noopener noreferrer"><span data-i18n="footer.portal">IT Lab Portal ↗</span><span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span></a></li>
+          <li><a href="https://irc.technicallabs.org/" target="_blank" rel="noopener noreferrer"><span data-i18n="footer.irc">Public Web IRC ↗</span><span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span></a></li>
+          <li><a href="https://wifi-doctor.technicallabs.org" target="_blank" rel="noopener noreferrer"><span data-i18n="footer.wifi">WiFi Doctor ↗</span><span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h2 class="footer-heading" data-i18n="common.contact">Contact</h2>
+        <ul>
           <li><a href="mailto:xphox@xphox.net">xphox@xphox.net</a></li>
-          <li><span style="color: var(--text-secondary);" data-i18n="footer.timezone">EST Timezone</span></li>
+          <li><a href="https://linkedin.com/in/nickdiotte" target="_blank" rel="noopener noreferrer"><span>linkedin.com/in/nickdiotte ↗</span><span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span></a></li>
+          <li><a href="https://www.technicallabs.org">www.technicallabs.org</a></li>
         </ul>
       </div>
     </div>
 
     <div class="container footer-bottom">
       <p data-i18n="footer.copyright">&copy; 2026 Technical Labs. All rights reserved.</p>
-      <p data-i18n="footer.designed">Designed with Vanilla HTML, CSS, and JS</p>
+      <p class="footer-craft" data-i18n="footer.designed">Designed with Vanilla HTML, CSS, and JS</p>
     </div>
   </footer>
 
-  <!-- MODALS FOR PORTFOLIO DETAILS -->
-  <!-- 1. Vinylfo Modal -->
-  <div class="modal" id="modal-vinylfo" aria-hidden="true">
-    <div class="modal-content">
-      <button class="modal-close-btn" aria-label="Close details">
-        <i data-lucide="x"></i>
-      </button>
-      <div class="modal-header">
-        <div class="modal-title-row">
-          <div class="project-icon" style="margin-bottom: 0; width: 2.5rem; height: 2.5rem;">
-            <i data-lucide="music"></i>
-          </div>
-          <h3 data-i18n="modals.vinylfo_title">Vinylfo Record Collection Manager</h3>
-        </div>
-        <div class="project-tags">
-          <span class="project-tag">Go</span>
-          <span class="project-tag">Twitch API</span>
-          <span class="project-tag">YouTube API</span>
-          <span class="project-tag">OBS overlay</span>
-          <span class="project-tag">SSE</span>
-        </div>
+  <!-- PHONE-ONLY FLOATING BOOKING PILL -->
+  <a href="#booking" class="book-pill" id="book-pill" data-book-link>
+    <span data-i18n="nav.book">Book a session</span>
+    <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg>
+  </a>
+
+  <!-- ARCHITECTURE INSPECTION DIALOGS -->
+  <!-- Dialog 1: Vinylfo -->
+  <dialog class="modal" id="modal-vinylfo" aria-labelledby="modal-title-vinylfo">
+    <div class="modal-panel">
+      <div class="modal-topbar">
+        <span class="mono-label">SYS-01 // <span data-i18n="modals.spec">Architecture specification</span></span>
+        <button type="button" class="modal-close" data-modal-close aria-label="Close Vinylfo details">
+          <svg width="18" height="18" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
       </div>
+
       <div class="modal-body">
+        <div class="modal-head">
+          <div class="modal-title-row">
+            <h2 id="modal-title-vinylfo" data-i18n="modals.vinylfo_title">Vinylfo Record Collection Manager</h2>
+            <span class="version-chip" data-version-for="vinyl" data-stable="true">v0.16.13 · Stable</span>
+          </div>
+          <ul class="tag-list">
+            <li>Go</li>
+            <li>Twitch OAuth / Twitch API</li>
+            <li>YouTube API</li>
+            <li>OBS WebSocket / OBS Overlay</li>
+            <li>SSE</li>
+            <li>Windows · macOS · Linux</li>
+          </ul>
+        </div>
+
         <div class="modal-section">
-          <h4 class="modal-section-title" data-i18n="modals.overview_heading">Project Overview</h4>
-          <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="modals.vinylfo_overview">
-            Vinylfo is a self-hosted desktop application designed for streamers and audiophiles to manage their physical vinyl records while streaming metadata and media feeds to platforms like Twitch, YouTube, and OBS.
+          <h3 data-i18n="modals.overview_heading">Project Overview</h3>
+          <p data-i18n="modals.vinylfo_overview">
+            Vinylfo is a self-hosted desktop application designed for streamers and audiophiles to manage their physical vinyl records while streaming metadata and media feeds to platforms like Twitch, YouTube, and OBS, alongside Stream Deck integrations.
           </p>
         </div>
+
+        <figure class="flow-diagram" aria-labelledby="flow-cap-vinylfo">
+          <figcaption class="flow-cap" id="flow-cap-vinylfo" data-i18n="flow.vinyl_cap">Data flow: collection in, live stream feeds out.</figcaption>
+          <div class="flow-grid">
+            <div class="flow-col">
+              <p class="flow-label" data-i18n="flow.source">Source</p>
+              <ul class="flow-stack">
+                <li class="flow-node" data-i18n="flow.discogs">Discogs collection</li>
+              </ul>
+            </div>
+            <div class="flow-link">
+              <span class="flow-link-label" data-i18n="flow.oauth">OAuth sync</span>
+              <span class="flow-arrow" aria-hidden="true"></span>
+            </div>
+            <div class="flow-col">
+              <p class="flow-label" data-i18n="flow.desktop">Desktop app</p>
+              <p class="flow-node flow-node-hub">Vinylfo<span class="flow-node-sub">Go · Windows, macOS, Linux</span></p>
+              <ul class="flow-stack">
+                <li class="flow-node" data-i18n="flow.schedules">Track schedules</li>
+              </ul>
+            </div>
+            <div class="flow-link">
+              <span class="flow-link-label" data-i18n="flow.sse_link">SSE on a local HTTP port · Twitch API</span>
+              <span class="flow-arrow" aria-hidden="true"></span>
+            </div>
+            <div class="flow-col">
+              <p class="flow-label" data-i18n="flow.outputs">Outputs</p>
+              <ul class="flow-stack">
+                <li class="flow-node" data-i18n="flow.obs">OBS browser-source overlays</li>
+                <li class="flow-node" data-i18n="flow.twitch">Twitch live HUD &amp; chatbot</li>
+                <li class="flow-node" data-i18n="flow.streamdeck">Stream Deck integrations</li>
+              </ul>
+            </div>
+          </div>
+        </figure>
+
         <div class="modal-section">
-          <h4 class="modal-section-title" data-i18n="modals.arch_heading">Core Systems Architecture</h4>
-          <ul class="modal-features-list">
-            <li>
-              <i data-lucide="chevron-right"></i>
-              <span data-i18n="modals.vinylfo_feat1" data-i18n-html><strong>Discogs OAuth &amp; Sync:</strong> Import vinyl libraries and artwork through standard OAuth connections, running syncs asynchronously in database workers.</span>
+          <h3 data-i18n="modals.arch_heading">Core Systems Architecture</h3>
+          <ul class="arch-list">
+            <li data-i18n="modals.vinylfo_feat1" data-i18n-html>
+              <strong>Discogs OAuth &amp; Sync:</strong> Import vinyl libraries and artwork through standard OAuth connections, running syncs asynchronously in database workers.
             </li>
-            <li>
-              <i data-lucide="chevron-right"></i>
-              <span data-i18n="modals.vinylfo_feat2" data-i18n-html><strong>Multi-Source Duration Consensus:</strong> Queries MusicBrainz, Wikipedia, and YouTube APIs to resolve track durations, applying filters for closest match consensus.</span>
+            <li data-i18n="modals.vinylfo_feat2" data-i18n-html>
+              <strong>Multi-Source Duration Consensus:</strong> Queries MusicBrainz, Wikipedia, and YouTube APIs to resolve track durations, applying filters for closest match consensus.
             </li>
-            <li>
-              <i data-lucide="chevron-right"></i>
-              <span data-i18n="modals.vinylfo_feat3" data-i18n-html><strong>OBS Server-Sent Events (SSE):</strong> Broadcasts low-latency "Now Playing", Album Cover, and Visualizer feeds on a local HTTP port directly into OBS browser sources.</span>
+            <li data-i18n="modals.vinylfo_feat3" data-i18n-html>
+              <strong>OBS Server-Sent Events (SSE):</strong> Broadcasts low-latency "Now Playing", Album Cover, and Visualizer feeds on a local HTTP port directly into OBS browser sources.
             </li>
-            <li>
-              <i data-lucide="chevron-right"></i>
-              <span data-i18n="modals.vinylfo_feat4" data-i18n-html><strong>Twitch Live HUD &amp; Chatbot:</strong> Connects via device code OAuth to read chat events, moderate, launch viewer polls, and send announcements when record tracks advance.</span>
+            <li data-i18n="modals.vinylfo_feat4" data-i18n-html>
+              <strong>Twitch Live HUD &amp; Chatbot:</strong> Connects via device code OAuth to read chat events, moderate, launch viewer polls, and send announcements when record tracks advance.
             </li>
           </ul>
         </div>
+
+        <div class="modal-footer">
+          <a href="https://www.vinylfo.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span data-i18n="modals.vinylfo_visit">Visit vinylfo.com</span>
+            <span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span>
+            <svg width="14" height="14" aria-hidden="true"><use href="#i-ext"/></svg>
+          </a>
+          <button type="button" class="btn btn-secondary" data-modal-close><span data-i18n="modals.close">Close</span></button>
+        </div>
       </div>
     </div>
-  </div>
+  </dialog>
 
-  <!-- 2. Firewall Mon Modal -->
-  <div class="modal" id="modal-fwmon" aria-hidden="true">
-    <div class="modal-content">
-      <button class="modal-close-btn" aria-label="Close details">
-        <i data-lucide="x"></i>
-      </button>
-      <div class="modal-header">
-        <div class="modal-title-row">
-          <div class="project-icon" style="margin-bottom: 0; width: 2.5rem; height: 2.5rem;">
-            <i data-lucide="shield-check"></i>
-          </div>
-          <h3 data-i18n="modals.fwmon_title">Firewall Monitor &amp; Probe Relays</h3>
-        </div>
-        <div class="project-tags">
-          <span class="project-tag">Go Daemon</span>
-          <span class="project-tag">SNMP v2c/v3</span>
-          <span class="project-tag">Syslog Parser</span>
-          <span class="project-tag">sFlow Ingest</span>
-          <span class="project-tag">mTLS Relays</span>
-        </div>
+  <!-- Dialog 2: Firewall Monitor & Firewall-Collector -->
+  <dialog class="modal" id="modal-fwmon" aria-labelledby="modal-title-fwmon">
+    <div class="modal-panel">
+      <div class="modal-topbar">
+        <span class="mono-label">SYS-02 // <span data-i18n="modals.spec">Architecture specification</span></span>
+        <button type="button" class="modal-close" data-modal-close aria-label="Close Firewall Monitor details">
+          <svg width="18" height="18" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
       </div>
+
       <div class="modal-body">
+        <div class="modal-head">
+          <div class="modal-title-row">
+            <h2 id="modal-title-fwmon" data-i18n="modals.fwmon_title">Firewall Monitor &amp; Firewall-Collector</h2>
+            <div class="dual-versions">
+              <span class="version-chip"><span class="version-k" data-i18n="hud.server">server</span> <span data-version-for="fw_server">v0.11.233</span></span>
+              <span class="version-chip version-chip-sub"><span class="version-k" data-i18n="hud.collector">collector</span> <span data-version-for="fw_collector">v1.3.44</span></span>
+            </div>
+          </div>
+          <ul class="tag-list">
+            <li>Go</li>
+            <li>SNMP v2c/v3</li>
+            <li>Syslog</li>
+            <li>sFlow</li>
+            <li>HTTPS / mTLS Relays</li>
+            <li>Docker</li>
+          </ul>
+        </div>
+
         <div class="modal-section">
-          <h4 class="modal-section-title" data-i18n="modals.overview_heading">Project Overview</h4>
-          <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="modals.fwmon_overview">
-            Firewall Monitor is a specialized, lightweight Network Management System (NMS) focused entirely on firewall fleets. It supports centralized deployments or edge collection probes across multiple client sites.
+          <h3 data-i18n="modals.overview_heading">Project Overview</h3>
+          <p data-i18n="modals.fwmon_overview">
+            Firewall Monitor is a vendor-agnostic, lightweight Network Management System (NMS) focused on firewall fleets. It supports centralized deployments or distributed remote collection probes (Firewall-Collector) across multiple client sites.
           </p>
         </div>
+
+        <figure class="flow-diagram" aria-labelledby="flow-cap-fwmon">
+          <figcaption class="flow-cap" id="flow-cap-fwmon" data-i18n="flow.fw_cap">Collection topology: edge probes relay to the central NMS.</figcaption>
+          <div class="flow-grid">
+            <div class="flow-col">
+              <p class="flow-label" data-i18n="flow.edge">Edge site</p>
+              <ul class="flow-stack">
+                <li class="flow-node">FortiGate</li>
+                <li class="flow-node">Palo Alto</li>
+                <li class="flow-node">pfSense</li>
+              </ul>
+            </div>
+            <div class="flow-link">
+              <span class="flow-link-label" data-i18n="flow.snmp_link">SNMP v2c/v3 · syslog · sFlow</span>
+              <span class="flow-arrow" aria-hidden="true"></span>
+            </div>
+            <div class="flow-col">
+              <p class="flow-label" data-i18n="flow.probe">Probe</p>
+              <p class="flow-node flow-node-hub">Firewall-Collector<span class="flow-node-sub" data-i18n="flow.edge_relay">edge relay</span></p>
+            </div>
+            <div class="flow-link">
+              <span class="flow-link-label" data-i18n="flow.https_link">HTTPS · mTLS</span>
+              <span class="flow-arrow" aria-hidden="true"></span>
+            </div>
+            <div class="flow-col">
+              <p class="flow-label" data-i18n="flow.hq">Headquarters</p>
+              <p class="flow-node flow-node-hub flow-node-hub-emerald">Firewall Monitor<span class="flow-node-sub" data-i18n="flow.hq_sub">central NMS · Docker</span></p>
+              <ul class="flow-stack">
+                <li class="flow-node" data-i18n="flow.config">Config tracking: SSH / TFTP</li>
+                <li class="flow-node" data-i18n="flow.alerts">Alerts: webhooks · SMTP · IRC</li>
+              </ul>
+            </div>
+          </div>
+        </figure>
+
         <div class="modal-section">
-          <h4 class="modal-section-title" data-i18n="modals.arch_heading">Core Systems Architecture</h4>
-          <ul class="modal-features-list">
-            <li>
-              <i data-lucide="chevron-right"></i>
-              <span data-i18n="modals.fwmon_feat1" data-i18n-html><strong>Distributed SNMP Relays:</strong> The Firewall-Collector probe runs locally, polling devices at the edge (FortiGate, Palo Alto, pfSense) and batches logs to HQ over HTTPS.</span>
+          <h3 data-i18n="modals.arch_heading">Core Systems Architecture</h3>
+          <ul class="arch-list">
+            <li data-i18n="modals.fwmon_feat1" data-i18n-html>
+              <strong>Distributed SNMP Relays:</strong> The Firewall-Collector probe runs locally, polling edge devices (FortiGate, Palo Alto, pfSense) over SNMP v2c/v3 and batching telemetry to HQ over HTTPS/mTLS.
             </li>
-            <li>
-              <i data-lucide="chevron-right"></i>
-              <span data-i18n="modals.fwmon_feat2" data-i18n-html><strong>Syslog &amp; sFlow Receivers:</strong> High-performance UDP parsing pipelines normalized to handle hundreds of events per second with rate-limiting filters.</span>
+            <li data-i18n="modals.fwmon_feat2" data-i18n-html>
+              <strong>Syslog &amp; sFlow Receivers:</strong> High-performance UDP parsing pipelines normalized to handle hundreds of events per second with rate-limiting filters.
             </li>
-            <li>
-              <i data-lucide="chevron-right"></i>
-              <span data-i18n="modals.fwmon_feat3" data-i18n-html><strong>Normalized Configuration Tracking:</strong> Periodically polls configurations via SSH/TFTP, Normalizes values across different vendors, and stores differential code revisions.</span>
+            <li data-i18n="modals.fwmon_feat3" data-i18n-html>
+              <strong>Normalized Configuration Tracking:</strong> Periodically polls configurations via SSH/TFTP, normalizes values across different vendors, and stores differential code revisions.
             </li>
-            <li>
-              <i data-lucide="chevron-right"></i>
-              <span data-i18n="modals.fwmon_feat4" data-i18n-html><strong>Custom State Alerts:</strong> Evaluates data lag, traffic spikes, interface metrics, and sends notifications via Webhooks, SMTP Email, and IRC Bots.</span>
+            <li data-i18n="modals.fwmon_feat4" data-i18n-html>
+              <strong>Custom State Alerts:</strong> Evaluates data lag, traffic spikes, and interface metrics, sending notifications via Webhooks, SMTP Email, and IRC Bots.
             </li>
           </ul>
         </div>
+
+        <div class="modal-footer">
+          <a href="https://firewall-mon.technicallabs.org" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span data-i18n="modals.fwmon_open">Open firewall-mon.technicallabs.org</span>
+            <span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span>
+            <svg width="14" height="14" aria-hidden="true"><use href="#i-ext"/></svg>
+          </a>
+          <button type="button" class="btn btn-secondary" data-modal-close><span data-i18n="modals.close">Close</span></button>
+        </div>
       </div>
     </div>
-  </div>
+  </dialog>
 
-  <!-- 3. Rust Game Plugin Modal -->
-  <div class="modal" id="modal-rustplugin" aria-hidden="true">
-    <div class="modal-content">
-      <button class="modal-close-btn" aria-label="Close details">
-        <i data-lucide="x"></i>
-      </button>
-      <div class="modal-header">
-        <div class="modal-title-row">
-          <div class="project-icon" style="margin-bottom: 0; width: 2.5rem; height: 2.5rem;">
-            <i data-lucide="gamepad-2"></i>
-          </div>
-          <h3 data-i18n="modals.rust_title">Rust Server Gameplay Plugin</h3>
-        </div>
-        <div class="project-tags">
-          <span class="project-tag">C# / .NET</span>
-          <span class="project-tag">Oxide API</span>
-          <span class="project-tag">JSON Configs</span>
-          <span class="project-tag">Memory Tuning</span>
-        </div>
+  <!-- Dialog 3: Rust Game Plugin (SignArtSaver) -->
+  <dialog class="modal" id="modal-rustplugin" aria-labelledby="modal-title-rust">
+    <div class="modal-panel">
+      <div class="modal-topbar">
+        <span class="mono-label">SYS-03 // <span data-i18n="modals.spec">Architecture specification</span></span>
+        <button type="button" class="modal-close" data-modal-close aria-label="Close SignArtSaver details">
+          <svg width="18" height="18" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
       </div>
+
       <div class="modal-body">
+        <div class="modal-head">
+          <div class="modal-title-row">
+            <h2 id="modal-title-rust" data-i18n="modals.rust_title">SignArtSaver — Rust Server Gameplay Plugin</h2>
+            <span class="version-chip" data-version-for="rust_plugin">v0.11.14</span>
+          </div>
+          <ul class="tag-list">
+            <li>C#</li>
+            <li>.NET</li>
+            <li>Oxide / uMod API</li>
+            <li>JSON Configs</li>
+            <li data-i18n="modals.rust_server_tag">Rust Survival Server</li>
+          </ul>
+        </div>
+
         <div class="modal-section">
-          <h4 class="modal-section-title" data-i18n="modals.overview_heading">Project Overview</h4>
-          <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-i18n="modals.rust_overview">
-            A native plugin developed for Rust survival game servers, modifying engine hooks to implement client-side interactive economy boards, administrative alerts, and performance metrics.
+          <h3 data-i18n="modals.overview_heading">Project Overview</h3>
+          <p data-i18n="modals.rust_overview">
+            A native plugin developed for Rust survival game servers, attaching to Oxide/uMod engine hooks to implement client-side interactive economy boards, administrative alerts, and real-time performance metrics.
           </p>
         </div>
+
+        <figure class="flow-diagram" aria-labelledby="flow-cap-rust">
+          <figcaption class="flow-cap" id="flow-cap-rust" data-i18n="flow.rust_cap">Plugin flow: game hooks in, overlays and checkpoints out.</figcaption>
+          <div class="flow-grid">
+            <div class="flow-col">
+              <p class="flow-label" data-i18n="flow.game_server">Game server</p>
+              <ul class="flow-stack">
+                <li class="flow-node" data-i18n="flow.rust_server">Rust server · Oxide/uMod</li>
+                <li class="flow-node" data-i18n="flow.player_hooks">Player hooks: gathering, trading, combat</li>
+              </ul>
+            </div>
+            <div class="flow-link">
+              <span class="flow-link-label" data-i18n="flow.event_hooks">Event hooks</span>
+              <span class="flow-arrow" aria-hidden="true"></span>
+            </div>
+            <div class="flow-col">
+              <p class="flow-label" data-i18n="flow.plugin">Plugin</p>
+              <p class="flow-node flow-node-hub">SignArtSaver<span class="flow-node-sub" data-i18n="flow.rust_sub">C# / .NET · in-memory data</span></p>
+              <ul class="flow-stack">
+                <li class="flow-node" data-i18n="flow.admin_registry">Admin command registry</li>
+              </ul>
+            </div>
+            <div class="flow-link">
+              <span class="flow-link-label" data-i18n="flow.checkpoints_link">Checkpoints · UI engine</span>
+              <span class="flow-arrow" aria-hidden="true"></span>
+            </div>
+            <div class="flow-col">
+              <p class="flow-label" data-i18n="flow.outputs">Outputs</p>
+              <ul class="flow-stack">
+                <li class="flow-node" data-i18n="flow.json_ckpt">JSON checkpoints on disk</li>
+                <li class="flow-node" data-i18n="flow.ui_overlays">Game UI overlays on player viewports</li>
+                <li class="flow-node" data-i18n="flow.admin_alerts">Admin alerts &amp; metrics</li>
+              </ul>
+            </div>
+          </div>
+        </figure>
+
         <div class="modal-section">
-          <h4 class="modal-section-title" data-i18n="modals.arch_heading">Core Systems Architecture</h4>
-          <ul class="modal-features-list">
-            <li>
-              <i data-lucide="chevron-right"></i>
-              <span data-i18n="modals.rust_feat1" data-i18n-html><strong>Low-Overhead Event Hooks:</strong> Attaches directly to player interaction hooks (gathering, trading, combat) without introducing stutter to the game thread.</span>
+          <h3 data-i18n="modals.arch_heading">Core Systems Architecture</h3>
+          <ul class="arch-list">
+            <li data-i18n="modals.rust_feat1" data-i18n-html>
+              <strong>Low-Overhead Event Hooks:</strong> Attaches directly to player interaction hooks (gathering, trading, combat) without introducing stutter to the game thread.
             </li>
-            <li>
-              <i data-lucide="chevron-right"></i>
-              <span data-i18n="modals.rust_feat2" data-i18n-html><strong>In-Memory Database Sync:</strong> Maintains real-time player telemetry and points balances in memory, periodically saving checkpoints to disk using structured JSON configurations.</span>
+            <li data-i18n="modals.rust_feat2" data-i18n-html>
+              <strong>In-Memory Database Sync:</strong> Maintains real-time player telemetry and points balances in memory, periodically saving checkpoints to disk using structured JSON configurations.
             </li>
-            <li>
-              <i data-lucide="chevron-right"></i>
-              <span data-i18n="modals.rust_feat3" data-i18n-html><strong>Admin Command Registry:</strong> Exposes chat and console commands with permission layers for server managers to issue adjustments, check logs, and run server diagnostics.</span>
+            <li data-i18n="modals.rust_feat3" data-i18n-html>
+              <strong>Admin Command Registry:</strong> Exposes chat and console commands with permission layers for server managers to issue adjustments, check logs, and run server diagnostics.
             </li>
-            <li>
-              <i data-lucide="chevron-right"></i>
-              <span data-i18n="modals.rust_feat4" data-i18n-html><strong>UI Overlay Renderer:</strong> Crafts custom vector and text screens using the Rust Game UI Engine, displaying data directly on player viewports dynamically.</span>
+            <li data-i18n="modals.rust_feat4" data-i18n-html>
+              <strong>UI Overlay Renderer:</strong> Crafts custom vector and text screens using the Rust Game UI Engine, displaying data directly on player viewports dynamically.
             </li>
           </ul>
         </div>
+
+        <div class="modal-footer">
+          <a href="https://github.com/xphox2/SignArtSaver" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span data-i18n="modals.rust_github">View on GitHub</span>
+            <span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span>
+            <svg width="14" height="14" aria-hidden="true"><use href="#i-ext"/></svg>
+          </a>
+          <a href="https://rust.facepunch.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <span data-i18n="modals.rust_site">Rust (Facepunch) ↗</span>
+            <span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span>
+          </a>
+          <button type="button" class="btn btn-secondary" data-modal-close><span data-i18n="modals.close">Close</span></button>
+        </div>
       </div>
     </div>
-  </div>
+  </dialog>
 
-  <!-- BACK TO TOP BUTTON -->
-  <button class="back-to-top" id="back-to-top-btn" aria-label="Scroll back to top">
-    <i data-lucide="arrow-up"></i>
-  </button>
+  <!-- Dialog 4: WiFi Doctor -->
+  <dialog class="modal" id="modal-wifidoctor" aria-labelledby="modal-title-wifidoctor">
+    <div class="modal-panel">
+      <div class="modal-topbar">
+        <span class="mono-label">SYS-04 // <span data-i18n="modals.spec">Architecture specification</span></span>
+        <button type="button" class="modal-close" data-modal-close aria-label="Close WiFi Doctor details">
+          <svg width="18" height="18" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-head">
+          <div class="modal-title-row">
+            <h2 id="modal-title-wifidoctor" data-i18n="modals.wifi_title">WiFi Doctor — Room-by-Room WiFi Survey Fleet</h2>
+            <span class="version-chip version-chip-status" data-i18n="modals.wifi_status">Early access · US &amp; Canada first</span>
+          </div>
+          <ul class="tag-list">
+            <li>Go</li>
+            <li>Postgres</li>
+            <li>ClickHouse</li>
+            <li>NATS</li>
+            <li>Kotlin Multiplatform</li>
+            <li>React</li>
+            <li>Android · Android TV · Windows · macOS · Linux</li>
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h3 data-i18n="modals.overview_heading">Project Overview</h3>
+          <p data-i18n="modals.wifi_overview">
+            WiFi Doctor finds and fixes weak WiFi, room by room. It turns the phones, Android TV boxes and computers you already have into a WiFi survey fleet, maps signal on your real floor plans, and tells you what to fix, room by room. Sensors are apps, not hardware: Android phones and tablets, Android TV boxes, Windows, macOS and Linux, including Raspberry Pi. No survey kit to buy.
+          </p>
+        </div>
+
+        <figure class="flow-diagram" aria-labelledby="flow-cap-wifidoctor">
+          <figcaption class="flow-cap" id="flow-cap-wifidoctor" data-i18n="flow.wifi_cap">Survey flow: sensors scan, the server maps, you get findings and reports.</figcaption>
+          <div class="flow-grid">
+            <div class="flow-col">
+              <p class="flow-label" data-i18n="flow.sensors">Sensors (apps)</p>
+              <ul class="flow-stack">
+                <li class="flow-node" data-i18n="flow.android_phones">Android phones &amp; tablets</li>
+                <li class="flow-node" data-i18n="flow.android_tv">Android TV boxes</li>
+                <li class="flow-node" data-i18n="flow.pcs">Windows, macOS, Linux PCs · Raspberry Pi</li>
+              </ul>
+            </div>
+            <div class="flow-link">
+              <span class="flow-link-label" data-i18n="flow.scan_link">Scans about every 30 s · guided walk surveys</span>
+              <span class="flow-arrow" aria-hidden="true"></span>
+            </div>
+            <div class="flow-col">
+              <p class="flow-label" data-i18n="irc.server">Server</p>
+              <p class="flow-node flow-node-hub flow-node-hub-amber"><span data-i18n="flow.wifi_server">WiFi Doctor server</span><span class="flow-node-sub">Go · Postgres, ClickHouse, NATS</span></p>
+              <ul class="flow-stack">
+                <li class="flow-node" data-i18n="flow.heatmaps">Heatmaps on your floor plans</li>
+                <li class="flow-node" data-i18n="flow.findings">Findings with evidence</li>
+              </ul>
+            </div>
+            <div class="flow-link">
+              <span class="flow-link-label" data-i18n="flow.dashboard_link">React web dashboard</span>
+              <span class="flow-arrow" aria-hidden="true"></span>
+            </div>
+            <div class="flow-col">
+              <p class="flow-label" data-i18n="flow.outputs">Outputs</p>
+              <ul class="flow-stack">
+                <li class="flow-node" data-i18n="flow.dashboard">Dashboard</li>
+                <li class="flow-node" data-i18n="flow.alerts_watch">Alerts once sensors keep watching</li>
+                <li class="flow-node" data-i18n="flow.reports">PDF &amp; CSV survey reports · scheduled reports</li>
+              </ul>
+            </div>
+          </div>
+        </figure>
+
+        <div class="modal-section">
+          <h3 data-i18n="modals.arch_heading">Core Systems Architecture</h3>
+          <ul class="arch-list">
+            <li data-i18n="modals.wifi_feat1" data-i18n-html>
+              <strong>Measured, not guessed:</strong> Heatmaps come from real scans on your floor plan; where nothing was measured, the map stays blank. A predictive view is always labelled as predicted.
+            </li>
+            <li data-i18n="modals.wifi_feat2" data-i18n-html>
+              <strong>Two ways to measure:</strong> Stationary sensors left in place scan about every 30 seconds, around the clock; guided walk surveys on an Android phone tell you which room to visit next and take a reading in each one.
+            </li>
+            <li data-i18n="modals.wifi_feat3" data-i18n-html>
+              <strong>Tells you what to change:</strong> Findings for weak coverage, crowded channels, roaming trouble and access-point spacing, each with the evidence behind it.
+            </li>
+            <li data-i18n="modals.wifi_feat4" data-i18n-html>
+              <strong>Reports and alerts:</strong> Survey reports as PDF and CSV with map and heatmap images; scheduled reports such as a weekly coverage PDF; alerts once sensors keep watching.
+            </li>
+            <li data-i18n="modals.wifi_feat5" data-i18n-html>
+              <strong>Sensor pairing:</strong> Add a sensor by scanning a QR code, or by typing a pairing code on devices without a camera; every new sensor waits for an admin's approval.
+            </li>
+          </ul>
+        </div>
+
+        <div class="modal-footer">
+          <a href="https://wifi-doctor.technicallabs.org/access" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span data-i18n="projects.request_access">Request early access</span>
+            <span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span>
+            <svg width="14" height="14" aria-hidden="true"><use href="#i-ext"/></svg>
+          </a>
+          <a href="https://wifi-doctor.technicallabs.org" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <span>wifi-doctor.technicallabs.org ↗</span>
+            <span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span>
+          </a>
+          <button type="button" class="btn btn-secondary" data-modal-close><span data-i18n="modals.close">Close</span></button>
+        </div>
+      </div>
+    </div>
+  </dialog>
 
   <script src="js/i18n.js?v=dev"></script>
   <script src="app.js?v=dev"></script>

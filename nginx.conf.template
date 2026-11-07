@@ -19,6 +19,9 @@ server {
     # browser on whatever scheme and host it used.
     absolute_redirect off;
 
+    # Custom 404 page (root-absolute links, so it works for nested paths too)
+    error_page 404 /404.html;
+
     # =========================================================================
     # Cache policy — updates always take effect without a manual refresh.
     #

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex">
+  <title>404 Route Unreachable | Technical Labs</title>
+
+  <!-- Root-absolute asset URLs: nginx serves this page for nested paths too. -->
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=dev">
+  <link rel="stylesheet" href="/style.css?v=dev">
+  <script>document.documentElement.classList.add('js-enabled');</script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-brand" viewBox="0 0 24 24"><path d="M5 8L10 12L5 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="16" x2="19" y2="16" fill="none" style="stroke:var(--signal-emerald)" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></g></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></g></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></g></symbol>
+  </svg>
+
+  <div class="ambient-canvas" aria-hidden="true">
+    <div class="ambient-glow"></div>
+    <div class="ambient-grid"></div>
+  </div>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-mark">
+        <span class="brand-glyph" aria-hidden="true"><svg width="20" height="20"><use href="#i-brand"/></svg></span>
+        <span class="brand-name">Technical Labs</span>
+      </a>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="/#hero" class="nav-link"><span>Home</span></a></li>
+          <li><a href="/#projects" class="nav-link"><span>Projects</span></a></li>
+          <li><a href="/#services" class="nav-link"><span>Services &amp; Consulting</span></a></li>
+          <li><a href="/#resume" class="nav-link"><span>Resume &amp; Skills</span></a></li>
+          <li><a href="/#faq" class="nav-link"><span>FAQ</span></a></li>
+          <li class="nav-sep" aria-hidden="true"></li>
+          <li>
+            <a href="/ai/" class="nav-link nav-link-pill">
+              <span class="pip pip-amber" aria-hidden="true"></span>
+              <span>AI</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://portal.technicallabs.org" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-ext">
+              <span>Portal</span>
+              <span class="sr-only">(opens in a new tab)</span>
+              <svg width="12" height="12" aria-hidden="true"><use href="#i-ext"/></svg>
+            </a>
+          </li>
+          <li class="nav-book-item">
+            <a href="/#booking" class="btn btn-primary btn-sm nav-book">
+              <span>Book a session</span>
+              <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-controls">
+        <a href="/#booking" class="btn btn-primary btn-sm header-book">
+          <span>Book a session</span>
+        </a>
+        <button type="button" class="nav-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-controls="primary-nav" aria-expanded="false">
+          <span class="nav-toggle-bars" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="notfound-main">
+    <div class="container">
+      <div class="notfound-console" data-reveal>
+        <div class="console-corner console-corner-tl" aria-hidden="true"></div>
+        <div class="console-corner console-corner-tr" aria-hidden="true"></div>
+        <div class="console-corner console-corner-bl" aria-hidden="true"></div>
+        <div class="console-corner console-corner-br" aria-hidden="true"></div>
+
+        <div class="notfound-bar">
+          <span class="pip pip-amber" aria-hidden="true"></span>
+          <span class="mono-label">Diagnostic // HTTP 404 — no route to destination</span>
+        </div>
+
+        <div class="notfound-code" aria-hidden="true">404</div>
+        <h1>Route not in forwarding table.</h1>
+
+        <pre class="notfound-trace" aria-label="Traceroute, for fun"><span class="trace-prompt">$</span> traceroute www.technicallabs.org
+ 1  edge        ok
+ 2  hq          ok
+ 3  this page   * * *</pre>
+
+        <p class="notfound-copy">
+          The requested path does not match an active page on <code>www.technicallabs.org</code>. Return to the main console or jump directly to one of the active endpoints below.
+        </p>
+
+        <div class="notfound-actions">
+          <a href="/" class="btn btn-primary">
+            <span>Return to Home Console</span>
+            <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a href="/#booking" class="btn btn-secondary"><span>Book a Session</span></a>
+          <a href="/#projects" class="btn btn-secondary"><span>Projects</span></a>
+          <a href="/ai/" class="btn btn-secondary"><span>Technical Labs AI</span></a>
+          <a href="http://portal.technicallabs.org" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span>IT Lab Portal ↗</span><span class="sr-only">(opens in a new tab)</span></a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom footer-bottom-solo">
+      <p>&copy; 2026 Technical Labs. All rights reserved.</p>
+      <p><a href="mailto:xphox@xphox.net">xphox@xphox.net</a> · <a href="https://linkedin.com/in/nickdiotte" target="_blank" rel="noopener noreferrer"><span>LinkedIn ↗</span><span class="sr-only">(opens in a new tab)</span></a></p>
+    </div>
+  </footer>
+
+  <script src="/app.js?v=dev"></script>
+</body>
+</html>
