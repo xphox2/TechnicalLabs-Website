@@ -32,12 +32,15 @@ COPY . /usr/share/nginx/html
 # Replace local versions file with the live compiled one from the Builder stage
 COPY --from=builder /app/assets/versions.json /usr/share/nginx/html/assets/versions.json
 
-# Cache-busting: stamp git short SHA or timestamp onto ?v= assets in index.html
+# Cache-busting: stamp git short SHA or timestamp onto ?v= assets in the HTML entry
+# documents and in style.css (self-hosted font URLs carry ?v= too)
 ARG BUILD_ID=
 RUN set -e; \
     BID="${BUILD_ID:-$(date +%Y%m%d%H%M%S)}"; \
-    [ -f "/usr/share/nginx/html/index.html" ] && \
-    sed -i -E "s/\?v=[0-9A-Za-z._-]+/?v=${BID}/g" "/usr/share/nginx/html/index.html"; \
+    for f in index.html 404.html style.css; do \
+      [ -f "/usr/share/nginx/html/$f" ] && \
+      sed -i -E "s/\?v=[0-9A-Za-z._-]+/?v=${BID}/g" "/usr/share/nginx/html/$f"; \
+    done; \
     echo "cache-bust: stamped all ?v= assets with build id ${BID}"
 
 # Expose Nginx server port

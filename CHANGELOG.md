@@ -2,6 +2,31 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.11] - 2026-11-07
+
+### Changed
+- **New home page design ("A+").** It comes from a redesign round in which eight models each built a full site from the same brief. The owner picked Option A, a dark operations console, and two independent reviews folded in the best parts of the others:
+  - **Booking from anywhere:** topic chips in the hero, a header button, a floating button on phones and a closing booking band. The form opens with the chosen topic already selected.
+  - **Live project versions:** the hero's System Monitor shows them, and clicking a row opens that project's details. Firewall Monitor's server and collector share one row, and every row and version pill is the same size.
+  - **Project details:** they open in native dialogs with an architecture flow written as text, so it can be translated and read by screen readers.
+  - **Shorter hero copy**, a certifications strip, the resume timeline, one AI spec panel, an FAQ grouped into AI lab, Booking and Community, and the IRC details.
+  - Dark only. Every fact comes from the existing site copy.
+- **SignArtSaver** is labelled a game plugin, not a game server.
+- **Fonts** (Space Grotesk, IBM Plex Sans, JetBrains Mono) are self-hosted under `assets/fonts/`. The page makes no Google Fonts request.
+
+### Added
+- **WiFi Doctor** as the fourth project, with its own details dialog, links to wifi-doctor.technicallabs.org and its early-access form, and a System Monitor row showing "Early access". Its repository is private, so no version is shown.
+- **190 new translation keys** in all 10 languages. The new language picker uses `js/i18n.js`, which stays the only owner of the chosen language through the new `window.setLanguage()`.
+- **A custom 404 page.** nginx serves it for any missing path (`error_page 404 /404.html`), and its links are root-absolute so it also works on nested paths.
+- **Google Analytics events:** a project's details opened, language changed, booking started, a booking sent (`generate_lead`) and a booking error. The tag and its local-development switch are unchanged.
+
+### Removed
+- Every line asking visitors to contact the owner for access to the AI or the labs, including the "How do I get access?" FAQ.
+- The light/dark toggle and the multi-step booking wizard. Booking is now one form with inline checks, a 12-second timeout, and a pre-filled email fallback if sending fails.
+
+### Fixed
+- The Docker build now also stamps `?v=` in `404.html` and `style.css`, so the font URLs carry the build id. `tasks/` is kept out of the image, so planning notes are not served.
+
 ## [1.0.10] - 2026-11-07
 
 ### Changed

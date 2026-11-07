@@ -54,6 +54,13 @@
         return currentLang;
     };
 
+    // Single owner of language state: other pickers (app.js) call this instead
+    // of keeping their own storage. Resolves after the locale has loaded and
+    // the `languageChanged` event has fired.
+    window.setLanguage = function (lang) {
+        return loadLanguage(lang);
+    };
+
     // Deep merge function to merge target translation onto English
     function deepMerge(target, source) {
         const output = Object.assign({}, target);
