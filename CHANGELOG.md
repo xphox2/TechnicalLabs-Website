@@ -2,6 +2,15 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.12] - 2026-11-08
+
+### Changed
+- **AI guide model names now match the live gateway:** `ornith-1.5-122b`, `ornith-1.5-35b-a3b` and `qwen3.8-turbo-27b`. One name works for both the OpenAI and Anthropic formats. Older names (`ornith-122b-openai`, `ornith-35b-anthropic`, `qwen3.8-27b-turbo-openai`) still work as hidden aliases for existing configs.
+- **Setup behaviour:** the catalog no longer claims that the inactive Ornith name is answered by the other model. All three names stay listed; a model whose setup is not loaded returns a clear "model not found" error.
+- **OpenCode and Claude Code snippets** use the new names. Qwen's OpenCode input limit is 229,376 so input plus output stays inside its 262,144-token context.
+- **Qwen long-context row** now shows the measured follow-up at ~244k (13–28 s, then 18–22 tok/s) instead of "not measured yet".
+- The connector test prompts use the new model names.
+
 ## [1.0.11] - 2026-11-07
 
 ### Changed
