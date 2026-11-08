@@ -2,6 +2,13 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.13] - 2026-11-08
+
+### Added
+- **Test-program invitation at `/ai/invite/`.** The Claude artifact is retired; the same invitation now lives on the website, with the corrected model names, a link back to the AI guide, and a footer link to Technical Labs.
+### Changed
+- **`/ai/` navigation** links to the invitation.
+
 ## [1.0.12] - 2026-11-08
 
 ### Changed
