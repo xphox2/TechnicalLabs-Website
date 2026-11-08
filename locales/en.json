@@ -84,7 +84,6 @@
     "tag": "Professional profile",
     "heading": "Resume, Competencies & Certifications",
     "intro": "A 25+ year record across managed service networks, national carrier operations, data centre infrastructure, and security policy governance.",
-    "subtitle": "Principal Consultant | Network & Infrastructure",
     "location": "Toronto, ON / Remote",
     "exp1_role": "Principal Consultant",
     "exp1_period": "Aug 2024 – Present",
@@ -382,10 +381,5 @@
   },
   "meta": {
     "title": "Technical Labs — Principal Consultant, Network & Infrastructure"
-  },
-  "readout_systems": "Systems",
-  "readout_public": "Public releases",
-  "readout_early": "Early access",
-  "readout_live": "Live telemetry",
-  "readout_monitor": "Monitor ↑"
+  }
 }

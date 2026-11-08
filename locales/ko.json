@@ -84,7 +84,6 @@
     "tag": "전문 프로필",
     "heading": "이력서, 역량 및 자격증",
     "intro": "관리형 서비스 네트워크, 전국 통신사 운영, 데이터센터 인프라, 보안 정책 거버넌스에 걸친 25년 이상의 경력.",
-    "subtitle": "프린시펄 컨설턴트 | 네트워크 및 인프라",
     "location": "토론토, ON / 원격",
     "exp1_role": "프린시펄 컨설턴트",
     "exp1_period": "2024년 8월 - 현재",
@@ -382,10 +381,5 @@
     "dashboard": "대시보드",
     "alerts_watch": "센서가 계속 감시하는 동안의 알림",
     "reports": "PDF 및 CSV 측정 보고서 · 예약 보고서"
-  },
-  "readout_systems": "시스템",
-  "readout_public": "공개 릴리스",
-  "readout_early": "얼리 액세스",
-  "readout_live": "실시간 텔레메트리",
-  "readout_monitor": "모니터 ↑"
+  }
 }

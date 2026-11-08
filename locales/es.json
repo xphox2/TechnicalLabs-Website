@@ -84,7 +84,6 @@
     "tag": "Perfil profesional",
     "heading": "Currículum, competencias y certificaciones",
     "intro": "Más de 25 años de trayectoria en redes de servicios gestionados, operaciones de operadores nacionales, infraestructura de centros de datos y gobernanza de políticas de seguridad.",
-    "subtitle": "Consultor Principal | Redes e Infraestructura",
     "location": "Toronto, ON / Remoto",
     "exp1_role": "Consultor Principal",
     "exp1_period": "Ago 2024 - Presente",
@@ -382,10 +381,5 @@
     "dashboard": "Panel",
     "alerts_watch": "Alertas cuando los sensores vigilan de forma continua",
     "reports": "Informes de medición en PDF y CSV · informes programados"
-  },
-  "readout_systems": "Sistemas",
-  "readout_public": "Versiones públicas",
-  "readout_early": "Acceso anticipado",
-  "readout_live": "Telemetría en vivo",
-  "readout_monitor": "Monitor ↑"
+  }
 }

@@ -84,7 +84,6 @@
     "tag": "职业简介",
     "heading": "简历、能力与认证",
     "intro": "25 年以上的从业经历，涵盖托管服务网络、全国运营商运维、数据中心基础设施和安全策略治理。",
-    "subtitle": "首席顾问 | 网络与基础设施",
     "location": "多伦多,安大略省 / 远程",
     "exp1_role": "首席顾问",
     "exp1_period": "2024年8月 - 至今",
@@ -382,10 +381,5 @@
     "dashboard": "仪表盘",
     "alerts_watch": "传感器持续监测时的警报",
     "reports": "PDF 与 CSV 测绘报告 · 定期报告"
-  },
-  "readout_systems": "系统",
-  "readout_public": "公开发布",
-  "readout_early": "抢先体验",
-  "readout_live": "实时遥测",
-  "readout_monitor": "监控 ↑"
+  }
 }

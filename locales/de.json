@@ -84,7 +84,6 @@
     "tag": "Berufsprofil",
     "heading": "Lebenslauf, Kompetenzen & Zertifizierungen",
     "intro": "Eine über 25-jährige Laufbahn in Managed-Service-Netzwerken, nationalem Carrier-Betrieb, Rechenzentrumsinfrastruktur und Security-Policy-Governance.",
-    "subtitle": "Principal Consultant | Netzwerk & Infrastruktur",
     "location": "Toronto, ON / Remote",
     "exp1_role": "Principal Consultant",
     "exp1_period": "Aug. 2024 - Heute",
@@ -382,10 +381,5 @@
     "dashboard": "Dashboard",
     "alerts_watch": "Alarme, sobald Sensoren dauerhaft überwachen",
     "reports": "PDF- & CSV-Messberichte · geplante Berichte"
-  },
-  "readout_systems": "Systeme",
-  "readout_public": "Öffentliche Releases",
-  "readout_early": "Frühzugang",
-  "readout_live": "Live-Telemetrie",
-  "readout_monitor": "Monitor ↑"
+  }
 }

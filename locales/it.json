@@ -84,7 +84,6 @@
     "tag": "Profilo professionale",
     "heading": "Curriculum, competenze e certificazioni",
     "intro": "Oltre 25 anni di esperienza tra reti di servizi gestiti, operazioni di carrier nazionali, infrastrutture di data center e governance delle policy di sicurezza.",
-    "subtitle": "Consulente principale | Reti e Infrastruttura",
     "location": "Toronto, ON / Remoto",
     "exp1_role": "Consulente principale",
     "exp1_period": "Ago 2024 - Presente",
@@ -382,10 +381,5 @@
     "dashboard": "Dashboard",
     "alerts_watch": "Avvisi quando i sensori restano in monitoraggio",
     "reports": "Report PDF e CSV dei rilievi · report pianificati"
-  },
-  "readout_systems": "Sistemi",
-  "readout_public": "Release pubbliche",
-  "readout_early": "Accesso anticipato",
-  "readout_live": "Telemetria live",
-  "readout_monitor": "Monitor ↑"
+  }
 }
