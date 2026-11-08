@@ -10,13 +10,11 @@
     "book": "Réserver une session"
   },
   "hero": {
-    "title": "Apprentissage IT interactif &<br>Ingénierie des systèmes",
     "subtitle": "Bienvenue chez Technical Labs. Nous proposons des ressources de laboratoire interactives et pratiques pour aider les futurs professionnels de l'IT à développer des compétences concrètes, offrons du conseil personnalisé pour des déploiements conformes aux meilleures pratiques, et présentons des projets de qualité production.",
     "cta_projects": "Voir les projets du portfolio",
     "cta_services": "Réserver un support de déploiement",
-    "eyebrow": "Nicholas Diotte · Ingénieur principal · Toronto, ON / À distance",
-    "h1": "Ingénierie réseau et infrastructure, conseil et logiciels en production.",
-    "lede": "Nicholas Diotte est ingénieur principal à Toronto ; il dirige des déploiements FortiGate, des migrations d’infrastructure et des tests de reprise après sinistre. Technical Labs est sa pratique : plus de 25 ans de travail sur les réseaux et l’infrastructure depuis 1999, proposés sous forme de mentorat de déploiement en tête-à-tête, d’audits d’architecture et d’outils réseau sur mesure.",
+    "h1": "Conseil en réseaux et infrastructure et logiciels en production.",
+    "lede": "Plus de 25 ans de travail sur les réseaux et l'infrastructure depuis 1999, proposé sous forme de mentorat individuel au déploiement, d'audits d'architecture et d'outils réseau sur mesure.",
     "cta_book": "Réserver une session de conseil",
     "cta_explore": "Explorer les systèmes actifs",
     "topic_hint": "Ou commencez une réservation par un sujet",
@@ -49,11 +47,11 @@
   },
   "projects": {
     "tag": "Vitrine",
-    "heading": "Projets d’ingénierie actifs",
+    "heading": "Projets actifs",
     "intro": "Une application de bureau auto-hébergée pour les streamers, un NMS central pour les parcs de pare-feu avec ses sondes de périphérie, un plugin pour les serveurs du jeu Rust et WiFi Doctor, une flotte de mesure WiFi composée des appareils que vous avez déjà. Le moniteur ci-dessus affiche la dernière version de chacun et le statut d’accès anticipé de WiFi Doctor.",
     "vinylfo_desc": "Application de bureau auto-hébergée pour streamers et audiophiles qui synchronise les collections Discogs, gère les programmations de pistes et alimente les métadonnées Twitch en direct, les overlays vidéo OBS et les intégrations Stream Deck.",
     "fwmon_title": "Firewall Monitor",
-    "fwmon_desc": "NMS central léger et indépendant des fabricants pour les parcs de pare-feu (FortiGate, Palo Alto, pfSense) : interrogation SNMP v2c/v3, récepteurs syslog et sFlow, diffs de configuration SSH/TFTP et sondes Firewall-Collector distribuées via HTTPS/mTLS.",
+    "fwmon_desc": "NMS central léger et indépendant des fabricants pour les parcs de pare-feu (grands fabricants) : interrogation SNMP v2c/v3, récepteurs syslog et sFlow, diffs de configuration SSH/TFTP et sondes Firewall-Collector distribuées via HTTPS/mTLS.",
     "rust_title": "Plugin de jeu Rust",
     "rust_desc": "Plugin de gameplay C#/.NET pour les serveurs du jeu de survie Rust via les hooks Oxide/uMod : tableaux d’économie, alertes et registre de commandes pour les administrateurs, métriques de performance, données en mémoire avec points de contrôle JSON et overlays d’interface personnalisés.",
     "runs_on": "Fonctionne sur",
@@ -81,12 +79,12 @@
     "tag": "Profil professionnel",
     "heading": "CV, compétences et certifications",
     "intro": "Plus de 25 ans de parcours dans les réseaux de services gérés, l’exploitation d’opérateurs nationaux, l’infrastructure de centres de données et la gouvernance des politiques de sécurité.",
-    "subtitle": "Ingénieur principal | Réseau et infrastructure",
+    "subtitle": "Réseaux et infrastructure",
     "location": "Toronto, ON / À distance",
-    "exp1_role": "Ingénieur principal",
+    "exp1_role": "Responsable réseaux et infrastructure",
     "exp1_period": "Août 2024 - Présent",
     "exp1_desc": "Autorité technique senior pour l'ensemble des comptes clients de services gérés, concevant l'architecture des migrations d'infrastructure d'entreprise.",
-    "exp1_li1": "Dirige les déploiements de pare-feu FortiGate, la gouvernance des politiques de sécurité et les revues de posture système.",
+    "exp1_li1": "Dirige les déploiements de pare-feu, la gouvernance des politiques de sécurité et les revues de posture système.",
     "exp1_li2": "Conçoit l'architecture et supervise des migrations réseau, stockage et calcul complexes de bout en bout.",
     "exp1_li3": "Mène des tests de reprise après sinistre, des exercices de continuité des activités et des audits de santé des équipements.",
     "exp2_role": "Consultant TI senior et chef d'équipe",
@@ -103,7 +101,6 @@
     "exp4_desc": "A géré les équipes NOC, Provisionnement et Planification de capacité, et supervisé les opérations clients de gros.",
     "exp4_li1": "A participé au lancement et à la planification de capacité du centre de données d'entreprise situé au 151 Front Street, à Toronto.",
     "exp4_li2": "A étendu la couverture du NOC à 24/7/365 et conçu des outils d'automatisation pour éliminer les tâches quotidiennes répétitives.",
-    "exp4_li3": "A géré l'infrastructure physique du centre de données, les systèmes HVAC, la distribution d'alimentation en courant continu et les fibres optiques.",
     "exp5_role": "Chef d'équipe et technicien NOCC",
     "exp5_period": "Févr. 2005 - Juin 2011",
     "exp5_desc": "A supervisé les opérations NOCC, élaboré des indicateurs de formation standardisés et surveillé les réseaux voix et données des opérateurs nationaux.",
@@ -131,7 +128,7 @@
     "cat1_skill3": "Routage et commutation, SD-WAN",
     "cat1_skill3_meta": "BGP, OSPF, MPLS, SIP, ATM · réseaux voix et données d’opérateur",
     "domain2": "Domaine 02",
-    "cat2_skill1_meta": "Planification de capacité, alimentation DC, CVC, fibre optique",
+    "cat2_skill1_meta": "Planification de capacité et virtualisation",
     "cat2_skill2": "Windows Server, Linux, automatisation",
     "cat2_skill2_meta": "Migrations Windows/Exchange, outils d’automatisation, Docker et CI/CD",
     "cat2_skill3_meta": "Tests de reprise, exercices de continuité d’activité, architectures de sauvegarde"
@@ -139,7 +136,7 @@
   "services": {
     "tag": "Temps et support",
     "heading": "Services et réservation de sessions",
-    "intro": "Mentorat de déploiement pratique, audits d’architecture et outils réseau sur mesure, encadrés directement par un ingénieur principal.",
+    "intro": "Mentorat pratique au déploiement, audits d'architecture et outils réseau sur mesure.",
     "svc1_title": "Mentorat de déploiement en tête-à-tête",
     "svc1_desc": "Apprenez pendant que nous construisons : cartographier votre réseau, créer les politiques de pare-feu et déployer des sondes avec des modèles sécurisés.",
     "svc2_title": "Audits d’architecture et CI/CD",
@@ -158,7 +155,7 @@
     "card_net_title": "Pare-feu et réseaux",
     "card_net_desc": "Planification des sous-réseaux, règles de pare-feu, routage",
     "card_fw_title": "Centre de données et infrastructure",
-    "card_fw_desc": "Déploiements de serveurs, virtualisation, installation physique",
+    "card_fw_desc": "Déploiements de serveurs et virtualisation",
     "card_docker_title": "Automatisation des systèmes et processus",
     "card_docker_desc": "Scripts, pipelines CI/CD, workflows conteneurisés",
     "card_dev_title": "Développement sur mesure",
@@ -219,7 +216,7 @@
     "a2_link_full": "Ouvrir le guide de connexion (/ai/#connect) →",
     "group_booking": "Réservation",
     "q4": "Sur quels sujets puis-je réserver une session ?",
-    "a4": "Quatre domaines : pare-feu et réseaux (planification des sous-réseaux, règles de pare-feu, routage), centre de données et infrastructure (déploiements de serveurs, virtualisation, installation physique), automatisation des systèmes et processus (scripts, pipelines CI/CD, workflows conteneurisés) et développement sur mesure (intégrations d’API, services backend, outils sur mesure).",
+    "a4": "Quatre domaines : pare-feu et réseaux, centres de données et infrastructure, automatisation des systèmes et des processus, et développement sur mesure.",
     "a4_link": "Aller au formulaire de réservation →",
     "q5": "Que se passe-t-il après l’envoi d’une demande de réservation ?",
     "a5": "Nous recevons votre demande et vous écrivons sous 24 heures pour finaliser les détails.",
@@ -257,7 +254,7 @@
     "vinylfo_feat4": "<strong>HUD en direct et chatbot Twitch :</strong> Se connecte via OAuth par code d'appareil pour lire les événements du chat, modérer, lancer des sondages spectateurs et envoyer des annonces lors du changement de piste.",
     "fwmon_title": "Firewall Monitor et Firewall-Collector",
     "fwmon_overview": "Firewall Monitor est un système de gestion de réseau (NMS) léger et indépendant des fabricants, centré sur les parcs de pare-feu. Il prend en charge les déploiements centralisés ou les sondes de collecte distantes distribuées (Firewall-Collector) sur plusieurs sites clients.",
-    "fwmon_feat1": "<strong>Relais SNMP distribués :</strong> La sonde Firewall-Collector tourne localement, interroge les équipements de périphérie (FortiGate, Palo Alto, pfSense) en SNMP v2c/v3 et transmet la télémétrie par lots au siège via HTTPS/mTLS.",
+    "fwmon_feat1": "<strong>Relais SNMP distribués :</strong> La sonde Firewall-Collector tourne localement, interroge les équipements de périphérie (grands fabricants) en SNMP v2c/v3 et transmet la télémétrie par lots au siège via HTTPS/mTLS.",
     "fwmon_feat2": "<strong>Récepteurs Syslog et sFlow :</strong> Pipelines d'analyse UDP haute performance, normalisés pour traiter des centaines d'événements par seconde avec des filtres de limitation de débit.",
     "fwmon_feat3": "<strong>Suivi normalisé des configurations :</strong> Interroge périodiquement les configurations via SSH/TFTP, normalise les valeurs entre différents fournisseurs et conserve les révisions différentielles du code.",
     "fwmon_feat4": "<strong>Alertes d'état personnalisées :</strong> Évalue le décalage des données, les pics de trafic, les métriques d'interface, et envoie des notifications via Webhooks, e-mail SMTP et bots IRC.",
@@ -287,7 +284,7 @@
     "aria": "Changer de langue"
   },
   "meta": {
-    "title": "Technical Labs — Nicholas Diotte | Ingénierie réseau et infrastructure"
+    "title": "Technical Labs — Réseaux et infrastructure"
   },
   "a11y": {
     "skip": "Aller au contenu principal",
@@ -310,7 +307,7 @@
   "sections": {
     "projects": "Logiciels en production",
     "services": "Conseil et mentorat",
-    "resume": "Dossier de l’ingénieur principal",
+    "resume": "Dossier professionnel",
     "faq": "IA Technical Labs et FAQ",
     "community": "Communauté et environnements de lab",
     "band": "Dispatch des sessions"

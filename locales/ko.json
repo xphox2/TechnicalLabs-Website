@@ -10,13 +10,11 @@
     "book": "세션 예약"
   },
   "hero": {
-    "title": "인터랙티브 IT 학습 &<br>시스템 엔지니어링",
     "subtitle": "Technical Labs에 오신 것을 환영합니다. 저희는 IT 전문가를 꿈꾸는 분들이 실무 역량을 기를 수 있도록 실습형 인터랙티브 랩 자료를 제공하며, 모범 사례 기반 배포를 위한 맞춤형 컨설팅을 제공하고, 프로덕션 수준의 프로젝트를 선보입니다.",
     "cta_projects": "포트폴리오 프로젝트 보기",
     "cta_services": "배포 지원 예약하기",
-    "eyebrow": "Nicholas Diotte · 수석 엔지니어 · 토론토, 온타리오 / 원격",
-    "h1": "네트워크 및 인프라 엔지니어링, 컨설팅, 그리고 프로덕션 소프트웨어.",
-    "lede": "Nicholas Diotte는 토론토의 수석 엔지니어로 FortiGate 구축, 인프라 마이그레이션, 재해 복구 테스트를 이끌고 있습니다. Technical Labs는 그의 활동 공간입니다. 1999년부터 25년 넘게 쌓아 온 네트워크·인프라 실무 경험을 1:1 구축 멘토링, 아키텍처 감사, 맞춤형 네트워크 도구로 제공합니다.",
+    "h1": "네트워크 및 인프라 컨설팅과 프로덕션 소프트웨어.",
+    "lede": "1999년부터 25년 이상의 네트워크 및 인프라 경험을 1:1 배포 멘토링, 아키텍처 감사, 맞춤형 네트워크 도구로 제공합니다.",
     "cta_book": "컨설팅 세션 예약",
     "cta_explore": "운영 중인 시스템 보기",
     "topic_hint": "또는 주제를 골라 예약을 시작하세요",
@@ -49,11 +47,11 @@
   },
   "projects": {
     "tag": "쇼케이스",
-    "heading": "진행 중인 엔지니어링 프로젝트",
+    "heading": "진행 중인 프로젝트",
     "intro": "스트리머를 위한 자체 호스팅 데스크톱 앱, 엣지 프로브를 갖춘 방화벽 플릿용 중앙 NMS, Rust 게임 서버용 플러그인, 그리고 이미 가지고 있는 기기로 WiFi 측정 플릿을 만드는 WiFi Doctor. 위의 모니터에는 각 프로젝트의 최신 릴리스와 WiFi Doctor의 얼리 액세스 상태가 표시됩니다.",
     "vinylfo_desc": "스트리머와 오디오 애호가를 위한 자체 호스팅 데스크톱 앱으로, Discogs 컬렉션을 동기화하고 트랙 일정을 관리하며 Twitch 실시간 메타데이터, OBS 영상 오버레이, Stream Deck 연동에 데이터를 공급합니다.",
     "fwmon_title": "Firewall Monitor",
-    "fwmon_desc": "방화벽 플릿(FortiGate, Palo Alto, pfSense)을 위한 벤더 독립적이고 가벼운 중앙 NMS: SNMP v2c/v3 폴링, syslog 및 sFlow 수신, SSH/TFTP 설정 비교, HTTPS/mTLS를 통한 분산 Firewall-Collector 프로브.",
+    "fwmon_desc": "방화벽 플릿(주요 벤더)을 위한 벤더 독립적이고 가벼운 중앙 NMS: SNMP v2c/v3 폴링, syslog 및 sFlow 수신, SSH/TFTP 설정 비교, HTTPS/mTLS를 통한 분산 Firewall-Collector 프로브.",
     "rust_title": "Rust 게임 플러그인",
     "rust_desc": "Oxide/uMod 훅을 통해 Rust 생존 게임 서버에서 동작하는 C#/.NET 게임플레이 플러그인: 경제 보드, 관리자 알림 및 명령 레지스트리, 성능 지표, JSON 체크포인트가 있는 인메모리 데이터, 맞춤형 게임 UI 오버레이.",
     "runs_on": "지원 플랫폼",
@@ -81,12 +79,12 @@
     "tag": "전문 프로필",
     "heading": "이력서, 역량 및 자격증",
     "intro": "관리형 서비스 네트워크, 전국 통신사 운영, 데이터센터 인프라, 보안 정책 거버넌스에 걸친 25년 이상의 경력.",
-    "subtitle": "수석 엔지니어 | 네트워크 및 인프라",
+    "subtitle": "네트워크 및 인프라",
     "location": "토론토, ON / 원격",
-    "exp1_role": "수석 엔지니어",
+    "exp1_role": "네트워크 및 인프라 리드",
     "exp1_period": "2024년 8월 - 현재",
     "exp1_desc": "모든 매니지드 서비스 고객 계정에 대한 선임 기술 책임자로서 엔터프라이즈 인프라 마이그레이션을 설계합니다.",
-    "exp1_li1": "FortiGate 방화벽 배포, 보안 정책 거버넌스, 시스템 보안 상태 검토를 주도합니다.",
+    "exp1_li1": "방화벽 배포, 보안 정책 거버넌스, 시스템 보안 상태 검토를 주도합니다.",
     "exp1_li2": "복잡한 엔드투엔드 네트워크, 스토리지, 컴퓨트 마이그레이션을 설계하고 총괄합니다.",
     "exp1_li3": "재해 복구 테스트, 비즈니스 연속성 훈련, 장비 상태 점검을 수행합니다.",
     "exp2_role": "수석 IT 컨설턴트 및 팀 리더",
@@ -103,7 +101,6 @@
     "exp4_desc": "NOC, 프로비저닝, 용량 계획 팀을 관리하고 도매 고객 운영을 총괄했습니다.",
     "exp4_li1": "토론토 151 Front Street에 위치한 엔터프라이즈 데이터센터의 구축 및 용량 계획을 지원했습니다.",
     "exp4_li2": "NOC 운영을 24/7/365 체계로 확장하고, 반복적인 일상 업무를 없애는 자동화 도구를 설계했습니다.",
-    "exp4_li3": "데이터센터의 물리적 인프라, HVAC 시스템, DC 전원 분배, 광케이블을 관리했습니다.",
     "exp5_role": "팀 리더 및 NOCC 기술자",
     "exp5_period": "2005년 2월 - 2011년 6월",
     "exp5_desc": "NOCC 운영을 감독하고, 표준화된 교육 지표를 구축했으며, 전국 통신사업자의 음성 및 데이터 네트워크를 모니터링했습니다.",
@@ -131,7 +128,7 @@
     "cat1_skill3": "라우팅 및 스위칭, SD-WAN",
     "cat1_skill3_meta": "BGP, OSPF, MPLS, SIP, ATM · 통신사 음성 및 데이터 네트워크",
     "domain2": "영역 02",
-    "cat2_skill1_meta": "용량 계획, DC 전원, 공조, 광섬유",
+    "cat2_skill1_meta": "용량 계획 및 가상화",
     "cat2_skill2": "Windows Server, Linux, 자동화",
     "cat2_skill2_meta": "Windows/Exchange 마이그레이션, 자동화 도구, Docker 및 CI/CD",
     "cat2_skill3_meta": "DR 테스트, 업무 연속성 훈련, 백업 아키텍처"
@@ -139,7 +136,7 @@
   "services": {
     "tag": "시간 및 지원",
     "heading": "서비스 및 세션 예약",
-    "intro": "실습 중심의 구축 멘토링, 아키텍처 감사, 맞춤형 네트워크 도구를 수석 엔지니어가 직접 안내합니다.",
+    "intro": "실무 배포 멘토링, 아키텍처 감사, 맞춤형 네트워크 도구.",
     "svc1_title": "1:1 구축 멘토링",
     "svc1_desc": "함께 구축하며 배웁니다: 네트워크 구성 설계, 방화벽 정책 작성, 안전한 템플릿으로 프로브 배포.",
     "svc2_title": "아키텍처 감사 및 CI/CD",
@@ -158,7 +155,7 @@
     "card_net_title": "방화벽 및 네트워킹",
     "card_net_desc": "서브넷 설계, 방화벽 규칙, 라우팅",
     "card_fw_title": "데이터센터 및 인프라",
-    "card_fw_desc": "서버 구축, 가상화, 물리 설치",
+    "card_fw_desc": "서버 배포, 가상화",
     "card_docker_title": "시스템 및 프로세스 자동화",
     "card_docker_desc": "스크립팅, CI/CD 파이프라인, 컨테이너 워크플로",
     "card_dev_title": "맞춤 개발",
@@ -219,7 +216,7 @@
     "a2_link_full": "연결 가이드 열기 (/ai/#connect) →",
     "group_booking": "예약",
     "q4": "어떤 주제로 세션을 예약할 수 있나요?",
-    "a4": "네 가지 분야입니다: 방화벽 및 네트워킹(서브넷 설계, 방화벽 규칙, 라우팅), 데이터센터 및 인프라(서버 구축, 가상화, 물리 설치), 시스템 및 프로세스 자동화(스크립팅, CI/CD 파이프라인, 컨테이너 워크플로), 맞춤 개발(API 연동, 백엔드 서비스, 맞춤 도구).",
+    "a4": "네 가지 분야: 방화벽 및 네트워크, 데이터 센터 및 인프라, 시스템 및 프로세스 자동화, 맞춤형 개발.",
     "a4_link": "예약 양식으로 이동 →",
     "q5": "예약 요청을 보낸 뒤에는 어떻게 되나요?",
     "a5": "요청을 받은 뒤 24시간 내에 이메일로 세부 사항을 안내드립니다.",
@@ -257,7 +254,7 @@
     "vinylfo_feat4": "<strong>Twitch 라이브 HUD 및 챗봇:</strong> 디바이스 코드 OAuth를 통해 연결하여 채팅 이벤트를 읽고, 채팅을 관리하며, 시청자 투표를 진행하고, 레코드 트랙이 넘어갈 때 공지를 전송합니다.",
     "fwmon_title": "Firewall Monitor 및 Firewall-Collector",
     "fwmon_overview": "Firewall Monitor는 방화벽 플릿에 특화된 벤더 독립적이고 가벼운 네트워크 관리 시스템(NMS)입니다. 중앙 집중식 배포와, 여러 고객 사이트에 분산된 원격 수집 프로브(Firewall-Collector)를 모두 지원합니다.",
-    "fwmon_feat1": "<strong>분산 SNMP 릴레이:</strong> Firewall-Collector 프로브가 현장에서 실행되어 엣지 장비(FortiGate, Palo Alto, pfSense)를 SNMP v2c/v3로 폴링하고, 텔레메트리를 묶어 HTTPS/mTLS로 본사에 전송합니다.",
+    "fwmon_feat1": "<strong>분산 SNMP 릴레이:</strong> Firewall-Collector 프로브가 현장에서 실행되어 엣지 장비(주요 벤더)를 SNMP v2c/v3로 폴링하고, 텔레메트리를 묶어 HTTPS/mTLS로 본사에 전송합니다.",
     "fwmon_feat2": "<strong>Syslog 및 sFlow 수신기:</strong> 초당 수백 건의 이벤트를 처리할 수 있도록 정규화된 고성능 UDP 파싱 파이프라인에 속도 제한 필터를 적용합니다.",
     "fwmon_feat3": "<strong>정규화된 구성 추적:</strong> SSH/TFTP를 통해 주기적으로 구성을 폴링하고, 벤더별 값을 정규화하며, 차등 코드 리비전을 저장합니다.",
     "fwmon_feat4": "<strong>맞춤형 상태 알림:</strong> 데이터 지연, 트래픽 급증, 인터페이스 지표를 평가하고, Webhook, SMTP 이메일, IRC 봇을 통해 알림을 전송합니다.",
@@ -287,7 +284,7 @@
     "aria": "언어 변경"
   },
   "meta": {
-    "title": "Technical Labs — Nicholas Diotte | 네트워크 및 인프라 엔지니어링"
+    "title": "Technical Labs — 네트워크 및 인프라"
   },
   "a11y": {
     "skip": "본문으로 건너뛰기",
@@ -310,7 +307,7 @@
   "sections": {
     "projects": "프로덕션 소프트웨어",
     "services": "컨설팅 및 멘토링",
-    "resume": "수석 엔지니어 프로필",
+    "resume": "프로페셔널 도시에",
     "faq": "Technical Labs AI 및 FAQ",
     "community": "커뮤니티 및 랩 환경",
     "band": "세션 접수"

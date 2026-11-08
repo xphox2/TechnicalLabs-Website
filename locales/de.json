@@ -10,13 +10,11 @@
     "book": "Termin buchen"
   },
   "hero": {
-    "title": "Interaktives IT-Lernen &<br>Systemtechnik",
     "subtitle": "Willkommen bei Technical Labs. Wir bieten praxisnahe, interaktive Lab-Ressourcen, die angehenden IT-Fachkräften helfen, praxisrelevante Fähigkeiten aufzubauen, individuelle Beratung für Best-Practice-Implementierungen und Projekte auf Produktionsniveau.",
     "cta_projects": "Portfolio-Projekte ansehen",
     "cta_services": "Deployment-Unterstützung buchen",
-    "eyebrow": "Nicholas Diotte · Principal Engineer · Toronto, ON / Remote",
-    "h1": "Netzwerk- & Infrastruktur-Engineering, Beratung und Produktionssoftware.",
-    "lede": "Nicholas Diotte ist Principal Engineer in Toronto und leitet FortiGate-Deployments, Infrastrukturmigrationen und Disaster-Recovery-Tests. Technical Labs ist seine Praxis: über 25 Jahre Netzwerk- und Infrastrukturarbeit seit 1999, angeboten als 1-zu-1-Deployment-Mentoring, Architektur-Audits und maßgeschneiderte Netzwerk-Tools.",
+    "h1": "Netzwerk- und Infrastrukturberatung und Produktionssoftware.",
+    "lede": "Über 25 Jahre Netzwerk- und Infrastrukturarbeit seit 1999, angeboten als 1-zu-1-Deployment-Mentoring, Architektur-Audits und maßgeschneiderte Netzwerk-Tools.",
     "cta_book": "Beratungstermin buchen",
     "cta_explore": "Aktive Systeme erkunden",
     "topic_hint": "Oder eine Buchung mit einem Thema starten",
@@ -49,11 +47,11 @@
   },
   "projects": {
     "tag": "Showcase",
-    "heading": "Aktive Engineering-Projekte",
+    "heading": "Aktive Projekte",
     "intro": "Eine selbst gehostete Desktop-App für Streamer, ein zentrales NMS für Firewall-Flotten mit seinen Edge-Probes, ein Plugin für Rust-Spieleserver und WiFi Doctor, eine WLAN-Messflotte aus den Geräten, die Sie bereits haben. Der Monitor oben zeigt das jeweils neueste Release und den Early-Access-Status von WiFi Doctor.",
     "vinylfo_desc": "Selbst gehostete Desktop-App für Streamer und Audiophile, die Discogs-Sammlungen synchronisiert, Track-Zeitpläne verwaltet und Live-Twitch-Metadaten, OBS-Video-Overlays und Stream-Deck-Integrationen bereitstellt.",
     "fwmon_title": "Firewall Monitor",
-    "fwmon_desc": "Herstellerunabhängiges, schlankes zentrales NMS für Firewall-Flotten (FortiGate, Palo Alto, pfSense): SNMP-v2c/v3-Polling, Syslog- und sFlow-Empfänger, SSH/TFTP-Konfigurations-Diffs und verteilte Firewall-Collector-Probes über HTTPS/mTLS.",
+    "fwmon_desc": "Herstellerunabhängiges, schlankes zentrales NMS für Firewall-Flotten (große Hersteller): SNMP-v2c/v3-Polling, Syslog- und sFlow-Empfänger, SSH/TFTP-Konfigurations-Diffs und verteilte Firewall-Collector-Probes über HTTPS/mTLS.",
     "rust_title": "Rust-Spiele-Plugin",
     "rust_desc": "C#/.NET-Gameplay-Plugin für Rust-Survival-Spieleserver über Oxide/uMod-Hooks: Wirtschafts-Boards, Admin-Benachrichtigungen und Befehlsregister, Leistungsmetriken, In-Memory-Daten mit JSON-Checkpoints und eigene Spiel-UI-Overlays.",
     "runs_on": "Läuft auf",
@@ -81,12 +79,12 @@
     "tag": "Berufsprofil",
     "heading": "Lebenslauf, Kompetenzen & Zertifizierungen",
     "intro": "Eine über 25-jährige Laufbahn in Managed-Service-Netzwerken, nationalem Carrier-Betrieb, Rechenzentrumsinfrastruktur und Security-Policy-Governance.",
-    "subtitle": "Principal Engineer | Netzwerk & Infrastruktur",
+    "subtitle": "Netzwerk & Infrastruktur",
     "location": "Toronto, ON / Remote",
-    "exp1_role": "Principal Engineer",
+    "exp1_role": "Leiter Netzwerk & Infrastruktur",
     "exp1_period": "Aug. 2024 - Heute",
     "exp1_desc": "Leitende technische Instanz für alle Managed-Service-Kundenkonten, verantwortlich für die Architektur von Unternehmensinfrastruktur-Migrationen.",
-    "exp1_li1": "Leitung von FortiGate-Firewall-Implementierungen, Governance von Sicherheitsrichtlinien und Systemsicherheitsbewertungen.",
+    "exp1_li1": "Leitung von Firewall-Implementierungen, Governance von Sicherheitsrichtlinien und Systemsicherheitsbewertungen.",
     "exp1_li2": "Konzeption und Überwachung komplexer End-to-End-Migrationen von Netzwerk-, Storage- und Compute-Systemen.",
     "exp1_li3": "Durchführung von Disaster-Recovery-Tests, Business-Continuity-Übungen und Geräte-Zustandsprüfungen.",
     "exp2_role": "Senior IT Consultant & Team Lead",
@@ -103,7 +101,6 @@
     "exp4_desc": "Leitung der Teams für NOC, Provisioning und Kapazitätsplanung sowie Verantwortung für den Wholesale-Kundenbetrieb.",
     "exp4_li1": "Unterstützung bei der Eröffnung und Kapazitätsplanung des Unternehmensrechenzentrums in der 151 Front Street, Toronto.",
     "exp4_li2": "Ausbau des NOC auf eine 24/7/365-Abdeckung und Entwicklung von Automatisierungstools zur Eliminierung wiederkehrender Routineaufgaben.",
-    "exp4_li3": "Verwaltung der physischen Rechenzentrumsinfrastruktur, HVAC-Systeme, DC-Stromverteilung und Glasfaserleitungen.",
     "exp5_role": "Team Lead & NOCC Technician",
     "exp5_period": "Feb. 2005 - Jun. 2011",
     "exp5_desc": "Beaufsichtigung des NOCC-Betriebs, Entwicklung standardisierter Schulungskennzahlen und Überwachung nationaler Carrier-Sprach- und Datennetze.",
@@ -131,7 +128,7 @@
     "cat1_skill3": "Routing & Switching, SD-WAN",
     "cat1_skill3_meta": "BGP, OSPF, MPLS, SIP, ATM · Carrier-Sprach- & Datennetze",
     "domain2": "Bereich 02",
-    "cat2_skill1_meta": "Kapazitätsplanung, DC-Stromversorgung, HLK, Glasfaser",
+    "cat2_skill1_meta": "Kapazitätsplanung und Virtualisierung",
     "cat2_skill2": "Windows Server, Linux, Automatisierung",
     "cat2_skill2_meta": "Windows/Exchange-Migrationen, Automatisierungstools, Docker & CI/CD",
     "cat2_skill3_meta": "DR-Tests, Business-Continuity-Übungen, Backup-Architekturen"
@@ -139,7 +136,7 @@
   "services": {
     "tag": "Zeit & Support",
     "heading": "Dienstleistungen & Terminbuchung",
-    "intro": "Praxisnahes Deployment-Mentoring, Architektur-Audits und maßgeschneiderte Netzwerk-Tools, direkt von einem Principal Engineer begleitet.",
+    "intro": "Praxisnahes Deployment-Mentoring, Architektur-Audits und maßgeschneiderte Netzwerk-Tools.",
     "svc1_title": "1-zu-1-Deployment-Mentoring",
     "svc1_desc": "Lernen Sie direkt beim Aufbau: Netzwerklayout planen, Firewall-Richtlinien erstellen und Probes mit sicheren Vorlagen bereitstellen.",
     "svc2_title": "Architektur-Audits & CI/CD",
@@ -158,7 +155,7 @@
     "card_net_title": "Firewalls & Netzwerk",
     "card_net_desc": "Subnetzplanung, Firewall-Regeln, Routing",
     "card_fw_title": "Rechenzentrum & Infrastruktur",
-    "card_fw_desc": "Server-Deployments, Virtualisierung, physischer Aufbau",
+    "card_fw_desc": "Server-Deployments und Virtualisierung",
     "card_docker_title": "System- & Prozessautomatisierung",
     "card_docker_desc": "Skripting, CI/CD-Pipelines, Container-Workflows",
     "card_dev_title": "Individuelle Entwicklung",
@@ -219,7 +216,7 @@
     "a2_link_full": "Verbindungsanleitung öffnen (/ai/#connect) →",
     "group_booking": "Buchung",
     "q4": "Wozu kann ich einen Termin buchen?",
-    "a4": "Vier Bereiche: Firewalls & Netzwerk (Subnetzplanung, Firewall-Regeln, Routing), Rechenzentrum & Infrastruktur (Server-Deployments, Virtualisierung, physischer Aufbau), System- & Prozessautomatisierung (Skripting, CI/CD-Pipelines, Container-Workflows) und individuelle Entwicklung (API-Integrationen, Backend-Dienste, eigene Tools).",
+    "a4": "Vier Bereiche: Firewalls & Netzwerke, Rechenzentren & Infrastruktur, System- & Prozessautomatisierung und individuelle Entwicklung.",
     "a4_link": "Zum Buchungsformular →",
     "q5": "Was passiert, nachdem ich eine Buchungsanfrage gesendet habe?",
     "a5": "Wir erhalten Ihre Anfrage und melden uns innerhalb von 24 Stunden per E-Mail, um die Details zu klären.",
@@ -257,7 +254,7 @@
     "vinylfo_feat4": "<strong>Twitch Live-HUD & Chatbot:</strong> Verbindet sich über Device-Code-OAuth, um Chat-Ereignisse zu lesen, zu moderieren, Zuschauer-Umfragen zu starten und Ankündigungen zu senden, wenn Plattentracks wechseln.",
     "fwmon_title": "Firewall Monitor & Firewall-Collector",
     "fwmon_overview": "Firewall Monitor ist ein herstellerunabhängiges, schlankes Network Management System (NMS) mit Fokus auf Firewall-Flotten. Es unterstützt zentrale Deployments oder verteilte Remote-Sammel-Probes (Firewall-Collector) an mehreren Kundenstandorten.",
-    "fwmon_feat1": "<strong>Verteilte SNMP-Relays:</strong> Die Firewall-Collector-Probe läuft lokal, fragt Edge-Geräte (FortiGate, Palo Alto, pfSense) über SNMP v2c/v3 ab und sendet die Telemetrie gebündelt über HTTPS/mTLS an die Zentrale.",
+    "fwmon_feat1": "<strong>Verteilte SNMP-Relays:</strong> Die Firewall-Collector-Probe läuft lokal, fragt Edge-Geräte (große Hersteller) über SNMP v2c/v3 ab und sendet die Telemetrie gebündelt über HTTPS/mTLS an die Zentrale.",
     "fwmon_feat2": "<strong>Syslog- & sFlow-Empfänger:</strong> Hochperformante UDP-Parsing-Pipelines, normalisiert für die Verarbeitung von Hunderten von Ereignissen pro Sekunde mit Rate-Limiting-Filtern.",
     "fwmon_feat3": "<strong>Normalisierte Konfigurationsverfolgung:</strong> Fragt Konfigurationen regelmäßig über SSH/TFTP ab, normalisiert Werte herstellerübergreifend und speichert differenzielle Coderevisionen.",
     "fwmon_feat4": "<strong>Individuelle Statuswarnungen:</strong> Bewertet Datenverzögerungen, Traffic-Spitzen und Interface-Metriken und sendet Benachrichtigungen über Webhooks, SMTP-E-Mail und IRC-Bots.",
@@ -287,7 +284,7 @@
     "aria": "Sprache ändern"
   },
   "meta": {
-    "title": "Technical Labs — Nicholas Diotte | Netzwerk- & Infrastruktur-Engineering"
+    "title": "Technical Labs — Netzwerk & Infrastruktur"
   },
   "a11y": {
     "skip": "Zum Hauptinhalt springen",
@@ -310,7 +307,7 @@
   "sections": {
     "projects": "Produktionssoftware",
     "services": "Beratung & Mentoring",
-    "resume": "Principal-Dossier",
+    "resume": "Berufliches Dossier",
     "faq": "Technical Labs KI & FAQ",
     "community": "Community & Lab-Umgebungen",
     "band": "Session-Dispatch"

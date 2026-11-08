@@ -10,13 +10,11 @@
     "book": "预约咨询"
   },
   "hero": {
-    "title": "互动式IT学习与<br>系统工程",
     "subtitle": "欢迎来到 Technical Labs。我们提供实操型互动实验资源,帮助有志于IT行业的人才积累真实技能,提供最佳实践部署的定制咨询服务,并展示生产级项目案例。",
     "cta_projects": "查看作品项目",
     "cta_services": "预约部署支持",
-    "eyebrow": "Nicholas Diotte · 首席工程师 · 多伦多（安大略省）/ 远程",
-    "h1": "网络与基础设施工程、咨询，以及投入生产的软件。",
-    "lede": "Nicholas Diotte 是多伦多的首席工程师，负责 FortiGate 部署、基础设施迁移和灾难恢复测试。Technical Labs 是他的实践平台：自 1999 年以来 25 年以上的网络与基础设施经验，以一对一部署辅导、架构审计和定制网络工具的形式提供。",
+    "h1": "网络与基础设施咨询，以及生产软件。",
+    "lede": "自1999年以来超过25年的网络与基础设施经验，以一对一部署辅导、架构审计和定制网络工具的形式提供。",
     "cta_book": "预约咨询会话",
     "cta_explore": "查看在线系统",
     "topic_hint": "或选择一个主题开始预约",
@@ -49,11 +47,11 @@
   },
   "projects": {
     "tag": "作品展示",
-    "heading": "进行中的工程项目",
+    "heading": "进行中的项目",
     "intro": "面向主播的自托管桌面应用、带边缘探针的防火墙集群中央 NMS、Rust 游戏服务器插件，以及用你现有设备组成 WiFi 测绘队列的 WiFi Doctor。上方监视器显示各项目的最新版本以及 WiFi Doctor 的抢先体验状态。",
     "vinylfo_desc": "面向主播和音乐发烧友的自托管桌面应用：同步 Discogs 收藏、管理曲目排期，并向 Twitch 实时元数据、OBS 视频叠加层和 Stream Deck 集成提供数据。",
     "fwmon_title": "Firewall Monitor",
-    "fwmon_desc": "面向防火墙集群（FortiGate、Palo Alto、pfSense）的厂商无关、轻量级中央 NMS：SNMP v2c/v3 轮询、syslog 与 sFlow 接收、SSH/TFTP 配置差异比对，以及通过 HTTPS/mTLS 的分布式 Firewall-Collector 探针。",
+    "fwmon_desc": "面向防火墙集群（主流厂商）的厂商无关、轻量级中央 NMS：SNMP v2c/v3 轮询、syslog 与 sFlow 接收、SSH/TFTP 配置差异比对，以及通过 HTTPS/mTLS 的分布式 Firewall-Collector 探针。",
     "rust_title": "Rust Game Plugin",
     "rust_desc": "通过 Oxide/uMod 钩子运行于 Rust 生存游戏服务器的 C#/.NET 玩法插件：经济面板、管理员警报与命令注册、性能指标、带 JSON 检查点的内存数据，以及自定义游戏 UI 叠加层。",
     "runs_on": "运行于",
@@ -81,12 +79,12 @@
     "tag": "职业简介",
     "heading": "简历、能力与认证",
     "intro": "25 年以上的从业经历，涵盖托管服务网络、全国运营商运维、数据中心基础设施和安全策略治理。",
-    "subtitle": "首席工程师 | 网络与基础设施",
+    "subtitle": "网络与基础设施",
     "location": "多伦多,安大略省 / 远程",
-    "exp1_role": "首席工程师",
+    "exp1_role": "网络与基础设施负责人",
     "exp1_period": "2024年8月 - 至今",
     "exp1_desc": "作为所有托管服务客户账户的高级技术权威,负责企业级基础设施迁移的架构设计。",
-    "exp1_li1": "主导 FortiGate 防火墙部署、安全策略治理及系统状态审查。",
+    "exp1_li1": "主导防火墙部署、安全策略治理及系统状态审查。",
     "exp1_li2": "架构并统筹复杂的端到端网络、存储与计算迁移项目。",
     "exp1_li3": "开展灾难恢复测试、业务连续性演练及设备健康审计。",
     "exp2_role": "高级IT顾问兼团队负责人",
@@ -103,7 +101,6 @@
     "exp4_desc": "管理 NOC、配置及容量规划团队,并负责批发客户运营。",
     "exp4_li1": "协助多伦多 Front Street 151 号企业级数据中心的启用与容量规划工作。",
     "exp4_li2": "将 NOC 扩展为 24/7/365 全天候覆盖,并设计自动化工具以消除重复性日常工作流程。",
-    "exp4_li3": "管理数据中心物理基础设施、HVAC 系统、直流电力分配及光纤线路。",
     "exp5_role": "团队负责人兼 NOCC 技术员",
     "exp5_period": "2005年2月 - 2011年6月",
     "exp5_desc": "监督 NOCC 运营,制定标准化培训指标,并监控全国性运营商的语音与数据网络。",
@@ -131,7 +128,7 @@
     "cat1_skill3": "路由与交换、SD-WAN",
     "cat1_skill3_meta": "BGP、OSPF、MPLS、SIP、ATM · 运营商语音与数据网络",
     "domain2": "领域 02",
-    "cat2_skill1_meta": "容量规划、直流供电、暖通空调、光纤",
+    "cat2_skill1_meta": "容量规划与虚拟化",
     "cat2_skill2": "Windows Server、Linux、自动化",
     "cat2_skill2_meta": "Windows/Exchange 迁移、自动化工具、Docker 与 CI/CD",
     "cat2_skill3_meta": "DR 测试、业务连续性演练、备份架构"
@@ -139,7 +136,7 @@
   "services": {
     "tag": "时间与支持",
     "heading": "服务与会话预约",
-    "intro": "动手部署辅导、架构审计和定制网络工具，由首席工程师直接指导。",
+    "intro": "实践性部署辅导、架构审计和定制网络工具。",
     "svc1_title": "一对一部署辅导",
     "svc1_desc": "边搭建边学习：规划网络布局、编写防火墙策略，并用安全模板部署探针。",
     "svc2_title": "架构审计与 CI/CD",
@@ -158,7 +155,7 @@
     "card_net_title": "防火墙与网络",
     "card_net_desc": "子网规划、防火墙规则、路由",
     "card_fw_title": "数据中心与基础设施",
-    "card_fw_desc": "服务器部署、虚拟化、物理安装",
+    "card_fw_desc": "服务器部署、虚拟化",
     "card_docker_title": "系统与流程自动化",
     "card_docker_desc": "脚本、CI/CD 流水线、容器工作流",
     "card_dev_title": "定制开发",
@@ -219,7 +216,7 @@
     "a2_link_full": "打开连接指南（/ai/#connect）→",
     "group_booking": "预约",
     "q4": "我可以预约哪些主题的会话？",
-    "a4": "四个领域：防火墙与网络（子网规划、防火墙规则、路由）、数据中心与基础设施（服务器部署、虚拟化、物理安装）、系统与流程自动化（脚本、CI/CD 流水线、容器工作流），以及定制开发（API 集成、后端服务、定制工具）。",
+    "a4": "四个领域：防火墙与网络、数据中心与基础设施、系统与流程自动化，以及定制开发。",
     "a4_link": "前往预约表单 →",
     "q5": "发送预约请求后会发生什么？",
     "a5": "我们收到请求后会在 24 小时内通过邮件与你确认细节。",
@@ -257,7 +254,7 @@
     "vinylfo_feat4": "<strong>Twitch 实时 HUD 与聊天机器人:</strong> 通过设备代码 OAuth 连接读取聊天事件,进行内容审核、发起观众投票,并在唱片曲目切换时发送公告。",
     "fwmon_title": "Firewall Monitor 与 Firewall-Collector",
     "fwmon_overview": "Firewall Monitor 是一款专注于防火墙集群的厂商无关、轻量级网络管理系统（NMS）。它既支持集中式部署，也支持分布在多个客户站点的远程采集探针（Firewall-Collector）。",
-    "fwmon_feat1": "<strong>分布式 SNMP 中继：</strong> Firewall-Collector 探针在本地运行，通过 SNMP v2c/v3 轮询边缘设备（FortiGate、Palo Alto、pfSense），并将遥测数据批量经 HTTPS/mTLS 发送到总部。",
+    "fwmon_feat1": "<strong>分布式 SNMP 中继：</strong> Firewall-Collector 探针在本地运行，通过 SNMP v2c/v3 轮询边缘设备（主流厂商），并将遥测数据批量经 HTTPS/mTLS 发送到总部。",
     "fwmon_feat2": "<strong>Syslog 与 sFlow 接收器:</strong> 高性能 UDP 解析流水线经过规范化处理,配合限速过滤器,可每秒处理数百个事件。",
     "fwmon_feat3": "<strong>标准化配置追踪:</strong> 定期通过 SSH/TFTP 轮询配置,对不同厂商的数据进行标准化处理,并存储差异化的代码版本记录。",
     "fwmon_feat4": "<strong>自定义状态告警:</strong> 评估数据延迟、流量峰值及接口指标,并通过 Webhook、SMTP 邮件及 IRC 机器人发送通知。",
@@ -287,7 +284,7 @@
     "aria": "切换语言"
   },
   "meta": {
-    "title": "Technical Labs — Nicholas Diotte | 网络与基础设施工程"
+    "title": "Technical Labs — 网络与基础设施"
   },
   "a11y": {
     "skip": "跳至主要内容",
@@ -310,7 +307,7 @@
   "sections": {
     "projects": "生产软件",
     "services": "咨询与辅导",
-    "resume": "首席工程师档案",
+    "resume": "职业档案",
     "faq": "Technical Labs AI 与常见问题",
     "community": "社区与实验环境",
     "band": "会话预约"

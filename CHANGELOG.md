@@ -2,6 +2,15 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.14] - 2026-11-08
+
+### Changed
+- **Generic home-page positioning.** Removed the hero banner with the name, title and location. The hero heading and lede no longer use "engineering", "Principal Engineer", "FortiGate" or the owner's name; the résumé title is now "Network & Infrastructure Lead" and the section label is "Professional dossier". The projects heading is "Active Projects".
+- **Data Centre & Infrastructure** no longer lists physical setup. The résumé bullet covering physical infrastructure, HVAC and DC power was removed.
+- **Firewall Monitor** copy now says "major vendors" instead of naming specific firewall brands, and its topology uses generic firewall roles. The certification name is the only remaining FortiGate mention.
+- **Services & Session Booking** columns are equal height on desktop: the service cards flex to fill the same row as the booking console. Measured bottom delta: 0 px at 1440 px wide.
+- Updated all 10 locale files to match the new generic copy and the "Active Projects" heading.
+
 ## [1.0.13] - 2026-11-08
 
 ### Added
