@@ -34,7 +34,7 @@
   <meta name="color-scheme" content="dark">
   <meta name="description" content="Technical Labs provides network and infrastructure consulting: deployment mentorship, architecture audits, custom tooling, production software (Vinylfo, Firewall Monitor, SignArtSaver, WiFi Doctor), and self-hosted AI coding models.">
   <meta name="author" content="Nicholas Diotte — Technical Labs">
-  <title data-i18n="meta.title">Technical Labs — Network &amp; Infrastructure</title>
+  <title data-i18n="meta.title">Technical Labs — Principal Consultant, Network &amp; Infrastructure</title>
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=dev">
   <link rel="stylesheet" href="style.css?v=dev">
@@ -289,11 +289,30 @@
             <span class="coord-rule" aria-hidden="true"></span>
             <span class="coord-label" data-i18n="sections.projects">Production software</span>
           </div>
-          <div class="section-title-split">
+          <div class="projects-head">
             <h2 id="projects-heading" data-i18n="projects.heading">Active Projects</h2>
             <p class="section-lead" data-i18n="projects.intro">
-              A self-hosted desktop app for streamers, a central NMS for firewall fleets with its edge probes, a plugin for Rust game servers, and WiFi Doctor, a WiFi survey fleet made of the devices you already have. The monitor above shows each latest release, and WiFi Doctor's early-access status.
+              Four systems we design and maintain, from a streamer's desktop app to a room-by-room WiFi survey.
             </p>
+          </div>
+
+          <div class="projects-readout" role="group" aria-label="Project status">
+            <div class="projects-readout-cell">
+              <span class="projects-readout-k" data-i18n="projects.readout_systems">Systems</span>
+              <span class="projects-readout-v">04</span>
+            </div>
+            <div class="projects-readout-cell">
+              <span class="projects-readout-k" data-i18n="projects.readout_public">Public releases</span>
+              <span class="projects-readout-v">03</span>
+            </div>
+            <div class="projects-readout-cell">
+              <span class="projects-readout-k" data-i18n="projects.readout_early">Early access</span>
+              <span class="projects-readout-v projects-readout-v-amber">01</span>
+            </div>
+            <a class="projects-readout-cell projects-readout-link" href="#hero-status-hud" aria-label="Live telemetry — jump to the release monitor">
+              <span class="projects-readout-k" data-i18n="projects.readout_live">Live telemetry</span>
+              <span class="projects-readout-v" data-i18n="projects.readout_monitor">Monitor ↑</span>
+            </a>
           </div>
         </div>
 
@@ -304,6 +323,8 @@
               <span class="sys-id">SYS-01 // <span data-i18n="projects.sys1">Streaming desktop app</span></span>
               <span class="version-chip" data-version-for="vinyl" data-stable="true">v0.16.13 · Stable</span>
             </div>
+
+            <h3 class="project-title">Vinylfo</h3>
 
             <!-- Decorative topology thumbnail -->
             <div class="topology-frame" aria-hidden="true">
@@ -323,7 +344,6 @@
               </svg>
             </div>
 
-            <h3 class="project-title">Vinylfo</h3>
             <p class="project-summary" data-i18n="projects.vinylfo_desc">
               Self-hosted desktop app for streamers and audiophiles that syncs Discogs collections, manages track schedules, and feeds live Twitch metadata, OBS video overlays, and Stream Deck integrations.
             </p>
@@ -368,6 +388,8 @@
               </div>
             </div>
 
+            <h3 class="project-title" data-i18n="projects.fwmon_card_title">Firewall Monitor &amp; Collector</h3>
+
             <!-- Decorative topology thumbnail -->
             <div class="topology-frame" aria-hidden="true">
               <svg viewBox="0 0 320 68" fill="none" class="topology-svg">
@@ -386,7 +408,6 @@
               </svg>
             </div>
 
-            <h3 class="project-title" data-i18n="projects.fwmon_card_title">Firewall Monitor &amp; Collector</h3>
             <p class="project-summary" data-i18n="projects.fwmon_desc">
               Vendor-agnostic, lightweight central NMS for firewall fleets from major vendors: SNMP v2c/v3 polling, syslog and sFlow receivers, SSH/TFTP config diffs, and distributed Firewall-Collector probes over HTTPS/mTLS.
             </p>
@@ -426,6 +447,8 @@
               <span class="version-chip" data-version-for="rust_plugin">v0.11.14</span>
             </div>
 
+            <h3 class="project-title">SignArtSaver <span class="project-subtitle" data-i18n="projects.rust_subtitle">Rust Plugin</span></h3>
+
             <!-- Decorative topology thumbnail -->
             <div class="topology-frame" aria-hidden="true">
               <svg viewBox="0 0 320 68" fill="none" class="topology-svg">
@@ -444,7 +467,6 @@
               </svg>
             </div>
 
-            <h3 class="project-title">SignArtSaver <span class="project-subtitle" data-i18n="projects.rust_subtitle">Rust Plugin</span></h3>
             <p class="project-summary" data-i18n="projects.rust_desc">
               C#/.NET gameplay plugin for Rust survival game servers via Oxide/uMod hooks: economy boards, admin alerts and command registry, performance metrics, in-memory data with JSON checkpoints, and custom game UI overlays.
             </p>
@@ -487,6 +509,8 @@
               <span class="version-chip version-chip-status" data-i18n="projects.early_access">Early access</span>
             </div>
 
+            <h3 class="project-title">WiFi Doctor</h3>
+
             <!-- Decorative topology thumbnail -->
             <div class="topology-frame" aria-hidden="true">
               <svg viewBox="0 0 320 68" fill="none" class="topology-svg">
@@ -508,7 +532,6 @@
               </svg>
             </div>
 
-            <h3 class="project-title">WiFi Doctor</h3>
             <p class="project-summary" data-i18n="projects.wifi_desc">
               Finds and fixes weak WiFi, room by room. It turns the phones, Android TV boxes and computers you already have into a WiFi survey fleet, maps signal on your real floor plans, and tells you what to fix. No survey kit to buy.
             </p>
@@ -568,7 +591,7 @@
           <div class="section-title-split">
             <h2 id="services-heading" data-i18n="services.heading">Services &amp; Session Booking</h2>
             <p class="section-lead" data-i18n="services.intro">
-              Hands-on deployment mentorship, architecture audits, and custom network tooling.
+              Hands-on deployment mentorship, architecture audits, and custom network tooling, guided directly by a Principal Consultant.
             </p>
           </div>
         </div>
@@ -748,7 +771,7 @@
           <div class="section-coord">
             <span class="coord-index">03</span>
             <span class="coord-rule" aria-hidden="true"></span>
-            <span class="coord-label" data-i18n="sections.resume">Professional dossier</span>
+            <span class="coord-label" data-i18n="sections.resume">Principal dossier</span>
           </div>
           <div class="section-title-split">
             <h2 id="resume-heading" data-i18n="resume.heading">Resume, Competencies &amp; Certifications</h2>
@@ -767,7 +790,7 @@
             <div class="dossier-body">
               <div class="dossier-status">
                 <span class="pip pip-emerald" aria-hidden="true"></span>
-                <span data-i18n="resume.exp1_role">Network &amp; Infrastructure Lead</span>
+                <span data-i18n="resume.exp1_role">Principal Consultant</span>
               </div>
               <h3 class="dossier-name">Nicholas Diotte</h3>
               <p class="dossier-title" data-i18n="resume.title_short">Network &amp; Infrastructure</p>
@@ -805,7 +828,7 @@
                   <span class="timeline-node" aria-hidden="true"></span>
                   <div class="timeline-meta">
                     <div>
-                      <h4 class="timeline-role" data-i18n="resume.exp1_role">Network &amp; Infrastructure Lead</h4>
+                      <h4 class="timeline-role" data-i18n="resume.exp1_role">Principal Consultant</h4>
                       <span class="timeline-company">Tuor Networks</span>
                     </div>
                     <span class="timeline-dates" data-i18n="resume.exp1_period">Aug 2024 – Present</span>

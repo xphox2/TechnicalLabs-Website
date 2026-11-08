@@ -48,7 +48,7 @@
   "projects": {
     "tag": "Vetrina",
     "heading": "Progetti attivi",
-    "intro": "Un’app desktop self-hosted per streamer, un NMS centrale per flotte di firewall con le sue sonde edge, un plugin per i server del gioco Rust e WiFi Doctor, una flotta di rilevamento WiFi fatta con i dispositivi che hai già. Il monitor qui sopra mostra l’ultima release di ciascuno e lo stato di accesso anticipato di WiFi Doctor.",
+    "intro": "Quattro sistemi che progettiamo e gestiamo, da un'app desktop per streamer a un'indagine WiFi stanza per stanza.",
     "vinylfo_desc": "App desktop self-hosted per streamer e audiofili che sincronizza le collezioni Discogs, gestisce le scalette dei brani e alimenta metadati live per Twitch, overlay video per OBS e integrazioni Stream Deck.",
     "fwmon_title": "Firewall Monitor",
     "fwmon_desc": "NMS centrale leggero e indipendente dal vendor per flotte di firewall (principali vendor): polling SNMP v2c/v3, ricevitori syslog e sFlow, diff di configurazione via SSH/TFTP e sonde Firewall-Collector distribuite su HTTPS/mTLS.",
@@ -66,7 +66,12 @@
     "sys1": "App desktop per lo streaming",
     "sys2": "NMS per flotte",
     "sys3": "Plugin di gioco",
-    "sys4": "Flotta di rilevamento WiFi"
+    "sys4": "Flotta di rilevamento WiFi",
+    "readout_systems": "Sistemi",
+    "readout_public": "Release pubbliche",
+    "readout_early": "Accesso anticipato",
+    "readout_live": "Telemetria live",
+    "readout_monitor": "Monitor ↑"
   },
   "common": {
     "view_architecture": "Architettura principale",
@@ -79,9 +84,8 @@
     "tag": "Profilo professionale",
     "heading": "Curriculum, competenze e certificazioni",
     "intro": "Oltre 25 anni di esperienza tra reti di servizi gestiti, operazioni di carrier nazionali, infrastrutture di data center e governance delle policy di sicurezza.",
-    "subtitle": "Reti e Infrastruttura",
     "location": "Toronto, ON / Remoto",
-    "exp1_role": "Responsabile Reti e Infrastruttura",
+    "exp1_role": "Consulente principale",
     "exp1_period": "Ago 2024 - Presente",
     "exp1_desc": "Autorità tecnica senior su tutti gli account clienti dei servizi gestiti, con responsabilità di architettura per le migrazioni dell'infrastruttura aziendale.",
     "exp1_li1": "Guida le implementazioni dei firewall, la governance delle policy di sicurezza e le revisioni della postura del sistema.",
@@ -136,7 +140,7 @@
   "services": {
     "tag": "Tempo e Supporto",
     "heading": "Servizi e prenotazione sessioni",
-    "intro": "Mentoring pratico sui deployment, audit di architettura e strumenti di rete su misura.",
+    "intro": "Mentoring pratico sui deployment, audit di architettura e strumenti di rete su misura, guidati direttamente da un consulente principale.",
     "svc1_title": "Mentoring di deployment 1 a 1",
     "svc1_desc": "Impara mentre costruiamo: definire la topologia di rete, creare le policy del firewall e distribuire sonde con template sicuri.",
     "svc2_title": "Audit di architettura e CI/CD",
@@ -284,7 +288,7 @@
     "aria": "Cambia Lingua"
   },
   "meta": {
-    "title": "Technical Labs — Reti e Infrastruttura"
+    "title": "Technical Labs — Consulente principale, Reti e Infrastruttura"
   },
   "a11y": {
     "skip": "Vai al contenuto principale",
@@ -307,7 +311,7 @@
   "sections": {
     "projects": "Software in produzione",
     "services": "Consulenza e mentoring",
-    "resume": "Dossier professionale",
+    "resume": "Dossier del consulente principale",
     "faq": "IA di Technical Labs e FAQ",
     "community": "Community e ambienti di lab",
     "band": "Dispatch delle sessioni"

@@ -2,6 +2,14 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.15] - 2026-11-08
+
+### Changed
+- **Active Projects section rebuilt for scanning.** The heading and one-line lead are stacked (no more inverted two-column header), followed by a four-cell status rail: 04 systems, 03 public releases, 01 early access, and a live-telemetry link back to the release monitor. Each project title now sits above its topology diagram, so the card reads name first and diagram second.
+- **Responsive project layout:** 2×2 on desktop, 1 column at ≤820 px, the status rail becomes 2×2 at ≤980 px and stacks each label above its value at ≤640 px.
+- **Principal titles restored:** the résumé pip and timeline show **Principal Consultant**, the services intro says “guided directly by a Principal Consultant”, the section label is **Principal dossier**, and the metadata title includes **Principal Consultant**. No “Engineer” or “Engineering” was reintroduced.
+- All 10 locale files carry the new projects lead, status labels and Principal Consultant titles.
+
 ## [1.0.14] - 2026-11-08
 
 ### Changed
