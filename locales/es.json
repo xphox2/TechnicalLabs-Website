@@ -235,7 +235,7 @@
     "s4": "¿Cuándo empezó Technical Labs?",
     "sa4": "Technical Labs se lanzó el 6 de junio de 2019. La trayectoria profesional detrás se remonta a 1999, en roles de ISP, operador y servicios gestionados.",
     "s5": "¿Puedo usar los servidores?",
-    "sa5": "El servidor de IA del laboratorio no es un servicio de hosting compartido. Los modelos de IA están disponibles para probadores invitados a través del gateway; los proyectos son públicos. Los servidores Proxmox alojados ejecutan nuestros propios servicios, no VM de clientes.",
+    "sa5": "El servidor de IA del laboratorio no es un servicio de hosting compartido. Los modelos de IA están disponibles para probadores invitados a través del gateway; los proyectos son públicos. Los servidores Proxmox alojados ejecutan nuestros propios servicios.",
     "group_study": "Estudio y recursos",
     "t1": "Estoy estudiando algo y necesito un recurso. ¿Puedes ayudar?",
     "ta1": "Sí. Cuéntame en la <a href=\"#contact\">sección de contacto</a> qué estás aprendiendo y qué necesitas: un entorno de laboratorio, un modelo, un conjunto de datos, una guía o simplemente una orientación. No necesitas reservar una sesión de pago para preguntar.",

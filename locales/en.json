@@ -235,7 +235,7 @@
     "s4": "When did Technical Labs start?",
     "sa4": "Technical Labs went live on June 6, 2019. The IT career behind it goes back to 1999, across ISP, carrier and managed-service roles.",
     "s5": "Can I use the servers?",
-    "sa5": "The AI lab server is not a shared hosting service. The AI models are available to invited testers through the gateway; the projects are public. The hosted Proxmox servers run our own services, not customer VMs.",
+    "sa5": "The AI lab server is not a shared hosting service. The AI models are available to invited testers through the gateway; the projects are public. The hosted Proxmox servers run our own services.",
     "group_study": "Studying & resources",
     "t1": "I'm studying something and need a resource. Can you help?",
     "ta1": "Yes. Tell me what you're learning and what you need — a lab environment, a model, a dataset, a guide, or just a pointer — in the <a href=\"#contact\">contact section</a>. You don't need to book a paid session to ask.",
