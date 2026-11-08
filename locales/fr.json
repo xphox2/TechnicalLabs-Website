@@ -211,7 +211,7 @@
     "a2_link": "Ouvrir le guide de connexion",
     "q3": "Comment obtenir un accès ?",
     "a3": "Pendant la phase de test, l'accès se fait sur invitation. Demandez une clé personnelle à Nicholas, il vous l'enverra directement.",
-    "intro": "Le matériel derrière le lab, les projets qu'il fait tourner, et des réponses sur les réservations et la communauté.",
+    "intro": "Le matériel derrière le lab, les projets qu'il fait tourner, et des réponses sur les études, les réservations et la communauté.",
     "group_booking": "Réservation",
     "q4": "Sur quels sujets puis-je réserver une session ?",
     "a4": "Quatre domaines : pare-feu et réseaux, centres de données et infrastructure, automatisation des systèmes et des processus, et développement sur mesure.",
@@ -235,7 +235,12 @@
     "s4": "Quand Technical Labs a-t-il commencé ?",
     "sa4": "Technical Labs a été mis en ligne le 6 juin 2019. Le parcours professionnel derrière remonte à 1999, dans des rôles chez un FAI, un opérateur et en services gérés.",
     "s5": "Puis-je utiliser le serveur ?",
-    "sa5": "Le serveur du lab n'est pas un service d'hébergement mutualisé. Les modèles IA sont disponibles pour les testeurs invités via la passerelle ; les projets sont publics."
+    "sa5": "Le serveur du lab n'est pas un service d'hébergement mutualisé. Les modèles IA sont disponibles pour les testeurs invités via la passerelle ; les projets sont publics.",
+    "group_study": "Études et ressources",
+    "t1": "J'étudie quelque chose et j'ai besoin d'une ressource. Pouvez-vous m'aider ?",
+    "ta1": "Oui. Dites-moi dans la <a href=\"#contact\">section contact</a> ce que vous apprenez et ce dont vous avez besoin — un environnement de lab, un modèle, un jeu de données, un guide ou simplement une piste. Vous n'avez pas besoin de réserver une session payante pour demander.",
+    "t2": "Puis-je utiliser le serveur du lab pour un cours ou un projet d'études ?",
+    "ta2": "Parfois. Le lab n'est pas un service d'hébergement mutualisé, mais si vous travaillez sur quelque chose de précis et avez besoin d'un modèle, d'un lab ou d'une autre ressource, dites-moi dans la <a href=\"#contact\">section contact</a> ce que vous étudiez. Je vérifierai ce qui est disponible et je vous répondrai."
   },
   "footer": {
     "brand_desc": "Simulateurs de lab IT de haute qualité, mentorat de déploiement personnalisé et solutions réseau robustes.",
@@ -251,7 +256,8 @@
     "portal": "Portail des labs IT ↗",
     "irc": "IRC web public ↗",
     "wifi": "WiFi Doctor ↗",
-    "status": "État du réseau en direct"
+    "status": "État du réseau en direct",
+    "study_note": "Vous étudiez quelque chose et avez besoin d'une ressource ? <a href=\"mailto:xphox@xphox.net?subject=Study%20resource%20request\">Dites-moi ce que vous apprenez</a> — aucune réservation nécessaire."
   },
   "modals": {
     "overview_heading": "Présentation du projet",

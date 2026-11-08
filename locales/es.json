@@ -211,7 +211,7 @@
     "a2_link": "Abrir la guía de conexión",
     "q3": "¿Cómo obtengo acceso?",
     "a3": "Mientras hacemos pruebas, el acceso es solo por invitación. Pide a Nicholas una clave personal y te la enviará directamente.",
-    "intro": "El hardware detrás del laboratorio, los proyectos que soporta y respuestas sobre reservas y comunidad.",
+    "intro": "El hardware detrás del laboratorio, los proyectos que soporta y respuestas sobre estudio, reservas y comunidad.",
     "group_booking": "Reservas",
     "q4": "¿Sobre qué puedo reservar una sesión?",
     "a4": "Cuatro áreas: firewalls y redes, centros de datos e infraestructura, automatización de sistemas y procesos, y desarrollo a medida.",
@@ -235,7 +235,12 @@
     "s4": "¿Cuándo empezó Technical Labs?",
     "sa4": "Technical Labs se lanzó el 6 de junio de 2019. La trayectoria profesional detrás se remonta a 1999, en roles de ISP, operador y servicios gestionados.",
     "s5": "¿Puedo usar el servidor?",
-    "sa5": "El servidor del laboratorio no es un servicio de hosting compartido. Los modelos de IA están disponibles para probadores invitados a través del gateway; los proyectos son públicos."
+    "sa5": "El servidor del laboratorio no es un servicio de hosting compartido. Los modelos de IA están disponibles para probadores invitados a través del gateway; los proyectos son públicos.",
+    "group_study": "Estudio y recursos",
+    "t1": "Estoy estudiando algo y necesito un recurso. ¿Puedes ayudar?",
+    "ta1": "Sí. Cuéntame en la <a href=\"#contact\">sección de contacto</a> qué estás aprendiendo y qué necesitas: un entorno de laboratorio, un modelo, un conjunto de datos, una guía o simplemente una orientación. No necesitas reservar una sesión de pago para preguntar.",
+    "t2": "¿Puedo usar el servidor del laboratorio para un curso o proyecto de estudio?",
+    "ta2": "A veces. El laboratorio no es un servicio de hosting compartido, pero si estás trabajando en algo concreto y necesitas acceso a un modelo, un laboratorio u otro recurso, cuéntame en la <a href=\"#contact\">sección de contacto</a> qué estás estudiando. Veré qué hay disponible y te responderé."
   },
   "footer": {
     "brand_desc": "Simuladores de laboratorio de TI de alta calidad, mentoría de despliegue personalizada y soluciones de red robustas.",
@@ -251,7 +256,8 @@
     "portal": "Portal de laboratorios de TI ↗",
     "irc": "IRC web público ↗",
     "wifi": "WiFi Doctor ↗",
-    "status": "Estado de red en vivo"
+    "status": "Estado de red en vivo",
+    "study_note": "¿Estás estudiando algo y necesitas un recurso? <a href=\"mailto:xphox@xphox.net?subject=Study%20resource%20request\">Cuéntame qué estás aprendiendo</a> — no hace falta reservar."
   },
   "modals": {
     "overview_heading": "Resumen del proyecto",

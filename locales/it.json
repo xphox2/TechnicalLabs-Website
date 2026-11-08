@@ -211,7 +211,7 @@
     "a2_link": "Apri la guida di collegamento",
     "q3": "Come ottengo l'accesso?",
     "a3": "Durante la fase di test l'accesso è su invito. Chiedi a Nicholas una chiave personale e te la invierà direttamente.",
-    "intro": "L'hardware dietro il lab, i progetti che supporta e le risposte su prenotazioni e community.",
+    "intro": "L'hardware dietro il lab, i progetti che supporta e le risposte su studio, prenotazioni e community.",
     "group_booking": "Prenotazioni",
     "q4": "Su cosa posso prenotare una sessione?",
     "a4": "Quattro aree: firewall e reti, data center e infrastruttura, automazione di sistemi e processi, e sviluppo su misura.",
@@ -235,7 +235,12 @@
     "s4": "Quando è nata Technical Labs?",
     "sa4": "Technical Labs è andata online il 6 giugno 2019. Il percorso professionale alle spalle risale al 1999, tra ruoli ISP, carrier e managed service.",
     "s5": "Posso usare il server?",
-    "sa5": "Il server del lab non è un servizio di hosting condiviso. I modelli AI sono disponibili per tester invitati tramite il gateway; i progetti sono pubblici."
+    "sa5": "Il server del lab non è un servizio di hosting condiviso. I modelli AI sono disponibili per tester invitati tramite il gateway; i progetti sono pubblici.",
+    "group_study": "Studio e risorse",
+    "t1": "Sto studiando qualcosa e ho bisogno di una risorsa. Puoi aiutarmi?",
+    "ta1": "Sì. Dimmi nella <a href=\"#contact\">sezione contatti</a> cosa stai imparando e di cosa hai bisogno — un ambiente lab, un modello, un dataset, una guida o semplicemente un orientamento. Non devi prenotare una sessione a pagamento per chiedere.",
+    "t2": "Posso usare il server del lab per un corso o un progetto di studio?",
+    "ta2": "A volte. Il lab non è un servizio di hosting condiviso, ma se stai lavorando a qualcosa di specifico e ti serve accesso a un modello, a un lab o a un'altra risorsa, dimmi nella <a href=\"#contact\">sezione contatti</a> cosa stai studiando. Controllerò cosa è disponibile e ti risponderò."
   },
   "footer": {
     "brand_desc": "Simulatori di lab IT di alta qualità, mentoring di deployment personalizzato e soluzioni di rete solide.",
@@ -251,7 +256,8 @@
     "portal": "Portale dei lab IT ↗",
     "irc": "IRC web pubblico ↗",
     "wifi": "WiFi Doctor ↗",
-    "status": "Stato rete in tempo reale"
+    "status": "Stato rete in tempo reale",
+    "study_note": "Stai studiando qualcosa e ti serve una risorsa? <a href=\"mailto:xphox@xphox.net?subject=Study%20resource%20request\">Dimmi cosa stai imparando</a> — nessuna prenotazione necessaria."
   },
   "modals": {
     "overview_heading": "Panoramica del progetto",

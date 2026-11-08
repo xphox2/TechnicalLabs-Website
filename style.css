@@ -2025,9 +2025,15 @@ main,
 
 .faq-secondary {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(1.5rem, 3.5vw, 2.75rem);
   margin-top: clamp(1.5rem, 3.5vw, 2.75rem);
+}
+
+@media (max-width: 980px) {
+  .faq-secondary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .ai-spotlight {
@@ -2339,6 +2345,18 @@ main,
 .footer-craft {
   font-family: var(--font-mono);
   font-size: 0.75rem;
+}
+
+.footer-note {
+  margin-top: 0.9rem;
+  max-width: 34ch;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.footer-note a {
+  color: var(--signal-cyan);
 }
 
 /* ==========================================================================
