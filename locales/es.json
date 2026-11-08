@@ -128,7 +128,7 @@
     "cat1_skill3": "Enrutamiento y conmutación, SD-WAN",
     "cat1_skill3_meta": "BGP, OSPF, MPLS, SIP, ATM · redes de voz y datos de operador",
     "domain2": "Dominio 02",
-    "cat2_skill1_meta": "Planificación de capacidad, alimentación DC, climatización, fibra óptica",
+    "cat2_skill1_meta": "Planificación de capacidad y virtualización",
     "cat2_skill2": "Windows Server, Linux, automatización",
     "cat2_skill2_meta": "Migraciones Windows/Exchange, herramientas de automatización, Docker y CI/CD",
     "cat2_skill3_meta": "Pruebas de DR, ejercicios de continuidad de negocio, arquitecturas de copias de seguridad"

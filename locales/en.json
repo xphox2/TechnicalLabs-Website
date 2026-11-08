@@ -128,7 +128,7 @@
     "cat1_skill3": "Routing & Switching, SD-WAN",
     "cat1_skill3_meta": "BGP, OSPF, MPLS, SIP, ATM · carrier voice & data networks",
     "domain2": "Domain 02",
-    "cat2_skill1_meta": "Capacity planning, DC power, HVAC, optical fibres",
+    "cat2_skill1_meta": "Capacity planning and virtualization",
     "cat2_skill2": "Windows Server, Linux, Automation",
     "cat2_skill2_meta": "Windows/Exchange migrations, automation tooling, Docker & CI/CD",
     "cat2_skill3_meta": "DR testing, business continuity exercises, backup architectures"

@@ -84,7 +84,7 @@
     "exp1_role": "网络与基础设施负责人",
     "exp1_period": "2024年8月 - 至今",
     "exp1_desc": "作为所有托管服务客户账户的高级技术权威,负责企业级基础设施迁移的架构设计。",
-    "exp1_li1": "主导 防火墙部署、安全策略治理及系统状态审查。",
+    "exp1_li1": "主导防火墙部署、安全策略治理及系统状态审查。",
     "exp1_li2": "架构并统筹复杂的端到端网络、存储与计算迁移项目。",
     "exp1_li3": "开展灾难恢复测试、业务连续性演练及设备健康审计。",
     "exp2_role": "高级IT顾问兼团队负责人",
@@ -128,7 +128,7 @@
     "cat1_skill3": "路由与交换、SD-WAN",
     "cat1_skill3_meta": "BGP、OSPF、MPLS、SIP、ATM · 运营商语音与数据网络",
     "domain2": "领域 02",
-    "cat2_skill1_meta": "容量规划、直流供电、暖通空调、光纤",
+    "cat2_skill1_meta": "容量规划与虚拟化",
     "cat2_skill2": "Windows Server、Linux、自动化",
     "cat2_skill2_meta": "Windows/Exchange 迁移、自动化工具、Docker 与 CI/CD",
     "cat2_skill3_meta": "DR 测试、业务连续性演练、备份架构"

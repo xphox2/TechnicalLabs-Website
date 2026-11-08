@@ -128,7 +128,7 @@
     "cat1_skill3": "ルーティング・スイッチング、SD-WAN",
     "cat1_skill3_meta": "BGP、OSPF、MPLS、SIP、ATM · 通信事業者の音声・データネットワーク",
     "domain2": "領域 02",
-    "cat2_skill1_meta": "キャパシティ計画、直流電源、空調、光ファイバー",
+    "cat2_skill1_meta": "容量計画と仮想化",
     "cat2_skill2": "Windows Server、Linux、自動化",
     "cat2_skill2_meta": "Windows/Exchange 移行、自動化ツール、Docker と CI/CD",
     "cat2_skill3_meta": "DR 試験、事業継続演習、バックアップ設計"

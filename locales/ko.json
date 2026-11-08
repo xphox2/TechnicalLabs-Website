@@ -128,7 +128,7 @@
     "cat1_skill3": "라우팅 및 스위칭, SD-WAN",
     "cat1_skill3_meta": "BGP, OSPF, MPLS, SIP, ATM · 통신사 음성 및 데이터 네트워크",
     "domain2": "영역 02",
-    "cat2_skill1_meta": "용량 계획, DC 전원, 공조, 광섬유",
+    "cat2_skill1_meta": "용량 계획 및 가상화",
     "cat2_skill2": "Windows Server, Linux, 자동화",
     "cat2_skill2_meta": "Windows/Exchange 마이그레이션, 자동화 도구, Docker 및 CI/CD",
     "cat2_skill3_meta": "DR 테스트, 업무 연속성 훈련, 백업 아키텍처"
