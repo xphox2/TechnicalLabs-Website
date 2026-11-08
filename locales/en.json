@@ -207,11 +207,11 @@
   },
   "faq": {
     "tag": "Questions",
-    "heading": "Our Servers & Common Questions",
+    "heading": "Our Servers & FAQs",
     "a2_link": "Open the connection guide",
     "q3": "How do I get access?",
     "a3": "Access is by invitation while we test. Ask Nicholas for a personal key and he will send it to you directly.",
-    "intro": "The AI server in the lab, our hosted servers in Nuday Data Centre, the projects they support, and answers about studying, booking and the community.",
+    "intro": "What we run, who can use it, and why we run it this way.",
     "group_booking": "Booking",
     "q4": "What can I book a session about?",
     "a4": "Four areas: Firewalls & Networking, Data Centre & Infrastructure, System & Process Automation, and Custom Development.",
@@ -226,23 +226,13 @@
     "q8": "Where are the interactive IT labs?",
     "a8": "The Portal at <a href=\"http://portal.technicallabs.org\" target=\"_blank\" rel=\"noopener noreferrer\"><span>portal.technicallabs.org</span><span class=\"sr-only\" data-i18n=\"a11y.new_tab\">(opens in a new tab)</span></a> hosts the interactive IT labs: hands-on lab resources for aspiring IT professionals.",
     "group_server": "Our servers",
-    "s1": "What are the servers?",
-    "sa1": "Technical Labs runs two parts of its infrastructure. The AI server is an ASUS Ascent GX10 with an NVIDIA GB10 superchip and 128 GB of unified memory, in our lab. The website and project services run on hosted virtual servers in Nuday Data Centre, on Proxmox with MultiPortal.io.",
-    "s2": "What runs where?",
-    "sa2": "The GX10 serves the self-hosted Ornith and Qwen models for TechLabs AI. The Proxmox virtual servers in Nuday Data Centre run the website and the services behind projects such as Firewall Monitor and WiFi Doctor.",
     "s3": "Why self-host?",
-    "sa3": "It keeps the models and project data on infrastructure we control — the lab AI server and our hosted Proxmox VMs — avoids per-token cloud pricing for the AI, and lets us tune the stack end to end.",
-    "s4": "When did Technical Labs start?",
-    "sa4": "Technical Labs went live on June 6, 2019. The IT career behind it goes back to 1999, across ISP, carrier and managed-service roles.",
+    "sa3": "It keeps the models and project data on infrastructure we control, avoids per-token cloud pricing for the AI, and lets us tune the stack end to end.",
     "s5": "Can I use the servers?",
-    "sa5": "The AI lab server is not a shared hosting service. The AI models are available to invited testers through the gateway; the projects are public. The hosted Proxmox servers run our own services.",
+    "sa5": "Not as shared hosting. The AI models are available to invited testers through the gateway; the website and project services are public. The hosted Proxmox servers run our own services.",
     "group_study": "Studying & resources",
     "t1": "I'm studying something and need a resource. Can you help?",
-    "ta1": "Yes. Tell me what you're learning and what you need — a lab environment, a model, a dataset, a guide, or just a pointer — in the <a href=\"#contact\">contact section</a>. You don't need to book a paid session to ask.",
-    "t2": "Can I use the lab server for a course or study project?",
-    "ta2": "Sometimes. The lab is not a shared hosting service, but if you're working through something specific and need access to a model, a lab, or another resource, tell me what you're studying in the <a href=\"#contact\">contact section</a>. I'll check what's available and get back to you. No paid booking is required.",
-    "s6": "Where are the servers hosted?",
-    "sa6": "The AI server is in our lab. The website and project services run on virtual servers in Nuday Data Centre, on Proxmox with MultiPortal.io."
+    "ta1": "Yes. Tell me what you're learning and what you need — a lab environment, a model, a dataset, a guide, or just a pointer — in the <a href=\"#contact\">contact section</a>. It's free to ask; no paid booking is required."
   },
   "footer": {
     "brand_desc": "Providing high-quality IT lab simulators, customized deployment mentorship, and robust networking solutions.",
@@ -259,7 +249,7 @@
     "irc": "Public Web IRC ↗",
     "wifi": "WiFi Doctor ↗",
     "status": "Live Network Status",
-    "study_note": "Studying something and need a resource? <a href=\"mailto:xphox@xphox.net?subject=Study%20resource%20request\">Tell me what you're learning</a> — no booking needed.",
+    "study_note": "Studying something and need a resource? <a href=\"mailto:xphox@xphox.net?subject=Study%20resource%20request\">Tell me what you're learning</a>.",
     "ai": "Technical Labs AI"
   },
   "modals": {
@@ -335,14 +325,12 @@
     "context": "Models",
     "context_v": "Self-hosted Ornith and Qwen models, up to a million tokens of context",
     "clients": "Since",
-    "clients_v": "Technical Labs live since June 6, 2019",
-    "setup": "Production",
-    "setup_v": "Our website and project services run on our Proxmox virtual servers",
+    "clients_v": "Live since June 6, 2019",
     "cta_guide": "See the projects",
     "cta_full": "Read the AI guide",
     "status": "Live status",
     "hosting": "Hosting",
-    "hosting_v": "Virtual servers in Nuday Data Centre, running Proxmox with MultiPortal.io"
+    "hosting_v": "Website & project services on virtual servers in Nuday Data Centre — Proxmox with MultiPortal.io"
   },
   "band": {
     "heading": "Ready to book a session?",

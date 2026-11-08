@@ -207,11 +207,11 @@
   },
   "faq": {
     "tag": "问题",
-    "heading": "我们的服务器与常见问题",
+    "heading": "我们的服务器与 FAQ",
     "a2_link": "打开连接指南",
     "q3": "如何获得访问权限？",
     "a3": "测试期间仅限受邀使用。请向 Nicholas 申请个人密钥，他会直接发给你。",
-    "intro": "实验室的 AI 服务器、Nuday Data Centre 的托管服务器、它们支持的项目，以及关于学习、预约和社区的解答。",
+    "intro": "我们运行什么、谁可以使用，以及为什么这样做。",
     "group_booking": "预约",
     "q4": "我可以预约哪些主题的会话？",
     "a4": "四个领域：防火墙与网络、数据中心与基础设施、系统与流程自动化，以及定制开发。",
@@ -226,23 +226,13 @@
     "q8": "交互式 IT 实验室在哪里？",
     "a8": "<a href=\"http://portal.technicallabs.org\" target=\"_blank\" rel=\"noopener noreferrer\"><span>portal.technicallabs.org</span><span class=\"sr-only\">（在新标签页中打开）</span></a> 门户托管着交互式 IT 实验室：为有志于 IT 行业的人提供的动手实验资源。",
     "group_server": "我们的服务器",
-    "s1": "我们有哪些服务器？",
-    "sa1": "Technical Labs 的基础设施分为两部分。AI 服务器是 ASUS Ascent GX10（NVIDIA GB10 超级芯片、128 GB 统一内存），位于我们的实验室。网站和项目服务运行在 Nuday Data Centre 的托管虚拟服务器上，使用 Proxmox 与 MultiPortal.io。",
-    "s2": "什么在哪里运行？",
-    "sa2": "GX10 为 TechLabs AI 提供自托管的 Ornith 和 Qwen 模型。Nuday Data Centre 的 Proxmox 虚拟服务器运行网站以及 Firewall Monitor、WiFi Doctor 等项目背后的服务。",
     "s3": "为什么自托管？",
-    "sa3": "这样模型和项目数据都在我们控制的基础设施上——实验室 AI 服务器和我们的托管 Proxmox VM——避免 AI 的按 token 云成本，也让我们能够端到端调优整个技术栈。",
-    "s4": "Technical Labs 是什么时候开始的？",
-    "sa4": "Technical Labs 于 2019 年 6 月 6 日上线。其背后的 IT 职业生涯可追溯到 1999 年，涵盖 ISP、运营商和托管服务岗位。",
+    "sa3": "这样模型和项目数据都在我们控制的基础设施上，避免 AI 的按 token 云成本，也让我们能够端到端调优整个技术栈。",
     "s5": "我可以使用服务器吗？",
-    "sa5": "实验室 AI 服务器不是共享主机服务。AI 模型通过网关向受邀测试者开放；项目是公开的。托管 Proxmox 服务器运行我们自己的服务。",
+    "sa5": "不是共享主机。AI 模型通过网关向受邀测试者开放；网站和项目服务是公开的。托管 Proxmox 服务器运行我们自己的服务。",
     "group_study": "学习与资源",
     "t1": "我正在学习一些东西，需要资源。你能帮忙吗？",
-    "ta1": "可以。请在<a href=\"#contact\">联系部分</a>告诉我你在学什么、需要什么——实验环境、模型、数据集、指南，或者只是一个方向。提问不需要预约付费会话。",
-    "t2": "我可以把实验室服务器用于课程或学习项目吗？",
-    "ta2": "视情况而定。实验室不是共享主机服务，但如果你正在做某个具体项目，需要访问模型、实验环境或其他资源，请在<a href=\"#contact\">联系部分</a>告诉我你在学什么。我会看看有什么可用并回复你。无需付费预约。",
-    "s6": "服务器托管在哪里？",
-    "sa6": "AI 服务器在我们的实验室。网站和项目服务运行在 Nuday Data Centre 的虚拟服务器上，使用 Proxmox 与 MultiPortal.io。"
+    "ta1": "可以。请在<a href=\"#contact\">联系部分</a>告诉我你在学什么、需要什么——实验环境、模型、数据集、指南，或者只是一个方向。提问是免费的，无需付费预约。"
   },
   "footer": {
     "brand_desc": "提供高质量的 IT 实验模拟器、定制化部署辅导和稳健的网络解决方案。",
@@ -259,7 +249,7 @@
     "irc": "公共网页 IRC ↗",
     "wifi": "WiFi Doctor ↗",
     "status": "实时网络状态",
-    "study_note": "正在学习并需要资源？<a href=\"mailto:xphox@xphox.net?subject=Study%20resource%20request\">告诉我你在学什么</a> — 无需预约。",
+    "study_note": "正在学习并需要资源？<a href=\"mailto:xphox@xphox.net?subject=Study%20resource%20request\">告诉我你在学什么</a>。",
     "ai": "Technical Labs AI"
   },
   "modals": {
@@ -338,14 +328,12 @@
     "context": "模型",
     "context_v": "自托管 Ornith 与 Qwen 模型，最高一百万 token 上下文",
     "clients": "上线",
-    "clients_v": "Technical Labs 自 2019 年 6 月 6 日上线",
-    "setup": "生产",
-    "setup_v": "我们的网站和项目服务运行在我们的 Proxmox 虚拟服务器上",
+    "clients_v": "自 2019 年 6 月 6 日上线",
     "cta_guide": "查看项目",
     "cta_full": "阅读 AI 指南",
     "status": "实时状态",
     "hosting": "托管",
-    "hosting_v": "Nuday Data Centre 的虚拟服务器，运行 Proxmox 与 MultiPortal.io"
+    "hosting_v": "网站和项目服务运行在 Nuday Data Centre 的虚拟服务器上——Proxmox 与 MultiPortal.io"
   },
   "band": {
     "heading": "准备好预约会话了吗？",

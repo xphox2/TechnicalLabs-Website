@@ -207,11 +207,11 @@
   },
   "faq": {
     "tag": "Questions",
-    "heading": "Nos serveurs et questions fréquentes",
+    "heading": "Nos serveurs et FAQ",
     "a2_link": "Ouvrir le guide de connexion",
     "q3": "Comment obtenir un accès ?",
     "a3": "Pendant la phase de test, l'accès se fait sur invitation. Demandez une clé personnelle à Nicholas, il vous l'enverra directement.",
-    "intro": "Le serveur IA au lab, nos serveurs hébergés au Nuday Data Centre, les projets qu'ils font tourner, et des réponses sur les études, les réservations et la communauté.",
+    "intro": "Ce que nous exploitons, qui peut l'utiliser et pourquoi nous procédons ainsi.",
     "group_booking": "Réservation",
     "q4": "Sur quels sujets puis-je réserver une session ?",
     "a4": "Quatre domaines : pare-feu et réseaux, centres de données et infrastructure, automatisation des systèmes et des processus, et développement sur mesure.",
@@ -226,23 +226,13 @@
     "q8": "Où sont les labs IT interactifs ?",
     "a8": "Le portail sur <a href=\"http://portal.technicallabs.org\" target=\"_blank\" rel=\"noopener noreferrer\"><span>portal.technicallabs.org</span><span class=\"sr-only\">(s’ouvre dans un nouvel onglet)</span></a> héberge les labs IT interactifs : des ressources pratiques pour les futurs professionnels de l’IT.",
     "group_server": "Nos serveurs",
-    "s1": "Quels serveurs avez-vous ?",
-    "sa1": "Technical Labs exploite deux parties de son infrastructure. Le serveur IA est un ASUS Ascent GX10 avec un superchip NVIDIA GB10 et 128 Go de mémoire unifiée, dans notre lab. Le site web et les services des projets tournent sur des serveurs virtuels hébergés au Nuday Data Centre, sous Proxmox avec MultiPortal.io.",
-    "s2": "Qu'est-ce qui tourne où ?",
-    "sa2": "Le GX10 sert les modèles Ornith et Qwen auto-hébergés pour TechLabs AI. Les serveurs virtuels Proxmox au Nuday Data Centre font tourner le site web et les services derrière des projets comme Firewall Monitor et WiFi Doctor.",
     "s3": "Pourquoi auto-héberger ?",
-    "sa3": "Cela garde les modèles et les données des projets sur une infrastructure que nous contrôlons — le serveur IA du lab et nos VM Proxmox hébergées —, évite le prix par token dans le cloud pour l'IA et nous permet d'optimiser toute la pile de bout en bout.",
-    "s4": "Quand Technical Labs a-t-il commencé ?",
-    "sa4": "Technical Labs a été mis en ligne le 6 juin 2019. Le parcours professionnel derrière remonte à 1999, dans des rôles chez un FAI, un opérateur et en services gérés.",
+    "sa3": "Cela garde les modèles et les données des projets sur une infrastructure que nous contrôlons, évite le prix par token dans le cloud pour l'IA et nous permet d'optimiser toute la pile de bout en bout.",
     "s5": "Puis-je utiliser les serveurs ?",
-    "sa5": "Le serveur IA du lab n'est pas un service d'hébergement mutualisé. Les modèles IA sont disponibles pour les testeurs invités via la passerelle ; les projets sont publics. Les serveurs Proxmox hébergés font tourner nos propres services.",
+    "sa5": "Pas en hébergement mutualisé. Les modèles IA sont disponibles pour les testeurs invités via la passerelle ; le site web et les services des projets sont publics. Les serveurs Proxmox hébergés font tourner nos propres services.",
     "group_study": "Études et ressources",
     "t1": "J'étudie quelque chose et j'ai besoin d'une ressource. Pouvez-vous m'aider ?",
-    "ta1": "Oui. Dites-moi dans la <a href=\"#contact\">section contact</a> ce que vous apprenez et ce dont vous avez besoin — un environnement de lab, un modèle, un jeu de données, un guide ou simplement une piste. Vous n'avez pas besoin de réserver une session payante pour demander.",
-    "t2": "Puis-je utiliser le serveur du lab pour un cours ou un projet d'études ?",
-    "ta2": "Parfois. Le lab n'est pas un service d'hébergement mutualisé, mais si vous travaillez sur quelque chose de précis et avez besoin d'un modèle, d'un lab ou d'une autre ressource, dites-moi dans la <a href=\"#contact\">section contact</a> ce que vous étudiez. Je vérifierai ce qui est disponible et je vous répondrai. Aucune réservation payante n'est nécessaire.",
-    "s6": "Où sont hébergés les serveurs ?",
-    "sa6": "Le serveur IA est dans notre lab. Le site web et les services des projets tournent sur des serveurs virtuels au Nuday Data Centre, sous Proxmox avec MultiPortal.io."
+    "ta1": "Oui. Dites-moi dans la <a href=\"#contact\">section contact</a> ce que vous apprenez et ce dont vous avez besoin — un environnement de lab, un modèle, un jeu de données, un guide ou simplement une piste. Demander est gratuit ; aucune réservation payante n'est nécessaire."
   },
   "footer": {
     "brand_desc": "Simulateurs de lab IT de haute qualité, mentorat de déploiement personnalisé et solutions réseau robustes.",
@@ -259,7 +249,7 @@
     "irc": "IRC web public ↗",
     "wifi": "WiFi Doctor ↗",
     "status": "État du réseau en direct",
-    "study_note": "Vous étudiez quelque chose et avez besoin d'une ressource ? <a href=\"mailto:xphox@xphox.net?subject=Study%20resource%20request\">Dites-moi ce que vous apprenez</a> — aucune réservation nécessaire.",
+    "study_note": "Vous étudiez quelque chose et avez besoin d'une ressource ? <a href=\"mailto:xphox@xphox.net?subject=Study%20resource%20request\">Dites-moi ce que vous apprenez</a>.",
     "ai": "Technical Labs AI"
   },
   "modals": {
@@ -338,14 +328,12 @@
     "context": "Modèles",
     "context_v": "Modèles Ornith et Qwen auto-hébergés, jusqu'à un million de tokens de contexte",
     "clients": "Depuis",
-    "clients_v": "Technical Labs en ligne depuis le 6 juin 2019",
-    "setup": "Production",
-    "setup_v": "Notre site web et les services des projets tournent sur nos serveurs virtuels Proxmox",
+    "clients_v": "En ligne depuis le 6 juin 2019",
     "cta_guide": "Voir les projets",
     "cta_full": "Lire le guide IA",
     "status": "État en direct",
     "hosting": "Hébergement",
-    "hosting_v": "Serveurs virtuels au Nuday Data Centre, sous Proxmox avec MultiPortal.io"
+    "hosting_v": "Site web et services des projets sur des serveurs virtuels au Nuday Data Centre — Proxmox avec MultiPortal.io"
   },
   "band": {
     "heading": "Prêt à réserver une session ?",
