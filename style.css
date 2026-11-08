@@ -2341,7 +2341,7 @@ main,
 dialog.modal {
   width: min(42rem, calc(100% - 2.5rem));
   max-width: 42rem;
-  max-height: min(88vh, 48rem);
+  max-height: min(90vh, 56rem);
   margin: auto;
   padding: 0;
   border: 0;
@@ -2362,7 +2362,7 @@ dialog.modal[open] .modal-panel {
 
 .modal-panel {
   width: 100%;
-  max-height: min(88vh, 48rem);
+  max-height: min(90vh, 56rem);
   overflow-y: auto;
   overscroll-behavior: contain;
   background: var(--bg-surface);
@@ -3035,6 +3035,13 @@ html.js-enabled [data-reveal-delay="3"] {
   min-width: 0;
 }
 
+.flow-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.32rem;
+  min-width: 0;
+}
+
 .flow-label {
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -3118,6 +3125,44 @@ html.js-enabled [data-reveal-delay="3"] {
   border-left: 8px solid var(--signal-cyan);
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
+}
+
+/* Desktop flow diagrams: labels and content share two rows, so every arrow
+   meets the hub at the same vertical centre. */
+@media (min-width: 821px) {
+  @supports (grid-template-rows: subgrid) {
+    .flow-grid {
+      grid-template-rows: auto 1fr;
+    }
+
+    .flow-col,
+    .flow-link {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: span 2;
+      align-items: center;
+    }
+
+    .flow-col .flow-label,
+    .flow-link .flow-link-label {
+      grid-row: 1;
+      align-self: start;
+    }
+
+    .flow-col > :not(.flow-label),
+    .flow-link .flow-arrow {
+      grid-row: 2;
+      align-self: center;
+    }
+
+    .flow-link {
+      justify-items: center;
+    }
+
+    .flow-link .flow-arrow {
+      justify-self: center;
+    }
+  }
 }
 
 /* --- AI spec plate (key / value rows) --- */

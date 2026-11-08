@@ -2,6 +2,11 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.16] - 2026-11-08
+
+### Fixed
+- **Core architecture dialogs:** the flow diagrams now use a shared label row and a shared content row, so every arrow meets its hub and the source/output stacks at the same vertical centre. Secondary nodes were moved into hub sub-labels or into the output group, and the dialog height was raised to `min(90vh, 56rem)` so the WiFi Doctor diagram fits without being cut off.
+
 ## [1.0.15] - 2026-11-08
 
 ### Changed
