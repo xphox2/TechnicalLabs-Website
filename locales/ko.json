@@ -211,7 +211,7 @@
     "a2_link": "연결 가이드 열기",
     "q3": "어떻게 이용할 수 있나요?",
     "a3": "테스트 기간에는 초대받은 분만 이용할 수 있습니다. Nicholas에게 개인 키를 요청하면 직접 보내 드립니다.",
-    "intro": "랩의 하드웨어, 그것이 지원하는 프로젝트, 공부·예약·커뮤니티에 대한 답변.",
+    "intro": "랩의 AI 서버, Nuday Data Centre의 호스팅 서버, 그것이 지원하는 프로젝트, 공부·예약·커뮤니티에 대한 답변.",
     "group_booking": "예약",
     "q4": "어떤 주제로 세션을 예약할 수 있나요?",
     "a4": "네 가지 분야: 방화벽 및 네트워크, 데이터 센터 및 인프라, 시스템 및 프로세스 자동화, 맞춤형 개발.",
@@ -226,21 +226,23 @@
     "q8": "인터랙티브 IT 랩은 어디에 있나요?",
     "a8": "<a href=\"http://portal.technicallabs.org\" target=\"_blank\" rel=\"noopener noreferrer\"><span>portal.technicallabs.org</span><span class=\"sr-only\">(새 탭에서 열림)</span></a> 포털에 인터랙티브 IT 랩이 있습니다. IT 전문가를 꿈꾸는 분들을 위한 실습형 랩 자료입니다.",
     "group_server": "우리 서버",
-    "s1": "서버란 무엇인가요?",
-    "sa1": "Technical Labs는 자체 랩 서버를 운영합니다. ASUS Ascent GX10, NVIDIA GB10 슈퍼칩, 128GB 통합 메모리를 갖추고 우리 랩에 있습니다. 웹사이트와 프로젝트 서비스는 별도의 프로덕션 서버에서 실행됩니다.",
-    "s2": "서버에서는 무엇이 실행되나요?",
-    "sa2": "GX10은 TechLabs AI를 위한 셀프 호스팅 Ornith 및 Qwen 모델을 제공합니다. 프로덕션 서버는 웹사이트와 Firewall Monitor, WiFi Doctor 같은 프로젝트의 서비스를 실행합니다.",
-    "s3": "왜 자체 서버를 운영하나요?",
-    "sa3": "모델과 프로젝트 데이터를 우리가 통제하는 하드웨어에 두고, 클라우드 토큰 비용을 피하며, 스택 전체를 끝에서 끝까지 조정할 수 있기 때문입니다.",
+    "s1": "서버는 어떻게 구성되어 있나요?",
+    "sa1": "Technical Labs는 인프라를 두 부분으로 운영합니다. AI 서버는 ASUS Ascent GX10(NVIDIA GB10 슈퍼칩, 128GB 통합 메모리)이며 우리 랩에 있습니다. 웹사이트와 프로젝트 서비스는 Nuday Data Centre의 호스팅 가상 서버(Proxmox 및 MultiPortal.io)에서 실행됩니다.",
+    "s2": "어디에서 무엇이 실행되나요?",
+    "sa2": "GX10은 TechLabs AI를 위한 셀프 호스팅 Ornith 및 Qwen 모델을 제공합니다. Nuday Data Centre의 Proxmox 가상 서버는 웹사이트와 Firewall Monitor, WiFi Doctor 같은 프로젝트의 서비스를 실행합니다.",
+    "s3": "왜 셀프 호스팅하나요?",
+    "sa3": "모델과 프로젝트 데이터를 우리가 통제하는 인프라(랩 AI 서버와 호스팅 Proxmox VM)에 두고, AI의 클라우드 토큰 비용을 피하며, 스택 전체를 끝에서 끝까지 조정할 수 있기 때문입니다.",
     "s4": "Technical Labs는 언제 시작했나요?",
     "sa4": "Technical Labs는 2019년 6월 6일에 공개되었습니다. 그 배경이 되는 IT 경력은 1999년으로 거슬러 올라가며 ISP, 통신사, 관리형 서비스 역할을 거쳤습니다.",
     "s5": "서버를 사용할 수 있나요?",
-    "sa5": "랩 서버는 공유 호스팅 서비스가 아닙니다. AI 모델은 초대된 테스터가 게이트웨이를 통해 사용할 수 있으며, 프로젝트는 공개되어 있습니다.",
+    "sa5": "랩 AI 서버는 공유 호스팅 서비스가 아닙니다. AI 모델은 초대된 테스터가 게이트웨이를 통해 사용할 수 있으며, 프로젝트는 공개되어 있습니다. 호스팅 Proxmox 서버는 우리 자체 서비스를 실행하며 고객 VM이 아닙니다.",
     "group_study": "공부와 자료",
     "t1": "무언가를 공부 중인데 자료가 필요합니다. 도와주실 수 있나요?",
     "ta1": "네. <a href=\"#contact\">문의 섹션</a>에서 무엇을 배우고 있고 무엇이 필요한지(랩 환경, 모델, 데이터셋, 가이드 또는 간단한 안내) 알려주세요. 질문하려고 유료 세션을 예약할 필요는 없습니다.",
     "t2": "강의나 공부 프로젝트에 랩 서버를 사용할 수 있나요?",
-    "ta2": "경우에 따라 다릅니다. 랩은 공유 호스팅 서비스가 아니지만, 특정 작업을 하면서 모델, 랩 또는 다른 자료에 접근해야 한다면 <a href=\"#contact\">문의 섹션</a>에서 무엇을 공부하는지 알려주세요. 사용 가능한 것을 확인하고 답변드리겠습니다. 유료 예약은 필요하지 않습니다."
+    "ta2": "경우에 따라 다릅니다. 랩은 공유 호스팅 서비스가 아니지만, 특정 작업을 하면서 모델, 랩 또는 다른 자료에 접근해야 한다면 <a href=\"#contact\">문의 섹션</a>에서 무엇을 공부하는지 알려주세요. 사용 가능한 것을 확인하고 답변드리겠습니다. 유료 예약은 필요하지 않습니다.",
+    "s6": "서버는 어디에 호스팅되어 있나요?",
+    "sa6": "AI 서버는 우리 랩에 있습니다. 웹사이트와 프로젝트 서비스는 Nuday Data Centre의 가상 서버(Proxmox 및 MultiPortal.io)에서 실행됩니다."
   },
   "footer": {
     "brand_desc": "고품질 IT 랩 시뮬레이터, 맞춤형 구축 멘토링, 견고한 네트워크 솔루션을 제공합니다.",
@@ -257,7 +259,8 @@
     "irc": "공개 웹 IRC ↗",
     "wifi": "WiFi Doctor ↗",
     "status": "실시간 네트워크 상태",
-    "study_note": "무언가를 공부 중이고 자료가 필요하신가요? <a href=\"mailto:xphox@xphox.net?subject=Study%20resource%20request\">배우고 있는 것을 알려주세요</a> — 예약은 필요 없습니다."
+    "study_note": "무언가를 공부 중이고 자료가 필요하신가요? <a href=\"mailto:xphox@xphox.net?subject=Study%20resource%20request\">배우고 있는 것을 알려주세요</a> — 예약은 필요 없습니다.",
+    "ai": "Technical Labs AI"
   },
   "modals": {
     "overview_heading": "프로젝트 개요",
@@ -329,18 +332,20 @@
     "band": "세션 접수"
   },
   "ai": {
-    "heading": "랩 서버",
-    "hardware": "하드웨어",
+    "heading": "우리 서버",
+    "hardware": "AI 서버",
     "hardware_v": "ASUS Ascent GX10 · NVIDIA GB10 · 128GB 통합 메모리, 우리 랩에 위치",
     "context": "모델",
     "context_v": "셀프 호스팅 Ornith 및 Qwen 모델, 최대 100만 토큰 컨텍스트",
     "clients": "시작",
     "clients_v": "Technical Labs는 2019년 6월 6일부터 운영 중",
-    "setup": "추가 운영",
-    "setup_v": "우리 웹사이트와 프로젝트 서비스는 별도의 프로덕션 서버에서 실행됩니다",
+    "setup": "프로덕션",
+    "setup_v": "우리 웹사이트와 프로젝트 서비스는 우리 Proxmox 가상 서버에서 실행됩니다",
     "cta_guide": "프로젝트 보기",
     "cta_full": "AI 가이드 읽기",
-    "status": "실시간 상태"
+    "status": "실시간 상태",
+    "hosting": "호스팅",
+    "hosting_v": "Nuday Data Centre의 가상 서버, Proxmox 및 MultiPortal.io 운영"
   },
   "band": {
     "heading": "세션을 예약할 준비가 되셨나요?",

@@ -2,6 +2,13 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.20] - 2026-11-08
+
+### Changed
+- **The server FAQ now covers both infrastructure tiers.** “Our Servers” separates the **AI server** (ASUS Ascent GX10, NVIDIA GB10, 128 GB unified memory, in the lab) from the **hosted virtual servers in Nuday Data Centre**, running **Proxmox with MultiPortal.io**. The card adds a Hosting row and a separate Production row; the FAQ adds “What runs where?” and “Where are the servers hosted?”.
+- **Footer fix:** the “Lab & Network” first link now correctly reads “Technical Labs AI” instead of inheriting the server card heading.
+- All 10 locale files were updated.
+
 ## [1.0.19] - 2026-11-08
 
 ### Added
