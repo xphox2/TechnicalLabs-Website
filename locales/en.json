@@ -211,7 +211,7 @@
     "a2_link": "Open the connection guide",
     "q3": "How do I get access?",
     "a3": "Access is by invitation while we test. Ask Nicholas for a personal key and he will send it to you directly.",
-    "intro": "The hardware behind the lab, the projects it supports, and answers about booking and the community.",
+    "intro": "The hardware behind the lab, the projects it supports, and answers about studying, booking and the community.",
     "group_booking": "Booking",
     "q4": "What can I book a session about?",
     "a4": "Four areas: Firewalls & Networking, Data Centre & Infrastructure, System & Process Automation, and Custom Development.",
@@ -235,7 +235,12 @@
     "s4": "When did Technical Labs start?",
     "sa4": "Technical Labs went live on June 6, 2019. The IT career behind it goes back to 1999, across ISP, carrier and managed-service roles.",
     "s5": "Can I use the server?",
-    "sa5": "The lab server is not a shared hosting service. The AI models are available to invited testers through the gateway; the projects are public."
+    "sa5": "The lab server is not a shared hosting service. The AI models are available to invited testers through the gateway; the projects are public.",
+    "group_study": "Studying & resources",
+    "t1": "I'm studying something and need a resource. Can you help?",
+    "ta1": "Yes. Tell me what you're learning and what you need — a lab environment, a model, a dataset, a guide, or just a pointer — in the <a href=\"#contact\">contact section</a>. You don't need to book a paid session to ask.",
+    "t2": "Can I use the lab server for a course or study project?",
+    "ta2": "Sometimes. The lab is not a shared hosting service, but if you're working through something specific and need access to a model, a lab, or another resource, tell me what you're studying in the <a href=\"#contact\">contact section</a>. I'll check what's available and get back to you. No paid booking is required."
   },
   "footer": {
     "brand_desc": "Providing high-quality IT lab simulators, customized deployment mentorship, and robust networking solutions.",
@@ -251,7 +256,8 @@
     "portal": "IT Lab Portal ↗",
     "irc": "Public Web IRC ↗",
     "wifi": "WiFi Doctor ↗",
-    "status": "Live Network Status"
+    "status": "Live Network Status",
+    "study_note": "Studying something and need a resource? <a href=\"mailto:xphox@xphox.net?subject=Study%20resource%20request\">Tell me what you're learning</a> — no booking needed."
   },
   "modals": {
     "overview_heading": "Project Overview",

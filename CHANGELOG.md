@@ -2,6 +2,16 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.19] - 2026-11-08
+
+### Added
+- **Studying & resources FAQ:** two new questions for people learning something and needing a lab, model, dataset, guide or other resource. Both point to the contact section and say no paid booking is required.
+- **Contact section:** the footer Contact column now has an `id="contact"` anchor and a short note inviting study/resource requests, with a prefilled mailto link.
+
+### Changed
+- The FAQ intro now mentions studying alongside booking and the community.
+- The secondary FAQ row is three columns on desktop (Studying & resources, Booking, Community), two at ≤980 px and one at ≤820 px.
+
 ## [1.0.18] - 2026-11-08
 
 ### Added
