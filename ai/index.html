@@ -241,20 +241,20 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
 <section class="sheet">
   <div class="tag"><span><b>Catalog</b></span><span>Every model we serve, measured on this box</span></div>
   <h2>Every model on the box</h2>
-  <p>Use the names in the second row. Which ones answer depends on the setup that's running: ask the box with <code>GET /v1/models</code> (any client's model list shows the same). In Setup A the <code>ornith-35b</code> names are answered by Ornith-122B and the TURBO names are offline. In Setup B the <code>ornith-122b</code> names are answered by Ornith-35B.</p>
+  <p>Use the model name in the second row for both the OpenAI and Anthropic formats. All three names stay in the catalog; only the models in the setup that's running answer. If you call a model whose setup isn't loaded, the gateway returns a clear "model not found" error instead of answering with a different model. Setup B is the default, and we warn you before switching.</p>
   <div class="tablebox">
   <table class="cmp">
     <thead><tr><th></th><th class="num grp" style="--c: var(--setA)">Ornith-1.5-122B</th><th class="num grp" style="--c: var(--setB)">Ornith-1.5-35B</th><th class="num grp" style="--c: var(--setB)">Qwen3.8-27B TURBO</th></tr></thead>
     <tbody>
       <tr><td>Setup</td><td class="num">A</td><td class="num">B (start here)</td><td class="num">B (start here)</td></tr>
-      <tr><td>Names to use (OpenAI / Anthropic style)</td><td class="num build">ornith-122b-openai<br>ornith-122b-anthropic</td><td class="num build">ornith-35b-openai<br>ornith-35b-anthropic</td><td class="num build">qwen3.8-27b-turbo-openai<br>qwen3.8-27b-turbo-anthropic</td></tr>
+      <tr><td>Model name (both formats)</td><td class="num build">ornith-1.5-122b</td><td class="num build">ornith-1.5-35b-a3b</td><td class="num build">qwen3.8-turbo-27b</td></tr>
       <tr><td>Exact build we run</td><td class="num build">ornith-ai/<wbr>Ornith-1.5-122B-NVFP4</td><td class="num build">ornith-ai/<wbr>Ornith-1.5-35B-A3B-NVFP4</td><td class="num build">our 4-bit build of DavidAU/<wbr>Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU</td></tr>
       <tr><td>Parameters used per token</td><td class="num">10B of 122B (mixture of experts)</td><td class="num">3B of 35B (mixture of experts)</td><td class="num">all 27B (dense)</td></tr>
       <tr><td>Longest conversation</td><td class="num">1,010,000 tokens</td><td class="num">1,010,000 tokens</td><td class="num">262,144 tokens</td></tr>
       <tr><td>Reply speed, short prompt</td><td class="num">~30 tok/s</td><td class="num">~79 tok/s</td><td class="num">~18 tok/s</td></tr>
       <tr><td>Short-answer checks (16 questions)</td><td class="num">14 / 16</td><td class="num">15 / 16</td><td class="num">15 / 16</td></tr>
       <tr><td>Team jobs passed in our tests</td><td class="num">22 / 22 (1–6 people)</td><td class="num" colspan="2" id="cat-b-jobs">22 / 22 as a pair (1–6 people)</td></tr>
-      <tr><td>Follow-up turn at ~256k</td><td class="num">36 s, then 18 tok/s</td><td class="num">15 s, then 37 tok/s</td><td class="num">not measured yet</td></tr>
+      <tr><td>Follow-up turn at ~256k</td><td class="num">36 s, then 18 tok/s</td><td class="num">15 s, then 37 tok/s</td><td class="num">13–28 s at ~244k, then 18–22 tok/s</td></tr>
       <tr><td>Follow-up turn at ~1M</td><td class="num">93 s, then 11 tok/s</td><td class="num">34 s, then 18 tok/s</td><td class="num">n/a</td></tr>
       <tr><td>Fresh read of 1M tokens</td><td class="num">~60 min</td><td class="num">~25 min</td><td class="num">n/a</td></tr>
       <tr><td>Recall of 4 facts hidden in ~1M tokens</td><td class="num">4 / 4</td><td class="num">4 / 4</td><td class="num">n/a</td></tr>
@@ -262,7 +262,7 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
     </tbody>
   </table>
   </div>
-  <p class="note" style="margin-top:12px">TURBO is a community fine-tune of Qwen3.8-27B by DavidAU, trained to think in fewer tokens. Its creator removed its safety refusals, so it will answer requests the other models decline. Its creator publishes general-reasoning scores rather than coding ones, so we judge it on our own team jobs above. All three are 4-bit (NVFP4) builds, which is what lets them fit in the box's 128 GB. "Follow-up turn" is the wait for the first word in a long conversation the box has already read, then the reply speed. †Scores published by each model's makers, in slightly different test setups. Everything else we measured ourselves, one person on the box.</p>
+  <p class="note" style="margin-top:12px">TURBO is a community fine-tune of Qwen3.8-27B by DavidAU, trained to think in fewer tokens. Its creator removed its safety refusals, so it will answer requests the other models decline. Its creator publishes general-reasoning scores rather than coding ones, so we judge it on our own team jobs above. All three are 4-bit (NVFP4) builds, which is what lets them fit in the box's 128 GB. "Follow-up turn" is the wait for the first word in a long conversation the box has already read, then the reply speed. †Scores published by each model's makers, in slightly different test setups. Everything else we measured ourselves, one person on the box. Older configs that use <code>ornith-122b-openai</code>, <code>ornith-35b-anthropic</code> or <code>qwen3.8-27b-turbo-openai</code> keep working; the names in the table are the ones to use.</p>
 </section>
 
 <section class="sheet">
@@ -282,7 +282,7 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
 <section class="sheet" id="connect">
   <div class="tag"><span><b>Setup</b></span><span>About two minutes</span></div>
   <h2>Connect</h2>
-  <p>You'll get a personal key. Paste it where it says <code>YOUR_KEY</code>. These settings start you on Setup B; the OpenCode file lists every model, and only the ones in the running setup will answer.</p>
+  <p>You'll get a personal key. Paste it where it says <code>YOUR_KEY</code>. These settings start you on Setup B. The OpenCode file lists all three models; in Setup A the 35B and Qwen names return a clear error until we switch back.</p>
   <div class="card" style="--c: var(--accent); margin: 6px 0 22px">
     <h3>Using the Claude app?</h3>
     <p>Add the TechLabs connector and Claude can hand work to our models while it stays in charge of the chat. The steps are under <a href="#connector">Connector: connect and test</a> below. To run whole coding sessions on our models instead, use Claude Code or OpenCode with the settings here. Either way you need your own TechLabs key: ask Nicholas and he'll send you one. Your normal Claude account keeps working as before.</p>
@@ -301,20 +301,20 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
         "timeout": 1800000
       },
       "models": {
-        "ornith-122b-openai": { "limit": { "context": 1010000, "input": 960000, "output": 32768 } },
-        "ornith-35b-openai": { "limit": { "context": 1010000, "input": 960000, "output": 32768 } },
-        "qwen3.8-27b-turbo-openai": { "limit": { "context": 262144, "input": 230000, "output": 32768 } }
+        "ornith-1.5-35b-a3b": { "limit": { "context": 1010000, "input": 960000, "output": 32768 } },
+        "ornith-1.5-122b": { "limit": { "context": 1010000, "input": 960000, "output": 32768 } },
+        "qwen3.8-turbo-27b": { "limit": { "context": 262144, "input": 229376, "output": 32768 } }
       }
     }
   },
-  "model": "techlabs/ornith-35b-openai",
+  "model": "techlabs/ornith-1.5-35b-a3b",
   "agents": {
-    "general": { "model": "techlabs/qwen3.8-27b-turbo-openai" },
-    "explore": { "model": "techlabs/qwen3.8-27b-turbo-openai" }
+    "general": { "model": "techlabs/qwen3.8-turbo-27b" },
+    "explore": { "model": "techlabs/qwen3.8-turbo-27b" }
   },
   "compaction": { "auto": true, "buffer": 60000 }
 }</pre>
-      <p class="note">Ornith-35B runs the session and OpenCode's sub-agents (<code>general</code>, <code>explore</code>) use TURBO Qwen. Keep the <code>"model"</code> line: without it OpenCode falls back to its own free cloud model.</p>
+      <p class="note">Ornith-35B runs the session and OpenCode's sub-agents (<code>general</code>, <code>explore</code>) use TURBO Qwen. Keep the <code>"model"</code> line: without it OpenCode may fall back to another provider. In Setup A, change the model lines to <code>ornith-1.5-122b</code>.</p>
     </div>
     <div class="snip">
       <header><b>Claude Code: ~/.claude/techlabs.json</b><button class="copy" type="button" data-target="snip-cc">Copy</button></header>
@@ -322,12 +322,12 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
   "env": {
     "ANTHROPIC_BASE_URL": "https://llm.technicallabs.org:8443",
     "ANTHROPIC_AUTH_TOKEN": "YOUR_KEY",
-    "ANTHROPIC_MODEL": "ornith-35b-anthropic",
-    "CLAUDE_CODE_SUBAGENT_MODEL": "qwen3.8-27b-turbo-anthropic",
+    "ANTHROPIC_MODEL": "ornith-1.5-35b-a3b",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "qwen3.8-turbo-27b",
     "CLAUDE_CODE_SUBAGENT_MODEL_FORCE": "1",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "ornith-35b-anthropic",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "qwen3.8-27b-turbo-anthropic",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "ornith-35b-anthropic",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "ornith-1.5-35b-a3b",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "qwen3.8-turbo-27b",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "ornith-1.5-35b-a3b",
     "ENABLE_TOOL_SEARCH": "false",
     "CLAUDE_CODE_MAX_CONTEXT_TOKENS": "1000000",
     "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "900000",
@@ -346,8 +346,8 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
   "env": {
     "ANTHROPIC_BASE_URL": "https://llm.technicallabs.org:8443",
     "ANTHROPIC_AUTH_TOKEN": "YOUR_KEY",
-    "ANTHROPIC_MODEL": "ornith-122b-anthropic",
-    "CLAUDE_CODE_SUBAGENT_MODEL": "ornith-122b-anthropic",
+    "ANTHROPIC_MODEL": "ornith-1.5-122b",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "ornith-1.5-122b",
     "ENABLE_TOOL_SEARCH": "false",
     "CLAUDE_CODE_MAX_CONTEXT_TOKENS": "1000000",
     "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "900000",
@@ -360,9 +360,9 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
     <div class="snip">
       <header><b>How the mix works</b></header>
       <p>This is the team we tested as Setup B: Ornith-35B runs the session and hands work to TURBO Qwen sub-agents. Swap the two names if you'd rather have Qwen lead.</p>
-      <p><code>"CLAUDE_CODE_SUBAGENT_MODEL_FORCE": "1"</code> makes the sub-agent entry win over an agent's own <code>model:</code> setting. Leave out both sub-agent entries to let each agent choose instead: its <code>opus</code>, <code>sonnet</code> or <code>haiku</code> choice is mapped onto our models by the three alias entries. Inside a session, <code>/model qwen3.8-27b-turbo-anthropic</code> switches the main model.</p>
+      <p><code>"CLAUDE_CODE_SUBAGENT_MODEL_FORCE": "1"</code> makes the sub-agent entry win over an agent's own <code>model:</code> setting. Leave out both sub-agent entries to let each agent choose instead: its <code>opus</code>, <code>sonnet</code> or <code>haiku</code> choice is mapped onto our models by the three alias entries. Inside a session, <code>/model qwen3.8-turbo-27b</code> switches the main model.</p>
       <p>Keep <code>"ENABLE_TOOL_SEARCH": "false"</code>. Claude Code's tool search sends a block type made for Anthropic's own servers; ours now accept it, but with tool search off Claude Code skips that extra lookup. If you ever see "Unexpected item type in content", add <code>"CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": "1"</code>.</p>
-      <p class="note">We tested this mix with Claude Code 2.1.317. Mixing works within one setup. In Setup A only the 122B runs, so every name in this file is answered by it or is offline. Qwen sub-agents stop at 262,144 tokens even when the main session goes to 1M. Everything goes through this address, so cloud Claude models can't join the same session.</p>
+      <p class="note">We tested this mix with Claude Code 2.1.317. Mixing works within one setup. In Setup A only the 122B runs, so the 35B and Qwen names in this file are offline. Qwen sub-agents stop at 262,144 tokens even when the main session goes to 1M. Everything goes through this address, so cloud Claude models can't join the same session.</p>
     </div>
   </div>
 </section>
@@ -387,8 +387,8 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
         <li>Our sign-in page opens. Paste your personal TechLabs key (ask Nicholas for one) and click <b>Connect</b>.</li>
         <li>In a chat, turn it on under <b>+ → Connectors</b>.</li>
       </ol>
-      <p class="note">Claude stays in charge of the conversation and calls our models as tools: <code>list_models</code> shows what's running, <code>ask_model</code> sends a prompt. Each answer has a 200-second limit, so ask for focused pieces of work. On Pro or Max, add it yourself under <b>Customize → Connectors → Add custom connector</b>.</p>
-      <pre>Use TechLabs: ask qwen3.8-27b-turbo-openai to write
+      <p class="note">Claude stays in charge of the conversation and calls our models as tools: <code>list_models</code> shows the model catalog, <code>ask_model</code> sends a prompt. Each answer has a 200-second limit, so ask for focused pieces of work. On Pro or Max, add it yourself under <b>Customize → Connectors → Add custom connector</b>.</p>
+      <pre>Use TechLabs: ask qwen3.8-turbo-27b to write
 unit tests for this function, then review them.</pre>
     </div>
     <div class="card" style="--c: var(--setA)">
@@ -440,8 +440,8 @@ claude</pre>
     <div class="snip">
       <header><b>Test it: paste this into a chat</b></header>
       <pre>Use TechLabs: list the models, then ask
-ornith-35b-openai what 17 times 23 is.</pre>
-      <p class="note">You should see the running models, then the answer 391 within a few seconds. The first call can take a little longer while the model warms up.</p>
+ornith-1.5-35b-a3b what 17 times 23 is.</pre>
+      <p class="note">On Setup B, you should see the model list, then the answer 391 within a few seconds. The first call can take a little longer while the model warms up.</p>
     </div>
     <div class="snip">
       <header><b>If it doesn't work</b></header>
