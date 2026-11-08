@@ -2,6 +2,15 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.22] - 2026-11-08
+
+### Changed
+- **FAQ deduplicated.** The “Our Servers” card is now the only place for the AI/hosting facts: AI server, hosting (website and project services on Nuday Data Centre Proxmox with MultiPortal.io), models, founding date and live status. Removed the duplicated Production row.
+- **Server FAQ cut from six questions to two**, answering only what the card does not: “Why self-host?” and “Can I use the servers?”. Removed the questions that restated the card.
+- **Studying & resources cut from two questions to one**; the no-booking path is stated once there, and the footer note is now just the contact pointer.
+- The right side is a two-column FAQ grid (server/study, booking/community) so the card and FAQ stay balanced.
+- All 10 locale files updated; the duplicated keys were removed.
+
 ## [1.0.21] - 2026-11-08
 
 ### Changed

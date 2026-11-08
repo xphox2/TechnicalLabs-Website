@@ -1025,15 +1025,15 @@
             <span class="coord-label" data-i18n="sections.faq">Technical Labs &amp; FAQ</span>
           </div>
           <div class="section-title-split">
-            <h2 id="faq-heading" data-i18n="faq.heading">Our Servers &amp; Common Questions</h2>
+            <h2 id="faq-heading" data-i18n="faq.heading">Our Servers &amp; FAQs</h2>
             <p class="section-lead" data-i18n="faq.intro">
-              The AI server in the lab, our hosted servers in Nuday Data Centre, the projects they support, and answers about studying, booking and the community.
+              What we run, who can use it, and why we run it this way.
             </p>
           </div>
         </div>
 
         <div class="ai-faq-layout">
-          <!-- Left: Technical Labs AI spec plate -->
+          <!-- Left: the facts, once -->
           <div class="ai-spotlight" data-reveal>
             <h3 data-i18n="ai.heading">Our Servers</h3>
 
@@ -1044,7 +1044,7 @@
               </div>
               <div class="ai-plate-row">
                 <dt data-i18n="ai.hosting">Hosting</dt>
-                <dd data-i18n="ai.hosting_v">Virtual servers in Nuday Data Centre, running Proxmox with MultiPortal.io</dd>
+                <dd data-i18n="ai.hosting_v">Website &amp; project services on virtual servers in Nuday Data Centre — Proxmox with MultiPortal.io</dd>
               </div>
               <div class="ai-plate-row">
                 <dt data-i18n="ai.context">Models</dt>
@@ -1052,11 +1052,7 @@
               </div>
               <div class="ai-plate-row">
                 <dt data-i18n="ai.clients">Since</dt>
-                <dd data-i18n="ai.clients_v">Technical Labs live since June 6, 2019</dd>
-              </div>
-              <div class="ai-plate-row">
-                <dt data-i18n="ai.setup">Production</dt>
-                <dd data-i18n="ai.setup_v">Our website and project services run on our Proxmox virtual servers</dd>
+                <dd data-i18n="ai.clients_v">Live since June 6, 2019</dd>
               </div>
               <div class="ai-plate-row">
                 <dt data-i18n="ai.status">Live status</dt>
@@ -1075,53 +1071,18 @@
             </div>
           </div>
 
-          <!-- Right: grouped FAQ -->
-          <div class="faq-stack" data-reveal data-reveal-delay="1">
+          <!-- Right: only questions the card does not answer -->
+          <div class="faq-columns" data-reveal data-reveal-delay="1">
+            <div class="faq-stack">
             <h3 class="faq-group-heading" data-i18n="faq.group_server">Our servers</h3>
             <details class="faq-item" open>
-              <summary>
-                <span data-i18n="faq.s1">What are the servers?</span>
-                <span class="faq-chevron" aria-hidden="true"></span>
-              </summary>
-              <div class="faq-answer">
-                <p data-i18n="faq.sa1">
-                  Technical Labs runs two parts of its infrastructure. The AI server is an ASUS Ascent GX10 with an NVIDIA GB10 superchip and 128 GB of unified memory, in our lab. The website and project services run on hosted virtual servers in Nuday Data Centre, on Proxmox with MultiPortal.io.
-                </p>
-              </div>
-            </details>
-
-            <details class="faq-item">
-              <summary>
-                <span data-i18n="faq.s2">What runs where?</span>
-                <span class="faq-chevron" aria-hidden="true"></span>
-              </summary>
-              <div class="faq-answer">
-                <p data-i18n="faq.sa2">
-                  The GX10 serves the self-hosted Ornith and Qwen models for TechLabs AI. The Proxmox virtual servers in Nuday Data Centre run the website and the services behind projects such as Firewall Monitor and WiFi Doctor.
-                </p>
-              </div>
-            </details>
-
-            <details class="faq-item">
               <summary>
                 <span data-i18n="faq.s3">Why self-host?</span>
                 <span class="faq-chevron" aria-hidden="true"></span>
               </summary>
               <div class="faq-answer">
                 <p data-i18n="faq.sa3">
-                  It keeps the models and project data on infrastructure we control — the lab AI server and our hosted Proxmox VMs — avoids per-token cloud pricing for the AI, and lets us tune the stack end to end.
-                </p>
-              </div>
-            </details>
-
-            <details class="faq-item">
-              <summary>
-                <span data-i18n="faq.s4">When did Technical Labs start?</span>
-                <span class="faq-chevron" aria-hidden="true"></span>
-              </summary>
-              <div class="faq-answer">
-                <p data-i18n="faq.sa4">
-                  Technical Labs went live on June 6, 2019. The IT career behind it goes back to 1999, across ISP, carrier and managed-service roles.
+                  It keeps the models and project data on infrastructure we control, avoids per-token cloud pricing for the AI, and lets us tune the stack end to end.
                 </p>
               </div>
             </details>
@@ -1133,27 +1094,11 @@
               </summary>
               <div class="faq-answer">
                 <p data-i18n="faq.sa5">
-                  The AI lab server is not a shared hosting service. The AI models are available to invited testers through the gateway; the projects are public. The hosted Proxmox servers run our own services.
+                  Not as shared hosting. The AI models are available to invited testers through the gateway; the website and project services are public. The hosted Proxmox servers run our own services.
                 </p>
               </div>
             </details>
 
-            <details class="faq-item">
-              <summary>
-                <span data-i18n="faq.s6">Where are the servers hosted?</span>
-                <span class="faq-chevron" aria-hidden="true"></span>
-              </summary>
-              <div class="faq-answer">
-                <p data-i18n="faq.sa6">
-                  The AI server is in our lab. The website and project services run on virtual servers in Nuday Data Centre, on Proxmox with MultiPortal.io.
-                </p>
-              </div>
-            </details>
-          </div>
-        </div>
-
-        <div class="faq-secondary" data-reveal data-reveal-delay="2">
-          <div class="faq-stack">
             <h3 class="faq-group-heading" data-i18n="faq.group_study">Studying &amp; resources</h3>
             <details class="faq-item">
               <summary>
@@ -1162,24 +1107,14 @@
               </summary>
               <div class="faq-answer">
                 <p data-i18n="faq.ta1" data-i18n-html>
-                  Yes. Tell me what you're learning and what you need — a lab environment, a model, a dataset, a guide, or just a pointer — in the <a href="#contact">contact section</a>. You don't need to book a paid session to ask.
+                  Yes. Tell me what you're learning and what you need — a lab environment, a model, a dataset, a guide, or just a pointer — in the <a href="#contact">contact section</a>. It's free to ask; no paid booking is required.
                 </p>
               </div>
             </details>
-            <details class="faq-item">
-              <summary>
-                <span data-i18n="faq.t2">Can I use the lab server for a course or study project?</span>
-                <span class="faq-chevron" aria-hidden="true"></span>
-              </summary>
-              <div class="faq-answer">
-                <p data-i18n="faq.ta2" data-i18n-html>
-                  Sometimes. The lab is not a shared hosting service, but if you're working through something specific and need access to a model, a lab, or another resource, tell me what you're studying in the <a href="#contact">contact section</a>. I'll check what's available and get back to you. No paid booking is required.
-                </p>
-              </div>
-            </details>
-          </div>
 
-          <div class="faq-stack">
+            </div>
+
+            <div class="faq-stack">
             <h3 class="faq-group-heading" data-i18n="faq.group_booking">Booking</h3>
             <details class="faq-item">
               <summary>
@@ -1217,9 +1152,7 @@
                 </p>
               </div>
             </details>
-          </div>
 
-          <div class="faq-stack">
             <h3 class="faq-group-heading" data-i18n="faq.group_community">Community</h3>
             <details class="faq-item">
               <summary>
@@ -1245,10 +1178,10 @@
               </div>
             </details>
           </div>
+          </div>
         </div>
       </div>
     </section>
-
     <!-- SECTION 05: COMMUNITY & PORTAL -->
     <section id="community" class="section" aria-labelledby="community-heading">
       <div class="container">
