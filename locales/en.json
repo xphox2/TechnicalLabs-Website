@@ -250,7 +250,8 @@
     "ai_guide": "AI Connection Guide",
     "portal": "IT Lab Portal ↗",
     "irc": "Public Web IRC ↗",
-    "wifi": "WiFi Doctor ↗"
+    "wifi": "WiFi Doctor ↗",
+    "status": "Live Network Status"
   },
   "modals": {
     "overview_heading": "Project Overview",
@@ -329,7 +330,8 @@
     "setup": "Also runs",
     "setup_v": "Our website and project services run on a separate production server",
     "cta_guide": "See the projects",
-    "cta_full": "Read the AI guide"
+    "cta_full": "Read the AI guide",
+    "status": "Live status"
   },
   "band": {
     "heading": "Ready to book a session?",

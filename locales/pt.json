@@ -250,7 +250,8 @@
     "ai_guide": "Guia de conexão à IA",
     "portal": "Portal de laboratórios de TI ↗",
     "irc": "IRC web público ↗",
-    "wifi": "WiFi Doctor ↗"
+    "wifi": "WiFi Doctor ↗",
+    "status": "Estado da rede ao vivo"
   },
   "modals": {
     "overview_heading": "Visão geral do projeto",
@@ -332,7 +333,8 @@
     "setup": "Também executa",
     "setup_v": "O nosso site e os serviços dos projetos correm num servidor de produção separado",
     "cta_guide": "Ver os projetos",
-    "cta_full": "Ler o guia de IA"
+    "cta_full": "Ler o guia de IA",
+    "status": "Estado ao vivo"
   },
   "band": {
     "heading": "Pronto para agendar uma sessão?",

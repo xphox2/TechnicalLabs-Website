@@ -250,7 +250,8 @@
     "ai_guide": "KI-Verbindungsanleitung",
     "portal": "IT-Lab-Portal ↗",
     "irc": "Öffentlicher Web-IRC ↗",
-    "wifi": "WiFi Doctor ↗"
+    "wifi": "WiFi Doctor ↗",
+    "status": "Live-Netzwerkstatus"
   },
   "modals": {
     "overview_heading": "Projektübersicht",
@@ -332,7 +333,8 @@
     "setup": "Läuft außerdem",
     "setup_v": "Unsere Website und Projekt-Services laufen auf einem separaten Produktionsserver",
     "cta_guide": "Projekte ansehen",
-    "cta_full": "AI-Leitfaden lesen"
+    "cta_full": "AI-Leitfaden lesen",
+    "status": "Live-Status"
   },
   "band": {
     "heading": "Bereit, einen Termin zu buchen?",

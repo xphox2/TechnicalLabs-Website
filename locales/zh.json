@@ -250,7 +250,8 @@
     "ai_guide": "AI 连接指南",
     "portal": "IT 实验室门户 ↗",
     "irc": "公共网页 IRC ↗",
-    "wifi": "WiFi Doctor ↗"
+    "wifi": "WiFi Doctor ↗",
+    "status": "实时网络状态"
   },
   "modals": {
     "overview_heading": "项目概览",
@@ -332,7 +333,8 @@
     "setup": "还运行",
     "setup_v": "我们的网站和项目服务运行在另一台生产服务器上",
     "cta_guide": "查看项目",
-    "cta_full": "阅读 AI 指南"
+    "cta_full": "阅读 AI 指南",
+    "status": "实时状态"
   },
   "band": {
     "heading": "准备好预约会话了吗？",
