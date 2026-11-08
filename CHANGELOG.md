@@ -2,6 +2,14 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.17] - 2026-11-08
+
+### Changed
+- **Home FAQ rebalanced around the lab server.** The section label is “Technical Labs & FAQ”, the heading “Our Server & Common Questions”, and the left card is “The Lab Server” with hardware, models, founding-date and production-server rows. The FAQ starts with five server questions; AI is now a secondary link to `/ai/`.
+- **Founding detail:** Technical Labs went live on June 6, 2019, shown in the server card and the “When did Technical Labs start?” answer, with the 1999 IT-career context.
+- **Layout:** the server card and server FAQ are the top row; Booking and Community sit in a two-column secondary row, removing the long empty left column.
+- All 10 locale files were updated, and the old AI FAQ group keys were removed.
+
 ## [1.0.16] - 2026-11-08
 
 ### Fixed
