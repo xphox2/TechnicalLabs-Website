@@ -1025,9 +1025,9 @@
             <span class="coord-label" data-i18n="sections.faq">Technical Labs &amp; FAQ</span>
           </div>
           <div class="section-title-split">
-            <h2 id="faq-heading" data-i18n="faq.heading">Our Server &amp; Common Questions</h2>
+            <h2 id="faq-heading" data-i18n="faq.heading">Our Servers &amp; Common Questions</h2>
             <p class="section-lead" data-i18n="faq.intro">
-              The hardware behind the lab, the projects it supports, and answers about studying, booking and the community.
+              The AI server in the lab, our hosted servers in Nuday Data Centre, the projects they support, and answers about studying, booking and the community.
             </p>
           </div>
         </div>
@@ -1035,12 +1035,16 @@
         <div class="ai-faq-layout">
           <!-- Left: Technical Labs AI spec plate -->
           <div class="ai-spotlight" data-reveal>
-            <h3 data-i18n="ai.heading">The Lab Server</h3>
+            <h3 data-i18n="ai.heading">Our Servers</h3>
 
             <dl class="ai-plate">
               <div class="ai-plate-row">
-                <dt data-i18n="ai.hardware">Hardware</dt>
+                <dt data-i18n="ai.hardware">AI server</dt>
                 <dd data-i18n="ai.hardware_v">ASUS Ascent GX10 · NVIDIA GB10 · 128 GB unified memory, in our lab</dd>
+              </div>
+              <div class="ai-plate-row">
+                <dt data-i18n="ai.hosting">Hosting</dt>
+                <dd data-i18n="ai.hosting_v">Virtual servers in Nuday Data Centre, running Proxmox with MultiPortal.io</dd>
               </div>
               <div class="ai-plate-row">
                 <dt data-i18n="ai.context">Models</dt>
@@ -1051,8 +1055,8 @@
                 <dd data-i18n="ai.clients_v">Technical Labs live since June 6, 2019</dd>
               </div>
               <div class="ai-plate-row">
-                <dt data-i18n="ai.setup">Also runs</dt>
-                <dd data-i18n="ai.setup_v">Our website and project services run on a separate production server</dd>
+                <dt data-i18n="ai.setup">Production</dt>
+                <dd data-i18n="ai.setup_v">Our website and project services run on our Proxmox virtual servers</dd>
               </div>
               <div class="ai-plate-row">
                 <dt data-i18n="ai.status">Live status</dt>
@@ -1073,39 +1077,39 @@
 
           <!-- Right: grouped FAQ -->
           <div class="faq-stack" data-reveal data-reveal-delay="1">
-            <h3 class="faq-group-heading" data-i18n="faq.group_server">Our server</h3>
+            <h3 class="faq-group-heading" data-i18n="faq.group_server">Our servers</h3>
             <details class="faq-item" open>
               <summary>
-                <span data-i18n="faq.s1">What is the server?</span>
+                <span data-i18n="faq.s1">What are the servers?</span>
                 <span class="faq-chevron" aria-hidden="true"></span>
               </summary>
               <div class="faq-answer">
                 <p data-i18n="faq.sa1">
-                  Technical Labs runs its own lab server: an ASUS Ascent GX10 with an NVIDIA GB10 superchip and 128 GB of unified memory. It sits in our lab; the website and project services run on a separate production server.
+                  Technical Labs runs two parts of its infrastructure. The AI server is an ASUS Ascent GX10 with an NVIDIA GB10 superchip and 128 GB of unified memory, in our lab. The website and project services run on hosted virtual servers in Nuday Data Centre, on Proxmox with MultiPortal.io.
                 </p>
               </div>
             </details>
 
             <details class="faq-item">
               <summary>
-                <span data-i18n="faq.s2">What does the server run?</span>
+                <span data-i18n="faq.s2">What runs where?</span>
                 <span class="faq-chevron" aria-hidden="true"></span>
               </summary>
               <div class="faq-answer">
                 <p data-i18n="faq.sa2">
-                  The GX10 serves the self-hosted Ornith and Qwen models for TechLabs AI. The production server runs the website and the services behind projects such as Firewall Monitor and WiFi Doctor.
+                  The GX10 serves the self-hosted Ornith and Qwen models for TechLabs AI. The Proxmox virtual servers in Nuday Data Centre run the website and the services behind projects such as Firewall Monitor and WiFi Doctor.
                 </p>
               </div>
             </details>
 
             <details class="faq-item">
               <summary>
-                <span data-i18n="faq.s3">Why run your own server?</span>
+                <span data-i18n="faq.s3">Why self-host?</span>
                 <span class="faq-chevron" aria-hidden="true"></span>
               </summary>
               <div class="faq-answer">
                 <p data-i18n="faq.sa3">
-                  It keeps the models and project data on hardware we control, avoids per-token cloud pricing, and lets us tune the stack end to end.
+                  It keeps the models and project data on infrastructure we control — the lab AI server and our hosted Proxmox VMs — avoids per-token cloud pricing for the AI, and lets us tune the stack end to end.
                 </p>
               </div>
             </details>
@@ -1124,12 +1128,24 @@
 
             <details class="faq-item">
               <summary>
-                <span data-i18n="faq.s5">Can I use the server?</span>
+                <span data-i18n="faq.s5">Can I use the servers?</span>
                 <span class="faq-chevron" aria-hidden="true"></span>
               </summary>
               <div class="faq-answer">
                 <p data-i18n="faq.sa5">
-                  The lab server is not a shared hosting service. The AI models are available to invited testers through the gateway; the projects are public.
+                  The AI lab server is not a shared hosting service. The AI models are available to invited testers through the gateway; the projects are public. The hosted Proxmox servers run our own services, not customer VMs.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <span data-i18n="faq.s6">Where are the servers hosted?</span>
+                <span class="faq-chevron" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.sa6">
+                  The AI server is in our lab. The website and project services run on virtual servers in Nuday Data Centre, on Proxmox with MultiPortal.io.
                 </p>
               </div>
             </details>
@@ -1380,7 +1396,7 @@
       <div class="footer-col">
         <h2 class="footer-heading" data-i18n="footer.lab">Lab &amp; Network</h2>
         <ul>
-          <li><a href="/ai/" data-i18n="ai.heading">Technical Labs AI</a></li>
+          <li><a href="/ai/" data-i18n="footer.ai">Technical Labs AI</a></li>
           <li><a href="/ai/#connect" data-i18n="footer.ai_guide">AI Connection Guide</a></li>
           <li><a href="http://portal.technicallabs.org" target="_blank" rel="noopener noreferrer"><span data-i18n="footer.portal">IT Lab Portal ↗</span><span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span></a></li>
           <li><a href="https://irc.technicallabs.org/" target="_blank" rel="noopener noreferrer"><span data-i18n="footer.irc">Public Web IRC ↗</span><span class="sr-only" data-i18n="a11y.new_tab">(opens in a new tab)</span></a></li>
