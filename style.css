@@ -1264,7 +1264,7 @@ main,
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.15fr);
   gap: clamp(1.5rem, 3.5vw, 2.75rem);
-  align-items: start;
+  align-items: stretch;
 }
 
 .service-cards {
@@ -1333,6 +1333,25 @@ main,
 .service-select-link:hover {
   color: var(--signal-cyan-hover);
   text-decoration: underline;
+}
+
+/* Desktop: the service stack and the booking console share the same height. */
+@media (min-width: 981px) {
+  .service-cards {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .service-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-card p {
+    flex: 1;
+  }
 }
 
 .direct-dispatch-note {

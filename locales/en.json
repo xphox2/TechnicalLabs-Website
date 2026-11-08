@@ -10,13 +10,11 @@
     "book": "Book a session"
   },
   "hero": {
-    "title": "Interactive IT Learning &<br>Systems Engineering",
     "subtitle": "Welcome to Technical Labs. We provide hands-on interactive lab resources to help aspiring IT professionals build real-world skills, offer custom consulting for best-practice deployments, and showcase production-grade projects.",
     "cta_projects": "View Portfolio Projects",
     "cta_services": "Book Deployment Support",
-    "eyebrow": "Nicholas Diotte · Principal Engineer · Toronto, ON / Remote",
-    "h1": "Network & infrastructure engineering, consulting, and production software.",
-    "lede": "Nicholas Diotte is a Principal Engineer in Toronto who leads FortiGate deployments, infrastructure migrations and disaster-recovery testing. Technical Labs is his practice: 25+ years of network and infrastructure work since 1999, offered as 1-on-1 deployment mentorship, architecture audits and custom network tooling.",
+    "h1": "Network & infrastructure consulting and production software.",
+    "lede": "25+ years of network and infrastructure work since 1999, offered as 1-on-1 deployment mentorship, architecture audits and custom network tooling.",
     "cta_book": "Book a consulting session",
     "cta_explore": "Explore active systems",
     "topic_hint": "Or start a booking with a topic",
@@ -49,11 +47,11 @@
   },
   "projects": {
     "tag": "Showcase",
-    "heading": "Active Engineering Projects",
+    "heading": "Active Projects",
     "intro": "A self-hosted desktop app for streamers, a central NMS for firewall fleets with its edge probes, a plugin for Rust game servers, and WiFi Doctor, a WiFi survey fleet made of the devices you already have. The monitor above shows each latest release, and WiFi Doctor's early-access status.",
     "vinylfo_desc": "Self-hosted desktop app for streamers and audiophiles that syncs Discogs collections, manages track schedules, and feeds live Twitch metadata, OBS video overlays, and Stream Deck integrations.",
     "fwmon_title": "Firewall Monitor",
-    "fwmon_desc": "Vendor-agnostic, lightweight central NMS for firewall fleets (FortiGate, Palo Alto, pfSense): SNMP v2c/v3 polling, syslog and sFlow receivers, SSH/TFTP config diffs, and distributed Firewall-Collector probes over HTTPS/mTLS.",
+    "fwmon_desc": "Vendor-agnostic, lightweight central NMS for firewall fleets from major vendors: SNMP v2c/v3 polling, syslog and sFlow receivers, SSH/TFTP config diffs, and distributed Firewall-Collector probes over HTTPS/mTLS.",
     "rust_title": "Rust Game Plugin",
     "rust_desc": "C#/.NET gameplay plugin for Rust survival game servers via Oxide/uMod hooks: economy boards, admin alerts and command registry, performance metrics, in-memory data with JSON checkpoints, and custom game UI overlays.",
     "runs_on": "Runs on",
@@ -81,12 +79,12 @@
     "tag": "Professional profile",
     "heading": "Resume, Competencies & Certifications",
     "intro": "A 25+ year record across managed service networks, national carrier operations, data centre infrastructure, and security policy governance.",
-    "subtitle": "Principal Engineer | Network & Infrastructure",
+    "subtitle": "Network & Infrastructure",
     "location": "Toronto, ON / Remote",
-    "exp1_role": "Principal Engineer",
+    "exp1_role": "Network & Infrastructure Lead",
     "exp1_period": "Aug 2024 – Present",
     "exp1_desc": "Senior technical authority across all managed service customer accounts, architecting enterprise infrastructure migrations.",
-    "exp1_li1": "Lead FortiGate firewall deployments, security policy governance, and system posture reviews.",
+    "exp1_li1": "Lead firewall deployments, security policy governance, and system posture reviews.",
     "exp1_li2": "Architect and oversee complex, end-to-end network, storage, and compute migrations.",
     "exp1_li3": "Conduct disaster recovery testing, business continuity exercises, and device health audits.",
     "exp2_role": "Senior IT Consultant & Team Lead",
@@ -103,7 +101,6 @@
     "exp4_desc": "Managed NOC, Provisioning, and Capacity Planning teams, and owned wholesale customer operations.",
     "exp4_li1": "Assisted with the launch and capacity planning of the enterprise data centre at 151 Front Street, Toronto.",
     "exp4_li2": "Expanded NOC to 24/7/365 coverage and designed automation tools to eliminate repetitive daily workflows.",
-    "exp4_li3": "Managed data centre physical infrastructure, HVAC systems, DC power distribution, and optical fibres.",
     "exp5_role": "Team Lead & NOCC Technician",
     "exp5_period": "Feb 2005 – Jun 2011",
     "exp5_desc": "Supervised NOCC operations, built standardized training metrics, and monitored national carrier voice and data networks.",
@@ -139,7 +136,7 @@
   "services": {
     "tag": "Time & Support",
     "heading": "Services & Session Booking",
-    "intro": "Hands-on deployment mentorship, architecture audits, and custom network tooling, guided directly by a Principal Engineer.",
+    "intro": "Hands-on deployment mentorship, architecture audits, and custom network tooling.",
     "svc1_title": "1-on-1 Deployment Mentorship",
     "svc1_desc": "Learn directly as we build: map out your network layout, build firewall policies, and deploy probes using secure templates.",
     "svc2_title": "Architecture Audits & CI/CD",
@@ -158,7 +155,7 @@
     "card_net_title": "Firewalls & Networking",
     "card_net_desc": "Subnet planning, firewall rules, routing",
     "card_fw_title": "Data Centre & Infrastructure",
-    "card_fw_desc": "Server deployments, virtualization, physical setup",
+    "card_fw_desc": "Server deployments and virtualization",
     "card_docker_title": "System & Process Automation",
     "card_docker_desc": "Scripting, CI/CD pipelines, container workflows",
     "card_dev_title": "Custom Development",
@@ -219,7 +216,7 @@
     "a2_link_full": "Open the connection guide (/ai/#connect) →",
     "group_booking": "Booking",
     "q4": "What can I book a session about?",
-    "a4": "Four areas: Firewalls & Networking (subnet planning, firewall rules, routing), Data Centre & Infrastructure (server deployments, virtualization, physical setup), System & Process Automation (scripting, CI/CD pipelines, container workflows), and Custom Development (API integrations, backend services, custom tools).",
+    "a4": "Four areas: Firewalls & Networking, Data Centre & Infrastructure, System & Process Automation, and Custom Development.",
     "a4_link": "Go to the booking form →",
     "q5": "What happens after I send a booking request?",
     "a5": "We receive your request and email you within 24 hours to finalize the details.",
@@ -257,7 +254,7 @@
     "vinylfo_feat4": "<strong>Twitch Live HUD &amp; Chatbot:</strong> Connects via device code OAuth to read chat events, moderate, launch viewer polls, and send announcements when record tracks advance.",
     "fwmon_title": "Firewall Monitor & Firewall-Collector",
     "fwmon_overview": "Firewall Monitor is a vendor-agnostic, lightweight Network Management System (NMS) focused on firewall fleets. It supports centralized deployments or distributed remote collection probes (Firewall-Collector) across multiple client sites.",
-    "fwmon_feat1": "<strong>Distributed SNMP Relays:</strong> The Firewall-Collector probe runs locally, polling edge devices (FortiGate, Palo Alto, pfSense) over SNMP v2c/v3 and batching telemetry to HQ over HTTPS/mTLS.",
+    "fwmon_feat1": "<strong>Distributed SNMP Relays:</strong> The Firewall-Collector probe runs locally, polling edge firewalls from major vendors over SNMP v2c/v3 and batching telemetry to HQ over HTTPS/mTLS.",
     "fwmon_feat2": "<strong>Syslog &amp; sFlow Receivers:</strong> High-performance UDP parsing pipelines normalized to handle hundreds of events per second with rate-limiting filters.",
     "fwmon_feat3": "<strong>Normalized Configuration Tracking:</strong> Periodically polls configurations via SSH/TFTP, normalizes values across different vendors, and stores differential code revisions.",
     "fwmon_feat4": "<strong>Custom State Alerts:</strong> Evaluates data lag, traffic spikes, and interface metrics, sending notifications via Webhooks, SMTP Email, and IRC Bots.",
@@ -307,7 +304,7 @@
   "sections": {
     "projects": "Production software",
     "services": "Consulting & mentorship",
-    "resume": "Principal dossier",
+    "resume": "Professional dossier",
     "faq": "Technical Labs AI & FAQ",
     "community": "Community & lab environments",
     "band": "Session dispatch"
@@ -379,6 +376,6 @@
     "wifi_server": "WiFi Doctor server"
   },
   "meta": {
-    "title": "Technical Labs — Nicholas Diotte | Network & Infrastructure Engineering"
+    "title": "Technical Labs — Network & Infrastructure"
   }
 }

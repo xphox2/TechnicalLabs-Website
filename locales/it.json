@@ -10,13 +10,11 @@
     "book": "Prenota una sessione"
   },
   "hero": {
-    "title": "Apprendimento IT Interattivo &<br>Ingegneria dei Sistemi",
     "subtitle": "Benvenuti in Technical Labs. Offriamo risorse di laboratorio interattive e pratiche per aiutare i professionisti IT emergenti a sviluppare competenze concrete, forniamo consulenza personalizzata per implementazioni basate sulle best practice e presentiamo progetti di livello produttivo.",
     "cta_projects": "Visualizza i Progetti del Portfolio",
     "cta_services": "Prenota Supporto per l'Implementazione",
-    "eyebrow": "Nicholas Diotte · Principal Engineer · Toronto, ON / Da remoto",
-    "h1": "Ingegneria di rete e infrastrutture, consulenza e software in produzione.",
-    "lede": "Nicholas Diotte è Principal Engineer a Toronto e guida deployment FortiGate, migrazioni di infrastrutture e test di disaster recovery. Technical Labs è la sua attività: oltre 25 anni di lavoro su reti e infrastrutture dal 1999, offerti come mentoring di deployment 1 a 1, audit di architettura e strumenti di rete su misura.",
+    "h1": "Consulenza su reti e infrastrutture e software in produzione.",
+    "lede": "Oltre 25 anni di lavoro su reti e infrastrutture dal 1999, offerti come mentoring individuale al deployment, audit di architettura e strumenti di rete su misura.",
     "cta_book": "Prenota una sessione di consulenza",
     "cta_explore": "Esplora i sistemi attivi",
     "topic_hint": "Oppure inizia una prenotazione da un argomento",
@@ -49,11 +47,11 @@
   },
   "projects": {
     "tag": "Vetrina",
-    "heading": "Progetti di ingegneria attivi",
+    "heading": "Progetti attivi",
     "intro": "Un’app desktop self-hosted per streamer, un NMS centrale per flotte di firewall con le sue sonde edge, un plugin per i server del gioco Rust e WiFi Doctor, una flotta di rilevamento WiFi fatta con i dispositivi che hai già. Il monitor qui sopra mostra l’ultima release di ciascuno e lo stato di accesso anticipato di WiFi Doctor.",
     "vinylfo_desc": "App desktop self-hosted per streamer e audiofili che sincronizza le collezioni Discogs, gestisce le scalette dei brani e alimenta metadati live per Twitch, overlay video per OBS e integrazioni Stream Deck.",
     "fwmon_title": "Firewall Monitor",
-    "fwmon_desc": "NMS centrale leggero e indipendente dal vendor per flotte di firewall (FortiGate, Palo Alto, pfSense): polling SNMP v2c/v3, ricevitori syslog e sFlow, diff di configurazione via SSH/TFTP e sonde Firewall-Collector distribuite su HTTPS/mTLS.",
+    "fwmon_desc": "NMS centrale leggero e indipendente dal vendor per flotte di firewall (principali vendor): polling SNMP v2c/v3, ricevitori syslog e sFlow, diff di configurazione via SSH/TFTP e sonde Firewall-Collector distribuite su HTTPS/mTLS.",
     "rust_title": "Plugin di Gioco per Rust",
     "rust_desc": "Plugin di gameplay in C#/.NET per i server del gioco di sopravvivenza Rust tramite hook Oxide/uMod: bacheche economiche, avvisi e registro comandi per gli admin, metriche di prestazioni, dati in memoria con checkpoint JSON e overlay di interfaccia personalizzati.",
     "runs_on": "Funziona su",
@@ -81,12 +79,12 @@
     "tag": "Profilo professionale",
     "heading": "Curriculum, competenze e certificazioni",
     "intro": "Oltre 25 anni di esperienza tra reti di servizi gestiti, operazioni di carrier nazionali, infrastrutture di data center e governance delle policy di sicurezza.",
-    "subtitle": "Principal Engineer | Rete e Infrastruttura",
+    "subtitle": "Reti e Infrastruttura",
     "location": "Toronto, ON / Remoto",
-    "exp1_role": "Principal Engineer",
+    "exp1_role": "Responsabile Reti e Infrastruttura",
     "exp1_period": "Ago 2024 - Presente",
     "exp1_desc": "Autorità tecnica senior su tutti gli account clienti dei servizi gestiti, con responsabilità di architettura per le migrazioni dell'infrastruttura aziendale.",
-    "exp1_li1": "Guida le implementazioni dei firewall FortiGate, la governance delle policy di sicurezza e le revisioni della postura del sistema.",
+    "exp1_li1": "Guida le implementazioni dei firewall, la governance delle policy di sicurezza e le revisioni della postura del sistema.",
     "exp1_li2": "Progetta e supervisiona migrazioni complesse ed end-to-end di rete, storage e calcolo.",
     "exp1_li3": "Conduce test di disaster recovery, esercitazioni di continuità operativa e audit sullo stato dei dispositivi.",
     "exp2_role": "Senior IT Consultant & Team Lead",
@@ -103,7 +101,6 @@
     "exp4_desc": "Ha gestito i team NOC, Provisioning e Capacity Planning, ed è stato responsabile delle operazioni con i clienti wholesale.",
     "exp4_li1": "Ha collaborato al lancio e alla pianificazione della capacità del data center aziendale al 151 Front Street, Toronto.",
     "exp4_li2": "Ha esteso la copertura del NOC a 24/7/365 e progettato strumenti di automazione per eliminare i flussi di lavoro quotidiani ripetitivi.",
-    "exp4_li3": "Ha gestito l'infrastruttura fisica del data center, i sistemi HVAC, la distribuzione dell'alimentazione DC e le fibre ottiche.",
     "exp5_role": "Team Lead e Tecnico NOCC",
     "exp5_period": "Feb 2005 - Giu 2011",
     "exp5_desc": "Ha supervisionato le operazioni NOCC, sviluppato metriche di formazione standardizzate e monitorato le reti voce e dati dei principali operatori nazionali.",
@@ -139,7 +136,7 @@
   "services": {
     "tag": "Tempo e Supporto",
     "heading": "Servizi e prenotazione sessioni",
-    "intro": "Mentoring pratico sui deployment, audit di architettura e strumenti di rete su misura, guidati direttamente da un Principal Engineer.",
+    "intro": "Mentoring pratico sui deployment, audit di architettura e strumenti di rete su misura.",
     "svc1_title": "Mentoring di deployment 1 a 1",
     "svc1_desc": "Impara mentre costruiamo: definire la topologia di rete, creare le policy del firewall e distribuire sonde con template sicuri.",
     "svc2_title": "Audit di architettura e CI/CD",
@@ -158,7 +155,7 @@
     "card_net_title": "Firewall e reti",
     "card_net_desc": "Pianificazione delle subnet, regole del firewall, routing",
     "card_fw_title": "Data center e infrastruttura",
-    "card_fw_desc": "Deployment di server, virtualizzazione, installazione fisica",
+    "card_fw_desc": "Deployment di server e virtualizzazione",
     "card_docker_title": "Automazione di sistemi e processi",
     "card_docker_desc": "Scripting, pipeline CI/CD, flussi con container",
     "card_dev_title": "Sviluppo su misura",
@@ -219,7 +216,7 @@
     "a2_link_full": "Apri la guida alla connessione (/ai/#connect) →",
     "group_booking": "Prenotazioni",
     "q4": "Su cosa posso prenotare una sessione?",
-    "a4": "Quattro aree: firewall e reti (pianificazione delle subnet, regole del firewall, routing), data center e infrastruttura (deployment di server, virtualizzazione, installazione fisica), automazione di sistemi e processi (scripting, pipeline CI/CD, flussi con container) e sviluppo su misura (integrazioni API, servizi backend, strumenti personalizzati).",
+    "a4": "Quattro aree: firewall e reti, data center e infrastruttura, automazione di sistemi e processi, e sviluppo su misura.",
     "a4_link": "Vai al modulo di prenotazione →",
     "q5": "Cosa succede dopo l’invio di una richiesta di prenotazione?",
     "a5": "Riceviamo la tua richiesta e ti scriviamo entro 24 ore per definire i dettagli.",
@@ -257,7 +254,7 @@
     "vinylfo_feat4": "<strong>HUD Live e Chatbot per Twitch:</strong> Si connette tramite OAuth con codice dispositivo per leggere gli eventi della chat, moderare, avviare sondaggi per gli spettatori e inviare annunci quando le tracce del disco avanzano.",
     "fwmon_title": "Firewall Monitor e Firewall-Collector",
     "fwmon_overview": "Firewall Monitor è un sistema di gestione della rete (NMS) leggero e indipendente dal vendor, dedicato alle flotte di firewall. Supporta deployment centralizzati o sonde di raccolta remote distribuite (Firewall-Collector) su più sedi dei clienti.",
-    "fwmon_feat1": "<strong>Relay SNMP distribuiti:</strong> La sonda Firewall-Collector gira in locale, interroga i dispositivi edge (FortiGate, Palo Alto, pfSense) via SNMP v2c/v3 e invia la telemetria in batch alla sede centrale su HTTPS/mTLS.",
+    "fwmon_feat1": "<strong>Relay SNMP distribuiti:</strong> La sonda Firewall-Collector gira in locale, interroga i dispositivi edge (principali vendor) via SNMP v2c/v3 e invia la telemetria in batch alla sede centrale su HTTPS/mTLS.",
     "fwmon_feat2": "<strong>Ricevitori Syslog e sFlow:</strong> Pipeline di parsing UDP ad alte prestazioni, normalizzate per gestire centinaia di eventi al secondo con filtri di rate-limiting.",
     "fwmon_feat3": "<strong>Tracciamento Normalizzato delle Configurazioni:</strong> Esegue periodicamente il polling delle configurazioni via SSH/TFTP, normalizza i valori tra diversi vendor e memorizza revisioni differenziali del codice.",
     "fwmon_feat4": "<strong>Avvisi di Stato Personalizzati:</strong> Valuta il ritardo dei dati, i picchi di traffico, le metriche delle interfacce e invia notifiche tramite Webhook, Email SMTP e bot IRC.",
@@ -287,7 +284,7 @@
     "aria": "Cambia Lingua"
   },
   "meta": {
-    "title": "Technical Labs — Nicholas Diotte | Ingegneria di rete e infrastrutture"
+    "title": "Technical Labs — Reti e Infrastruttura"
   },
   "a11y": {
     "skip": "Vai al contenuto principale",
@@ -310,7 +307,7 @@
   "sections": {
     "projects": "Software in produzione",
     "services": "Consulenza e mentoring",
-    "resume": "Dossier del Principal Engineer",
+    "resume": "Dossier professionale",
     "faq": "IA di Technical Labs e FAQ",
     "community": "Community e ambienti di lab",
     "band": "Dispatch delle sessioni"
