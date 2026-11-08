@@ -235,7 +235,7 @@
     "s4": "Wann wurde Technical Labs gegründet?",
     "sa4": "Technical Labs ging am 6. Juni 2019 live. Die IT-Karriere dahinter reicht bis 1999 zurück, mit Rollen bei ISP, Carrier und Managed Services.",
     "s5": "Kann ich die Server nutzen?",
-    "sa5": "Der KI-Lab-Server ist kein Shared-Hosting-Dienst. Die KI-Modelle sind für eingeladene Tester über das Gateway verfügbar; die Projekte sind öffentlich. Die gehosteten Proxmox-Server betreiben unsere eigenen Services, keine Kunden-VMs.",
+    "sa5": "Der KI-Lab-Server ist kein Shared-Hosting-Dienst. Die KI-Modelle sind für eingeladene Tester über das Gateway verfügbar; die Projekte sind öffentlich. Die gehosteten Proxmox-Server betreiben unsere eigenen Services.",
     "group_study": "Studium & Ressourcen",
     "t1": "Ich lerne gerade etwas und brauche eine Ressource. Kannst du helfen?",
     "ta1": "Ja. Erzähl mir im <a href=\"#contact\">Kontaktbereich</a>, was du lernst und was du brauchst — eine Lab-Umgebung, ein Modell, einen Datensatz, einen Leitfaden oder einfach einen Hinweis. Du musst keine bezahlte Session buchen, um zu fragen.",

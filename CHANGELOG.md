@@ -2,6 +2,11 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.21] - 2026-11-08
+
+### Changed
+- **Hosted-server wording:** the FAQ no longer states that the Proxmox VMs are “not customer VMs”; it only says the hosted Proxmox servers run Technical Labs’ own services. This avoids claiming what the hosting tier does or does not offer beyond the site and project services.
+
 ## [1.0.20] - 2026-11-08
 
 ### Changed
