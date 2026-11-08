@@ -240,7 +240,7 @@
     "t1": "I'm studying something and need a resource. Can you help?",
     "ta1": "Yes. Tell me what you're learning and what you need — a lab environment, a model, a dataset, a guide, or just a pointer — in the <a href=\"#contact\">contact section</a>. You don't need to book a paid session to ask.",
     "t2": "Can I use the lab server for a course or study project?",
-    "ta2": "Sometimes. The lab is not a shared hosting service, but if you're working through something specific and need access to a model, a lab, or another resource, tell me what you're studying in the <a href=\"#contact\">contact section</a>. I'll check what's available and get back to you."
+    "ta2": "Sometimes. The lab is not a shared hosting service, but if you're working through something specific and need access to a model, a lab, or another resource, tell me what you're studying in the <a href=\"#contact\">contact section</a>. I'll check what's available and get back to you. No paid booking is required."
   },
   "footer": {
     "brand_desc": "Providing high-quality IT lab simulators, customized deployment mentorship, and robust networking solutions.",

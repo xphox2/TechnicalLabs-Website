@@ -240,7 +240,7 @@
     "t1": "J'étudie quelque chose et j'ai besoin d'une ressource. Pouvez-vous m'aider ?",
     "ta1": "Oui. Dites-moi dans la <a href=\"#contact\">section contact</a> ce que vous apprenez et ce dont vous avez besoin — un environnement de lab, un modèle, un jeu de données, un guide ou simplement une piste. Vous n'avez pas besoin de réserver une session payante pour demander.",
     "t2": "Puis-je utiliser le serveur du lab pour un cours ou un projet d'études ?",
-    "ta2": "Parfois. Le lab n'est pas un service d'hébergement mutualisé, mais si vous travaillez sur quelque chose de précis et avez besoin d'un modèle, d'un lab ou d'une autre ressource, dites-moi dans la <a href=\"#contact\">section contact</a> ce que vous étudiez. Je vérifierai ce qui est disponible et je vous répondrai."
+    "ta2": "Parfois. Le lab n'est pas un service d'hébergement mutualisé, mais si vous travaillez sur quelque chose de précis et avez besoin d'un modèle, d'un lab ou d'une autre ressource, dites-moi dans la <a href=\"#contact\">section contact</a> ce que vous étudiez. Je vérifierai ce qui est disponible et je vous répondrai. Aucune réservation payante n'est nécessaire."
   },
   "footer": {
     "brand_desc": "Simulateurs de lab IT de haute qualité, mentorat de déploiement personnalisé et solutions réseau robustes.",

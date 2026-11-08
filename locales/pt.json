@@ -240,7 +240,7 @@
     "t1": "Estou a estudar algo e preciso de um recurso. Podes ajudar?",
     "ta1": "Sim. Diz-me na <a href=\"#contact\">secção de contacto</a> o que estás a aprender e do que precisas — um ambiente de laboratório, um modelo, um conjunto de dados, um guia ou apenas uma indicação. Não precisas de reservar uma sessão paga para perguntar.",
     "t2": "Posso usar o servidor do laboratório para um curso ou projeto de estudo?",
-    "ta2": "Às vezes. O laboratório não é um serviço de alojamento partilhado, mas se estiveres a trabalhar em algo específico e precisares de acesso a um modelo, a um laboratório ou a outro recurso, diz-me na <a href=\"#contact\">secção de contacto</a> o que estás a estudar. Vou ver o que está disponível e respondo."
+    "ta2": "Às vezes. O laboratório não é um serviço de alojamento partilhado, mas se estiveres a trabalhar em algo específico e precisares de acesso a um modelo, a um laboratório ou a outro recurso, diz-me na <a href=\"#contact\">secção de contacto</a> o que estás a estudar. Vou ver o que está disponível e respondo. Não é necessária uma reserva paga."
   },
   "footer": {
     "brand_desc": "Simuladores de laboratório de TI de alta qualidade, mentoria de implantação personalizada e soluções de rede robustas.",

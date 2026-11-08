@@ -240,7 +240,7 @@
     "t1": "Sto studiando qualcosa e ho bisogno di una risorsa. Puoi aiutarmi?",
     "ta1": "Sì. Dimmi nella <a href=\"#contact\">sezione contatti</a> cosa stai imparando e di cosa hai bisogno — un ambiente lab, un modello, un dataset, una guida o semplicemente un orientamento. Non devi prenotare una sessione a pagamento per chiedere.",
     "t2": "Posso usare il server del lab per un corso o un progetto di studio?",
-    "ta2": "A volte. Il lab non è un servizio di hosting condiviso, ma se stai lavorando a qualcosa di specifico e ti serve accesso a un modello, a un lab o a un'altra risorsa, dimmi nella <a href=\"#contact\">sezione contatti</a> cosa stai studiando. Controllerò cosa è disponibile e ti risponderò."
+    "ta2": "A volte. Il lab non è un servizio di hosting condiviso, ma se stai lavorando a qualcosa di specifico e ti serve accesso a un modello, a un lab o a un'altra risorsa, dimmi nella <a href=\"#contact\">sezione contatti</a> cosa stai studiando. Controllerò cosa è disponibile e ti risponderò. Non è necessaria una prenotazione a pagamento."
   },
   "footer": {
     "brand_desc": "Simulatori di lab IT di alta qualità, mentoring di deployment personalizzato e soluzioni di rete solide.",

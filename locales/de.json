@@ -240,7 +240,7 @@
     "t1": "Ich lerne gerade etwas und brauche eine Ressource. Kannst du helfen?",
     "ta1": "Ja. Erzähl mir im <a href=\"#contact\">Kontaktbereich</a>, was du lernst und was du brauchst — eine Lab-Umgebung, ein Modell, einen Datensatz, einen Leitfaden oder einfach einen Hinweis. Du musst keine bezahlte Session buchen, um zu fragen.",
     "t2": "Kann ich den Lab-Server für einen Kurs oder ein Studienprojekt nutzen?",
-    "ta2": "Manchmal. Das Lab ist kein Shared-Hosting-Dienst, aber wenn du an etwas Bestimmtem arbeitest und Zugang zu einem Modell, einem Lab oder einer anderen Ressource brauchst, erzähl mir im <a href=\"#contact\">Kontaktbereich</a>, was du lernst. Ich prüfe, was verfügbar ist, und melde mich."
+    "ta2": "Manchmal. Das Lab ist kein Shared-Hosting-Dienst, aber wenn du an etwas Bestimmtem arbeitest und Zugang zu einem Modell, einem Lab oder einer anderen Ressource brauchst, erzähl mir im <a href=\"#contact\">Kontaktbereich</a>, was du lernst. Ich prüfe, was verfügbar ist, und melde mich. Eine bezahlte Buchung ist nicht nötig."
   },
   "footer": {
     "brand_desc": "Hochwertige IT-Lab-Simulatoren, individuelles Deployment-Mentoring und robuste Netzwerklösungen.",
