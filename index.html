@@ -1022,12 +1022,12 @@
           <div class="section-coord">
             <span class="coord-index">04</span>
             <span class="coord-rule" aria-hidden="true"></span>
-            <span class="coord-label" data-i18n="sections.faq">Technical Labs AI &amp; FAQ</span>
+            <span class="coord-label" data-i18n="sections.faq">Technical Labs &amp; FAQ</span>
           </div>
           <div class="section-title-split">
-            <h2 id="faq-heading" data-i18n="faq.heading">Self-Hosted AI Lab &amp; Common Questions</h2>
+            <h2 id="faq-heading" data-i18n="faq.heading">Our Server &amp; Common Questions</h2>
             <p class="section-lead" data-i18n="faq.intro">
-              Our own AI coding models, the setup guide, and answers about the lab, booking, and the community.
+              The hardware behind the lab, the projects it supports, and answers about booking and the community.
             </p>
           </div>
         </div>
@@ -1035,66 +1035,105 @@
         <div class="ai-faq-layout">
           <!-- Left: Technical Labs AI spec plate -->
           <div class="ai-spotlight" data-reveal>
-            <h3 data-i18n="ai.heading">Technical Labs AI</h3>
+            <h3 data-i18n="ai.heading">The Lab Server</h3>
 
             <dl class="ai-plate">
               <div class="ai-plate-row">
                 <dt data-i18n="ai.hardware">Hardware</dt>
-                <dd data-i18n="ai.hardware_v">Our own AI coding models on an ASUS Ascent GX10, self-hosted in our lab</dd>
+                <dd data-i18n="ai.hardware_v">ASUS Ascent GX10 · NVIDIA GB10 · 128 GB unified memory, in our lab</dd>
               </div>
               <div class="ai-plate-row">
-                <dt data-i18n="ai.context">Context</dt>
-                <dd data-i18n="ai.context_v">Up to a million tokens</dd>
+                <dt data-i18n="ai.context">Models</dt>
+                <dd data-i18n="ai.context_v">Self-hosted Ornith and Qwen models, up to a million tokens of context</dd>
               </div>
               <div class="ai-plate-row">
-                <dt data-i18n="ai.clients">Clients</dt>
-                <dd data-i18n="ai.clients_v">Claude Code · OpenCode · the Claude app</dd>
+                <dt data-i18n="ai.clients">Since</dt>
+                <dd data-i18n="ai.clients_v">Technical Labs live since June 6, 2019</dd>
               </div>
               <div class="ai-plate-row">
-                <dt data-i18n="ai.setup">Setup</dt>
-                <dd data-i18n="ai.setup_v">Ready-to-copy settings for Claude Code and OpenCode, plus the steps to add the TechLabs connector to your company's Claude</dd>
+                <dt data-i18n="ai.setup">Also runs</dt>
+                <dd data-i18n="ai.setup_v">Our website and project services run on a separate production server</dd>
               </div>
             </dl>
 
             <div class="ai-cta-group">
-              <a href="/ai/#connect" class="btn btn-primary">
-                <span data-i18n="ai.cta_guide">Open the connection guide</span>
+              <a href="#projects" class="btn btn-primary">
+                <span data-i18n="ai.cta_guide">See the projects</span>
                 <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg>
               </a>
               <a href="/ai/" class="btn btn-secondary">
-                <span data-i18n="ai.cta_full">Read the full guide (/ai/)</span>
+                <span data-i18n="ai.cta_full">Read the AI guide</span>
               </a>
             </div>
           </div>
 
           <!-- Right: grouped FAQ -->
           <div class="faq-stack" data-reveal data-reveal-delay="1">
-            <h3 class="faq-group-heading" data-i18n="faq.group_ai">AI lab</h3>
-            <details class="faq-item">
-              <summary>
-                <span data-i18n="faq.q1">What is Technical Labs AI?</span>
-                <span class="faq-chevron" aria-hidden="true"></span>
-              </summary>
-              <div class="faq-answer">
-                <p data-i18n="faq.a1">
-                  Our own AI coding models, running in our lab. You can use them from Claude Code, OpenCode or the Claude app, with up to a million tokens of context.
-                </p>
-              </div>
-            </details>
-
+            <h3 class="faq-group-heading" data-i18n="faq.group_server">Our server</h3>
             <details class="faq-item" open>
               <summary>
-                <span data-i18n="faq.q2">How do I connect to Technical Labs AI?</span>
+                <span data-i18n="faq.s1">What is the server?</span>
                 <span class="faq-chevron" aria-hidden="true"></span>
               </summary>
               <div class="faq-answer">
-                <p data-i18n="faq.a2">
-                  Follow our setup guide. It has ready-to-copy settings for Claude Code and OpenCode, and the steps to add the TechLabs connector to your company's Claude.
+                <p data-i18n="faq.sa1">
+                  Technical Labs runs its own lab server: an ASUS Ascent GX10 with an NVIDIA GB10 superchip and 128 GB of unified memory. It sits in our lab; the website and project services run on a separate production server.
                 </p>
-                <a href="/ai/#connect" class="faq-inline-cta"><span data-i18n="faq.a2_link_full">Open the connection guide (/ai/#connect) →</span></a>
               </div>
             </details>
 
+            <details class="faq-item">
+              <summary>
+                <span data-i18n="faq.s2">What does the server run?</span>
+                <span class="faq-chevron" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.sa2">
+                  The GX10 serves the self-hosted Ornith and Qwen models for TechLabs AI. The production server runs the website and the services behind projects such as Firewall Monitor and WiFi Doctor.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <span data-i18n="faq.s3">Why run your own server?</span>
+                <span class="faq-chevron" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.sa3">
+                  It keeps the models and project data on hardware we control, avoids per-token cloud pricing, and lets us tune the stack end to end.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <span data-i18n="faq.s4">When did Technical Labs start?</span>
+                <span class="faq-chevron" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.sa4">
+                  Technical Labs went live on June 6, 2019. The IT career behind it goes back to 1999, across ISP, carrier and managed-service roles.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <span data-i18n="faq.s5">Can I use the server?</span>
+                <span class="faq-chevron" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.sa5">
+                  The lab server is not a shared hosting service. The AI models are available to invited testers through the gateway; the projects are public.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="faq-secondary" data-reveal data-reveal-delay="2">
+          <div class="faq-stack">
             <h3 class="faq-group-heading" data-i18n="faq.group_booking">Booking</h3>
             <details class="faq-item">
               <summary>
@@ -1132,7 +1171,9 @@
                 </p>
               </div>
             </details>
+          </div>
 
+          <div class="faq-stack">
             <h3 class="faq-group-heading" data-i18n="faq.group_community">Community</h3>
             <details class="faq-item">
               <summary>
