@@ -250,7 +250,8 @@
     "ai_guide": "AI 연결 가이드",
     "portal": "IT 랩 포털 ↗",
     "irc": "공개 웹 IRC ↗",
-    "wifi": "WiFi Doctor ↗"
+    "wifi": "WiFi Doctor ↗",
+    "status": "실시간 네트워크 상태"
   },
   "modals": {
     "overview_heading": "프로젝트 개요",
@@ -332,7 +333,8 @@
     "setup": "추가 운영",
     "setup_v": "우리 웹사이트와 프로젝트 서비스는 별도의 프로덕션 서버에서 실행됩니다",
     "cta_guide": "프로젝트 보기",
-    "cta_full": "AI 가이드 읽기"
+    "cta_full": "AI 가이드 읽기",
+    "status": "실시간 상태"
   },
   "band": {
     "heading": "세션을 예약할 준비가 되셨나요?",

@@ -250,7 +250,8 @@
     "ai_guide": "AI 接続ガイド",
     "portal": "IT ラボポータル ↗",
     "irc": "公開ウェブ IRC ↗",
-    "wifi": "WiFi Doctor ↗"
+    "wifi": "WiFi Doctor ↗",
+    "status": "ライブネットワークステータス"
   },
   "modals": {
     "overview_heading": "プロジェクト概要",
@@ -332,7 +333,8 @@
     "setup": "その他",
     "setup_v": "当社のウェブサイトとプロジェクトのサービスは別の本番サーバーで稼働しています",
     "cta_guide": "プロジェクトを見る",
-    "cta_full": "AIガイドを読む"
+    "cta_full": "AIガイドを読む",
+    "status": "ライブステータス"
   },
   "band": {
     "heading": "セッションを予約しますか？",

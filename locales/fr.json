@@ -250,7 +250,8 @@
     "ai_guide": "Guide de connexion à l’IA",
     "portal": "Portail des labs IT ↗",
     "irc": "IRC web public ↗",
-    "wifi": "WiFi Doctor ↗"
+    "wifi": "WiFi Doctor ↗",
+    "status": "État du réseau en direct"
   },
   "modals": {
     "overview_heading": "Présentation du projet",
@@ -332,7 +333,8 @@
     "setup": "Fait aussi tourner",
     "setup_v": "Notre site web et les services des projets tournent sur un serveur de production séparé",
     "cta_guide": "Voir les projets",
-    "cta_full": "Lire le guide IA"
+    "cta_full": "Lire le guide IA",
+    "status": "État en direct"
   },
   "band": {
     "heading": "Prêt à réserver une session ?",

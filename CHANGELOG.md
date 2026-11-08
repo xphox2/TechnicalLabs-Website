@@ -2,6 +2,11 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.18] - 2026-11-08
+
+### Added
+- **Live network status link:** `stats.technicallabs.org` is now in “The Lab Server” card under “Live status”, and in the footer’s “Lab & Network” column as “Live Network Status”. All 10 locales carry the new labels.
+
 ## [1.0.17] - 2026-11-08
 
 ### Changed
