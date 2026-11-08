@@ -229,7 +229,7 @@
     "s3": "Pourquoi auto-héberger ?",
     "sa3": "Cela garde les modèles et les données des projets sur une infrastructure que nous contrôlons, évite le prix par token dans le cloud pour l'IA et nous permet d'optimiser toute la pile de bout en bout.",
     "s5": "Puis-je utiliser les serveurs ?",
-    "sa5": "Pas en hébergement mutualisé. Les modèles IA sont disponibles pour les testeurs invités via la passerelle ; le site web et les services des projets sont publics. Les serveurs Proxmox hébergés font tourner nos propres services.",
+    "sa5": "Pas en hébergement mutualisé. Les modèles IA sont disponibles pour les testeurs invités via la passerelle ; le site web et les services des projets sont publics. Les serveurs du centre de données font tourner nos propres services.",
     "group_study": "Études et ressources",
     "t1": "J'étudie quelque chose et j'ai besoin d'une ressource. Pouvez-vous m'aider ?",
     "ta1": "Oui. Dites-moi dans la <a href=\"#contact\">section contact</a> ce que vous apprenez et ce dont vous avez besoin — un environnement de lab, un modèle, un jeu de données, un guide ou simplement une piste. Demander est gratuit ; aucune réservation payante n'est nécessaire."
@@ -333,7 +333,7 @@
     "cta_full": "Lire le guide IA",
     "status": "État en direct",
     "hosting": "Hébergement",
-    "hosting_v": "Site web et services des projets sur des serveurs virtuels au Nuday Data Centre — Proxmox avec MultiPortal.io"
+    "hosting_v": "Site web et services des projets sur nos serveurs physiques au Nuday Data Centre — Proxmox avec MultiPortal.io"
   },
   "band": {
     "heading": "Prêt à réserver une session ?",

@@ -2,6 +2,13 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.23] - 2026-11-08
+
+### Changed
+- **FAQ layout reverted to a single list.** The two-column FAQ grid from 1.0.22 is gone; the server card stays on the left (sticky on desktop) and all questions sit in one right-hand column, grouped as Our servers, Studying & resources, Booking and Community.
+- **Hosting is physical, not virtual.** The hosting row now reads “our physical servers in Nuday Data Centre — Proxmox with MultiPortal.io”. The “Can I use the servers?” answer says “data-centre servers” instead of repeating the Proxmox/hosting names.
+- All 10 locale files updated with the same two changes.
+
 ## [1.0.22] - 2026-11-08
 
 ### Changed
