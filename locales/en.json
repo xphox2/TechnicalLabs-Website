@@ -48,7 +48,7 @@
   "projects": {
     "tag": "Showcase",
     "heading": "Active Projects",
-    "intro": "A self-hosted desktop app for streamers, a central NMS for firewall fleets with its edge probes, a plugin for Rust game servers, and WiFi Doctor, a WiFi survey fleet made of the devices you already have. The monitor above shows each latest release, and WiFi Doctor's early-access status.",
+    "intro": "Four systems we design and maintain, from a streamer's desktop app to a room-by-room WiFi survey.",
     "vinylfo_desc": "Self-hosted desktop app for streamers and audiophiles that syncs Discogs collections, manages track schedules, and feeds live Twitch metadata, OBS video overlays, and Stream Deck integrations.",
     "fwmon_title": "Firewall Monitor",
     "fwmon_desc": "Vendor-agnostic, lightweight central NMS for firewall fleets from major vendors: SNMP v2c/v3 polling, syslog and sFlow receivers, SSH/TFTP config diffs, and distributed Firewall-Collector probes over HTTPS/mTLS.",
@@ -66,7 +66,12 @@
     "sys1": "Streaming desktop app",
     "sys2": "Fleet NMS",
     "sys3": "Game plugin",
-    "sys4": "WiFi survey fleet"
+    "sys4": "WiFi survey fleet",
+    "readout_systems": "Systems",
+    "readout_public": "Public releases",
+    "readout_early": "Early access",
+    "readout_live": "Live telemetry",
+    "readout_monitor": "Monitor ↑"
   },
   "common": {
     "view_architecture": "Core architecture",
@@ -79,9 +84,9 @@
     "tag": "Professional profile",
     "heading": "Resume, Competencies & Certifications",
     "intro": "A 25+ year record across managed service networks, national carrier operations, data centre infrastructure, and security policy governance.",
-    "subtitle": "Network & Infrastructure",
+    "subtitle": "Principal Consultant | Network & Infrastructure",
     "location": "Toronto, ON / Remote",
-    "exp1_role": "Network & Infrastructure Lead",
+    "exp1_role": "Principal Consultant",
     "exp1_period": "Aug 2024 – Present",
     "exp1_desc": "Senior technical authority across all managed service customer accounts, architecting enterprise infrastructure migrations.",
     "exp1_li1": "Lead firewall deployments, security policy governance, and system posture reviews.",
@@ -136,7 +141,7 @@
   "services": {
     "tag": "Time & Support",
     "heading": "Services & Session Booking",
-    "intro": "Hands-on deployment mentorship, architecture audits, and custom network tooling.",
+    "intro": "Hands-on deployment mentorship, architecture audits, and custom network tooling, guided directly by a Principal Consultant.",
     "svc1_title": "1-on-1 Deployment Mentorship",
     "svc1_desc": "Learn directly as we build: map out your network layout, build firewall policies, and deploy probes using secure templates.",
     "svc2_title": "Architecture Audits & CI/CD",
@@ -304,7 +309,7 @@
   "sections": {
     "projects": "Production software",
     "services": "Consulting & mentorship",
-    "resume": "Professional dossier",
+    "resume": "Principal dossier",
     "faq": "Technical Labs AI & FAQ",
     "community": "Community & lab environments",
     "band": "Session dispatch"
@@ -376,6 +381,11 @@
     "wifi_server": "WiFi Doctor server"
   },
   "meta": {
-    "title": "Technical Labs — Network & Infrastructure"
-  }
+    "title": "Technical Labs — Principal Consultant, Network & Infrastructure"
+  },
+  "readout_systems": "Systems",
+  "readout_public": "Public releases",
+  "readout_early": "Early access",
+  "readout_live": "Live telemetry",
+  "readout_monitor": "Monitor ↑"
 }

@@ -48,7 +48,7 @@
   "projects": {
     "tag": "쇼케이스",
     "heading": "진행 중인 프로젝트",
-    "intro": "스트리머를 위한 자체 호스팅 데스크톱 앱, 엣지 프로브를 갖춘 방화벽 플릿용 중앙 NMS, Rust 게임 서버용 플러그인, 그리고 이미 가지고 있는 기기로 WiFi 측정 플릿을 만드는 WiFi Doctor. 위의 모니터에는 각 프로젝트의 최신 릴리스와 WiFi Doctor의 얼리 액세스 상태가 표시됩니다.",
+    "intro": "스트리머용 데스크톱 앱부터 공간별 WiFi 조사까지, 우리가 설계하고 운영하는 네 가지 시스템.",
     "vinylfo_desc": "스트리머와 오디오 애호가를 위한 자체 호스팅 데스크톱 앱으로, Discogs 컬렉션을 동기화하고 트랙 일정을 관리하며 Twitch 실시간 메타데이터, OBS 영상 오버레이, Stream Deck 연동에 데이터를 공급합니다.",
     "fwmon_title": "Firewall Monitor",
     "fwmon_desc": "방화벽 플릿(주요 벤더)을 위한 벤더 독립적이고 가벼운 중앙 NMS: SNMP v2c/v3 폴링, syslog 및 sFlow 수신, SSH/TFTP 설정 비교, HTTPS/mTLS를 통한 분산 Firewall-Collector 프로브.",
@@ -66,7 +66,12 @@
     "sys1": "스트리밍 데스크톱 앱",
     "sys2": "플릿 NMS",
     "sys3": "게임 플러그인",
-    "sys4": "WiFi 측정 플릿"
+    "sys4": "WiFi 측정 플릿",
+    "readout_systems": "시스템",
+    "readout_public": "공개 릴리스",
+    "readout_early": "얼리 액세스",
+    "readout_live": "실시간 텔레메트리",
+    "readout_monitor": "모니터 ↑"
   },
   "common": {
     "view_architecture": "핵심 아키텍처",
@@ -79,9 +84,9 @@
     "tag": "전문 프로필",
     "heading": "이력서, 역량 및 자격증",
     "intro": "관리형 서비스 네트워크, 전국 통신사 운영, 데이터센터 인프라, 보안 정책 거버넌스에 걸친 25년 이상의 경력.",
-    "subtitle": "네트워크 및 인프라",
+    "subtitle": "프린시펄 컨설턴트 | 네트워크 및 인프라",
     "location": "토론토, ON / 원격",
-    "exp1_role": "네트워크 및 인프라 리드",
+    "exp1_role": "프린시펄 컨설턴트",
     "exp1_period": "2024년 8월 - 현재",
     "exp1_desc": "모든 매니지드 서비스 고객 계정에 대한 선임 기술 책임자로서 엔터프라이즈 인프라 마이그레이션을 설계합니다.",
     "exp1_li1": "방화벽 배포, 보안 정책 거버넌스, 시스템 보안 상태 검토를 주도합니다.",
@@ -136,7 +141,7 @@
   "services": {
     "tag": "시간 및 지원",
     "heading": "서비스 및 세션 예약",
-    "intro": "실무 배포 멘토링, 아키텍처 감사, 맞춤형 네트워크 도구.",
+    "intro": "실무 배포 멘토링, 아키텍처 감사, 맞춤형 네트워크 도구를 프린시펄 컨설턴트가 직접 안내합니다.",
     "svc1_title": "1:1 구축 멘토링",
     "svc1_desc": "함께 구축하며 배웁니다: 네트워크 구성 설계, 방화벽 정책 작성, 안전한 템플릿으로 프로브 배포.",
     "svc2_title": "아키텍처 감사 및 CI/CD",
@@ -284,7 +289,7 @@
     "aria": "언어 변경"
   },
   "meta": {
-    "title": "Technical Labs — 네트워크 및 인프라"
+    "title": "Technical Labs — 프린시펄 컨설턴트, 네트워크 및 인프라"
   },
   "a11y": {
     "skip": "본문으로 건너뛰기",
@@ -307,7 +312,7 @@
   "sections": {
     "projects": "프로덕션 소프트웨어",
     "services": "컨설팅 및 멘토링",
-    "resume": "프로페셔널 도시에",
+    "resume": "프린시펄 도시에",
     "faq": "Technical Labs AI 및 FAQ",
     "community": "커뮤니티 및 랩 환경",
     "band": "세션 접수"
@@ -377,5 +382,10 @@
     "dashboard": "대시보드",
     "alerts_watch": "센서가 계속 감시하는 동안의 알림",
     "reports": "PDF 및 CSV 측정 보고서 · 예약 보고서"
-  }
+  },
+  "readout_systems": "시스템",
+  "readout_public": "공개 릴리스",
+  "readout_early": "얼리 액세스",
+  "readout_live": "실시간 텔레메트리",
+  "readout_monitor": "모니터 ↑"
 }

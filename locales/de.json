@@ -48,7 +48,7 @@
   "projects": {
     "tag": "Showcase",
     "heading": "Aktive Projekte",
-    "intro": "Eine selbst gehostete Desktop-App für Streamer, ein zentrales NMS für Firewall-Flotten mit seinen Edge-Probes, ein Plugin für Rust-Spieleserver und WiFi Doctor, eine WLAN-Messflotte aus den Geräten, die Sie bereits haben. Der Monitor oben zeigt das jeweils neueste Release und den Early-Access-Status von WiFi Doctor.",
+    "intro": "Vier Systeme, die wir entwerfen und betreiben – von einer Desktop-App für Streamer bis zu einer WiFi-Umfrage Raum für Raum.",
     "vinylfo_desc": "Selbst gehostete Desktop-App für Streamer und Audiophile, die Discogs-Sammlungen synchronisiert, Track-Zeitpläne verwaltet und Live-Twitch-Metadaten, OBS-Video-Overlays und Stream-Deck-Integrationen bereitstellt.",
     "fwmon_title": "Firewall Monitor",
     "fwmon_desc": "Herstellerunabhängiges, schlankes zentrales NMS für Firewall-Flotten (große Hersteller): SNMP-v2c/v3-Polling, Syslog- und sFlow-Empfänger, SSH/TFTP-Konfigurations-Diffs und verteilte Firewall-Collector-Probes über HTTPS/mTLS.",
@@ -66,7 +66,12 @@
     "sys1": "Streaming-Desktop-App",
     "sys2": "Flotten-NMS",
     "sys3": "Spiel-Plugin",
-    "sys4": "WLAN-Messflotte"
+    "sys4": "WLAN-Messflotte",
+    "readout_systems": "Systeme",
+    "readout_public": "Öffentliche Releases",
+    "readout_early": "Frühzugang",
+    "readout_live": "Live-Telemetrie",
+    "readout_monitor": "Monitor ↑"
   },
   "common": {
     "view_architecture": "Kernarchitektur",
@@ -79,9 +84,9 @@
     "tag": "Berufsprofil",
     "heading": "Lebenslauf, Kompetenzen & Zertifizierungen",
     "intro": "Eine über 25-jährige Laufbahn in Managed-Service-Netzwerken, nationalem Carrier-Betrieb, Rechenzentrumsinfrastruktur und Security-Policy-Governance.",
-    "subtitle": "Netzwerk & Infrastruktur",
+    "subtitle": "Principal Consultant | Netzwerk & Infrastruktur",
     "location": "Toronto, ON / Remote",
-    "exp1_role": "Leiter Netzwerk & Infrastruktur",
+    "exp1_role": "Principal Consultant",
     "exp1_period": "Aug. 2024 - Heute",
     "exp1_desc": "Leitende technische Instanz für alle Managed-Service-Kundenkonten, verantwortlich für die Architektur von Unternehmensinfrastruktur-Migrationen.",
     "exp1_li1": "Leitung von Firewall-Implementierungen, Governance von Sicherheitsrichtlinien und Systemsicherheitsbewertungen.",
@@ -136,7 +141,7 @@
   "services": {
     "tag": "Zeit & Support",
     "heading": "Dienstleistungen & Terminbuchung",
-    "intro": "Praxisnahes Deployment-Mentoring, Architektur-Audits und maßgeschneiderte Netzwerk-Tools.",
+    "intro": "Praxisnahes Deployment-Mentoring, Architektur-Audits und maßgeschneiderte Netzwerk-Tools, direkt von einem Principal Consultant begleitet.",
     "svc1_title": "1-zu-1-Deployment-Mentoring",
     "svc1_desc": "Lernen Sie direkt beim Aufbau: Netzwerklayout planen, Firewall-Richtlinien erstellen und Probes mit sicheren Vorlagen bereitstellen.",
     "svc2_title": "Architektur-Audits & CI/CD",
@@ -284,7 +289,7 @@
     "aria": "Sprache ändern"
   },
   "meta": {
-    "title": "Technical Labs — Netzwerk & Infrastruktur"
+    "title": "Technical Labs — Principal Consultant, Netzwerk & Infrastruktur"
   },
   "a11y": {
     "skip": "Zum Hauptinhalt springen",
@@ -307,7 +312,7 @@
   "sections": {
     "projects": "Produktionssoftware",
     "services": "Beratung & Mentoring",
-    "resume": "Berufliches Dossier",
+    "resume": "Principal-Dossier",
     "faq": "Technical Labs KI & FAQ",
     "community": "Community & Lab-Umgebungen",
     "band": "Session-Dispatch"
@@ -377,5 +382,10 @@
     "dashboard": "Dashboard",
     "alerts_watch": "Alarme, sobald Sensoren dauerhaft überwachen",
     "reports": "PDF- & CSV-Messberichte · geplante Berichte"
-  }
+  },
+  "readout_systems": "Systeme",
+  "readout_public": "Öffentliche Releases",
+  "readout_early": "Frühzugang",
+  "readout_live": "Live-Telemetrie",
+  "readout_monitor": "Monitor ↑"
 }

@@ -48,7 +48,7 @@
   "projects": {
     "tag": "Muestra",
     "heading": "Proyectos activos",
-    "intro": "Una aplicación de escritorio autoalojada para streamers, un NMS central para flotas de firewalls con sus sondas de borde, un plugin para servidores del juego Rust y WiFi Doctor, una flota de medición WiFi hecha con los dispositivos que ya tienes. El monitor de arriba muestra la última versión de cada uno y el estado de acceso anticipado de WiFi Doctor.",
+    "intro": "Cuatro sistemas que diseñamos y mantenemos, desde una app de escritorio para streamers hasta un estudio de WiFi habitación por habitación.",
     "vinylfo_desc": "Aplicación de escritorio autoalojada para streamers y audiófilos que sincroniza colecciones de Discogs, gestiona programaciones de pistas y alimenta metadatos en vivo de Twitch, superposiciones de vídeo en OBS e integraciones con Stream Deck.",
     "fwmon_title": "Firewall Monitor",
     "fwmon_desc": "NMS central ligero e independiente del fabricante para flotas de firewalls (principales fabricantes): sondeo SNMP v2c/v3, receptores de syslog y sFlow, diffs de configuración por SSH/TFTP y sondas Firewall-Collector distribuidas sobre HTTPS/mTLS.",
@@ -66,7 +66,12 @@
     "sys1": "App de escritorio para streaming",
     "sys2": "NMS de flota",
     "sys3": "Plugin de juego",
-    "sys4": "Flota de medición WiFi"
+    "sys4": "Flota de medición WiFi",
+    "readout_systems": "Sistemas",
+    "readout_public": "Versiones públicas",
+    "readout_early": "Acceso anticipado",
+    "readout_live": "Telemetría en vivo",
+    "readout_monitor": "Monitor ↑"
   },
   "common": {
     "view_architecture": "Arquitectura principal",
@@ -79,9 +84,9 @@
     "tag": "Perfil profesional",
     "heading": "Currículum, competencias y certificaciones",
     "intro": "Más de 25 años de trayectoria en redes de servicios gestionados, operaciones de operadores nacionales, infraestructura de centros de datos y gobernanza de políticas de seguridad.",
-    "subtitle": "Redes e Infraestructura",
+    "subtitle": "Consultor Principal | Redes e Infraestructura",
     "location": "Toronto, ON / Remoto",
-    "exp1_role": "Responsable de Redes e Infraestructura",
+    "exp1_role": "Consultor Principal",
     "exp1_period": "Ago 2024 - Presente",
     "exp1_desc": "Autoridad técnica senior en todas las cuentas de clientes de servicios gestionados, diseñando migraciones de infraestructura empresarial.",
     "exp1_li1": "Lidera implementaciones de firewalls, la gobernanza de políticas de seguridad y las revisiones de postura del sistema.",
@@ -136,7 +141,7 @@
   "services": {
     "tag": "Tiempo y Soporte",
     "heading": "Servicios y reserva de sesiones",
-    "intro": "Mentoría práctica de despliegue, auditorías de arquitectura y herramientas de red a medida.",
+    "intro": "Mentoría práctica de despliegue, auditorías de arquitectura y herramientas de red a medida, guiadas directamente por un consultor principal.",
     "svc1_title": "Mentoría de despliegue 1 a 1",
     "svc1_desc": "Aprende mientras construimos: diseñar el esquema de tu red, crear políticas de firewall y desplegar sondas con plantillas seguras.",
     "svc2_title": "Auditorías de arquitectura y CI/CD",
@@ -284,7 +289,7 @@
     "aria": "Cambiar Idioma"
   },
   "meta": {
-    "title": "Technical Labs — Redes e Infraestructura"
+    "title": "Technical Labs — Consultor Principal, Redes e Infraestructura"
   },
   "a11y": {
     "skip": "Saltar al contenido principal",
@@ -307,7 +312,7 @@
   "sections": {
     "projects": "Software en producción",
     "services": "Consultoría y mentoría",
-    "resume": "Dossier profesional",
+    "resume": "Dossier del consultor principal",
     "faq": "IA de Technical Labs y FAQ",
     "community": "Comunidad y entornos de laboratorio",
     "band": "Despacho de sesiones"
@@ -377,5 +382,10 @@
     "dashboard": "Panel",
     "alerts_watch": "Alertas cuando los sensores vigilan de forma continua",
     "reports": "Informes de medición en PDF y CSV · informes programados"
-  }
+  },
+  "readout_systems": "Sistemas",
+  "readout_public": "Versiones públicas",
+  "readout_early": "Acceso anticipado",
+  "readout_live": "Telemetría en vivo",
+  "readout_monitor": "Monitor ↑"
 }

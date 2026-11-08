@@ -48,7 +48,7 @@
   "projects": {
     "tag": "作品展示",
     "heading": "进行中的项目",
-    "intro": "面向主播的自托管桌面应用、带边缘探针的防火墙集群中央 NMS、Rust 游戏服务器插件，以及用你现有设备组成 WiFi 测绘队列的 WiFi Doctor。上方监视器显示各项目的最新版本以及 WiFi Doctor 的抢先体验状态。",
+    "intro": "从面向主播的桌面应用到逐房间的 WiFi 调查，我们设计并维护的四套系统。",
     "vinylfo_desc": "面向主播和音乐发烧友的自托管桌面应用：同步 Discogs 收藏、管理曲目排期，并向 Twitch 实时元数据、OBS 视频叠加层和 Stream Deck 集成提供数据。",
     "fwmon_title": "Firewall Monitor",
     "fwmon_desc": "面向防火墙集群（主流厂商）的厂商无关、轻量级中央 NMS：SNMP v2c/v3 轮询、syslog 与 sFlow 接收、SSH/TFTP 配置差异比对，以及通过 HTTPS/mTLS 的分布式 Firewall-Collector 探针。",
@@ -66,7 +66,12 @@
     "sys1": "直播桌面应用",
     "sys2": "集群 NMS",
     "sys3": "游戏插件",
-    "sys4": "WiFi 测绘队列"
+    "sys4": "WiFi 测绘队列",
+    "readout_systems": "系统",
+    "readout_public": "公开发布",
+    "readout_early": "抢先体验",
+    "readout_live": "实时遥测",
+    "readout_monitor": "监控 ↑"
   },
   "common": {
     "view_architecture": "核心架构",
@@ -79,9 +84,9 @@
     "tag": "职业简介",
     "heading": "简历、能力与认证",
     "intro": "25 年以上的从业经历，涵盖托管服务网络、全国运营商运维、数据中心基础设施和安全策略治理。",
-    "subtitle": "网络与基础设施",
+    "subtitle": "首席顾问 | 网络与基础设施",
     "location": "多伦多,安大略省 / 远程",
-    "exp1_role": "网络与基础设施负责人",
+    "exp1_role": "首席顾问",
     "exp1_period": "2024年8月 - 至今",
     "exp1_desc": "作为所有托管服务客户账户的高级技术权威,负责企业级基础设施迁移的架构设计。",
     "exp1_li1": "主导防火墙部署、安全策略治理及系统状态审查。",
@@ -136,7 +141,7 @@
   "services": {
     "tag": "时间与支持",
     "heading": "服务与会话预约",
-    "intro": "实践性部署辅导、架构审计和定制网络工具。",
+    "intro": "实践性部署辅导、架构审计和定制网络工具，由首席顾问直接指导。",
     "svc1_title": "一对一部署辅导",
     "svc1_desc": "边搭建边学习：规划网络布局、编写防火墙策略，并用安全模板部署探针。",
     "svc2_title": "架构审计与 CI/CD",
@@ -284,7 +289,7 @@
     "aria": "切换语言"
   },
   "meta": {
-    "title": "Technical Labs — 网络与基础设施"
+    "title": "Technical Labs — 首席顾问，网络与基础设施"
   },
   "a11y": {
     "skip": "跳至主要内容",
@@ -307,7 +312,7 @@
   "sections": {
     "projects": "生产软件",
     "services": "咨询与辅导",
-    "resume": "职业档案",
+    "resume": "首席顾问档案",
     "faq": "Technical Labs AI 与常见问题",
     "community": "社区与实验环境",
     "band": "会话预约"
@@ -377,5 +382,10 @@
     "dashboard": "仪表盘",
     "alerts_watch": "传感器持续监测时的警报",
     "reports": "PDF 与 CSV 测绘报告 · 定期报告"
-  }
+  },
+  "readout_systems": "系统",
+  "readout_public": "公开发布",
+  "readout_early": "抢先体验",
+  "readout_live": "实时遥测",
+  "readout_monitor": "监控 ↑"
 }
