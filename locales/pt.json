@@ -229,7 +229,7 @@
     "s3": "Porquê auto-hospedar?",
     "sa3": "Mantém os modelos e os dados dos projetos numa infraestrutura que controlamos, evita o preço por token na cloud para a IA e permite-nos afinar toda a stack de ponta a ponta.",
     "s5": "Posso usar os servidores?",
-    "sa5": "Não como alojamento partilhado. Os modelos de IA estão disponíveis para testadores convidados através do gateway; o site e os serviços dos projetos são públicos. Os servidores Proxmox alojados executam os nossos próprios serviços.",
+    "sa5": "Não como alojamento partilhado. Os modelos de IA estão disponíveis para testadores convidados através do gateway; o site e os serviços dos projetos são públicos. Os servidores do centro de dados executam os nossos próprios serviços.",
     "group_study": "Estudo e recursos",
     "t1": "Estou a estudar algo e preciso de um recurso. Podes ajudar?",
     "ta1": "Sim. Diz-me na <a href=\"#contact\">secção de contacto</a> o que estás a aprender e do que precisas — um ambiente de laboratório, um modelo, um conjunto de dados, um guia ou apenas uma indicação. Perguntar é gratuito; não é necessária uma reserva paga."
@@ -333,7 +333,7 @@
     "cta_full": "Ler o guia de IA",
     "status": "Estado ao vivo",
     "hosting": "Alojamento",
-    "hosting_v": "Site e serviços dos projetos em servidores virtuais no Nuday Data Centre — Proxmox com MultiPortal.io"
+    "hosting_v": "Site e serviços dos projetos nos nossos servidores físicos no Nuday Data Centre — Proxmox com MultiPortal.io"
   },
   "band": {
     "heading": "Pronto para agendar uma sessão?",

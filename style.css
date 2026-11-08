@@ -2103,13 +2103,6 @@ main,
   min-width: 0;
 }
 
-.faq-columns {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(1.5rem, 3.5vw, 2.75rem);
-  align-items: start;
-}
-
 .faq-item {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
@@ -3294,10 +3287,6 @@ html.js-enabled [data-reveal-delay="3"] {
 }
 
 @media (max-width: 820px) {
-  .faq-columns {
-    grid-template-columns: 1fr;
-  }
-
   .flow-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 0.45rem;

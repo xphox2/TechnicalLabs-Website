@@ -229,7 +229,7 @@
     "s3": "Why self-host?",
     "sa3": "It keeps the models and project data on infrastructure we control, avoids per-token cloud pricing for the AI, and lets us tune the stack end to end.",
     "s5": "Can I use the servers?",
-    "sa5": "Not as shared hosting. The AI models are available to invited testers through the gateway; the website and project services are public. The hosted Proxmox servers run our own services.",
+    "sa5": "Not as shared hosting. The AI models are available to invited testers through the gateway; the website and project services are public. The data-centre servers run our own services.",
     "group_study": "Studying & resources",
     "t1": "I'm studying something and need a resource. Can you help?",
     "ta1": "Yes. Tell me what you're learning and what you need — a lab environment, a model, a dataset, a guide, or just a pointer — in the <a href=\"#contact\">contact section</a>. It's free to ask; no paid booking is required."
@@ -330,7 +330,7 @@
     "cta_full": "Read the AI guide",
     "status": "Live status",
     "hosting": "Hosting",
-    "hosting_v": "Website & project services on virtual servers in Nuday Data Centre — Proxmox with MultiPortal.io"
+    "hosting_v": "Website & project services on our physical servers in Nuday Data Centre — Proxmox with MultiPortal.io"
   },
   "band": {
     "heading": "Ready to book a session?",
