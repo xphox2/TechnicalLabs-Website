@@ -2,6 +2,12 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.25] - 2026-11-14
+
+### Added
+- **Named models in Claude Code's `/model` list.** The `~/.claude/techlabs.json` (Setup B) and `~/.claude/techlabs-122b.json` (Setup A) snippets on `/ai` and `/ai/invite` now include a `modelPicker` block, so `/model` shows our models by name instead of Claude's. Needs Claude Code 2.1.242 or later.
+- A note to press **s** in `/model` to switch for one session: **Enter** saves the pick as the default for every new session, plain `claude` included.
+
 ## [1.0.24] - 2026-11-14
 
 ### Changed
