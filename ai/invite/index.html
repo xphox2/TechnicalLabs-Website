@@ -327,6 +327,13 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
     "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "900000",
     "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "32000",
     "API_TIMEOUT_MS": "1800000"
+  },
+  "modelPicker": {
+    "options": [
+      { "model": "ornith-1.5-35b-a3b", "label": "Ornith 1.5 35B", "description": "Setup B · 1M context · fast" },
+      { "model": "qwen3.8-turbo-27b", "label": "Qwen 3.8 TURBO 27B", "description": "Setup B · 262k context" }
+    ],
+    "replaceBuiltInOptions": true
   }
 }</pre>
       <p class="note">Start it with <code>claude --settings ~/.claude/techlabs.json</code>, or add <code>alias claude-techlabs='claude --settings ~/.claude/techlabs.json'</code> to your shell profile. Plain <code>claude</code> keeps using your normal Anthropic account, so you can run both side by side. The file holds your key: <code>chmod 600 ~/.claude/techlabs.json</code>.</p>
@@ -347,6 +354,12 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
     "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "900000",
     "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "32000",
     "API_TIMEOUT_MS": "1800000"
+  },
+  "modelPicker": {
+    "options": [
+      { "model": "ornith-1.5-122b", "label": "Ornith 1.5 122B", "description": "Setup A · 1M context · strongest" }
+    ],
+    "replaceBuiltInOptions": true
   }
 }</pre>
       <p class="note">For when the box runs Setup A: start it with <code>claude --settings ~/.claude/techlabs-122b.json</code>.</p>
@@ -354,7 +367,7 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
     <div class="snip">
       <header><b>How the mix works</b></header>
       <p>This is the team we tested as Setup B: Ornith-35B runs the session and hands work to TURBO Qwen sub-agents. Swap the two names if you'd rather have Qwen lead.</p>
-      <p><code>"CLAUDE_CODE_SUBAGENT_MODEL_FORCE": "1"</code> makes the sub-agent entry win over an agent's own <code>model:</code> setting. Leave out both sub-agent entries to let each agent choose instead: its <code>opus</code>, <code>sonnet</code> or <code>haiku</code> choice is mapped onto our models by the three alias entries. Inside a session, <code>/model qwen3.8-turbo-27b</code> switches the main model.</p>
+      <p><code>"CLAUDE_CODE_SUBAGENT_MODEL_FORCE": "1"</code> makes the sub-agent entry win over an agent's own <code>model:</code> setting. Leave out both sub-agent entries to let each agent choose instead: its <code>opus</code>, <code>sonnet</code> or <code>haiku</code> choice is mapped onto our models by the three alias entries. Inside a session, <code>/model</code> lists our models by name (the <code>modelPicker</code> block, Claude Code 2.1.242 or later). In that list press <strong>s</strong> to switch for this session only: <strong>Enter</strong> saves the pick as your default for every new session, plain <code>claude</code> included, so your normal Claude Code would then ask your Anthropic account for our model and fail until you pick a Claude model again. You can also type <code>/model qwen3.8-turbo-27b</code>.</p>
       <p>Keep <code>"ENABLE_TOOL_SEARCH": "false"</code>. Claude Code's tool search sends a block type made for Anthropic's own servers; ours now accept it, but with tool search off Claude Code skips that extra lookup. If you ever see "Unexpected item type in content", add <code>"CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": "1"</code>.</p>
       <p class="note">We tested this mix with Claude Code 2.1.317. Mixing works within one setup. In Setup A only the 122B runs, so the 35B and Qwen names in this file are offline. Qwen sub-agents stop at 262,144 tokens even when the main session goes to 1M. Everything goes through this address, so cloud Claude models can't join the same session.</p>
     </div>
