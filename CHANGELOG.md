@@ -6,7 +6,6 @@ All notable changes to the Technical Labs website are documented in this file.
 
 ### Changed
 - **TURBO Qwen reply speed corrected to ~29 tok/s** (was ~18) on `/ai` and `/ai/invite`. This is the 4-bit (NVFP4) build, measured 2026-11-14 with one person on the box and short coding prompts.
-- **`/ai` and `/ai/invite` catalog notes now explain `qwen3.8-turbo-27b-starchild`**, which testers see in the model list: it is the same TURBO model on a separate, slower test machine that is not part of either setup.
 
 ## [1.0.23] - 2026-11-08
 
