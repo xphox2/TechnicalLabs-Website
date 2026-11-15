@@ -2,6 +2,11 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.27] - 2026-11-15
+
+### Changed
+- Setup B's team-job results are back on `/ai` and `/ai/invite`, labelled **Ornith-35B**: the load-test chart shows both Ornith lines (122B and 35B) again, the table has both setups, and the catalog, Setup B card and expectations show the 35B's 22 of 22 jobs and its 11 to 29 minute averages. The minute-by-minute example stays Setup A only.
+
 ## [1.0.26] - 2026-11-15
 
 ### Removed
