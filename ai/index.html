@@ -136,9 +136,6 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
 .topnav a { color: var(--ink); text-decoration: none; }
 .topnav a:hover { text-decoration: underline; text-decoration-color: var(--accent); }
 .topnav .home { font-weight: 600; margin-right: auto; }
-.toggle { display: inline-flex; border: 1px solid var(--ink); border-radius: 3px; overflow: hidden; margin: 6px 0 10px; }
-.toggle button { font: 600 13px var(--f-mono); letter-spacing: 0.04em; background: transparent; color: var(--ink); border: 0; padding: 7px 14px; cursor: pointer; }
-.toggle button[aria-pressed="true"] { background: var(--ink); color: var(--sheet); }
 .steps li > span { display: block; }
 @media (max-width: 760px) {
   .readout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -302,7 +299,7 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
   "model": "techlabs/ornith-1.5-35b-a3b",
   "compaction": { "auto": true, "buffer": 60000 }
 }</pre>
-      <p class="note">Ornith-35B runs the session and OpenCode's sub-agents (<code>general</code>, <code>explore</code>). Keep the <code>"model"</code> line: without it OpenCode may fall back to another provider. In Setup A, change the model lines to <code>ornith-1.5-122b</code>.</p>
+      <p class="note">Ornith-35B runs the session and OpenCode's built-in sub-agents. Keep the <code>"model"</code> line: without it OpenCode may fall back to another provider. In Setup A, change the model lines to <code>ornith-1.5-122b</code>.</p>
     </div>
     <div class="snip">
       <header><b>Claude Code: ~/.claude/techlabs.json</b><button class="copy" type="button" data-target="snip-cc">Copy</button></header>
@@ -532,15 +529,16 @@ function drawScale() {
       const r = byRound(s, u);
       hits.push([px, py, `<b>${S.name}</b><br>${u} ${u > 1 ? "people" : "person"} at once: average ${fmt(avg(r.map(j => j[3])))}<br>${r.length} of ${r.length} jobs passed`]);
     });
-    ends[s] = pts[pts.length - 1];
+    if (pts.length) ends[s] = pts[pts.length - 1];
   }
   // Direct labels right of the last point; nudge apart if they meet.
-  const lab = { A: [ends.A[0] + 14, ends.A[1] + 5], B: [ends.B[0] + 14, ends.B[1] + 5] };
-  if (Math.abs(lab.A[1] - lab.B[1]) < 18) {
+  const lab = {};
+  for (const s in ends) lab[s] = [ends[s][0] + 14, ends[s][1] + 5];
+  if (lab.A && lab.B && Math.abs(lab.A[1] - lab.B[1]) < 18) {
     const up = lab.A[1] <= lab.B[1] ? "A" : "B", dn = up === "A" ? "B" : "A", mid = (lab.A[1] + lab.B[1]) / 2;
     lab[up][1] = mid - 9; lab[dn][1] = mid + 9;
   }
-  for (const s of ["A", "B"]) o += `<text x="${lab[s][0]}" y="${lab[s][1]}" fill="var(--ink)" font-family="var(--f-body)" font-size="14" font-weight="700" paint-order="stroke" stroke="var(--sheet)" stroke-width="4">${s === "A" ? "A: Ornith-122B" : "B: Ornith-35B"}</text>`;
+  for (const s in lab) o += `<text x="${lab[s][0]}" y="${lab[s][1]}" fill="var(--ink)" font-family="var(--f-body)" font-size="14" font-weight="700" paint-order="stroke" stroke="var(--sheet)" stroke-width="4">${s === "A" ? "A: Ornith-122B" : "B: Ornith-35B"}</text>`;
   hits.forEach((h, i) => o += `<circle class="hit" data-i="${i}" cx="${h[0]}" cy="${h[1]}" r="11" fill="transparent"/>`);
   svg.innerHTML = o;
   svg.querySelectorAll(".hit").forEach(c => {
@@ -586,9 +584,7 @@ function drawGantt(key) {
   });
   svg.innerHTML = out;
   document.getElementById("steps").innerHTML = run.steps.map(([t, s]) => `<li data-t="${t}"><span>${s}</span></li>`).join("");
-  document.querySelectorAll(".toggle button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.run === key)));
-}
-document.querySelectorAll(".toggle button").forEach(b => b.addEventListener("click", () => drawGantt(b.dataset.run)));
+  }
 document.querySelectorAll("button.copy").forEach(b => b.addEventListener("click", async () => {
   const t = document.getElementById(b.dataset.target).textContent;
   try { await navigator.clipboard.writeText(t); b.textContent = "Copied"; }

@@ -2,6 +2,13 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.28] - 2026-11-15
+
+### Fixed
+- The `/ai` load-test chart builds its line labels from the setups that have data, so it no longer blanks the chart, table and timeline if one setup's results are missing.
+- Removed the unused setup-toggle styles and click handlers left from the old Setup A/B timeline switch.
+- The OpenCode note now says "built-in sub-agents" instead of naming agent keys the snippet no longer sets.
+
 ## [1.0.27] - 2026-11-15
 
 ### Changed
