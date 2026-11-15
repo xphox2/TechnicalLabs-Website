@@ -326,7 +326,7 @@
     "hardware": "Serveur IA",
     "hardware_v": "ASUS Ascent GX10 · NVIDIA GB10 · 128 Go de mémoire unifiée, dans notre lab",
     "context": "Modèles",
-    "context_v": "Modèles Ornith et Qwen auto-hébergés, jusqu'à un million de tokens de contexte",
+    "context_v": "Modèles Ornith auto-hébergés, jusqu'à un million de tokens de contexte",
     "clients": "Depuis",
     "clients_v": "En ligne depuis le 6 juin 2019",
     "cta_guide": "Voir les projets",

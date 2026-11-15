@@ -2,6 +2,13 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.26] - 2026-11-15
+
+### Removed
+- **Qwen is gone from the site.** `/ai` and `/ai/invite` now cover only Ornith-1.5-122B (Setup A) and Ornith-1.5-35B (Setup B): Qwen's catalog column, its safety-filter warning, and the `qwen3.8-turbo-27b` entries in the OpenCode and Claude Code snippets are removed (sub-agents now use Ornith-35B).
+- Setup B's team-job load test and its example timeline are removed: they ran Ornith-35B together with Qwen sub-agents, so they were not Ornith-35B results. The page says they will be rerun on Ornith-35B alone; Setup A's results are unchanged.
+- The homepage AI card says "Self-hosted Ornith models" in all 10 languages.
+
 ## [1.0.25] - 2026-11-14
 
 ### Added

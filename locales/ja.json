@@ -326,7 +326,7 @@
     "hardware": "AIサーバー",
     "hardware_v": "ASUS Ascent GX10 · NVIDIA GB10 · 128GB 統合メモリ、当社ラボ内",
     "context": "モデル",
-    "context_v": "セルフホストの Ornith と Qwen モデル、最大100万トークンのコンテキスト",
+    "context_v": "セルフホストの Ornith モデル、最大100万トークンのコンテキスト",
     "clients": "稼働開始",
     "clients_v": "2019年6月6日から稼働",
     "cta_guide": "プロジェクトを見る",
