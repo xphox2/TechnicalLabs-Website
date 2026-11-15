@@ -323,7 +323,7 @@
     "hardware": "AI server",
     "hardware_v": "ASUS Ascent GX10 · NVIDIA GB10 · 128 GB unified memory, in our lab",
     "context": "Models",
-    "context_v": "Self-hosted Ornith and Qwen models, up to a million tokens of context",
+    "context_v": "Self-hosted Ornith models, up to a million tokens of context",
     "clients": "Since",
     "clients_v": "Live since June 6, 2019",
     "cta_guide": "See the projects",

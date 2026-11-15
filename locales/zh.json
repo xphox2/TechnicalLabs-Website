@@ -326,7 +326,7 @@
     "hardware": "AI 服务器",
     "hardware_v": "ASUS Ascent GX10 · NVIDIA GB10 · 128 GB 统一内存，位于我们的实验室",
     "context": "模型",
-    "context_v": "自托管 Ornith 与 Qwen 模型，最高一百万 token 上下文",
+    "context_v": "自托管 Ornith 模型，最高一百万 token 上下文",
     "clients": "上线",
     "clients_v": "自 2019 年 6 月 6 日上线",
     "cta_guide": "查看项目",

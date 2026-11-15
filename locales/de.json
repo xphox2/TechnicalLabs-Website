@@ -326,7 +326,7 @@
     "hardware": "KI-Server",
     "hardware_v": "ASUS Ascent GX10 · NVIDIA GB10 · 128 GB Unified Memory, in unserem Lab",
     "context": "Modelle",
-    "context_v": "Selbst gehostete Ornith- und Qwen-Modelle, bis zu einer Million Token Kontext",
+    "context_v": "Selbst gehostete Ornith-Modelle, bis zu einer Million Token Kontext",
     "clients": "Seit",
     "clients_v": "Live seit dem 6. Juni 2019",
     "cta_guide": "Projekte ansehen",

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Technical Labs AI | Self-hosted AI coding models</title>
-<meta name="description" content="Technical Labs AI: self-hosted Ornith and Qwen coding models on an ASUS Ascent GX10, for Claude Code, OpenCode and the Claude app. Setup guide, measured results and company connector.">
+<meta name="description" content="Technical Labs AI: self-hosted Ornith coding models on an ASUS Ascent GX10, for Claude Code, OpenCode and the Claude app. Setup guide, measured results and company connector.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -20,7 +20,6 @@
   --ok: #2b7a5d;
   --lane-orch: #13203a;
   --lane-ornith: #d9502a;
-  --lane-qwen: #2f6fa8;
   --lane-fable: #8a5cb8;
   --setA: #d9502a;
   --setB: #2f6fa8;
@@ -34,14 +33,14 @@
   :root:not([data-theme="light"]) {
     --paper: #0c121b; --sheet: #111a26; --ink: #e4e9f0; --muted: #96a2b3; --rule: #243243;
     --accent: #ff7a50; --ok: #4fb38c;
-    --lane-orch: #e4e9f0; --lane-ornith: #ff7a50; --lane-qwen: #5aa2e0; --lane-fable: #b48ae0; --setA: #ec6234; --setB: #4a8fd0; --lane-opus: #e0b25a;
+    --lane-orch: #e4e9f0; --lane-ornith: #ff7a50; --lane-fable: #b48ae0; --setA: #ec6234; --setB: #4a8fd0; --lane-opus: #e0b25a;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --paper: #0c121b; --sheet: #111a26; --ink: #e4e9f0; --muted: #96a2b3; --rule: #243243;
   --accent: #ff7a50; --ok: #4fb38c;
-  --lane-orch: #e4e9f0; --lane-ornith: #ff7a50; --lane-qwen: #5aa2e0; --lane-fable: #b48ae0; --setA: #ec6234; --setB: #4a8fd0; --lane-opus: #e0b25a;
+  --lane-orch: #e4e9f0; --lane-ornith: #ff7a50; --lane-fable: #b48ae0; --setA: #ec6234; --setB: #4a8fd0; --lane-opus: #e0b25a;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -137,9 +136,6 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
 .topnav a { color: var(--ink); text-decoration: none; }
 .topnav a:hover { text-decoration: underline; text-decoration-color: var(--accent); }
 .topnav .home { font-weight: 600; margin-right: auto; }
-.toggle { display: inline-flex; border: 1px solid var(--ink); border-radius: 3px; overflow: hidden; margin: 6px 0 10px; }
-.toggle button { font: 600 13px var(--f-mono); letter-spacing: 0.04em; background: transparent; color: var(--ink); border: 0; padding: 7px 14px; cursor: pointer; }
-.toggle button[aria-pressed="true"] { background: var(--ink); color: var(--sheet); }
 .steps li > span { display: block; }
 @media (max-width: 760px) {
   .readout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -161,7 +157,7 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
 <section class="sheet">
   <div class="tag"><span><b>Invitation</b></span><span>TechLabs test program</span><span>Tested November 2026</span></div>
   <h1>Your own AI coding team, <span class="hot">on our hardware</span></h1>
-  <p class="lede">We're inviting a small group of developers to test TechLabs: open models running on one ASUS Ascent GX10 in our lab, served from one private address that works in Claude Code and OpenCode. We tested two ways to set the box up, each with full AI coding teams for up to six people at once. Conversations can run up to a million tokens long.</p>
+  <p class="lede">We're inviting a small group of developers to test TechLabs: open models running on one ASUS Ascent GX10 in our lab, served from one private address that works in Claude Code and OpenCode. We tested two ways to set the box up, both running Ornith, each with full AI coding teams for up to six people at once. Conversations can run up to a million tokens long.</p>
   <div class="readout">
     <div><div class="n" id="ro-pass">–</div><div class="l">team jobs passed their hidden tests</div></div>
     <div><div class="n hot">1,010,000</div><div class="l">tokens in one Ornith conversation</div></div>
@@ -173,7 +169,7 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
 <section class="sheet">
   <div class="tag"><span><b>Options</b></span><span>One box, two ways to run it</span></div>
   <h2>Two setups, and when each one wins</h2>
-  <p>The box runs one setup at a time. We start the test on Setup B. Both passed every job we gave them; they differ in speed, depth and how far each conversation can go.</p>
+  <p>The box runs one setup at a time. We start the test on Setup B. Both run Ornith; they differ in speed, depth and how far each conversation can go.</p>
   <div class="grid2">
     <div class="setcard" style="--c: var(--setA)">
       <div class="k">Setup A</div>
@@ -189,12 +185,11 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
     </div>
     <div class="setcard" style="--c: var(--setB)">
       <div class="k">Setup B <span class="now">Start here</span></div>
-      <h3>The fast pair</h3>
-      <div class="sub">Ornith-1.5-35B · 3B of 35B active per token<br>+ Qwen3.8-27B TURBO · dense, all 27B active per token</div>
+      <h3>The fast one</h3>
+      <div class="sub">Ornith-1.5-35B · 3B of 35B active per token</div>
       <ul>
         <li><b>Fast.</b> Ornith-35B replies at about 79 tokens a second, 2.6 times the 122B.</li>
         <li><b>Quicker long conversations.</b> A follow-up at ~1M tokens starts in 34 seconds, not 93, and a fresh 1M read takes about 25 minutes.</li>
-        <li><b>A fast second model.</b> Qwen3.8-27B TURBO, a fine-tune by DavidAU trained to think in far fewer tokens, so the jobs it takes on finish quickly. Its creator removed its safety refusals. It replies at about 18 tokens a second and handles up to 262k tokens.</li>
         <li><b>Proven with six people at once:</b> 22 of 22 team jobs passed and nothing had to queue. Jobs averaged 11 to 29 minutes from one to six people, faster than Setup A at every size.</li>
         <li><b>Smaller models.</b> Ornith-35B scores 59.6 on SWE-bench Pro against the 122B's 76.9.</li>
       </ul>
@@ -206,17 +201,17 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
 <section class="sheet">
   <div class="tag"><span><b>Load test</b></span><span>Full AI teams, 1 to 6 people at once</span></div>
   <h2>How long a team job takes as more people join</h2>
-  <p>Each job is a full team: Ornith plans and checks, and hands the work to local Ornith sub-agents and cloud Claude Opus and Fable (plus TURBO Qwen in Setup B). Half the jobs built a firewall log analyzer from a spec (18 hidden tests). The other half fixed a buggy checkout library (10 hidden tests). The hidden tests were never shown to the agents.</p>
+  <p>Each job is a full team: Ornith plans and checks, and hands the work to local Ornith sub-agents and cloud Claude Opus and Fable. Half the jobs built a firewall log analyzer from a spec (18 hidden tests). The other half fixed a buggy checkout library (10 hidden tests). The hidden tests were never shown to the agents.</p>
   <div class="chartlegend" aria-hidden="true">
     <span><span class="swatch" style="--c: var(--setA)"></span>Setup A: Ornith-122B</span>
-    <span><span class="swatch" style="--c: var(--setB)"></span>Setup B: Ornith-35B + TURBO Qwen</span>
+    <span><span class="swatch" style="--c: var(--setB)"></span>Setup B: Ornith-35B</span>
     <span class="key">Small dots are single jobs; the line is the average.</span>
   </div>
   <div class="chartwrap"><svg id="scale" viewBox="0 0 960 390" role="img" aria-labelledby="scale-desc"><desc id="scale-desc">Job time in minutes against the number of people running jobs at once. The table below lists the same numbers.</desc></svg><div id="tip" role="presentation"></div></div>
   <div class="tablebox" style="margin-top:18px">
   <table>
     <thead>
-      <tr><th rowspan="2">People at once</th><th colspan="3" class="grp" style="--c: var(--setA)">Setup A: Ornith-122B</th><th colspan="3" class="grp" style="--c: var(--setB)">Setup B: Ornith-35B + TURBO Qwen</th></tr>
+      <tr><th rowspan="2">People at once</th><th colspan="3" class="grp" style="--c: var(--setA)">Setup A: Ornith-122B</th><th colspan="3" class="grp" style="--c: var(--setB)">Setup B: Ornith-35B</th></tr>
       <tr><th class="num">Passed</th><th class="num">Average</th><th class="num">Slowest</th><th class="num">Passed</th><th class="num">Average</th><th class="num">Slowest</th></tr>
     </thead>
     <tbody id="scaletable"></tbody>
@@ -228,11 +223,7 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
 <section class="sheet">
   <div class="tag"><span><b>Field test</b></span><span>One job, start to finish</span></div>
   <h2>A real job, minute by minute</h2>
-  <p>The same job in each setup, one person on the box: build a firewall log analyzer from a written spec. Ornith planned it, handed out the work and checked the result itself.</p>
-  <div class="toggle" role="group" aria-label="Choose a setup">
-    <button type="button" data-run="B" aria-pressed="true">Setup B · 35B + TURBO</button>
-    <button type="button" data-run="A" aria-pressed="false">Setup A · 122B</button>
-  </div>
+  <p>One job on Setup A, one person on the box: build a firewall log analyzer from a written spec. Ornith planned it, handed out the work and checked the result itself.</p>
   <div class="legend" id="ganttlegend" aria-hidden="true"></div>
   <div class="chartbox"><svg id="gantt" viewBox="0 0 960 300" role="img" aria-label="Timeline of one job"></svg></div>
   <ol class="steps" id="steps"></ol>
@@ -241,28 +232,28 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
 <section class="sheet">
   <div class="tag"><span><b>Catalog</b></span><span>Every model we serve, measured on this box</span></div>
   <h2>Every model on the box</h2>
-  <p>Use the model name in the second row for both the OpenAI and Anthropic formats. All three names stay in the catalog; only the models in the setup that's running answer. If you call a model whose setup isn't loaded, the gateway returns a clear "model not found" error instead of answering with a different model. Setup B is the default, and we warn you before switching.</p>
+  <p>Use the model name in the second row for both the OpenAI and Anthropic formats. Both names stay in the catalog; only the model in the setup that's running answers. If you call a model whose setup isn't loaded, the gateway returns a clear "model not found" error instead of answering with a different model. Setup B is the default, and we warn you before switching.</p>
   <div class="tablebox">
   <table class="cmp">
-    <thead><tr><th></th><th class="num grp" style="--c: var(--setA)">Ornith-1.5-122B</th><th class="num grp" style="--c: var(--setB)">Ornith-1.5-35B</th><th class="num grp" style="--c: var(--setB)">Qwen3.8-27B TURBO</th></tr></thead>
+    <thead><tr><th></th><th class="num grp" style="--c: var(--setA)">Ornith-1.5-122B</th><th class="num grp" style="--c: var(--setB)">Ornith-1.5-35B</th></tr></thead>
     <tbody>
-      <tr><td>Setup</td><td class="num">A</td><td class="num">B (start here)</td><td class="num">B (start here)</td></tr>
-      <tr><td>Model name (both formats)</td><td class="num build">ornith-1.5-122b</td><td class="num build">ornith-1.5-35b-a3b</td><td class="num build">qwen3.8-turbo-27b</td></tr>
-      <tr><td>Exact build we run</td><td class="num build">ornith-ai/<wbr>Ornith-1.5-122B-NVFP4</td><td class="num build">ornith-ai/<wbr>Ornith-1.5-35B-A3B-NVFP4</td><td class="num build">our 4-bit build of DavidAU/<wbr>Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU</td></tr>
-      <tr><td>Parameters used per token</td><td class="num">10B of 122B (mixture of experts)</td><td class="num">3B of 35B (mixture of experts)</td><td class="num">all 27B (dense)</td></tr>
-      <tr><td>Longest conversation</td><td class="num">1,010,000 tokens</td><td class="num">1,010,000 tokens</td><td class="num">262,144 tokens</td></tr>
-      <tr><td>Reply speed, short prompt</td><td class="num">~30 tok/s</td><td class="num">~79 tok/s</td><td class="num">~29 tok/s</td></tr>
-      <tr><td>Short-answer checks (16 questions)</td><td class="num">14 / 16</td><td class="num">15 / 16</td><td class="num">15 / 16</td></tr>
-      <tr><td>Team jobs passed in our tests</td><td class="num">22 / 22 (1–6 people)</td><td class="num" colspan="2" id="cat-b-jobs">22 / 22 as a pair (1–6 people)</td></tr>
-      <tr><td>Follow-up turn at ~256k</td><td class="num">36 s, then 18 tok/s</td><td class="num">15 s, then 37 tok/s</td><td class="num">13–28 s at ~244k, then 18–22 tok/s</td></tr>
-      <tr><td>Follow-up turn at ~1M</td><td class="num">93 s, then 11 tok/s</td><td class="num">34 s, then 18 tok/s</td><td class="num">n/a</td></tr>
-      <tr><td>Fresh read of 1M tokens</td><td class="num">~60 min</td><td class="num">~25 min</td><td class="num">n/a</td></tr>
-      <tr><td>Recall of 4 facts hidden in ~1M tokens</td><td class="num">4 / 4</td><td class="num">4 / 4</td><td class="num">n/a</td></tr>
-      <tr><td>SWE-bench Pro / Terminal-Bench 2.1†</td><td class="num">76.9 / 81.2</td><td class="num">59.6 / 67.8</td><td class="num">not published</td></tr>
+      <tr><td>Setup</td><td class="num">A</td><td class="num">B (start here)</td></tr>
+      <tr><td>Model name (both formats)</td><td class="num build">ornith-1.5-122b</td><td class="num build">ornith-1.5-35b-a3b</td></tr>
+      <tr><td>Exact build we run</td><td class="num build">ornith-ai/<wbr>Ornith-1.5-122B-NVFP4</td><td class="num build">ornith-ai/<wbr>Ornith-1.5-35B-A3B-NVFP4</td></tr>
+      <tr><td>Parameters used per token</td><td class="num">10B of 122B (mixture of experts)</td><td class="num">3B of 35B (mixture of experts)</td></tr>
+      <tr><td>Longest conversation</td><td class="num">1,010,000 tokens</td><td class="num">1,010,000 tokens</td></tr>
+      <tr><td>Reply speed, short prompt</td><td class="num">~30 tok/s</td><td class="num">~79 tok/s</td></tr>
+      <tr><td>Short-answer checks (16 questions)</td><td class="num">14 / 16</td><td class="num">15 / 16</td></tr>
+      <tr><td>Team jobs passed in our tests</td><td class="num">22 / 22 (1–6 people)</td><td class="num" id="cat-b-jobs">22 / 22 (1–6 people)</td></tr>
+      <tr><td>Follow-up turn at ~256k</td><td class="num">36 s, then 18 tok/s</td><td class="num">15 s, then 37 tok/s</td></tr>
+      <tr><td>Follow-up turn at ~1M</td><td class="num">93 s, then 11 tok/s</td><td class="num">34 s, then 18 tok/s</td></tr>
+      <tr><td>Fresh read of 1M tokens</td><td class="num">~60 min</td><td class="num">~25 min</td></tr>
+      <tr><td>Recall of 4 facts hidden in ~1M tokens</td><td class="num">4 / 4</td><td class="num">4 / 4</td></tr>
+      <tr><td>SWE-bench Pro / Terminal-Bench 2.1†</td><td class="num">76.9 / 81.2</td><td class="num">59.6 / 67.8</td></tr>
     </tbody>
   </table>
   </div>
-  <p class="note" style="margin-top:12px">TURBO is a community fine-tune of Qwen3.8-27B by DavidAU, trained to think in fewer tokens. Its creator removed its safety refusals, so it will answer requests the other models decline. Its creator publishes general-reasoning scores rather than coding ones, so we judge it on our own team jobs above. All three are 4-bit (NVFP4) builds, which is what lets them fit in the box's 128 GB. "Follow-up turn" is the wait for the first word in a long conversation the box has already read, then the reply speed. †Scores published by each model's makers, in slightly different test setups. Everything else we measured ourselves, one person on the box. Older configs that use <code>ornith-122b-openai</code>, <code>ornith-35b-anthropic</code> or <code>qwen3.8-27b-turbo-openai</code> keep working; the names in the table are the ones to use.</p>
+  <p class="note" style="margin-top:12px">Both are 4-bit (NVFP4) builds, which is what lets them fit in the box's 128 GB. "Follow-up turn" is the wait for the first word in a long conversation the box has already read, then the reply speed. †Scores published by each model's makers, in slightly different test setups. Everything else we measured ourselves, one person on the box. Older configs that use <code>ornith-122b-openai</code> or <code>ornith-35b-anthropic</code> keep working; the names in the table are the ones to use.</p>
 </section>
 
 <section class="sheet">
@@ -273,7 +264,6 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
     <div><span class="k">Sharing</span><h3>More people, slower jobs, none dropped</h3><p>Team jobs got slower as more people joined, but every one passed: from one to six people at once they averaged 11 to 29 minutes on Setup B and 27 to 40 minutes on Setup A. Nothing ever had to queue.</p></div>
     <div><span class="k">Long context</span><h3>Big conversations stay usable after the first read</h3><p>The box remembers what it has already read, so a follow-up turn near a million tokens starts in about 30 seconds on Setup B and about 90 on Setup A. Reading a huge conversation in from scratch takes 25 to 60 minutes.</p></div>
     <div><span class="k">Fair use</span><h3>Huge new prompts slow everyone</h3><p>While the box reads in a very large new prompt, everyone else's replies nearly stop until it's done. If you're about to paste in hundreds of thousands of tokens, give the group a heads-up.</p></div>
-    <div><span class="k">Content</span><h3>One model has no safety filter</h3><p>Qwen3.8-27B TURBO in Setup B had its refusals removed by its creator, so it will answer requests the other models decline. What you ask it is your responsibility.</p></div>
     <div><span class="k">Privacy</span><h3>Your code stays yours</h3><p>We log who used which model and how many tokens. We don't store your prompts or the replies.</p></div>
     <div><span class="k">Beta</span><h3>Things will change</h3><p>We may switch between the two setups during the test, and we'll warn you before any planned downtime. Tell us what breaks: that's the point.</p></div>
   </div>
@@ -282,7 +272,7 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
 <section class="sheet" id="connect">
   <div class="tag"><span><b>Setup</b></span><span>About two minutes</span></div>
   <h2>Connect</h2>
-  <p>You'll get a personal key. Paste it where it says <code>YOUR_KEY</code>. These settings start you on Setup B. The OpenCode file lists all three models; in Setup A the 35B and Qwen names return a clear error until we switch back.</p>
+  <p>You'll get a personal key. Paste it where it says <code>YOUR_KEY</code>. These settings start you on Setup B. The OpenCode file lists both models; in Setup A the 35B name returns a clear error until we switch back.</p>
   <div class="card" style="--c: var(--accent); margin: 6px 0 22px">
     <h3>Using the Claude app?</h3>
     <p>Add the TechLabs connector and Claude can hand work to our models while it stays in charge of the chat. The steps are under <a href="#connector">Connector: connect and test</a> below. To run whole coding sessions on our models instead, use Claude Code or OpenCode with the settings here. Either way you need your own TechLabs key: ask Nicholas and he'll send you one. Your normal Claude account keeps working as before.</p>
@@ -302,19 +292,14 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
       },
       "models": {
         "ornith-1.5-35b-a3b": { "limit": { "context": 1010000, "input": 960000, "output": 32768 } },
-        "ornith-1.5-122b": { "limit": { "context": 1010000, "input": 960000, "output": 32768 } },
-        "qwen3.8-turbo-27b": { "limit": { "context": 262144, "input": 229376, "output": 32768 } }
+        "ornith-1.5-122b": { "limit": { "context": 1010000, "input": 960000, "output": 32768 } }
       }
     }
   },
   "model": "techlabs/ornith-1.5-35b-a3b",
-  "agents": {
-    "general": { "model": "techlabs/qwen3.8-turbo-27b" },
-    "explore": { "model": "techlabs/qwen3.8-turbo-27b" }
-  },
   "compaction": { "auto": true, "buffer": 60000 }
 }</pre>
-      <p class="note">Ornith-35B runs the session and OpenCode's sub-agents (<code>general</code>, <code>explore</code>) use TURBO Qwen. Keep the <code>"model"</code> line: without it OpenCode may fall back to another provider. In Setup A, change the model lines to <code>ornith-1.5-122b</code>.</p>
+      <p class="note">Ornith-35B runs the session and OpenCode's built-in sub-agents. Keep the <code>"model"</code> line: without it OpenCode may fall back to another provider. In Setup A, change the model lines to <code>ornith-1.5-122b</code>.</p>
     </div>
     <div class="snip">
       <header><b>Claude Code: ~/.claude/techlabs.json</b><button class="copy" type="button" data-target="snip-cc">Copy</button></header>
@@ -323,10 +308,10 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
     "ANTHROPIC_BASE_URL": "https://llm.technicallabs.org:8443",
     "ANTHROPIC_AUTH_TOKEN": "YOUR_KEY",
     "ANTHROPIC_MODEL": "ornith-1.5-35b-a3b",
-    "CLAUDE_CODE_SUBAGENT_MODEL": "qwen3.8-turbo-27b",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "ornith-1.5-35b-a3b",
     "CLAUDE_CODE_SUBAGENT_MODEL_FORCE": "1",
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "ornith-1.5-35b-a3b",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "qwen3.8-turbo-27b",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "ornith-1.5-35b-a3b",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "ornith-1.5-35b-a3b",
     "ENABLE_TOOL_SEARCH": "false",
     "CLAUDE_CODE_MAX_CONTEXT_TOKENS": "1000000",
@@ -336,14 +321,13 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
   },
   "modelPicker": {
     "options": [
-      { "model": "ornith-1.5-35b-a3b", "label": "Ornith 1.5 35B", "description": "Setup B · 1M context · fast" },
-      { "model": "qwen3.8-turbo-27b", "label": "Qwen 3.8 TURBO 27B", "description": "Setup B · 262k context" }
+      { "model": "ornith-1.5-35b-a3b", "label": "Ornith 1.5 35B", "description": "Setup B · 1M context · fast" }
     ],
     "replaceBuiltInOptions": true
   }
 }</pre>
       <p class="note">Start it with <code>claude --settings ~/.claude/techlabs.json</code>, or add <code>alias claude-techlabs='claude --settings ~/.claude/techlabs.json'</code> to your shell profile. Plain <code>claude</code> keeps using your normal Anthropic account, so you can run both side by side. The file holds your key: <code>chmod 600 ~/.claude/techlabs.json</code>.</p>
-      <p class="note">This is Setup B: Ornith-35B runs the session and every sub-agent is TURBO Qwen.</p>
+      <p class="note">This is Setup B: Ornith-35B runs the session and every sub-agent.</p>
     </div>
   </div>
   <div class="grid2" style="margin-top:22px">
@@ -371,11 +355,11 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
       <p class="note">For when the box runs Setup A: start it with <code>claude --settings ~/.claude/techlabs-122b.json</code>.</p>
     </div>
     <div class="snip">
-      <header><b>How the mix works</b></header>
-      <p>This is the team we tested as Setup B: Ornith-35B runs the session and hands work to TURBO Qwen sub-agents. Swap the two names if you'd rather have Qwen lead.</p>
-      <p><code>"CLAUDE_CODE_SUBAGENT_MODEL_FORCE": "1"</code> makes the sub-agent entry win over an agent's own <code>model:</code> setting. Leave out both sub-agent entries to let each agent choose instead: its <code>opus</code>, <code>sonnet</code> or <code>haiku</code> choice is mapped onto our models by the three alias entries. Inside a session, <code>/model</code> lists our models by name (the <code>modelPicker</code> block, Claude Code 2.1.242 or later). In that list press <strong>s</strong> to switch for this session only: <strong>Enter</strong> saves the pick as your default for every new session, plain <code>claude</code> included, so your normal Claude Code would then ask your Anthropic account for our model and fail until you pick a Claude model again. You can also type <code>/model qwen3.8-turbo-27b</code>.</p>
+      <header><b>How the settings work</b></header>
+      <p>On Setup B, Ornith-35B runs the session and every sub-agent it starts.</p>
+      <p><code>"CLAUDE_CODE_SUBAGENT_MODEL_FORCE": "1"</code> makes the sub-agent entry win over an agent's own <code>model:</code> setting. Leave out both sub-agent entries to let each agent choose instead: its <code>opus</code>, <code>sonnet</code> or <code>haiku</code> choice is mapped onto our models by the three alias entries. Inside a session, <code>/model</code> lists our models by name (the <code>modelPicker</code> block, Claude Code 2.1.242 or later). In that list press <strong>s</strong> to switch for this session only: <strong>Enter</strong> saves the pick as your default for every new session, plain <code>claude</code> included, so your normal Claude Code would then ask your Anthropic account for our model and fail until you pick a Claude model again. You can also type <code>/model ornith-1.5-35b-a3b</code>.</p>
       <p>Keep <code>"ENABLE_TOOL_SEARCH": "false"</code>. Claude Code's tool search sends a block type made for Anthropic's own servers; ours now accept it, but with tool search off Claude Code skips that extra lookup. If you ever see "Unexpected item type in content", add <code>"CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": "1"</code>.</p>
-      <p class="note">We tested this mix with Claude Code 2.1.317. Mixing works within one setup. In Setup A only the 122B runs, so the 35B and Qwen names in this file are offline. Qwen sub-agents stop at 262,144 tokens even when the main session goes to 1M. Everything goes through this address, so cloud Claude models can't join the same session.</p>
+      <p class="note">We tested these settings with Claude Code 2.1.317. In Setup A only the 122B runs, so the 35B name in this file is offline. Everything goes through this address, so cloud Claude models can't join the same session.</p>
     </div>
   </div>
 </section>
@@ -401,14 +385,14 @@ th.grp { border-bottom: 2px solid var(--c); color: var(--ink); }
         <li>In a chat, turn it on under <b>+ → Connectors</b>.</li>
       </ol>
       <p class="note">Claude stays in charge of the conversation and calls our models as tools: <code>list_models</code> shows the model catalog, <code>ask_model</code> sends a prompt. Each answer has a 200-second limit, so ask for focused pieces of work. On Pro or Max, add it yourself under <b>Customize → Connectors → Add custom connector</b>.</p>
-      <pre>Use TechLabs: ask qwen3.8-turbo-27b to write
+      <pre>Use TechLabs: ask ornith-1.5-35b-a3b to write
 unit tests for this function, then review them.</pre>
     </div>
     <div class="card" style="--c: var(--setA)">
       <h3>Claude Code through our LiteLLM gateway</h3>
       <div class="sub">every request goes to TechLabs · your normal Claude keeps working</div>
       <p>Our gateway is LiteLLM, and it speaks Claude Code's own protocol. Give each developer the settings file from <a href="#connect">Connect</a> with their own key, then:</p>
-      <pre># our models: Ornith-35B leads, TURBO Qwen sub-agents
+      <pre># our models: Ornith-35B for the session and sub-agents
 claude --settings ~/.claude/techlabs.json
 
 # one-off job without opening a session
@@ -484,7 +468,7 @@ ornith-1.5-35b-a3b what 17 times 23 is.</pre>
 
 <script>
 const DATA = {
-  // One entry per team job. set A = Ornith-122B alone, B = Ornith-35B + Qwen. job: build (18 hidden tests) | fix (10).
+  // One entry per team job. set A = Ornith-122B, B = Ornith-35B. job: build (18 hidden tests) | fix (10).
   jobs: [
     ["A",1,"build",27.1,"18/18",2.59],["A",1,"fix",30.9,"10/10",1.52],
     ["A",2,"build",45.5,"18/18",3.71],["A",2,"fix",24.8,"10/10",1.22],
@@ -499,7 +483,7 @@ const DATA = {
     ["B",5,"build",18.3,"18/18",1.69],["B",5,"fix",19.9,"10/10",1.00],["B",5,"build",29.9,"18/18",1.49],["B",5,"fix",17.4,"10/10",0.90],["B",5,"build",29.3,"18/18",1.24],
     ["B",6,"build",26.2,"18/18",1.68],["B",6,"fix",16.9,"10/10",1.15],["B",6,"build",24.7,"18/18",2.03],["B",6,"fix",39.1,"10/10",1.25],["B",6,"build",38.5,"18/18",2.68],["B",6,"fix",30.2,"10/10",1.60],
   ],
-  // Example timelines, seconds from start. Lane: orch | ornith | qwen | fable | opus
+  // Example timelines, seconds from start. Lane: orch | ornith | fable | opus
   runs: {
     A: { total: 1626,
       bars: [["orch",0,422],["fable",422,631],["ornith",422,925],["orch",925,1281],["ornith",1281,1491],["orch",1491,1548],["opus",1548,1608],["orch",1608,1626]],
@@ -510,18 +494,9 @@ const DATA = {
         ["26 min","Opus reviews the code against the spec in one minute and finds no violations."],
         ["27 min",'Done: <span class="pass">18 of 18 hidden tests pass.</span> The cloud agents cost $2.59 at API rates.'],
       ] },
-    B: { total: 837,
-      bars: [["orch",0,136],["fable",136,191],["ornith",136,510],["orch",510,536],["opus",536,602],["orch",602,628],["qwen",628,828],["orch",828,837]],
-      steps: [
-        ["0–2 min","Ornith reads the spec and sample log, then plans."],
-        ["2 min","It starts two agents at once: an Ornith sub-agent builds the package and its tests, and Fable writes the README in under a minute."],
-        ["8½ min","The build is in. Ornith asks Opus for a review against the spec: no violations, all 17 tests pass, in one minute."],
-        ["10½ min","Ornith has TURBO Qwen add 14 more tests. It finishes in 3⅓ minutes and the whole suite passes."],
-        ["14 min",'Done: <span class="pass">18 of 18 hidden tests pass.</span> The cloud agents cost $1.40 at API rates.'],
-      ] },
   },
 };
-const SETS = { A: { name: "Setup A: Ornith-122B", color: "var(--setA)", dx: -9 }, B: { name: "Setup B: Ornith-35B + TURBO Qwen", color: "var(--setB)", dx: 9 } };
+const SETS = { A: { name: "Setup A: Ornith-122B", color: "var(--setA)", dx: -9 }, B: { name: "Setup B: Ornith-35B", color: "var(--setB)", dx: 9 } };
 const USERS = [1, 2, 3, 4, 5, 6];
 const byRound = (s, u) => DATA.jobs.filter(j => j[0] === s && j[1] === u);
 const avg = a => a.reduce((x, y) => x + y, 0) / a.length;
@@ -533,13 +508,6 @@ function drawScale() {
   const x = u => L + (W - L - R) * (u - 0.5) / 6;
   const y = m => T + (H - T - B) * (1 - m / yMax);
   let o = svg.querySelector("desc").outerHTML;
-  // untested band for Setup B
-  const untested = USERS.filter(u => !byRound("B", u).length);
-  if (untested.length) {
-    const x0 = x(untested[0]) - (W - L - R) / 12, x1 = x(untested[untested.length - 1]) + (W - L - R) / 12;
-    o += `<rect x="${x0}" y="${T}" width="${x1 - x0}" height="${H - T - B}" fill="var(--paper)"/>`;
-    o += `<text x="${(x0 + x1) / 2}" y="${H - B - 10}" text-anchor="middle" fill="var(--muted)" font-family="var(--f-mono)" font-size="12.5">Setup B: ${untested[0]}–${untested[untested.length - 1]} people: testing now</text>`;
-  }
   for (let m = 0; m <= yMax; m += 10) {
     o += `<line x1="${L}" x2="${W - R}" y1="${y(m)}" y2="${y(m)}" stroke="var(--rule)" stroke-width="1"/>`;
     o += `<text x="${L - 10}" y="${y(m) + 4}" text-anchor="end" fill="var(--muted)" font-family="var(--f-mono)" font-size="12">${m}</text>`;
@@ -548,7 +516,7 @@ function drawScale() {
   USERS.forEach(u => o += `<text x="${x(u)}" y="${H - B + 22}" text-anchor="middle" fill="var(--ink)" font-family="var(--f-mono)" font-size="13">${u}</text>`);
   o += `<text x="${(L + W - R) / 2}" y="${H - 6}" text-anchor="middle" fill="var(--muted)" font-family="var(--f-body)" font-size="13.5">people running team jobs at the same time</text>`;
   const hits = [], ends = {};
-  for (const s of ["A", "B"]) {
+  for (const s of Object.keys(SETS)) {
     const S = SETS[s], pts = USERS.filter(u => byRound(s, u).length).map(u => [x(u) + S.dx, y(avg(byRound(s, u).map(j => j[3]))), u]);
     DATA.jobs.filter(j => j[0] === s).forEach(j => {
       const cx = x(j[1]) + S.dx, cy = y(j[3]);
@@ -561,16 +529,16 @@ function drawScale() {
       const r = byRound(s, u);
       hits.push([px, py, `<b>${S.name}</b><br>${u} ${u > 1 ? "people" : "person"} at once: average ${fmt(avg(r.map(j => j[3])))}<br>${r.length} of ${r.length} jobs passed`]);
     });
-    ends[s] = pts[pts.length - 1];
+    if (pts.length) ends[s] = pts[pts.length - 1];
   }
-  // Direct labels: right of the last point; a series that stops early is labelled below its point; nudge apart if they meet.
-  const lab = { A: [ends.A[0] + 14, ends.A[1] + 5], B: [ends.B[0] + 14, ends.B[1] + 5] };
-  if (ends.B[2] < 6) lab.B = [ends.B[0] - 4, ends.B[1] + 26];
-  if (ends.A[2] === ends.B[2] && Math.abs(lab.A[1] - lab.B[1]) < 18) {
+  // Direct labels right of the last point; nudge apart if they meet.
+  const lab = {};
+  for (const s in ends) lab[s] = [ends[s][0] + 14, ends[s][1] + 5];
+  if (lab.A && lab.B && Math.abs(lab.A[1] - lab.B[1]) < 18) {
     const up = lab.A[1] <= lab.B[1] ? "A" : "B", dn = up === "A" ? "B" : "A", mid = (lab.A[1] + lab.B[1]) / 2;
     lab[up][1] = mid - 9; lab[dn][1] = mid + 9;
   }
-  for (const s of ["A", "B"]) o += `<text x="${lab[s][0]}" y="${lab[s][1]}" fill="var(--ink)" font-family="var(--f-body)" font-size="14" font-weight="700" paint-order="stroke" stroke="var(--sheet)" stroke-width="4">${s === "A" ? "A: Ornith-122B" : "B: 35B + TURBO"}</text>`;
+  for (const s in lab) o += `<text x="${lab[s][0]}" y="${lab[s][1]}" fill="var(--ink)" font-family="var(--f-body)" font-size="14" font-weight="700" paint-order="stroke" stroke="var(--sheet)" stroke-width="4">${s === "A" ? "A: Ornith-122B" : "B: Ornith-35B"}</text>`;
   hits.forEach((h, i) => o += `<circle class="hit" data-i="${i}" cx="${h[0]}" cy="${h[1]}" r="11" fill="transparent"/>`);
   svg.innerHTML = o;
   svg.querySelectorAll(".hit").forEach(c => {
@@ -594,10 +562,10 @@ function drawScaleTable() {
   document.getElementById("ro-pass").textContent = `${DATA.jobs.length} / ${DATA.jobs.length}`;
   document.getElementById("cost").textContent = "$" + DATA.jobs.reduce((a, j) => a + j[5], 0).toFixed(2);
 }
-const laneName = { orch: "Ornith (orchestrator)", ornith: "Ornith sub-agent", qwen: "TURBO Qwen sub-agent", fable: "Claude Fable (cloud)", opus: "Claude Opus (cloud)" };
+const laneName = { orch: "Ornith (orchestrator)", ornith: "Ornith sub-agent", fable: "Claude Fable (cloud)", opus: "Claude Opus (cloud)" };
 function drawGantt(key) {
   const run = DATA.runs[key], svg = document.getElementById("gantt");
-  const lanes = ["orch", "ornith", "qwen", "fable", "opus"].filter(l => run.bars.some(b => b[0] === l));
+  const lanes = ["orch", "ornith", "fable", "opus"].filter(l => run.bars.some(b => b[0] === l));
   document.getElementById("ganttlegend").innerHTML = lanes.map(l => `<span style="--c: var(--lane-${l})">${laneName[l]}</span>`).join("");
   const W = 960, left = 170, right = 16, top = 14, laneH = 46, axisH = 34, H = top + lanes.length * laneH + axisH;
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
@@ -616,16 +584,14 @@ function drawGantt(key) {
   });
   svg.innerHTML = out;
   document.getElementById("steps").innerHTML = run.steps.map(([t, s]) => `<li data-t="${t}"><span>${s}</span></li>`).join("");
-  document.querySelectorAll(".toggle button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.run === key)));
 }
-document.querySelectorAll(".toggle button").forEach(b => b.addEventListener("click", () => drawGantt(b.dataset.run)));
 document.querySelectorAll("button.copy").forEach(b => b.addEventListener("click", async () => {
   const t = document.getElementById(b.dataset.target).textContent;
   try { await navigator.clipboard.writeText(t); b.textContent = "Copied"; }
   catch (e) { b.textContent = "Select and copy"; }
   setTimeout(() => (b.textContent = "Copy"), 1800);
 }));
-drawScale(); drawScaleTable(); drawGantt("B");
+drawScale(); drawScaleTable(); drawGantt("A");
 </script>
 </body>
 </html>

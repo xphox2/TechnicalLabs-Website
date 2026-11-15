@@ -2,6 +2,25 @@
 
 All notable changes to the Technical Labs website are documented in this file.
 
+## [1.0.28] - 2026-11-15
+
+### Fixed
+- The `/ai` load-test chart builds its line labels from the setups that have data, so it no longer blanks the chart, table and timeline if one setup's results are missing.
+- Removed the unused setup-toggle styles and click handlers left from the old Setup A/B timeline switch.
+- The OpenCode note now says "built-in sub-agents" instead of naming agent keys the snippet no longer sets.
+
+## [1.0.27] - 2026-11-15
+
+### Changed
+- Setup B's team-job results are back on `/ai` and `/ai/invite`, labelled **Ornith-35B**: the load-test chart shows both Ornith lines (122B and 35B) again, the table has both setups, and the catalog, Setup B card and expectations show the 35B's 22 of 22 jobs and its 11 to 29 minute averages. The minute-by-minute example stays Setup A only.
+
+## [1.0.26] - 2026-11-15
+
+### Removed
+- **Qwen is gone from the site.** `/ai` and `/ai/invite` now cover only Ornith-1.5-122B (Setup A) and Ornith-1.5-35B (Setup B): Qwen's catalog column, its safety-filter warning, and the `qwen3.8-turbo-27b` entries in the OpenCode and Claude Code snippets are removed (sub-agents now use Ornith-35B).
+- Setup B's team-job load test and its example timeline are removed: they ran Ornith-35B together with Qwen sub-agents, so they were not Ornith-35B results. The page says they will be rerun on Ornith-35B alone; Setup A's results are unchanged.
+- The homepage AI card says "Self-hosted Ornith models" in all 10 languages.
+
 ## [1.0.25] - 2026-11-14
 
 ### Added
