@@ -584,7 +584,7 @@ function drawGantt(key) {
   });
   svg.innerHTML = out;
   document.getElementById("steps").innerHTML = run.steps.map(([t, s]) => `<li data-t="${t}"><span>${s}</span></li>`).join("");
-  }
+}
 document.querySelectorAll("button.copy").forEach(b => b.addEventListener("click", async () => {
   const t = document.getElementById(b.dataset.target).textContent;
   try { await navigator.clipboard.writeText(t); b.textContent = "Copied"; }
